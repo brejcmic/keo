@@ -1,0 +1,15 @@
+ Osnova cvičení}
+          1) Úvod. Bezpečnostní předpisy. Zadání témat.
+          2) Praktické provedení elektronického obvodu nebo jeho části, dislokace součástek, obvod na nepájivém poli.
+          3) Prezentace elektronických obvodů zamýšlených k výrobě
+          4) Návrh DPS programem KiCAD
+          5) Návrh DPS programem KiCAD
+          6) Ověření funkce určité části obvodu v laboratoři
+          7) Kontrola návrhů, podkladů a generování výrobních dat pro výrobu (\textbf{nutný hotový návrh})
+          8) Specifické vlastnosti elektronických součástek
+          9) Vrtání DPS, kontrola DPS, úpravy DPS do krabiček
+          10) Realizace elektronického obvodu – pájení 
+          11) Uvádění elektronického obvodu do provozu
+          12) Ověřování funkce obvodu a měření
+          13) Závěrečná zpráva
+          14) Zápočet
