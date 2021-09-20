@@ -9,6 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
+
 \usetheme{Antibes}
 \usecolortheme{crane}
 
@@ -17,7 +18,7 @@
 \subtitle[KEO] {Konstrukce a realizace elektronických obvodů}
 \author[Brejcha]{\texorpdfstring{Michal Brejcha\newline\url{brejcmic@fel.cvut.cz}}{Michal Brejcha}}
 \institute[CVUT]{ČVUT v Praze, FEL}
-\date[Praha, 2020]{Praha, 2020}
+\date[Praha, 2021]{Praha, 2021}
 
 %------------------------------------------------------------------------------
 %Konstanty a definice
@@ -119,11 +120,11 @@
 		\begin{enumerate}
           \small
           \item Úvod. Bezpečnostní předpisy. Zadání témat.
-          \item Praktické provedení elektronického obvodu nebo jeho části, dislokace součástek, obvod na nepájivém poli.
-          \item Prezentace elektronických obvodů zamýšlených k výrobě
-          \item Návrh DPS programem KiCAD
-          \item Návrh DPS programem KiCAD
-          \item Ověření funkce určité části obvodu v laboratoři
+          \item Praktické provedení elektronického obvodu. Ukázky prací studentů z jiných let.
+          \item Prezentace elektronických obvodů zamýšlených k výrobě.
+          \item Návrh DPS programem KiCAD.
+          \item Návrh DPS programem KiCAD.
+          \item Ověření funkce určité části obvodu v laboratoři.
           \item Kontrola návrhů, podkladů a generování výrobních dat pro výrobu (\textbf{nutný hotový návrh})
           \item Specifické vlastnosti elektronických součástek
           \item Vrtání DPS, kontrola DPS, úpravy DPS do krabiček
@@ -224,105 +225,95 @@
 	
 	\end{frame}
 %------------------------------------------------------------------------------
-	\begin{frame}
-    \frametitle{Co je v nabídce, když nemůžu na nic vlastního přijít?}
-    
-    Následující témata je si nutné zamluvit a \textbf{obvod se odevzdává} (neplatíte součástky). Obvody budou složit ve cvičení jiných předmětů nebo jiným kolegům.
-    
+%Prezentace studentskych praci
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Prezentace studentských prací - 3. hodina}{Prezentace studentskych praci - 3. hodina}}
+%------------------------------------------------------------------------------
+\begin{frame}
+    \frametitle{Požadavky na prezentaci}
+		
+    \textbf{Stačí 3 stránky v Powerpointu.}
     \begin{enumerate}
-      \item Obvod měření charakteristické impedance kabelu.
-      \item Napájecí bateriový zdroj 150 V.
-      \item Přepínatelná zátěž (50 W).
-      \item Budící obvod pro ovládání krokového motorku.
+      \item Seznámení s projektem = co chci dělat?
+      \item Cílové parametry obvodu = čeho chci dosáhnout?
+			
+			\begin{itemize}
+				\item pro zdroje například výstupní napětí, proudy, výkon,
+				\item pro zesilovače například zesílení, zkreslení, výkon,
+				\item pro logický obvod například co má řídit a jak, ...
+			\end{itemize}
+			
+			\item Ukázka toho, z čeho obvod bude vycházet = co je mým zdrojem informací?
+			
     \end{enumerate}
-    
+		
+		\textbf{Prezentace se nakonec odevzdává do moodle.}
+	
 	\end{frame}
 %------------------------------------------------------------------------------
-%Instalace KiCAD
-%------------------------------------------------------------------------------
-\section{\texorpdfstring{Instalace KiCAD}{Instalace Kicad}}
+	\begin{frame}
+    \frametitle{Ukázka prezentace - Josef Burda}
+		
+		\includegraphics[page=1,width=\textwidth]{pdf/KEO-Josef_Burda-Prezentace.pdf}
+	
+	\end{frame}
 %------------------------------------------------------------------------------
 	\begin{frame}
-    \frametitle{Stažení návrhového systému KiCAD}
+    \frametitle{Ukázka prezentace - Josef Burda}
 		
-		\begin{description}
-			\item[url:] http://kicad-pcb.org/
-			\item[sekce:] download
-		\end{description}
+		\includegraphics[page=2,width=\textwidth]{pdf/KEO-Josef_Burda-Prezentace.pdf}
+	
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Ukázka prezentace - Josef Burda}
+		
+		\includegraphics[page=3,width=\textwidth]{pdf/KEO-Josef_Burda-Prezentace.pdf}
+	
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Ukázka prezentace - Josef Burda}
+		
+		\includegraphics[page=4,width=\textwidth]{pdf/KEO-Josef_Burda-Prezentace.pdf}
+	
+	\end{frame}
+%------------------------------------------------------------------------------
+%Prezentace studentskych praci
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Ukázka závěrečné práce}{Ukazka zaverecne prace}}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Textová část závěrečné práce dle Jan Fiala}
 		
 		\begin{center}
-			\includegraphics[scale=0.3]{obr/kicad_url.png}
+			\includegraphics[page=1,width=6cm]{pdf/KEO-Jan_Fiala-ZP.pdf}
 		\end{center}
+	
 	\end{frame}
 %------------------------------------------------------------------------------
 	\begin{frame}
-    \frametitle{Výběr operačního systému}
-		\small
-		\begin{itemize}
-			\item instalace windows již obsahuje všechny knihovny
-			\item v případě ubuntu je třeba přidat ppa, aby se stáhla poslední verze KiCAD \kicadVersion\
-		\end{itemize}
+    \frametitle{Klasické provedení dle Iveta Kropáčková}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				 \includegraphics[page=1,width=5cm]{pdf/KEO-Iveta_Kropackova-ZP.pdf}
+			\end{column}
+			\begin{column}{0.5\textwidth} 
+				 \includegraphics[page=2,width=5cm]{pdf/KEO-Iveta_Kropackova-ZP.pdf}
+			\end{column}
+		\end{columns}
+	
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{To je vše...}
 		
 		\begin{center}
-			\includegraphics[scale=0.3]{obr/kicad_dwnld.png}
+			\textbf{Děkuji za pozornost}
 		\end{center}
+	
 	\end{frame}
 %------------------------------------------------------------------------------
-	\begin{frame}
-    \frametitle{Stažení instalačního souboru}
-		\small
-		\begin{itemize}
-			\item stáhnout aktuální stabilní verzi \kicadVersion\
-		\end{itemize}
-		
-		\begin{center}
-			\includegraphics[scale=0.3]{obr/kicad_stbv.png}
-		\end{center}
-	\end{frame}
-%------------------------------------------------------------------------------
-	\begin{frame}
-    \frametitle{Instalace - Windows}
-    	\textbf{Vhodný návod v podobě videa na youtube:} https://www.youtube.com/watch?v=Cu2VlXy-PzM \\~\\
-    	
-    	\textbf{Poznámky:}
-		\begin{enumerate}
-			\item poklepat na stažený instalační soubor
-			\item v prvním okně zvolit další,
-			\item vše ve volbě součástí nechat zaškrtnuté, jen v případě jazyků zrušit vše kromě češtiny a angličtiny,
-			\item zvolit další a přejít do nastavení umístění, umístění doporučuji nechat původní předepsané,
-			\item zvolit další a nechat proběhnout instalaci
-		\end{enumerate}
-	\end{frame}
-%------------------------------------------------------------------------------
-	\begin{frame}
-    \frametitle{První spuštění}
-    \small
-    	Po instalaci se v nabídce start objeví několik nových programů:
-      \begin{tabular}{ m{6cm} m{2cm} }
-         \begin{itemize}
-           \item \textbf{KiCad}
-           \item Eeschema
-           \item Pcbnew
-           \item Gerbview
-           \item PCB calculator
-           \item Pagelayout editor
-         \end{itemize}
-         & 
-        \begin{minipage}{\textwidth}
-          \includegraphics[scale=0.3]{obr/nabStart.png}
-        \end{minipage}
-      \end{tabular} 
-   
-  Vždy spouštíme KiCad, chceme pracovat s projekty.
-	\end{frame}
-%------------------------------------------------------------------------------
-	\begin{frame}
-    \frametitle{První spuštění}
-    \small
-    Při prvním spuštění se program dotáže na tvorbu a umístění souboru \textit{\textbf{sym-lib-table}}. V tomto případě nechte doporučenou první volbu.
-    \begin{center}
-			\includegraphics[scale=0.4]{obr/kicad_nabidka.png}
-		\end{center}
-	\end{frame}
-%------------------------------------------------------------------------------
+
 \end{document}

@@ -45,6 +45,94 @@
 }
 
 %------------------------------------------------------------------------------
+%Instalace KiCAD
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Instalace KiCAD}{Instalace Kicad}}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Stažení návrhového systému KiCAD}
+		
+		\begin{description}
+			\item[url:] http://kicad-pcb.org/
+			\item[sekce:] download
+		\end{description}
+		
+		\begin{center}
+			\includegraphics[scale=0.3]{obr/kicad_url.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Výběr operačního systému}
+		\small
+		\begin{itemize}
+			\item instalace windows již obsahuje všechny knihovny
+			\item v případě ubuntu je třeba přidat ppa, aby se stáhla poslední verze KiCAD \kicadVersion\
+		\end{itemize}
+		
+		\begin{center}
+			\includegraphics[scale=0.3]{obr/kicad_dwnld.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Stažení instalačního souboru}
+		\small
+		\begin{itemize}
+			\item stáhnout aktuální stabilní verzi \kicadVersion\
+		\end{itemize}
+		
+		\begin{center}
+			\includegraphics[scale=0.3]{obr/kicad_stbv.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Instalace - Windows}
+    	\textbf{Vhodný návod v podobě videa na youtube:} https://www.youtube.com/watch?v=Cu2VlXy-PzM \\~\\
+    	
+    	\textbf{Poznámky:}
+		\begin{enumerate}
+			\item poklepat na stažený instalační soubor
+			\item v prvním okně zvolit další,
+			\item vše ve volbě součástí nechat zaškrtnuté, jen v případě jazyků zrušit vše kromě češtiny a angličtiny,
+			\item zvolit další a přejít do nastavení umístění, umístění doporučuji nechat původní předepsané,
+			\item zvolit další a nechat proběhnout instalaci
+		\end{enumerate}
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{První spuštění}
+    \small
+    	Po instalaci se v nabídce start objeví několik nových programů:
+      \begin{tabular}{ m{6cm} m{2cm} }
+         \begin{itemize}
+           \item \textbf{KiCad}
+           \item Eeschema
+           \item Pcbnew
+           \item Gerbview
+           \item PCB calculator
+           \item Pagelayout editor
+         \end{itemize}
+         & 
+        \begin{minipage}{\textwidth}
+          \includegraphics[scale=0.3]{obr/nabStart.png}
+        \end{minipage}
+      \end{tabular} 
+   
+  Vždy spouštíme KiCad, chceme pracovat s projekty.
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{První spuštění}
+    \small
+    Při prvním spuštění se program dotáže na tvorbu a umístění souboru \textit{\textbf{sym-lib-table}}. V tomto případě nechte doporučenou první volbu.
+    \begin{center}
+			\includegraphics[scale=0.4]{obr/kicad_nabidka.png}
+		\end{center}
+	\end{frame}
+	
+%------------------------------------------------------------------------------
 %Návrh
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Návrh}{Navrh}}
