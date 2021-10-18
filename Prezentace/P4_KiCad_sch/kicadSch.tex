@@ -390,7 +390,7 @@
 		\begin{enumerate}
 			\item $\downarrow$ Umístit $\downarrow$ Součástka,
 			\item svislé menu vpravo, ikona OZ,
-			\item \uv{SHIFT + a} nebo jen \uv{a}
+			\item \uv{SHIFT + A} nebo jen \uv{A}
 		\end{enumerate}
 		
 		\column{0.55\textwidth}
@@ -447,6 +447,7 @@
 			\hline
 			\textbf{Klávesa} & \textbf{Popis} \\ \hline
 			M & Přesun symbolu \\ \hline
+			\textcolor{blue}{\textbf{V}} & \textcolor{blue}{\textbf{Změna hodnoty součástky}} \\ \hline
 			R & Rotace, otočení symbolu \\ \hline
 			X & Zrcadlení podle horizontální osy \\ \hline
 			Y & Zrcadlení podle vertikální osy \\ \hline
@@ -454,6 +455,37 @@
 			C & Kopírování, klonování, duplikování symbolu \\ \hline
 		\end{tabular}
 	\end{center}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Hodnota součástky}
+	
+	\begin{itemize}
+		\item Hodnotu lze zapsat (změnit) po najetí myši nad součástku a stisku klávesy \uv{V} nebo dvojím kliknutím na danou hodnotu.
+		\item Hodnoty zapisujme ve tvaru, kde desetinnou čárku nahrazujeme písmenem označující řády.
+	\end{itemize}
+	
+	\hrule
+	
+	\begin{itemize}
+		\item Typické značení řádů u rezistorů:
+		
+		\begin{itemize}
+			\item R = $10^0$: $0,47$ $\Omega$ je ve schéma 0R47, $10$ $\Omega$ je je ve schéma 10R,
+			\item k = $10^3$: $1200$ $\Omega$ je ve schéma 1k2, $10000$ $\Omega$ je je ve schéma 10k,
+			\item M = $10^6$: $1,2$ M$\Omega$ je ve schéma 1M2 atd.
+		\end{itemize}
+		
+		\item Typické značení řádů u kondenzátorů:
+		
+		\begin{itemize}
+			\item p = $10^{-12}$: $220$ pF je ve schéma 220p,
+			\item n = $10^{-9}$: $1,2$ nF je ve schéma 1n2, $220$ nF je ve schéma 220n,
+			\item u = $10^{-6}$: $1,2$ $\mu$F je ve schéma 1u2, $47$ $\mu$F je ve schéma 47u,
+			\item m = $10^{-3}$: $1,2$ mF je ve schéma 1m2,
+		\end{itemize}
+	\end{itemize}
 	
 \end{frame}
 %------------------------------------------------------------------------------
@@ -493,8 +525,125 @@
 \subsection{\texorpdfstring{Propojování - vodiče a odkazy}{Propojovani - vodice a odkazy}}
 %------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Propojování součástek}
+	\frametitle{Propojování vodiči}
+	\begin{columns}
+	
+		\column{0.45\textwidth}
+		\small
+		\begin{enumerate}
+			\item $\downarrow$ Umístit $\downarrow$ Spoj,
+			\item svislé menu vpravo, ikona zelené čáry,
+			\item \uv{SHIFT + W} nebo jen \uv{W}
+		\end{enumerate}
 		
+		\column{0.55\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/spoje01.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojování vodiči}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/spoje02.png}
+	\end{center}
+	
+	\small
+	
+	\begin{itemize}
+		\item Kliknutím levým tlačítkem zahájíme spoj,
+		\item kliknutím mimo vývod součástky vytváříme ohyb (koleno) ve spoji,
+		\item kliknutím na vývod součástky nebo jiný vodič se aktivní vodič připojí a ukončí.
+		\item Uzly se vytvářejí sami, pokud vodič končí na jiném vodiči, nebo je lze přidávat z menu vpravo, ikona zeleného puntíku.
+	\end{itemize}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojování globálními popisky}
+	\begin{columns}
+	
+		\column{0.45\textwidth}
+		\small
+		\begin{enumerate}
+			\item Globální popisky se symbolem,
+			\item vlastní globální popisky.
+		\end{enumerate}
+		
+		Ad 1.:
+		\begin{itemize}
+			\item Přidávat jako součástku (GND, +5V, ...),
+			\item nebo jako symbol napájení \uv{SHIFT + P} nebo jen \uv{P}
+		\end{itemize}
+		
+		Ad 2.:
+		\begin{itemize}
+			\item $\downarrow$ Umístit $\downarrow$ Globální popiska,
+			\item svislé menu vpravo, ikona \uv{A} v praporku.
+		\end{itemize}
+		
+		\column{0.55\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/spoje03.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojování globálními popisky}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/spoje04.png}
+	\end{center}
+	
+	\small
+	
+	\begin{itemize}
+		\item Globální popisky jsou viditelné ze všech listů, proto je kvůli přehlednosti používejte obezřetně.
+		\item U napájení je vhodné použít přímo symboly s napěťovou reprezentací.
+	\end{itemize}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojování lokálními popisky}
+	\begin{columns}
+	
+		\column{0.45\textwidth}
+		\small
+		\begin{enumerate}
+			\item $\downarrow$ Umístit $\downarrow$ Popiska,
+			\item svislé menu vpravo, ikona zeleně pod škrtnutého písmena A,
+			\item \uv{SHIFT + L} nebo jen \uv{L}
+		\end{enumerate}
+		
+		\column{0.55\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/spoje05.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojování lokálními popisky}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/spoje06.png}
+	\end{center}
+	
+	\small
+	
+	\begin{itemize}
+		\item Do zobrazeného pole zapište název popisku. Popisek lze opakovaně editovat dvojím kliknutím nebo stiskem klávesy \uv{E}.
+		\item Popisky jsou platné jen v rámci daného listu.
+		\item Popisek lze umístit na ukončený i neukončený vodič. Neukončený vodič lze vytvořit při jeho kreslení dvojím kliknutím.
+	\end{itemize}
+	
 \end{frame}
 %------------------------------------------------------------------------------
 
@@ -503,10 +652,121 @@
 \subsection{\texorpdfstring{Tvorba nových listů}{Tvorba novych listu}}
 %------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Přidávání stránek}
+	\frametitle{Přidávání listů}
+	\begin{columns}
+	
+		\column{0.45\textwidth}
+		\small
+		\begin{enumerate}
+			\item $\downarrow$ Umístit $\downarrow$ Hierarchický list,
+			\item svislé menu vpravo, ikona schéma,
+			\item \uv{SHIFT + S} nebo jen \uv{S}
+		\end{enumerate}
 		
+		\column{0.55\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/dalsi_strana01.png}
+		\end{center}
+		
+	\end{columns}
 \end{frame}
 %------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Přidávání listů}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/dalsi_strana02.png}
+	\end{center}
+	
+	\small
+	
+	\begin{itemize}
+		\item Kliknutím, tažením a dalším kliknutím vytvořte blok ve schématu.
+		\item Zapište jméno souboru a název listu.
+	\end{itemize}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Přidávání listů}
+	
+	\begin{itemize}
+		\item Do nového listu se dostanete dvojím kliknutím na vytvořený blok.
+		\item Do kteréhokoliv místa v projektu se můžete dostat pomocí navigátoru:
+			\begin{center}
+				\includegraphics[scale=0.6]{obr/dalsi_strana03.png}
+			\end{center}
+		\item Do listu o úroveň výš se dostanete ikonou s červenou šipkou:
+			\begin{center}
+				\includegraphics[scale=0.6]{obr/dalsi_strana04.png}
+			\end{center}
+	\end{itemize}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojení mezi listy}
+	\begin{columns}
+	
+		\column{0.45\textwidth}
+		\small
+		
+		\begin{itemize}
+			\item Ve všech listech platí globální popisky,
+			\item signály mezi listy lze vést pomocí vývodů.
+		\end{itemize}
+		
+		\textbf{Přidání vývodu:}
+		\begin{enumerate}
+			\item $\downarrow$ Umístit $\downarrow$ Hierarchické označení,
+			\item svislé menu vpravo, ikona písmene A mimo praporek,
+			\item \uv{SHIFT + H} nebo jen \uv{H}
+		\end{enumerate}
+		
+		\column{0.55\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/dalsi_strana05.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojení mezi listy}
+	\small
+	Definice vývodu:
+	
+	\begin{itemize}
+		\item Název,
+		\item orientaci není třeba nastavovat, s vývodem lze rotovat,
+		\item styl se týká zobrazení,
+		\item vždy nastavujte příslušný tvar, který určuje zda se jedná o vstup, výstup atd.
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[scale=0.5]{obr/dalsi_strana06.png}
+	\end{center}
+
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojení mezi listy}
+	\small
+	\begin{itemize}
+		\item Obvyklou praxí je umisťování vstupů vlevo a výstupů vpravo jak pro schéma zapojení tak pro list.
+			\begin{center}
+				\includegraphics[width=0.4\textwidth]{obr/dalsi_strana07.png}
+			\end{center}
+		\item Volba tvaru (typu) propojení mezi listy je přehledná pro každého, kdo zdědí a chce pokračovat ve vašem projektu.
+			\begin{center}
+				\includegraphics[width=0.4\textwidth]{obr/dalsi_strana08.png}
+			\end{center}
+		\item Propojování vývody je vhodnější než propojování globálními popisky, protože zachovává návaznost listů.
+	\end{itemize}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+
 
 
 %------------------------------------------------------------------------------
@@ -519,7 +779,7 @@
 %------------------------------------------------------------------------------
 
 
-%------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 \subsection{\texorpdfstring{Přiřazení pouzder}{Prirazeni pouzder}}
 %------------------------------------------------------------------------------
 \begin{frame}
