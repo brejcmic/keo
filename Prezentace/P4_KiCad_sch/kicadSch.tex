@@ -276,11 +276,104 @@
 % Eeschema
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Schéma zapojení}{Schema zapojeni}}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Spuštění Eeschema}
+
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{obr/Eeschema.png}
+		\end{center}
+		
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Základní ovládání}
+	
+	\begin{itemize}
+		\item \textbf{Levé tlačítko myši:}
+		
+		\begin{itemize}
+			\item Výběr prvků,
+			\item tažením lze vybrat více prvků najednou,
+			\item dvojím kliknutím lze vyvolat volbu nastavení konkrétní položky.
+		\end{itemize}
+		
+		\item \textbf{Pravé tlačítko myši:}
+		
+		\begin{itemize}
+			\item U konkrétních prvků nabízí místní nabídku možností úprav prvku.
+		\end{itemize}
+		
+		\item \textbf{Kolečko myši:}
+		
+		\begin{itemize}
+			\item Točení přibližuje a oddaluje,
+			\item stisk drží stránku a je tak možné se přemisťovat po stránce tažením myši.
+		\end{itemize}
+		
+	\end{itemize}
+		
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
 \subsection{\texorpdfstring{Volba stránky a razítko}{Volba stranky a razitko}}
 %------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Volba stránky a razítko}
+	\begin{columns}
+	
+		\column{0.5\textwidth}
+		\small
+		\begin{itemize}
+			\item Ikona stranky vlevo nahore
+			\item $\downarrow$ Soubor $\downarrow$ Nastavení stránky
+		\end{itemize}
 		
+		\column{0.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{obr/razitko01.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Volba stránky a razítko}
+	\begin{columns}
+	
+		\column{0.3\textwidth}
+		\small
+		\textcolor{red}{Vlevo}
+		\begin{itemize}
+			\item nastavení stránky
+		\end{itemize}
+		\textcolor{blue}{Vpravo}
+		\begin{itemize}
+			\item vyplnění razítka
+		\end{itemize}
+		
+		\column{0.7\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/razitko02.png}
+		\end{center}
+		
+	\end{columns}
+	
+	
+	\begin{itemize}
+		\item Údaje na razítku je možné přenést na všechny stránky projektu po zaškrtnutí \uv{Exportovat na další stránky}.
+	\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Volba stránky a razítko}
+
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{obr/razitko03.png}
+		\end{center}
+		
+		Nastavení stránky a vyplnění razítka lze zkontrolovat v levém spodním okraji stránky Eeschema.
 \end{frame}
 %------------------------------------------------------------------------------
 
@@ -290,7 +383,108 @@
 %------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Výběr a vložení součástky}
+	\begin{columns}
+	
+		\column{0.45\textwidth}
+		\small
+		\begin{enumerate}
+			\item $\downarrow$ Umístit $\downarrow$ Součástka,
+			\item svislé menu vpravo, ikona OZ,
+			\item \uv{SHIFT + a} nebo jen \uv{a}
+		\end{enumerate}
 		
+		\column{0.55\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/umisti_soucastku01.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Výběr a vložení součástky}
+	\begin{columns}
+	
+		\column{0.55\textwidth}
+		\small
+		\begin{enumerate}
+			\item Filtr pro vyhledávání symbolů,
+			\item nabídka všech nebo filtrovaných symbolů,
+			\item náhled vybraného symbolu,
+			\item popis vybraného symbolu.
+		\end{enumerate}
+		
+		\textbf{Filtrování}
+		\begin{itemize}
+			\item buď zadáním počátku názvu symbolu,
+			\item nebo lze s jistými omezeními zadat regulární výraz.
+		\end{itemize}
+		
+		\textbf{Zkuste zadat:} 74HC, 74HC7, 74??74, 74*74, 74\textbackslash w+74 apod.
+		
+		\column{0.45\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/umisti_soucastku02.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Výběr a vložení součástky}
+	
+	\begin{itemize}
+		\item Po stisku \uv{OK} se symbol vybere a je jím možné volně pohybovat po pracovní ploše,
+		\item kliknutím levým tlačítkem myši symbol umístíme.
+	\end{itemize}
+	
+	\textbf{Úpravy:}
+	
+	Pravým kliknutím myši na symbol se  zobrazí nabídka úprav, z nichž nejdůležitější jsou tyto:
+	
+	\begin{center}
+		\begin{tabular}{| c | l |}
+			\hline
+			\textbf{Klávesa} & \textbf{Popis} \\ \hline
+			M & Přesun symbolu \\ \hline
+			R & Rotace, otočení symbolu \\ \hline
+			X & Zrcadlení podle horizontální osy \\ \hline
+			Y & Zrcadlení podle vertikální osy \\ \hline
+			E & Úprava parametrů symbolu \\ \hline
+			C & Kopírování, klonování, duplikování symbolu \\ \hline
+		\end{tabular}
+	\end{center}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Víceprvkové symboly}
+	\small
+	\begin{itemize}
+		\item Některé symboly se skládají z několika prvků.
+		\item V knihovně je to vidět tak, že po rozbalení jména prvku (+) se objeví další symboly pojmenované jako \uv{jednotka A}, \uv{jednotka B} atd.
+		\item Typickými zástupci jsou logické obvody jako je například D klopný obvod 74HC74. Každá jednotka zastupuje jedno hradlo nebo napájecí vstupy.
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/umisti_soucastku03.png}
+	\end{center}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Víceprvkové symboly}
+	\small
+	\begin{itemize}
+		\item \textbf{Do schéma zapojení bychom měli vždy vkládat všechny jednotky daného symbolu.}
+		\item Pokud klonujeme resp. kopírujeme víceprvkový symbol, pak se vždy zkopíruje aktuální jednotka.
+		\item Jednotku daného prvku lze změnit úpravou vlastností (pravé tlačítko myši na symbolu: $\downarrow$ Vlastnosti $\downarrow$ upravit vlastnosti, nebo klávesa \uv{e})
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/umisti_soucastku04.png}
+	\end{center}
+	
 \end{frame}
 %------------------------------------------------------------------------------
 
