@@ -766,6 +766,49 @@
 	
 \end{frame}
 %------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojení mezi listy}
+	\begin{columns}
+	
+		\column{0.45\textwidth}
+		\small
+		
+		\begin{itemize}
+			\item Import vývodu slouží k vztažení existujícího vývodu z podřízené stránky.
+			\item Vyberte import a klikejte levým tlačítkem myši na vytvořený blok stránky.
+		\end{itemize}
+		
+		
+		\textbf{Import vývodu:}
+		\begin{enumerate}
+			\item $\downarrow$ Umístit $\downarrow$ Importovat hierarchické označení,
+			\item svislé menu vpravo, ikona písmene A, listu a modré šipky.
+		\end{enumerate}
+		
+		\column{0.55\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/dalsi_strana09.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojení mezi listy}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/dalsi_strana10.png}
+	\end{center}
+	
+	\small
+	
+	\begin{itemize}
+		\item Vývody se postupně importují dokud některý existuje nějaký, který není viditelný.
+		\item Při změně jména vývodu uvnitř stránky \textbf{nedojde} ke změně jména vývodu na bloku. To je nutné udělat ručně.
+	\end{itemize}
+	
+\end{frame}
+%------------------------------------------------------------------------------
 
 
 
@@ -774,7 +817,85 @@
 %------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Kontrola zapojení}
+	Dokončení schéma:
+	
+	\begin{enumerate}
+		\item Všechny nezapojené vývody součástek označte (modrým) křížkem: 
+			\begin{center}
+				\includegraphics[scale=0.5]{obr/kontrola01.png}
+			\end{center}
+			
+		\item Proveďte očíslování součástek:
+			\begin{center}
+				\includegraphics[scale=0.5]{obr/kontrola02.png}
+			\end{center}
+			\begin{itemize}
+				\item Vymazat existující očíslování - lze pokud ještě neexistuje návrh DPS,
+				\item ponechat existující očíslování - vždy když už jsme začali navrhovat DPS.
+			\end{itemize}
 		
+		\item Spusťte kontrolu zapojení:
+			\begin{center}
+				\includegraphics[scale=0.5]{obr/kontrola03.png}
+			\end{center}
+	\end{enumerate}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Kontrola zapojení}
+	\begin{columns}
+	
+		\column{0.5\textwidth}
+		\small
+		\begin{itemize}
+			\item Kontrolu spustíte tlačítkem spustit,
+			\item v horní části máte uvedenou statistiku chyb,
+			\item ve spodní části je uveden popis chyb,
+			\item chybové vývody jsou ve schématu označeny malou zelenou šipkou.
+		\end{itemize}
+		
+		\column{0.5\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/kontrola04.png}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Kontrola zapojení}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/kontrola05.png}
+	\end{center}
+	
+	\small
+	
+	\begin{itemize}
+		\item První dvě chyby říkají, že jsou ve schématu napájecí vstupy, ale žádný napájecí výstup (konektor má jen pasivní vývody). Lze obejít přidáním symbolu napájecího výstupu \uv{PWR\_FLAG}.
+		\item Druhé dvě chyby ukazují, že dané globální popisky nebyly použity k žádnému účelu. Lze je smazat.
+	\end{itemize}
+	
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Kontrola zapojení}
+	\begin{columns}
+	
+		\column{0.5\textwidth}
+		\small
+		\begin{itemize}
+			\item Jde jen o jednoduchou kontrolu spojení typů vývodů,
+			\item kontrola neodhalí jiné chyby jako například přetížení odporů, zkrat přes nulový odpor apod.
+			\item Pravidla kontroly lze nastavit v záložce možnosti.
+		\end{itemize}
+		
+		\column{0.5\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{obr/kontrola06.png}
+		\end{center}
+		
+	\end{columns}
 \end{frame}
 %------------------------------------------------------------------------------
 
@@ -784,7 +905,36 @@
 %------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Přiřazování pouzder}
-		
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{obr/pouzdra01.png}
+	\end{center}
+\end{frame}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Přiřazování pouzder}
+	\small
+	\begin{itemize}
+		\item Centrální okno ukazuje součástky, ke kterým je třeba přiřadit pouzdro.
+		\item V levém okně jsou knihovny pouzder,
+		\item v pravém okně jsou konkrétní (filtrované) výběry pouzder.
+		\item Výběr pouzder lze omezit čtyřmi filtry:
+			\begin{center}
+				\includegraphics[scale=0.6]{obr/pouzdra02.png}
+			\end{center}
+			
+			\begin{enumerate}
+				\item Filtrace podle popisu součástky,
+				\item filtrace podle počtu vývodů,
+				\item filtrace podle knihovny (vybíráme vlevo),
+				\item filtrace podle části názvu.
+			\end{enumerate}
+		\item V náhledu pouzdra lze zkontrolovat rozteče vývodů a další rozměry:
+			\begin{center}
+				\includegraphics[scale=0.6]{obr/pouzdra03.png}
+			\end{center}
+	\end{itemize}
+	
 \end{frame}
 %------------------------------------------------------------------------------
 
