@@ -23,7 +23,6 @@
 %Konstanty a definice
 %------------------------------------------------------------------------------
 \newtheorem{myDef}{}
-\newcommand{\kicadVersion}{5.0.0.}
 
 \begin{document}
 %------------------------------------------------------------------------------
@@ -47,21 +46,82 @@
 %------------------------------------------------------------------------------
 %Návrh
 %------------------------------------------------------------------------------
-\section{\texorpdfstring{Návrh}{Navrh}}
-\subsection{\texorpdfstring{Nepájivé pole}{Nepajive pole}}
+\section{\texorpdfstring{Dispozice obvodu}{Dispozice obvodu}}
 %------------------------------------------------------------------------------
   \begin{frame}
-    \frametitle{Nepájivé pole - breadboard}
-    \begin{center}
-      \includegraphics[width=\textwidth]{obr/breadBoard_bot.png}
-    \end{center}
+    \frametitle{Rozmístění obvodových částí}
+    
+			\begin{tabular}{ p{55mm} p{55mm} }
+				\begin{center}
+					\includegraphics[width=0.35\textwidth]{obr/dispozice.png} 
+				\end{center} &
+				
+				\begin{itemize}
+					\item vf obvody nejblíže konektoru,
+					\item úprava DC napětí bude nejdále.
+				\end{itemize}
+			\end{tabular}
+    
   \end{frame}
 %------------------------------------------------------------------------------
   \begin{frame}
-    \frametitle{Nepájivé pole - realizace prototypu}
-    \begin{center}
-      \includegraphics[width=0.8\textwidth]{obr/breadBoard_prot.png}
-    \end{center}
+    \frametitle{Propojení napájených částí}
+		
+    \begin{tabular}{ p{55mm} | p{55mm} }
+				\hline
+				\begin{center}
+					\includegraphics[scale=0.45]{obr/privod_napajeni_nevhodne.png} 
+				\end{center} &
+				
+				\begin{center}
+					\includegraphics[scale=0.45]{obr/privod_napajeni_vhodne.png} 
+				\end{center} \\
+				
+				Méně vodné z hlediska rušení & Lepší, ale vzniká větší smyčka \\ 
+				\hline
+			\end{tabular}
+			
+			
+			\begin{itemize}
+			  \item Propojujeme dvě strany DPS
+				\item mimo prostor aktivních obvodů.
+			\end{itemize}
+			
+  \end{frame}
+	
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Přívod napájení k prvkům}  
+		
+			\begin{tabular}{ p{55mm} p{55mm} }
+				\begin{center}
+					\includegraphics[width=0.5\textwidth]{obr/rozvod_napajeni_ne_ano.png} 
+				\end{center} &
+				
+				\begin{enumerate}
+					\item Hřebenová struktura = nevhodná
+					
+					\begin{itemize}
+						\item Velké smyčky,
+						\item galvanická vazba přes T uzly.
+					\end{itemize}
+					
+					\item Řádková struktura = lepší
+					
+					\begin{itemize}
+						\item Rozvod v blízkosti zdroje,
+						\item malé smyčky,
+						\item krátké přívody snižují galvanickou vazbu.
+					\end{itemize}
+					
+					\item Referenční plochy = nejlepší
+						\begin{itemize}
+							\item Nízká impedance propojení,
+							\item malé vazby.
+						\end{itemize}
+				\end{enumerate}
+			\end{tabular}
+    
   \end{frame}
 %------------------------------------------------------------------------------
 \subsection{\texorpdfstring{Prototypová deska s prokovy}{Prototypová deska s prokovy}}
