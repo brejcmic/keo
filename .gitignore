@@ -41,3 +41,8 @@
 !*.kicad_pcb
 !fp-lib-table
 !sym-lib-table
+
+# Simulace
+!*.sch
+!*.cir
+!*.asc
