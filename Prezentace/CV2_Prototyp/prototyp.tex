@@ -17,7 +17,7 @@
 \subtitle[KEO] {Konstrukce a realizace elektronických obvodů}
 \author[Brejcha]{\texorpdfstring{Michal Brejcha\newline\url{brejcmic@fel.cvut.cz}}{Michal Brejcha}}
 \institute[ČVUT]{ČVUT v Praze, FEL}
-\date[Praha, 2018]{Praha, 2018}
+\date[Praha, 2024]{Praha, 2024}
 
 %------------------------------------------------------------------------------
 %Konstanty a definice
@@ -45,6 +45,74 @@
 
 %------------------------------------------------------------------------------
 %Návrh
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Simulace obvodu}{Simulace obvodu}}
+%------------------------------------------------------------------------------
+  \begin{frame}
+    \frametitle{Ukázka simulačního SW}
+    
+		Volně stažitelné nástroje:
+		
+		\begin{itemize}
+			\item \textbf{LTSpice:} \\ \url{https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html}
+			\item \textbf{Micro-Cap 12:} \\ \url{https://micro-cap.informer.com/12.0/}
+			\item \textbf{Qucs-S:} \\ \url{https://ra3xdh.github.io/}
+		\end{itemize}
+    
+  \end{frame}
+%------------------------------------------------------------------------------
+  \begin{frame}
+    \frametitle{LTSpice}
+    
+		\begin{center}
+			\includegraphics[width=0.95\textwidth]{obr/LTSpice.png} 
+		\end{center}
+		
+		
+		\begin{itemize}
+			\item Jednoduché ovládání,
+			\item málo obsáhlé knihovny,
+			\item vhodné pro simulaci měničových struktur a filtrů.
+		\end{itemize}
+    
+  \end{frame}
+%------------------------------------------------------------------------------
+  \begin{frame}
+    \frametitle{Micro-Cap 12}
+    
+		\begin{center}
+			\includegraphics[width=0.95\textwidth]{obr/microcap12.png} 
+		\end{center}
+		
+		
+		\begin{itemize}
+			\item Trýznivé ovládání,
+			\item obsáhlé knihovny,
+			\item možnost dynamické simulace,
+			\item vhodné pro simulaci obvodů s integrovanými obvody.
+		\end{itemize}
+    
+  \end{frame}
+%------------------------------------------------------------------------------
+  \begin{frame}
+    \frametitle{Qucs-S}
+    
+		\begin{center}
+			\includegraphics[width=0.7\textwidth]{obr/qucs-s.png} 
+		\end{center}
+		
+		
+		\begin{itemize}
+			\item Jednoduché ovládání,
+			\item málo obsáhlé knihovny,
+			\item snadná tvorba podobvodů,
+			\item vhodné pro modelování obvodů.
+		\end{itemize}
+    
+  \end{frame}
+	
+%------------------------------------------------------------------------------
+% Dispozice obvodu
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Dispozice obvodu}{Dispozice obvodu}}
 %------------------------------------------------------------------------------
@@ -169,129 +237,9 @@
       \includegraphics[width=\textwidth]{obr/stripBoard_desgn.png}
     \end{center}
   \end{frame}
+	
 %------------------------------------------------------------------------------
-%------------------------------------------------------------------------------
-%Součástky
-%------------------------------------------------------------------------------
-\section{\texorpdfstring{Součástky}{Soucastky}}
-%------------------------------------------------------------------------------
-  \begin{frame}
-    \frametitle{Pasivní prvky}
-    \begin{columns}
-    
-    \column{.5\textwidth}
-    \begin{itemize}
-      \item \textbf{Rezistory}:
-        \begin{itemize}
-          \item odpor,
-          \item ztrátový výkon,
-          \item tolerance.
-        \end{itemize}
-        
-      \item \textbf{Kondenzátory}:
-        \begin{itemize}
-          \item kapacita,
-          \item jmenovité napětí, 
-          \item materiál (teplotní závislost),
-          \item ztrátový činitel,
-          \item frekvenční rozsah použití.
-        \end{itemize}
-    \end{itemize}
-    
-    \column{.5\textwidth}
-    \begin{itemize}
-      \item \textbf{Tlumivky, cívky:}
-        \begin{itemize}
-          \item indukčnost,
-          \item činitel jakosti (parazitní odpor),
-          \item jmenovitý proud, 
-          \item frekvenční rozsah použití.
-        \end{itemize}
-    \end{itemize}
-    \end{columns}
-  \end{frame}
-%------------------------------------------------------------------------------
-  \begin{frame}
-    \frametitle{Pouzdra rezistorů}
-    \begin{center}
-      \includegraphics[width=0.8\textwidth]{obr/resistor-wattage.png}
-    \end{center}
-  \end{frame}
-%------------------------------------------------------------------------------
-  \begin{frame}
-    \frametitle{Značení keramických kondenzátorů, třída 2}
-    \begin{center}
-      \includegraphics[width=\textwidth]{obr/classII.png}
-    \end{center}
-  \end{frame}
-%------------------------------------------------------------------------------
-  \begin{frame}
-    \frametitle{Příklad - spojování prvků}
-    
-    \begin{itemize}
-      \item Dva rezistory $R_1 = 15 \Omega$, $R_2 = 150 \Omega$  jsou spojeny 
-      paralelně, na kterém je vyšší výkonová ztráta?
-      \item Dva rezistory $R_1 = 15 \Omega$, $R_2 = 150 \Omega$  jsou spojeny 
-      sériově, na kterém je vyšší výkonová ztráta?
-      \item Dva kondenzátory $C_1 = 1 nF$, $R_2 = 10 nF$  jsou spojeny 
-      sériově, na kterém je vyšší napětí?
-    \end{itemize}
-    
-  \end{frame}
-%------------------------------------------------------------------------------
-  \begin{frame}
-    \frametitle{Aktivní prvky}
-    \begin{columns}
-    
-    \column{.5\textwidth}
-    \begin{itemize}
-      \item \textbf{Diody}:
-        \begin{itemize}
-          \item propustný proud,
-          \item závěrné napětí,
-          \item prahové napětí,
-          \item doba závěrného zotavení,
-          \item kapacita.
-        \end{itemize}
-      
-      \item \textbf{Integrované obvody:}
-        \begin{itemize}
-          \item napájecí napětí,
-          \item charakteristiky vstupů: napětí, proud, impedance,
-          \item charakteristiky výstupů: napětí, proud, typ zátěže, spínací časy...
-        \end{itemize}
-    \end{itemize}
-    
-    \column{.5\textwidth}
-    \begin{itemize}
-      \item \textbf{Tranzistory}:
-        \begin{itemize}
-          \item proud kolektorem (drainem),
-          \item napětí mezi kolektor-emitor (drain-source), 
-          \item zesilovací činitel (převodní admitance),
-          \item ztrátový výkon,
-          \item frekvenční rozsah použití.
-        \end{itemize}
-    \end{itemize}
-    \end{columns}
-  \end{frame}
-%------------------------------------------------------------------------------
-  \begin{frame}
-    \frametitle{Příklad - spojování prvků}
-    
-    \begin{itemize}
-      \item Rezistor $R_1 = 1,1 k\Omega$ a dioda 1N4007  jsou spojeny 
-      sériově a připojeny ke zdroji napětí 12 V. Jaký proud teče obvodem?
-      \item Jaký rezistor se má zvolit do série k LED BL-BD0141 při napájecím
-      napětí 5~V pro zvolený proud 10~mA?
-      \item Jaký rezistor se má zvolit do série k LED BL-BD0141 při napájecím
-      napětí 10~V se střídou 50\% pro zvolený proud 10~mA?
-      \item Jaký rezistor se má zvolit do série s bází tranzistoru BC546B, tak
-      aby spolehlivě sepnul (saturace) kolektorovou zátěž o velikosti 
-      $R = 100\Omega$ v zapojení SE při napájecím napětí 5~V?
-    \end{itemize}
-    
-  \end{frame}
+% Prezentace
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Prezetace zadání}{Prezentace zadani}}
 %------------------------------------------------------------------------------
