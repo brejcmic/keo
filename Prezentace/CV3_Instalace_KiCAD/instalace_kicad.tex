@@ -17,13 +17,13 @@
 \subtitle[KEO] {Konstrukce a realizace elektronických obvodů}
 \author[Brejcha]{\texorpdfstring{Michal Brejcha\newline\url{brejcmic@fel.cvut.cz}}{Michal Brejcha}}
 \institute[ČVUT]{ČVUT v Praze, FEL}
-\date[Praha, 2024]{Praha, 2024}
+\date[Praha, 2025]{Praha, 2025}
 
 %------------------------------------------------------------------------------
 %Konstanty a definice
 %------------------------------------------------------------------------------
 \newtheorem{myDef}{}
-\newcommand{\kicadVersion}{8.0.5}
+\newcommand{\kicadVersion}{9.0.5}
 
 \begin{document}
 %------------------------------------------------------------------------------
@@ -89,13 +89,14 @@
 %------------------------------------------------------------------------------
 	\begin{frame}
     \frametitle{Instalace - Windows}
-    	\textbf{Vhodný návod v podobě videa na youtube:} \url{https://www.youtube.com/watch?v=JZitbgEbCHU} \\~\\
+    	\textbf{Vhodný návod v podobě videa na youtube:} \url{https://www.youtube.com/watch?v=WRple05v3sE} \\~\\
     	
-    	\textbf{Poznámky:}
+    	\textbf{Shrnutí postupu:}
 		\begin{enumerate}
 			\item poklepat na stažený instalační soubor
 			\item v prvním okně zvolit další,
-			\item vše ve volbě součástí nechat zaškrtnuté, jen v případě jazyků zrušit vše kromě češtiny a angličtiny,
+			\item ponechte volbu instalace všem uživatelům,
+			\item vše ve volbě součástí nechat zaškrtnuté, pokud chcete ušetřit místo, vynechte 3D modely,
 			\item zvolit další a přejít do nastavení umístění, umístění doporučuji nechat původní předepsané,
 			\item zvolit další a nechat proběhnout instalaci
 		\end{enumerate}
@@ -120,7 +121,7 @@
 		\end{center}
 		
 		\begin{itemize}
-			\item Vše nechte kromě \uv{Help files} zaškrtnuté, v \uv{Help files} ponechte jen \uv{English}.
+			\item Ponechte volbu pro všechny uživatele počítače.
 		\end{itemize}
 	\end{frame}
 %------------------------------------------------------------------------------
@@ -128,10 +129,11 @@
     \frametitle{Průběh instalace}
 		\begin{center}
 			\includegraphics[scale=0.5]{obr/kicad_inst3.png}
+			\includegraphics[scale=0.4]{obr/kicad_inst3_no3D.png}
 		\end{center}
 		
 		\begin{itemize}
-			\item Nechte původní cestu a zvolte \uv{Install}
+			\item Vše lze nechat. Zvažte, jestli chcete 3D modely. Rozdíl v nárocích na místo na disku je velký ($>$4 GB).
 		\end{itemize}
 	\end{frame}
 %------------------------------------------------------------------------------
@@ -142,7 +144,7 @@
 		\end{center}
 		
 		\begin{itemize}
-			\item Vyčkejte do konce instalace.
+			\item Nechte původní cestu a zvolte \uv{Install}
 		\end{itemize}
 	\end{frame}
 %------------------------------------------------------------------------------
@@ -153,9 +155,25 @@
 		\end{center}
 		
 		\begin{itemize}
-			\item Potvrďte dokončení instalace, zaškrtávátko se týká 3D modelů součástek, které v předmětu KEO dělat nebudete.
+			\item Vyčkejte do konce instalace.
 		\end{itemize}
 	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Průběh instalace}
+		\begin{center}
+			\includegraphics[scale=0.5]{obr/kicad_inst6.png}
+		\end{center}
+		
+		\begin{itemize}
+			\item Potvrďte dokončení instalace. Můžete okamžitě přejít na spuštění programu.
+		\end{itemize}
+	\end{frame}
+	
+%------------------------------------------------------------------------------
+%Instalace KiCAD
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{První spuštění KiCAD}{Prvni spusteni KiCAD}}
 %------------------------------------------------------------------------------
 	\begin{frame}
     \frametitle{První spuštění}
@@ -164,11 +182,13 @@
       \begin{tabular}{ m{6cm} m{2cm} }
          \begin{itemize}
            \item \textbf{KiCad}
-           \item Eeschema
-           \item Pcbnew
-           \item Gerbview
-           \item PCB calculator
-           \item Pagelayout editor
+           \item Schematic Editor
+           \item PCB Editor
+           \item Gerber Viewer
+           \item Calculator Tools
+           \item Drawing Sheet Editor
+					 \item Image Converter
+					 \item KiCad Command Prompt
          \end{itemize}
          & 
         \begin{minipage}{\textwidth}
@@ -177,76 +197,43 @@
 				\vspace{0.2cm}
       \end{tabular} 
    
-  Vždy spouštíme KiCad, chceme pracovat s projekty.
+  Vždy spouštíme KiCad, zde se spravují projekty.
 	\end{frame}
 %------------------------------------------------------------------------------
 	\begin{frame}
     \frametitle{První spuštění}
     \small
-    Při prvním spuštění se program dotáže na tvorbu a umístění souboru \textit{\textbf{sym-lib-table}}. V tomto případě nechte doporučenou první volbu.
+    V případě, že jste již nějakou instalaci KiCad nainstalovali v minulosti, tak se program dotáže zda má proběhnout import nastavení z předchozí verze. Předpokládejme, že všichni zde zvolíme \uv{výchozí nastavení}.
+		
     \begin{center}
-			\includegraphics[scale=0.4]{obr/kicad_nabidka.png}
+			\includegraphics[scale=0.5]{obr/kicad_pocatecni_spusteni.png}
 		\end{center}
 	\end{frame}
 %------------------------------------------------------------------------------
-
-%Stazeni knihoven
-%------------------------------------------------------------------------------
-\section{\texorpdfstring{Stažení knihoven}{Stazeni knihoven}}
-%------------------------------------------------------------------------------
 	\begin{frame}
-    \frametitle{Oficiální knihovny}
-   
-    \textcolor{red}{Počáteční knihovny} KiCAD, které jsou součástí instalace, jsou rozdílné od oficiálních knihoven a také \textcolor{red}{jsou méně obsáhlé}.
-    \vspace{0.5 cm}
+    \frametitle{První spuštění}
+    \small
+    Následuje dotaz na pomoc se sběrem diagnostických dat pro vývojáře. Zde zvolte podle vlastního úsudku, volba neovlivní chod programu.
 		
-		\textbf{Stažení oficiálních knihoven}:
-		\begin{itemize}
-			\item[\textcolor{green}{\textbf{+}}] Jsou spravovány a aktualizovány komunitou,
-			\item[\textcolor{green}{\textbf{+}}] s GIT je lze snadno aktualizovat,
-			\item[\textcolor{green}{\textbf{+}}] mají mnohem více prvků než původní knihovny po instalaci.
-			\item[\textcolor{red}{\textbf{\text{--}}}] Pro jejich funkci je třeba v programu přiřadit cesty.
-		\end{itemize}
+    \begin{center}
+			\includegraphics[scale=0.5]{obr/kicad_pocatecni_spusteni2.png}
+		\end{center}
 	\end{frame}
 %------------------------------------------------------------------------------
 	\begin{frame}
-    \frametitle{Úložiště oficiálních knihoven}
-
+    \frametitle{První spuštění}
+    \small
+    Nakonec se dostanete do hlavní nabídky programu, kde se zakládají projekty.
+		
     \begin{center}
-			\includegraphics[scale=0.3]{obr/github_lib1.png}
+			\includegraphics[scale=0.5]{obr/kicad_pocatecni_spusteni3.png}
 		\end{center}
-		
-		Adresa: \url{https://github.com/KiCad}
-		
-		Potřebujeme: kicad-symbols, kicad-footprints
-		
 	\end{frame}
-%------------------------------------------------------------------------------
-	\begin{frame}
-    \frametitle{Stažení}
-
-    \begin{center}
-			\includegraphics[scale=0.3]{obr/github_lib2.png}
-		\end{center}
-		
-		\begin{itemize}
-			\item Uživatelé git mohou klonovat, ostatní stahují soubor zip.
-		\end{itemize}
-		
-	\end{frame}
-%------------------------------------------------------------------------------
-	\begin{frame}
-    \frametitle{Stažení}
-
-    \begin{center}
-			\includegraphics[scale=0.35]{obr/proj_lib1.png}
-		\end{center}
 	
-		\begin{itemize}
-			\item Cílovým adresářem pro rozbalení nebo klonování se předpokládá adresář s KiCAD projekty.
-		\end{itemize}
-		
-	\end{frame}
+%------------------------------------------------------------------------------
+% Co bude příště
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Co bude příště}{Co bude priste}}
 %------------------------------------------------------------------------------
 	\begin{frame}
     \frametitle{Co bude příště}
@@ -254,12 +241,32 @@
 		Přednáška a cvičení s výkladem pro kreslení v editoru schémat:
 		\begin{itemize}
 			\item Založení projektu,
-			\item přidání knihoven,
-			\item kreslení schéma, výběr součástek apod.
+			\item práce s knihovnami,
+			\item kreslení schéma, výběr součástek atd.
 			\item kontrola zapojení,
 			\item přiřazení pouzder.
 		\end{itemize}
-		Obě hodiny budou v počítačové učebně \textbf{T2:C4-264}. Nicméně, je možné pracovat i na vlastním notebooku. 
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Poznámky k příští hodině}
+		
+		Příští a po něm následující cvičení je v místnosti \textbf{T2:C4-264}.
+		\begin{itemize}
+			\item Jde o počítačovou učebnu.
+			\item K dispozici jsou instalace KiCad 7.0. Nejde o extrémní rozdíl proti verzi 9.0, ale rozdíly tu jsou.
+			\item Vyučovat se bude aktuální verze 9.0.
+			\item Doporučuji přijít s vlastním notebookem s instalací KiCad 9.0. Kdo tuto možnost nemá, bude pracovat na stanici v místnosti.
+			\item Kvůli nepřítomnosti některých studentů bude pořizován záznam hodiny a ten pak bude umístěn na moodle.
+		\end{itemize}
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{To je vše...}
+		
+		\begin{center}
+			\Large{Děkuji za pozornost}
+		\end{center}
 	\end{frame}
 %------------------------------------------------------------------------------
 \end{document}
