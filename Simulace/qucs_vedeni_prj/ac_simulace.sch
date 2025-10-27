@@ -1,6 +1,6 @@
-<Qucs Schematic 24.3.0>
+<Qucs Schematic 24.3.2>
 <Properties>
-  <View=-232,-30,879,581,1.42881,0,0>
+  <View=-229,-30,858,581,1.4599,0,0>
   <Grid=10,10,1>
   <DataSet=ac_simulace.dat>
   <DataDisplay=ac_simulace.dpl>
@@ -29,8 +29,8 @@
   <GND * 1 490 380 0 0 0 0>
   <Eqn Vypocet_vstupni_impedance 1 280 430 -25 17 0 0 "Z_in=volt_in.v / amp_in.i" 1 "yes" 0>
   <.AC AC1 1 80 420 0 40 0 0 "lin" 1 "1 MHz" 1 "2 GHz" 1 "1000" 1 "no" 0>
-  <Sub VEDENI1 1 350 280 -26 28 0 0 "VEDENI.sch" 0 "50" 1 "50e-12" 1 "1" 1>
   <R zatez 1 490 350 15 -26 0 1 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <Sub VEDENI1 1 350 280 -26 28 0 0 "VEDENI.sch" 0 "50" 1 "50e-12" 1 "1" 1>
 </Components>
 <Wires>
   <240 280 270 280 "" 0 0 0 "">

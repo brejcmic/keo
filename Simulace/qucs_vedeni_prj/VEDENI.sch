@@ -1,6 +1,6 @@
-<Qucs Schematic 24.3.0>
+<Qucs Schematic 24.3.2>
 <Properties>
-  <View=-3225,-260,5739,3045,0.318631,823,0>
+  <View=-1200,-32,4139,2939,1.99964,2108,42>
   <Grid=10,10,1>
   <DataSet=VEDENI.dat>
   <DataDisplay=VEDENI.dpl>
@@ -1235,7 +1235,7 @@
   <C C400 1 2690 2870 17 -26 0 1 "Cap" 1 "" 0 "neutral" 0>
   <L L400 1 2790 2840 -26 10 0 0 "Ind" 1 "" 0>
   <Port P_out 1 2850 2840 4 -44 0 2 "2" 1 "analog" 0 "v" 0 "" 0>
-  <Eqn Parametry_vedeni 1 70 20 -25 17 0 0 "N=800" 1 "L_1m=(Z^2) * C_1m" 1 "Cap=C_1m * L / N" 1 "Ind=L_1m * L / N" 1 "yes" 0>
+  <Eqn Parametry_vedeni 1 70 20 -25 17 0 0 "N=400" 1 "L_1m=(Z^2) * C_1m" 1 "Cap=C_1m * L / N" 1 "Ind=L_1m * L / N" 1 "yes" 0>
 </Components>
 <Wires>
   <70 180 160 180 "" 0 0 0 "">
