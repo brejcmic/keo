@@ -10,9 +10,6 @@
 # gitingnore list
 !*.gitignore
 
-# archiv
-!*.zip
-
 # dokumentace
 !*.txt
 !*.pdf
@@ -38,9 +35,17 @@
 !*.sch
 !*.lib
 !*.pro
-!*.kicad_pcb
-!fp-lib-table
 !sym-lib-table
+!fp-lib-table
+!fp-info-cache
+!*.kicad_pro
+!*.kicad_pcb
+!*.kicad_sch
+!*.kicad_sym
+!*.kicad_mod
+!*.kicad_dru
+!*.kicad_wks
+!*.pretty
 
 # Simulace
 !*.sch
