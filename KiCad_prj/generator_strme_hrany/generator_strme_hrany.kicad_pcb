@@ -1,7 +1,7 @@
 (kicad_pcb
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(general
 		(thickness 1.6)
 		(legacy_teardrops no)
@@ -9,43 +9,44 @@
 	(paper "A4")
 	(layers
 		(0 "F.Cu" signal)
-		(31 "B.Cu" signal)
-		(32 "B.Adhes" user "B.Adhesive")
-		(33 "F.Adhes" user "F.Adhesive")
-		(34 "B.Paste" user)
-		(35 "F.Paste" user)
-		(36 "B.SilkS" user "B.Silkscreen")
-		(37 "F.SilkS" user "F.Silkscreen")
-		(38 "B.Mask" user)
-		(39 "F.Mask" user)
-		(40 "Dwgs.User" user "User.Drawings")
-		(41 "Cmts.User" user "User.Comments")
-		(42 "Eco1.User" user "User.Eco1")
-		(43 "Eco2.User" user "User.Eco2")
-		(44 "Edge.Cuts" user)
-		(45 "Margin" user)
-		(46 "B.CrtYd" user "B.Courtyard")
-		(47 "F.CrtYd" user "F.Courtyard")
-		(48 "B.Fab" user)
-		(49 "F.Fab" user)
-		(50 "User.1" user)
-		(51 "User.2" user)
-		(52 "User.3" user)
-		(53 "User.4" user)
-		(54 "User.5" user)
-		(55 "User.6" user)
-		(56 "User.7" user)
-		(57 "User.8" user)
-		(58 "User.9" user)
+		(2 "B.Cu" signal)
+		(9 "F.Adhes" user "F.Adhesive")
+		(11 "B.Adhes" user "B.Adhesive")
+		(13 "F.Paste" user)
+		(15 "B.Paste" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
+		(1 "F.Mask" user)
+		(3 "B.Mask" user)
+		(17 "Dwgs.User" user "User.Drawings")
+		(19 "Cmts.User" user "User.Comments")
+		(21 "Eco1.User" user "User.Eco1")
+		(23 "Eco2.User" user "User.Eco2")
+		(25 "Edge.Cuts" user)
+		(27 "Margin" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
+		(35 "F.Fab" user)
+		(33 "B.Fab" user)
+		(39 "User.1" user)
+		(41 "User.2" user)
+		(43 "User.3" user)
+		(45 "User.4" user)
+		(47 "User.5" user)
+		(49 "User.6" user)
+		(51 "User.7" user)
+		(53 "User.8" user)
+		(55 "User.9" user)
 	)
 	(setup
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
+		(tenting front back)
 		(aux_axis_origin 150.876 50.292)
 		(grid_origin 150.876 50.292)
 		(pcbplotparams
-			(layerselection 0x00010fc_ffffffff)
-			(plot_on_all_layers_selection 0x0000000_00000000)
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
 			(usegerberattributes yes)
@@ -55,7 +56,6 @@
 			(dashed_line_gap_ratio 3.000000)
 			(svgprecision 4)
 			(plotframeref no)
-			(viasonmask no)
 			(mode 1)
 			(useauxorigin no)
 			(hpglpennumber 1)
@@ -63,16 +63,19 @@
 			(hpglpendiameter 15.000000)
 			(pdf_front_fp_property_popups yes)
 			(pdf_back_fp_property_popups yes)
+			(pdf_metadata yes)
+			(pdf_single_document no)
 			(dxfpolygonmode yes)
 			(dxfimperialunits yes)
 			(dxfusepcbnewfont yes)
 			(psnegative no)
 			(psa4output no)
-			(plotreference yes)
-			(plotvalue yes)
-			(plotfptext yes)
-			(plotinvisibletext no)
+			(plot_black_and_white yes)
 			(sketchpadsonfab no)
+			(plotpadnumbers no)
+			(hidednponfab no)
+			(sketchdnponfab yes)
+			(crossoutdnponfab yes)
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
@@ -139,21 +142,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:BNC_Amphenol_B6252HB-NPP3G-50_Horizontal"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "09ed8d47-f9cb-4408-bf58-78f26f122006")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -166,7 +156,7 @@
 			)
 		)
 		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -180,7 +170,7 @@
 		)
 		(property ki_fp_filters "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*")
 		(path "/ff950f71-f7c5-4544-ac0d-9c976151760c")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -460,7 +450,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "effd3436-3646-469c-ac2f-a9c81225e47c")
 		)
@@ -519,6 +509,7 @@
 			(pintype "passive")
 			(uuid "df3148d5-f152-447e-a683-03e1197c7e16")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_Coaxial.3dshapes/BNC_Amphenol_B6252HB-NPP3G-50_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -559,20 +550,7 @@
 				)
 			)
 		)
-		(property "Footprint" "prj_footprints:KLS7-SS02-12F20"
-			(at 0 -7.5 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "385e7bf7-6b9c-45f4-8f19-99946dcf72c0")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 -7.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -599,7 +577,7 @@
 			)
 		)
 		(path "/695710c5-2db7-4778-b89e-aa666a109ef2")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -917,6 +895,7 @@
 			(pintype "passive")
 			(uuid "ddb910d6-45b0-4180-9871-78a0c2a7fefc")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
@@ -925,7 +904,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R6"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "f633131b-5310-444a-be8d-07ffce8979ab")
 			(effects
@@ -936,7 +915,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "f5ba23d9-d2ab-431b-b4cc-45ae905c62e2")
 			(effects
@@ -946,20 +925,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "200aad5e-c5e9-4cae-8a74-18d1b602d2e9")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -987,7 +953,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/aca02158-3a85-436f-9bb8-0260ebf99806")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -1151,7 +1117,7 @@
 			(uuid "827e81cc-890b-4c66-ad39-735dc5ca39ed")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "204aec3a-b3e0-4d32-8f29-2ad94aacccda")
 			(effects
@@ -1181,6 +1147,7 @@
 			(pintype "passive")
 			(uuid "2282e2d2-629f-41e9-bff2-6871588d02ce")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -1200,7 +1167,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R7"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "4812cff6-f6a1-4707-b0b5-c5a6bd23eff0")
 			(effects
@@ -1211,7 +1178,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "c96666b8-dffa-419b-8505-8e7535256ae3")
 			(effects
@@ -1221,20 +1188,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "24f28ca5-12b2-45bf-8490-f8644a56ef42")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1262,7 +1216,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/e6a9f1b6-c817-4462-a7c1-0007b96930c5")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -1426,7 +1380,7 @@
 			(uuid "0dbc4b78-ff37-4da3-9729-95856e0e9f43")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "74bdc3f7-faa1-454f-a971-19bf4bfbdbe6")
 			(effects
@@ -1456,6 +1410,7 @@
 			(pintype "passive")
 			(uuid "3f3d998b-46bb-4a19-bb62-4da2731d3cbe")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -1475,7 +1430,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R4"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "a5ae1239-d476-49bd-817b-1ad32f19b164")
 			(effects
@@ -1486,7 +1441,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "abc6ee22-3327-4a42-80a6-f11a3d001114")
 			(effects
@@ -1496,20 +1451,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "18aef52c-da5b-4402-ad50-ec38e02fe415")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1537,7 +1479,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7ccc0f6c-a65a-42a2-ad86-dd446264a3b8")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -1701,7 +1643,7 @@
 			(uuid "a86ed010-5a8f-462d-8257-712206da1a1e")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "3040da92-ea39-4725-8eaf-1d93595cafb3")
 			(effects
@@ -1731,6 +1673,7 @@
 			(pintype "passive")
 			(uuid "08475fa4-43d8-4632-b6f5-680de5cf213d")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -1771,21 +1714,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "612bb99d-421f-474e-91f6-784d5072e073")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -1798,7 +1728,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -1812,7 +1742,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/91f56328-2e9c-4272-95c0-19dad4623d04")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -1966,6 +1896,7 @@
 			(pintype "passive")
 			(uuid "af469e9e-9167-47e6-966d-9cf9cf18bbaf")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L7.0mm_W2.5mm_P5.00mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -2006,19 +1937,6 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:CERDIP-14_W7.62mm_SideBrazed_LongPads"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "196019ca-171c-4560-ae47-2e08e7b85019")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
 			(at 0 0 0)
 			(unlocked yes)
@@ -2046,8 +1964,8 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm*")
-		(path "/dbc8c2d1-449a-45c3-8e81-f9cc455ea3ed")
-		(sheetname "Hlavní")
+		(path "/e586cb87-1b33-408d-9f89-751ed399caf6")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2354,6 +2272,7 @@
 			(pintype "power_in")
 			(uuid "68ec23b4-370a-4398-99a2-fef0704a3257")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Package_DIP.3dshapes/CERDIP-14_W7.62mm_SideBrazed_LongPads.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -2394,21 +2313,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "e243a533-71e4-45af-8d02-bd3c2932a164")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -2421,7 +2327,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -2435,7 +2341,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/d7b0e10f-31d8-4747-a809-661e40adaa0d")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2589,6 +2495,7 @@
 			(pintype "passive")
 			(uuid "e94f1c2d-307c-4c82-a9d4-8961074905a0")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L7.0mm_W2.5mm_P5.00mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -2629,20 +2536,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "dad7b69c-49c1-4cfe-9e0b-87e57305bc8b")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2670,7 +2564,7 @@
 		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/0f7d93fd-c728-45f3-836d-e07fdbaac65a")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
@@ -2680,7 +2574,7 @@
 				(width 0.15)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "c8137c44-8476-4369-9de0-28f537d5435b")
 		)
@@ -2691,7 +2585,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "a4c03864-aadd-45d6-9b3c-8dd66927fcf1")
 		)
@@ -2713,6 +2607,7 @@
 			(layers "*.Cu" "*.Mask")
 			(uuid "868a8da8-60f5-4bbd-80f6-78763ac4955e")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "MountingHole:MountingHole_3.2mm_M3"
 		(layer "F.Cu")
@@ -2742,20 +2637,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "db0659e8-3e85-4398-a804-3525f85c296b")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2783,7 +2665,7 @@
 		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/fbc447ff-f4bf-4cb6-b946-1ad4562273b5")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
@@ -2793,7 +2675,7 @@
 				(width 0.15)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "bbcd3e76-e188-462b-967b-ccc3bf2e8b01")
 		)
@@ -2804,7 +2686,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "ceff15a0-ccf7-4775-86b8-408da656623c")
 		)
@@ -2826,6 +2708,7 @@
 			(layers "*.Cu" "*.Mask")
 			(uuid "f1f8aabc-61e1-4b55-912a-3e51e30afdcb")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
@@ -2834,7 +2717,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R8"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "b49a62f1-e7fb-4b3f-b790-59a3f1aa5920")
 			(effects
@@ -2845,7 +2728,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "e29b0cda-e8d4-42d9-984a-38ba5c67abfc")
 			(effects
@@ -2855,20 +2738,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8dca8bb5-054d-48bb-a4f4-f51121b2fe08")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2896,7 +2766,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/404003c9-f35b-409d-9d8a-405d136b7784")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3060,7 +2930,7 @@
 			(uuid "88b36940-c5bc-42c1-a06a-8a5dd13a41b2")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "33390086-502f-4621-ab77-6131adda5e66")
 			(effects
@@ -3090,6 +2960,7 @@
 			(pintype "passive")
 			(uuid "02f3f6f0-ea5f-42b5-a4af-220cc653c8a9")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -3130,21 +3001,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_NV_B03P-NV_1x03_P5.00mm_Vertical"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "75b43be0-1af9-47cc-925c-b803dd1608d3")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3157,7 +3015,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3171,7 +3029,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/2c645ca6-7bab-42de-b233-6937c2fdd271")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3399,6 +3257,7 @@
 			(pintype "passive")
 			(uuid "1c661ad1-d96e-4cb6-ac15-5c4a50ecce1a")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_JST.3dshapes/JST_NV_B03P-NV_1x03_P5.00mm_Vertical.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -3439,21 +3298,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK163_Dual_Horizontal"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d3ea4fca-091d-47fb-9707-be6a4f6be1c1")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3466,7 +3312,7 @@
 			)
 		)
 		(property "Description" "Dual potentiometer"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3480,7 +3326,7 @@
 		)
 		(property ki_fp_filters "Potentiometer*")
 		(path "/a51044fe-1398-48c4-889e-6f10f51062f9")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3800,6 +3646,7 @@
 			(pintype "passive")
 			(uuid "3f38c0fb-6dd3-49e0-b744-fdc9af3d0d9f")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK163_Dual_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -3819,7 +3666,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R9"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "5d5f9687-d871-4dc1-8445-5d6dd9da861c")
 			(effects
@@ -3830,7 +3677,7 @@
 			)
 		)
 		(property "Value" "6k8"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "bfd9c95e-07b3-4d11-8679-fa7bd9edaca6")
 			(effects
@@ -3840,20 +3687,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "90f61604-dead-412d-82e9-b49598efd59c")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3881,7 +3715,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/8cfca39f-e490-4e72-8fe7-8372bed3a83a")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -4045,7 +3879,7 @@
 			(uuid "975aa701-48e0-4918-87d3-d82a22be293e")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "ae3df89d-bd3b-4983-819b-34e8af5da05d")
 			(effects
@@ -4075,6 +3909,7 @@
 			(pintype "passive")
 			(uuid "60186dbe-d606-470c-942d-2cfc86a02e05")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -4115,20 +3950,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "a30f7aac-4f0e-4ae9-86d9-f14a516ee6c2")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4156,7 +3978,7 @@
 		)
 		(property ki_fp_filters "CP_*")
 		(path "/3d89610e-db3e-487f-8790-cc45332055b4")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -5526,7 +5348,7 @@
 				(width 0.12)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.SilkS")
 			(uuid "83dfcd25-9603-4985-a64c-e781d8e07b94")
 		)
@@ -5537,7 +5359,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "4bf986a2-c85e-485c-9069-093b5a813c7c")
 		)
@@ -5568,7 +5390,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "aab04173-2dd4-4ec6-aaf5-3118f32011c0")
 		)
@@ -5603,6 +5425,7 @@
 			(pintype "passive")
 			(uuid "2bc21810-7eb2-46f0-b459-f7b0e187ba83")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -5622,7 +5445,7 @@
 		(descr "C, Rect series, Radial, pin pitch=5.00mm, , length*width=7*2.5mm^2, Capacitor")
 		(tags "C Rect series Radial pin pitch 5.00mm  length 7mm width 2.5mm Capacitor")
 		(property "Reference" "C6"
-			(at 2.5 -2.5 360)
+			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "8282f136-435e-412a-bbf7-e35b7a565a29")
 			(effects
@@ -5633,7 +5456,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 2.5 2.5 360)
+			(at 2.5 2.5 0)
 			(layer "F.Fab")
 			(uuid "a624bdee-fd28-478a-872e-73affe495598")
 			(effects
@@ -5643,20 +5466,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "2bd8b19d-fb2c-4998-b115-fd460443d768")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5684,7 +5494,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/e9361fe1-6c28-488d-97c0-296a2e7ae6e6")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -5808,7 +5618,7 @@
 			(uuid "1835d24b-00c4-407d-873f-28e550334fab")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 2.5 0 360)
+			(at 2.5 0 0)
 			(layer "F.Fab")
 			(uuid "e475482f-53d6-4581-84d7-1d8c56ecc919")
 			(effects
@@ -5838,6 +5648,7 @@
 			(pintype "passive")
 			(uuid "52d7c60f-5946-4b49-8766-ed69c025a231")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L7.0mm_W2.5mm_P5.00mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -5857,7 +5668,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R10"
-			(at 3.556 -2.032 360)
+			(at 3.556 -2.032 0)
 			(layer "F.SilkS")
 			(uuid "02e4703a-238d-49ca-9991-4807aae8466b")
 			(effects
@@ -5868,7 +5679,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "3b2b1d17-8ba8-456b-b8ff-89447d53d808")
 			(effects
@@ -5878,20 +5689,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "69277ac5-84bd-4d33-ac45-3eb48d9195fa")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5919,7 +5717,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/6789b6aa-4418-4ca4-a262-681a35f3e53c")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -6083,7 +5881,7 @@
 			(uuid "70616a5b-a539-4be7-b79b-64e344a42f9a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "9341e08a-445c-4d57-81f3-dfcc73d46c03")
 			(effects
@@ -6113,6 +5911,7 @@
 			(pintype "passive")
 			(uuid "beafff3d-4fb6-45c1-be43-a92eba3ef4b4")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -6153,20 +5952,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "86cc43b8-10a8-4bd9-820c-7b499df51f61")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6194,7 +5980,7 @@
 		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/42c85b99-aac7-4762-9c36-2df265891aa6")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
@@ -6204,7 +5990,7 @@
 				(width 0.15)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "964f2bb5-a9d2-4a79-8423-dedf8067e5c9")
 		)
@@ -6215,7 +6001,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "b0632de0-dfdf-47dd-a61b-c38bab42a26d")
 		)
@@ -6237,6 +6023,7 @@
 			(layers "*.Cu" "*.Mask")
 			(uuid "46084b6a-a082-4f33-8f95-e04bf475899c")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm"
 		(layer "F.Cu")
@@ -6245,7 +6032,7 @@
 		(descr "C, Rect series, Radial, pin pitch=5.00mm, , length*width=7*2.5mm^2, Capacitor")
 		(tags "C Rect series Radial pin pitch 5.00mm  length 7mm width 2.5mm Capacitor")
 		(property "Reference" "C7"
-			(at 2.5 -2.5 360)
+			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "ac21bb97-d5be-47dc-8af9-e87ab1b3bdd0")
 			(effects
@@ -6256,7 +6043,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 2.5 2.5 360)
+			(at 2.5 2.5 0)
 			(layer "F.Fab")
 			(uuid "b24c007d-87da-4823-9c19-96c5712244ed")
 			(effects
@@ -6266,20 +6053,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7a934bad-e952-4eaf-a837-90111d7eb771")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6307,7 +6081,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/b659f5d4-6725-48c8-a645-645d0ef0254e")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -6431,7 +6205,7 @@
 			(uuid "70fc89ec-0500-47d7-bb84-37dfa40787ae")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 2.5 0 360)
+			(at 2.5 0 0)
 			(layer "F.Fab")
 			(uuid "537f64b1-2971-4106-9709-43de8abd512e")
 			(effects
@@ -6461,6 +6235,7 @@
 			(pintype "passive")
 			(uuid "2d6e1809-461b-496a-a5c1-4fab8b4d2b59")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L7.0mm_W2.5mm_P5.00mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -6501,20 +6276,7 @@
 				)
 			)
 		)
-		(property "Footprint" "prj_footprints:KLS7-SS02-12F20"
-			(at 0 -7.5 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "085baa1b-867a-4828-9f87-44917887113b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 -7.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6541,7 +6303,7 @@
 			)
 		)
 		(path "/9fc0889d-f12e-4a08-ba81-bbd40fd05918")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -6859,6 +6621,7 @@
 			(pintype "passive")
 			(uuid "86343540-96fd-4633-abe7-da97c26243fc")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
@@ -6867,7 +6630,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R12"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "db3fc64e-8be9-459b-a3d4-eab2e2ea12c6")
 			(effects
@@ -6878,7 +6641,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "3247c476-b045-4e6d-be4d-7a52702462c2")
 			(effects
@@ -6888,20 +6651,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ec227f23-bb8d-4fd7-a74c-64c6da3561d0")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6929,7 +6679,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/ab31f564-1786-476c-9f45-6a8d653790a0")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -7093,7 +6843,7 @@
 			(uuid "178d07cf-86ee-4325-a788-5219415a4771")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "f0c24d6c-bb0e-49da-ba5d-1ebac5562967")
 			(effects
@@ -7123,6 +6873,7 @@
 			(pintype "passive")
 			(uuid "64e49561-65dd-4cc5-9cac-b5c27225be4e")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -7142,7 +6893,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R5"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "cece46aa-6c89-4540-8bb6-4a35b7af4810")
 			(effects
@@ -7153,7 +6904,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "31793904-5f17-4393-9757-aceada16b889")
 			(effects
@@ -7163,20 +6914,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f9d9c62d-11e2-4f1f-83a4-07a5fc8336a3")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7204,7 +6942,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/cb09d56f-dfbb-4ad6-b235-6316e0ee1605")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -7368,7 +7106,7 @@
 			(uuid "4bdc18da-e79e-44a4-8282-713aae6a1851")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "6b8fcdcb-9fe7-4770-bb40-caf66eb6f5ac")
 			(effects
@@ -7398,6 +7136,7 @@
 			(pintype "passive")
 			(uuid "86653fba-29d1-46c5-8a6a-97f814f347e8")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -7417,7 +7156,7 @@
 		(descr "C, Rect series, Radial, pin pitch=5.00mm, , length*width=7*2.5mm^2, Capacitor")
 		(tags "C Rect series Radial pin pitch 5.00mm  length 7mm width 2.5mm Capacitor")
 		(property "Reference" "C2"
-			(at 2.5 -2.5 360)
+			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "90be329b-69f1-4cfb-8685-c719a6f06c79")
 			(effects
@@ -7428,7 +7167,7 @@
 			)
 		)
 		(property "Value" "330n"
-			(at 2.5 2.5 360)
+			(at 2.5 2.5 0)
 			(layer "F.Fab")
 			(uuid "0539a430-16aa-47b7-bdf4-9e5df7ec1d7e")
 			(effects
@@ -7438,20 +7177,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "209a96e7-d563-4673-aeb9-2fc44231f4a9")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7479,7 +7205,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/cff875d3-8d05-4a78-ad43-c1d03c3438ec")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -7603,7 +7329,7 @@
 			(uuid "a74b4ba3-c0a5-42f5-8360-dd611e8acf39")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 2.5 0 360)
+			(at 2.5 0 0)
 			(layer "F.Fab")
 			(uuid "c2b16805-e617-4b93-91f8-963a608d7598")
 			(effects
@@ -7633,6 +7359,7 @@
 			(pintype "passive")
 			(uuid "724d6232-cb57-4b44-9172-b7b921b4d972")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L7.0mm_W2.5mm_P5.00mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -7673,21 +7400,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_BarrelJack:BarrelJack_GCT_DCJ200-10-A_Horizontal"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0c0c8961-b48f-48f0-a864-436e98be033e")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -7700,7 +7414,7 @@
 			)
 		)
 		(property "Description" "DC Barrel Jack with an internal switch"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -7714,7 +7428,7 @@
 		)
 		(property ki_fp_filters "BarrelJack*")
 		(path "/06e1e18c-8ffd-4cdb-9eb3-52d98fdf3549")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -7968,6 +7682,7 @@
 			(pintype "passive")
 			(uuid "60827779-87f3-4039-9dbf-95be67ee020a")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_BarrelJack.3dshapes/BarrelJack_GCT_DCJ200-10-A_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -8008,20 +7723,7 @@
 				)
 			)
 		)
-		(property "Footprint" "prj_footprints:KLS7-SS02-12F20"
-			(at 0 -7.5 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "915bd853-d224-4c03-ad9e-7bfb379523be")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 -7.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8048,7 +7750,7 @@
 			)
 		)
 		(path "/e2d2820c-6e4d-45da-8747-a1fb89bf312e")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -8366,6 +8068,7 @@
 			(pintype "passive")
 			(uuid "a325307e-d51a-4fa3-bbf0-d7bf6d3fabee")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "LED_THT:LED_D3.0mm"
 		(layer "F.Cu")
@@ -8395,21 +8098,8 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d5cb2e23-91f9-4ab0-be1b-c58bf56a9161")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8422,7 +8112,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8436,7 +8126,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/93132e89-17ae-4feb-89b3-2e666ef5d9d7")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -8571,7 +8261,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "6f1f889f-42c4-4bfb-a525-161cacecf380")
 		)
@@ -8597,6 +8287,7 @@
 			(pintype "passive")
 			(uuid "6f21f18b-2334-4f35-bb54-4bd55b0fc445")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/LED_THT.3dshapes/LED_D3.0mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -8637,21 +8328,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "3d82ddde-3295-4049-b7ac-ecfb088c7b98")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8664,7 +8342,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8678,7 +8356,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/28dca901-d703-4d15-90cf-b1117c147b6a")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -8872,6 +8550,7 @@
 			(pintype "passive")
 			(uuid "dee2b9d9-b23f-4593-954b-3d8f14ab89a6")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -8912,20 +8591,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1253f5f5-2788-42c6-9e05-c971dcfd8fb8")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8953,7 +8619,7 @@
 		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/9fb16648-e1c6-4d45-b6fd-24e5e50182b2")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
@@ -8963,7 +8629,7 @@
 				(width 0.15)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "a9c387a0-7670-4a2d-8eed-59835e1b50ad")
 		)
@@ -8974,7 +8640,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "54231abf-f793-4e9a-ab3d-be84ac4f0e24")
 		)
@@ -8996,6 +8662,7 @@
 			(layers "*.Cu" "*.Mask")
 			(uuid "5ecba795-c14b-4ce5-9534-b9a35cf24246")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
@@ -9025,21 +8692,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "838f3f38-9aad-426b-b65d-3a6148830074")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -9052,7 +8706,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -9066,7 +8720,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/3123ed32-66f5-460b-87e1-1cdced9fd84e")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -9260,6 +8914,7 @@
 			(pintype "passive")
 			(uuid "5d1b7277-bdb6-4eca-9824-2c66e8e8b1bc")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -9300,21 +8955,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:BNC_Amphenol_B6252HB-NPP3G-50_Horizontal"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1cc179cc-7c67-4856-a413-ff038ad7d582")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -9327,7 +8969,7 @@
 			)
 		)
 		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -9341,7 +8983,7 @@
 		)
 		(property ki_fp_filters "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*")
 		(path "/93656663-48f5-44b1-9a59-ce01bdb32556")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -9621,7 +9263,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "a77258aa-b577-4b03-9c3d-3988548df024")
 		)
@@ -9680,6 +9322,7 @@
 			(pintype "passive")
 			(uuid "35264e2b-7690-4752-8cac-68d81cb0d86d")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_Coaxial.3dshapes/BNC_Amphenol_B6252HB-NPP3G-50_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -9720,21 +9363,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "19b66e15-4e82-44cf-aa91-92d4f92dd940")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -9747,7 +9377,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -9761,7 +9391,7 @@
 		)
 		(property ki_fp_filters "CP_*")
 		(path "/c102b464-d83d-4fc5-9507-54fa2ae6bed2")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -11131,7 +10761,7 @@
 				(width 0.12)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.SilkS")
 			(uuid "752ad64b-8c3a-4e1d-b00a-5ffb6ee7a5ff")
 		)
@@ -11142,7 +10772,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "5057fe1a-0fbf-4caa-b58c-42078844f6e4")
 		)
@@ -11173,7 +10803,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "708c0aed-4cc2-40b3-9fc9-d7a206a67354")
 		)
@@ -11208,6 +10838,7 @@
 			(pintype "passive")
 			(uuid "33aafac7-d6e2-4894-97c4-dedbc5d20005")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -11227,7 +10858,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R3"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "c604d8c6-c512-49ae-b213-f219258bf8d2")
 			(effects
@@ -11238,7 +10869,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "5eedc89c-c350-43cf-9242-474b454b3795")
 			(effects
@@ -11248,20 +10879,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "568e977c-063e-4f3f-8ed9-178c5f4edfba")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11289,7 +10907,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/bbbdbf6c-5ce1-4005-9d07-b5ae5724c50d")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -11453,7 +11071,7 @@
 			(uuid "47a51e83-3dfe-4e31-b9c2-d1319c81bb8d")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "35f1b07f-de76-4f3e-986b-d12212123bb1")
 			(effects
@@ -11483,6 +11101,7 @@
 			(pintype "passive")
 			(uuid "24288148-1a52-444e-9373-1e5bf6d079e4")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -11502,7 +11121,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R11"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "09f57ad0-5744-4744-8632-a3ce659b256c")
 			(effects
@@ -11513,7 +11132,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "af3436ee-5eed-42d0-b7c0-2ebffe5c8d09")
 			(effects
@@ -11523,20 +11142,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "408e9f1c-ef6e-40c3-a2f0-45dec3055317")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11564,7 +11170,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/6fc67a0c-f6df-4b01-a287-dcaf1cba71dc")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -11728,7 +11334,7 @@
 			(uuid "7a023c1e-8a96-4edf-bbd1-6a8bf4133ab8")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "38a66328-80e4-4f1a-aefd-9dba273a0f05")
 			(effects
@@ -11758,6 +11364,7 @@
 			(pintype "passive")
 			(uuid "3d26a08b-0314-4863-8982-639946f929a6")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -11798,20 +11405,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK163_Dual_Horizontal"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c74b5d35-e8d8-47c0-817f-f213e74da674")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11839,7 +11433,7 @@
 		)
 		(property ki_fp_filters "Potentiometer*")
 		(path "/34b44c0b-eb27-4826-80b0-287c5a2074c3")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -12159,6 +11753,7 @@
 			(pintype "passive")
 			(uuid "33b75536-b006-4678-a121-677118578f24")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK163_Dual_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -12199,21 +11794,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Wire:SolderWire-1sqmm_1x03_P5.4mm_D1.4mm_OD2.7mm"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8c6b189e-85e1-4b52-92ee-31c19bcdb068")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -12226,7 +11808,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -12240,7 +11822,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/746c4389-e65d-4e79-bef5-6eef16bceb8c")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_line
@@ -12370,7 +11952,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "6196855f-94d0-4fbe-b193-4d7167a507db")
 		)
@@ -12381,7 +11963,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "20655319-0bc7-457f-8452-ea31f3e6c758")
 		)
@@ -12392,12 +11974,12 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "cc288747-8472-4b36-b356-1b55cc73f4e2")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 5.4 0 360)
+			(at 5.4 0 0)
 			(layer "F.Fab")
 			(uuid "cfb6a393-6b15-4aad-8a96-bdc775de00de")
 			(effects
@@ -12441,6 +12023,7 @@
 			(pintype "passive")
 			(uuid "095b7e5d-d1d1-4d57-ab77-3b14e4c5c328")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_Wire.3dshapes/SolderWire-1sqmm_1x03_P5.4mm_D1.4mm_OD2.7mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -12481,21 +12064,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Wire:SolderWire-1sqmm_1x03_P5.4mm_D1.4mm_OD2.7mm"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "26d75c5a-4880-4ccf-8dbb-3a9635fe6701")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -12508,7 +12078,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -12522,7 +12092,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/9c9fc306-ea00-463c-a9da-0558d9a9a3dd")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_line
@@ -12652,7 +12222,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "f22be026-27af-478e-a05d-6a2abf187f0d")
 		)
@@ -12663,7 +12233,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "1170e4d9-31ea-47d9-b91e-200d34d603b8")
 		)
@@ -12674,12 +12244,12 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "b26ea525-f1d4-49f8-b417-843189a148db")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 5.146 0 360)
+			(at 5.146 0 0)
 			(layer "F.Fab")
 			(uuid "8c7ab45e-1774-4067-82de-3b7a424c60a0")
 			(effects
@@ -12723,6 +12293,7 @@
 			(pintype "passive")
 			(uuid "4d1bf718-c491-4a89-8308-6e9e3c9d95f8")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_Wire.3dshapes/SolderWire-1sqmm_1x03_P5.4mm_D1.4mm_OD2.7mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -12763,20 +12334,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK163_Dual_Horizontal"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "dbc9ab07-9619-4124-85dd-7e47dad2324d")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12804,7 +12362,7 @@
 		)
 		(property ki_fp_filters "Potentiometer*")
 		(path "/e9a6f10f-9606-41f1-b763-e519adc47f96")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -13124,6 +12682,7 @@
 			(pintype "passive")
 			(uuid "eec5da9a-ff81-4b90-b691-219f9838077c")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK163_Dual_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -13164,19 +12723,6 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:CERDIP-14_W7.62mm_SideBrazed_LongPads"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "505780fe-c6fd-4a4e-a57d-f02fc508ec23")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
 			(at 0 0 0)
 			(unlocked yes)
@@ -13204,8 +12750,8 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm*")
-		(path "/cbbcaa2a-f6bd-4650-b0ad-34bfc7ca72a8")
-		(sheetname "Hlavní")
+		(path "/b6821299-3086-44fa-8a82-3f8351d9a4cf")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -13512,6 +13058,7 @@
 			(pintype "power_in")
 			(uuid "7c316479-7dfe-461e-9f25-503539bee368")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Package_DIP.3dshapes/CERDIP-14_W7.62mm_SideBrazed_LongPads.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -13552,21 +13099,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_NV_B03P-NV_1x03_P5.00mm_Vertical"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6e335337-247a-484b-9319-e9748422944d")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 -90)
+		(property "Datasheet" "~"
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -13579,7 +13113,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -13593,7 +13127,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/cd9deb5e-e0b6-455e-b084-0d03c1926a01")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -13821,6 +13355,7 @@
 			(pintype "passive")
 			(uuid "15b841b4-94ba-43f0-929a-0ca7de0f2c5d")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_JST.3dshapes/JST_NV_B03P-NV_1x03_P5.00mm_Vertical.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -13840,7 +13375,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R13"
-			(at 3.81 -2.37 360)
+			(at 3.81 -2.37 0)
 			(layer "F.SilkS")
 			(uuid "d3ebcf62-d0f2-4b6c-93ae-a864b57c08f1")
 			(effects
@@ -13851,7 +13386,7 @@
 			)
 		)
 		(property "Value" "249R"
-			(at 3.81 2.37 360)
+			(at 3.81 2.37 0)
 			(layer "F.Fab")
 			(uuid "f533bda2-dbc6-40cb-8651-e0db0ea92988")
 			(effects
@@ -13861,20 +13396,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d3e775c9-4abb-4051-a633-8e8a15e205d1")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13902,7 +13424,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/25857201-c758-42a9-88e0-c8e84dbb8c21")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -14066,7 +13588,7 @@
 			(uuid "1372a761-37f3-4561-98d5-380d3e5e85ab")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "c8d8953b-6484-4160-8b5a-0eeabac11dcf")
 			(effects
@@ -14096,6 +13618,7 @@
 			(pintype "passive")
 			(uuid "5424f47b-98f6-42d1-9f32-e1819608d6c6")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -14115,7 +13638,7 @@
 		(descr "TO-220-3, Horizontal, RM 2.54mm, see https://www.vishay.com/docs/66542/to-220-1.pdf")
 		(tags "TO-220-3 Horizontal RM 2.54mm")
 		(property "Reference" "U1"
-			(at 2.54 -20.58 360)
+			(at 2.54 -20.58 0)
 			(layer "F.SilkS")
 			(uuid "2ec1ca4b-efb7-4ad7-9695-b85a076de9a7")
 			(effects
@@ -14126,25 +13649,12 @@
 			)
 		)
 		(property "Value" "L7805"
-			(at 2.54 2 360)
+			(at 2.54 2 0)
 			(layer "F.Fab")
 			(uuid "07e3d971-b21c-4c39-a334-daa26351667b")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "035007dc-4e0d-4d7f-90de-4bd1831211f5")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -14177,7 +13687,7 @@
 		)
 		(property ki_fp_filters "TO?252* TO?263* TO?220*")
 		(path "/0229105f-168c-4758-b129-33a4ffdcb9cb")
-		(sheetname "Hlavní")
+		(sheetname "/")
 		(sheetfile "generator_strme_hrany.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -14407,12 +13917,12 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "4f4304e6-7072-4127-a1bf-4371079e5e6e")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 2.54 -20.58 360)
+			(at 2.54 -20.58 0)
 			(layer "F.Fab")
 			(uuid "6494bc29-e954-441e-b816-ce4201d20035")
 			(effects
@@ -14462,6 +13972,7 @@
 			(pintype "power_out")
 			(uuid "ddf5a633-d1b1-477b-9bfc-126c2ef8396d")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Package_TO_SOT_THT.3dshapes/TO-220-3_Horizontal_TabDown.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -17078,4 +16589,5 @@
 			)
 		)
 	)
+	(embedded_fonts no)
 )
