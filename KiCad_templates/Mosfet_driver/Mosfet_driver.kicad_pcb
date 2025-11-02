@@ -14561,8 +14561,8 @@
 			(justify left)
 		)
 	)
-	(gr_text "LS"
-		(at 144.526 94.488 315)
+	(gr_text "LSIN"
+		(at 144.018 93.98 315)
 		(layer "F.SilkS")
 		(uuid "0b203e5f-62ea-40d0-9183-5a10cea618fe")
 		(effects
@@ -14648,7 +14648,7 @@
 			)
 		)
 	)
-	(gr_text "~{HSIN}"
+	(gr_text "~{HIN}"
 		(at 151.207732 97.645731 0)
 		(layer "F.SilkS")
 		(uuid "4662071f-0402-4fe2-a0f2-fd59b9f6b4a9")
@@ -14661,7 +14661,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "LSIN"
+	(gr_text "LIN"
 		(at 147.828 101.346 90)
 		(layer "F.SilkS")
 		(uuid "55d177df-bad9-4e86-a381-0efcc1e1caa1")
@@ -14698,7 +14698,7 @@
 			)
 		)
 	)
-	(gr_text "LSIN"
+	(gr_text "LIN"
 		(at 150.368 122.936 90)
 		(layer "F.SilkS")
 		(uuid "799026c4-5ab4-4b36-888f-e00a88d465f4")
@@ -14772,7 +14772,7 @@
 			(justify left)
 		)
 	)
-	(gr_text "HSIN"
+	(gr_text "HIN"
 		(at 160.528 122.936 90)
 		(layer "F.SilkS")
 		(uuid "d404cb1e-bbe9-416b-a5d3-ba10ba6deb28")

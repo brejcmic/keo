@@ -1015,6 +1015,17 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Volba režimu:\n- 'single input signal', osadit R2\n- 'separate input signal', osadit R1"
+		(exclude_from_sim no)
+		(at 67.818 54.102 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d2c2da7d-1854-4639-8810-4325703ba085")
+	)
 	(junction
 		(at 83.82 39.37)
 		(diameter 0)
