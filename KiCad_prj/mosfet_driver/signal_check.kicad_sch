@@ -1869,6 +1869,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C5605"
+			(at 110.49 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "213a4f36-4fee-46e9-9cf9-353590896ee0")
 		)
@@ -2034,6 +2043,15 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
+			(at 179.07 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C5605"
 			(at 179.07 78.74 0)
 			(effects
 				(font
@@ -2279,6 +2297,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C17513"
+			(at 135.89 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b8753178-16ba-49cd-9909-5afa64ff5d5a")
 		)
@@ -2340,6 +2367,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 135.89 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C17513"
+			(at 135.89 115.57 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2482,6 +2518,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C17513"
+			(at 135.89 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bf08c8fb-d5d2-4707-9638-622469cbd939")
 		)
@@ -2543,6 +2588,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 135.89 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C17513"
+			(at 135.89 129.54 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2760,6 +2814,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C84256"
+			(at 146.05 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2d1dfe4e-514b-42ec-9d4f-b098a469c7f6")
 		)
@@ -2904,6 +2967,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C84256"
+			(at 146.05 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2d6fed30-ecd1-4887-a256-161c2264976e")
 		)
@@ -2966,6 +3038,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 201.93 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C28233"
 			(at 201.93 77.47 0)
 			(effects
 				(font
@@ -3051,6 +3132,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C84256"
+			(at 146.05 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "74441be2-9703-4954-87fc-6d1372973462")
 		)
@@ -3128,6 +3218,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C84256"
+			(at 146.05 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a1cb6fa9-645a-4743-8c3d-53ab11b17382")
 		)
@@ -3196,6 +3295,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C17513"
+			(at 135.89 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6f8a4ad2-21e8-4fbb-ad54-c3668a7c6d04")
 		)
@@ -3256,6 +3364,15 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
+			(at 110.49 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C5605"
 			(at 110.49 64.77 0)
 			(effects
 				(font
@@ -3368,6 +3485,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C5605"
+			(at 110.49 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "213a4f36-4fee-46e9-9cf9-353590896ee3")
 		)
@@ -3464,6 +3590,15 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
+			(at 110.49 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C5605"
 			(at 110.49 143.51 0)
 			(effects
 				(font
@@ -3643,6 +3778,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C5605"
+			(at 110.49 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "213a4f36-4fee-46e9-9cf9-353590896ee2")
 		)
@@ -3739,6 +3883,15 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
+			(at 110.49 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C5605"
 			(at 110.49 115.57 0)
 			(effects
 				(font
@@ -3852,6 +4005,15 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
+			(at 146.05 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C84256"
 			(at 146.05 115.57 0)
 			(effects
 				(font
