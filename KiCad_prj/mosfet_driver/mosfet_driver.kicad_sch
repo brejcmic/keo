@@ -2017,6 +2017,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C17477"
+			(at 86.36 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e9dde41e-c3e2-4ecc-99cc-a338470a43cb")
 		)
@@ -2037,7 +2046,7 @@
 		(at 232.41 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "2aa00789-e286-4e28-867d-d3e33ebf7d7d")
@@ -2050,7 +2059,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 234.95 41.1479 0)
 			(effects
 				(font
@@ -2087,6 +2096,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 232.41 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "95e1ae4a-a522-4ed7-b75c-ed6b4e121e8e")
 		)
@@ -2105,7 +2123,7 @@
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "348df538-5a38-47af-933e-52158fbab6a0")
@@ -2154,6 +2172,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 264.16 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2e5ab366-d558-405f-82e7-7836cd61625e")
 		)
@@ -2174,7 +2201,7 @@
 		(at 223.52 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "38a06748-ac42-41a2-a6fc-e85037b38441")
@@ -2187,7 +2214,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 226.06 41.1479 0)
 			(effects
 				(font
@@ -2224,6 +2251,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 223.52 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "33dd5d2b-27cd-48ef-9e27-e007146a8f2f")
 		)
@@ -2242,7 +2278,7 @@
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "3e1f4dae-d8a2-4d09-b627-7cf7c0ebb643")
@@ -2291,6 +2327,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 264.16 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ea0743e7-6724-421a-a228-1d95d3029831")
 		)
@@ -2311,7 +2356,7 @@
 		(at 205.74 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "40e339f0-6d7c-4316-a1ad-d86198a773a8")
@@ -2324,7 +2369,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 208.28 64.0079 0)
 			(effects
 				(font
@@ -2353,6 +2398,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 205.74 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 205.74 66.04 0)
 			(effects
 				(font
@@ -2444,7 +2498,7 @@
 		(at 214.63 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "502c7f44-9ea2-4952-a8de-91dd1b7c70b9")
@@ -2457,7 +2511,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 217.17 41.1479 0)
 			(effects
 				(font
@@ -2486,6 +2540,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 214.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 214.63 43.18 0)
 			(effects
 				(font
@@ -2577,7 +2640,7 @@
 		(at 40.64 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -2625,6 +2688,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 40.64 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "248ecc51-490f-48be-a822-d8c9098ef90c")
 		)
@@ -2648,7 +2720,7 @@
 		(at 68.58 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "5f36ac5e-1ab8-483f-97ae-7488cb91acb0")
@@ -2661,7 +2733,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 71.12 99.5679 0)
 			(effects
 				(font
@@ -2698,6 +2770,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 68.58 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a0bd596f-68d5-459a-9714-3211ba38defc")
 		)
@@ -2715,7 +2796,7 @@
 		(at 68.58 39.37 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "63015c8f-a9f1-4613-8e9d-d4bc2380f1b4")
@@ -2728,7 +2809,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 71.12 37.3379 0)
 			(effects
 				(font
@@ -2765,6 +2846,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 68.58 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b7acc57f-a69d-4c1f-b4c6-438e014bd453")
 		)
@@ -2782,7 +2872,7 @@
 		(at 232.41 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "64311e95-8197-457d-9ca3-ca6492696571")
@@ -2795,7 +2885,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 234.95 81.7879 0)
 			(effects
 				(font
@@ -2824,6 +2914,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 232.41 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 232.41 83.82 0)
 			(effects
 				(font
@@ -3048,7 +3147,7 @@
 		(at 196.85 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "81e78ce5-d410-465e-a9b2-e30ac30d24d6")
@@ -3061,7 +3160,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 199.39 41.1479 0)
 			(effects
 				(font
@@ -3090,6 +3189,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 196.85 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 196.85 43.18 0)
 			(effects
 				(font
@@ -3156,6 +3264,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 81.28 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C17477"
+			(at 81.28 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3249,7 +3366,7 @@
 		(at 68.58 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "8ec6c7ef-d4e8-4215-a2c0-46c2283aeec4")
@@ -3262,7 +3379,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 71.12 64.0079 0)
 			(effects
 				(font
@@ -3291,6 +3408,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 68.58 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 68.58 66.04 0)
 			(effects
 				(font
@@ -3499,6 +3625,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 124.46 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "Mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62"
@@ -3513,7 +3648,7 @@
 		(at 40.64 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -3553,6 +3688,15 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 40.64 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 40.64 101.6 0)
 			(effects
 				(font
@@ -3651,7 +3795,7 @@
 		(at 40.64 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -3691,6 +3835,15 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 40.64 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 40.64 83.82 0)
 			(effects
 				(font
@@ -3788,7 +3941,7 @@
 		(at 241.3 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "d4183960-30bd-409d-8449-5a885ec8215e")
@@ -3801,7 +3954,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 243.84 41.1479 0)
 			(effects
 				(font
@@ -3838,6 +3991,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 241.3 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5c6eeed2-9f96-484f-8712-350db03dfac7")
 		)
@@ -3855,7 +4017,7 @@
 		(at 205.74 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "d89e1bf6-4b39-4e97-aa7e-ad8b0d1ab35e")
@@ -3868,7 +4030,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 208.28 41.1479 0)
 			(effects
 				(font
@@ -3905,6 +4067,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 205.74 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5198245c-a2e0-44a6-ae58-ca32fe897bf9")
 		)
@@ -3922,7 +4093,7 @@
 		(at 96.52 39.37 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "ea95900c-30d7-4bbf-bbf7-23533ce4ff90")
@@ -3935,7 +4106,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 99.06 37.3379 0)
 			(effects
 				(font
@@ -3972,6 +4143,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 96.52 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3837e7dd-2c42-4a68-b8f7-5a0cb6559f60")
 		)
@@ -3989,7 +4169,7 @@
 		(at 68.58 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "f2057d0c-d737-428b-a251-3bbce738ad90")
@@ -4002,7 +4182,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "D1MM"
 			(at 71.12 81.7879 0)
 			(effects
 				(font
@@ -4031,6 +4211,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 68.58 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 68.58 83.82 0)
 			(effects
 				(font
@@ -4098,6 +4287,15 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
+			(at 93.98 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 93.98 151.13 0)
 			(effects
 				(font
@@ -4196,7 +4394,7 @@
 			)
 		)
 		(instances
-			(project "Mosfet_driver"
+			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62"
 					(page "4")
 				)
@@ -4313,7 +4511,7 @@
 			)
 		)
 		(instances
-			(project "Mosfet_driver"
+			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62"
 					(page "3")
 				)
@@ -4380,7 +4578,7 @@
 			)
 		)
 		(instances
-			(project "Mosfet_driver"
+			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62"
 					(page "2")
 				)

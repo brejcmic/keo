@@ -964,7 +964,7 @@
 		(at 139.7 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -1012,6 +1012,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 139.7 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "5"
 			(uuid "b959da4e-c3e7-4261-adef-c1026d247121")
 		)
@@ -1041,7 +1050,7 @@
 		(at 139.7 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -1081,6 +1090,15 @@
 			)
 		)
 		(property "Description" "5.2kVDC Isolated 2W Gate Drive, 5V Vin, +15V/-5V Vout"
+			(at 139.7 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
 			(at 139.7 60.96 0)
 			(effects
 				(font
@@ -1300,6 +1318,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C28233"
+			(at 115.57 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "20a80431-0b56-4a8e-8586-fd612f0fd577")
 		)
@@ -1362,6 +1389,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 115.57 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C28233"
 			(at 115.57 105.41 0)
 			(effects
 				(font

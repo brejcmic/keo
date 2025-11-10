@@ -51,3 +51,28 @@
 !*.sch
 !*.cir
 !*.asc
+
+# Gerber data
+!*.gbr
+!*.ger
+!*.pho
+!*.gbl
+!*.gtl
+!*.gbs
+!*.gts
+!*.gbo
+!*.gto
+!*.gm1
+!*.gm2
+!*.gm3
+
+# NC Drill soubory
+!*.drl
+!*.drd
+
+# CAM / Assembly výstupy
+!*.bom
+!*.csv
+!*.pos
+!*.mnt
+!*.pick
