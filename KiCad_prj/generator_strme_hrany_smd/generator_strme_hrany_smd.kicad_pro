@@ -48,16 +48,10 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.0
+          "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
+      "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -123,8 +117,8 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.15,
-        "min_connection": 0.3,
+        "min_clearance": 0.0,
+        "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
@@ -136,9 +130,9 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.3,
-        "min_via_annular_width": 0.15,
-        "min_via_diameter": 0.6,
+        "min_track_width": 0.0,
+        "min_via_annular_width": 0.1,
+        "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -186,10 +180,7 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [
-        0.0,
-        1.016
-      ],
+      "track_widths": [],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -216,12 +207,7 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [
-        {
-          "diameter": 0.0,
-          "drill": 0.0
-        }
-      ],
+      "via_dimensions": [],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -444,7 +430,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "error",
+      "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -465,7 +451,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "mosfet_driver.kicad_pro",
+    "filename": "generator_strme_hrany_smd.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -473,53 +459,19 @@
       {
         "bus_width": 12,
         "clearance": 0.254,
-        "diff_pair_gap": 0.254,
+        "diff_pair_gap": 0.381,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2032,
+        "diff_pair_width": 0.508,
         "line_style": 0,
-        "microvia_diameter": 0.3048,
-        "microvia_drill": 0.1016,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.3048,
-        "via_diameter": 0.762,
-        "via_drill": 0.3048,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.254,
-        "diff_pair_gap": 0.254,
-        "diff_pair_width": 0.2032,
-        "line_style": 0,
-        "microvia_diameter": 0.3048,
-        "microvia_drill": 0.1016,
-        "name": "Drv2A",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.508,
-        "via_diameter": 0.762,
-        "via_drill": 0.3048,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.254,
-        "diff_pair_gap": 0.254,
-        "diff_pair_width": 0.2032,
-        "line_style": 0,
-        "microvia_diameter": 0.3048,
-        "microvia_drill": 0.1016,
-        "name": "Supply",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.4064,
-        "via_diameter": 0.762,
-        "via_drill": 0.3048,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
         "wire_width": 6
       }
     ],
@@ -527,52 +479,16 @@
       "version": 4
     },
     "net_colors": null,
-    "netclass_assignments": {
-      "+5V": [
-        "Supply"
-      ],
-      "/Driver/HS.GND": [
-        "Supply"
-      ],
-      "/Driver/HS.VDD": [
-        "Supply"
-      ],
-      "/Driver/HS.VSS": [
-        "Supply"
-      ],
-      "/Driver/HS{VDD,GND,VSS}": [
-        "Supply"
-      ],
-      "/Driver/LS.GND": [
-        "Supply"
-      ],
-      "/Driver/LS.VDD": [
-        "Supply"
-      ],
-      "/Driver/LS.VSS": [
-        "Supply"
-      ],
-      "/Driver/LS{VDD,GND,VSS}": [
-        "Supply"
-      ],
-      "GND": [
-        "Supply"
-      ]
-    },
-    "netclass_patterns": [
-      {
-        "netclass": "Drv2A",
-        "pattern": "/*GATE*"
-      }
-    ]
+    "netclass_assignments": null,
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "Mosfet_driver.net",
-      "plot": "fab/",
-      "pos_files": "fab/",
+      "netlist": "./",
+      "plot": "",
+      "pos_files": "",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
@@ -582,7 +498,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "fab\\mosfet_driver_bom.csv",
+    "bom_export_filename": "${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -595,20 +511,8 @@
     },
     "bom_presets": [],
     "bom_settings": {
-      "exclude_dnp": true,
+      "exclude_dnp": false,
       "fields_ordered": [
-        {
-          "group_by": false,
-          "label": "Qty",
-          "name": "${QUANTITY}",
-          "show": false
-        },
-        {
-          "group_by": true,
-          "label": "Value",
-          "name": "Value",
-          "show": true
-        },
         {
           "group_by": false,
           "label": "Reference",
@@ -617,24 +521,36 @@
         },
         {
           "group_by": false,
+          "label": "Qty",
+          "name": "${QUANTITY}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Value",
+          "name": "Value",
+          "show": true
+        },
+        {
+          "group_by": true,
           "label": "DNP",
           "name": "${DNP}",
-          "show": false
+          "show": true
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Exclude from BOM",
           "name": "${EXCLUDE_FROM_BOM}",
-          "show": false
+          "show": true
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
-          "show": false
+          "show": true
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
           "show": true
@@ -643,6 +559,12 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
           "show": false
         },
         {
@@ -656,26 +578,14 @@
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Pins",
-          "name": "Sim.Pins",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "JLCPCB Part #",
-          "name": "JLCPCB Part #",
-          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "include_excluded_from_bom": false,
+      "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "${QUANTITY}"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -704,9 +614,9 @@
     "meta": {
       "version": 1
     },
-    "net_format_name": "KiCad",
+    "net_format_name": "",
     "page_layout_descr_file": "",
-    "plot_directory": "doc/",
+    "plot_directory": "",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
@@ -719,24 +629,9 @@
   },
   "sheets": [
     [
-      "affe9f01-beaf-4b8a-b5ac-1888fb444f62",
+      "79be1a42-f11b-4399-83e4-46f5861d246a",
       "Root"
-    ],
-    [
-      "56686c9a-3126-450e-a0e4-acb6a5b3bb3f",
-      "Supply"
-    ],
-    [
-      "3d388a56-2466-4d51-8971-3f7a4f39f3a1",
-      "Driver"
-    ],
-    [
-      "38e13478-08d3-4267-bd37-63fd94610f76",
-      "Singnal Check"
     ]
   ],
-  "text_variables": {
-    "REVISION": "1.0",
-    "TITLE": "MOSFET Driver (Si, SiC)"
-  }
+  "text_variables": {}
 }
