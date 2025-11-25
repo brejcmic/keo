@@ -571,7 +571,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "Mosfet_driver.net",
-      "plot": "fab/",
+      "plot": "gerber/",
       "pos_files": "fab/",
       "specctra_dsn": "",
       "step": "",
@@ -736,7 +736,7 @@
     ]
   ],
   "text_variables": {
-    "REVISION": "1.0",
+    "REVISION": "1.1",
     "TITLE": "MOSFET Driver (Si, SiC)"
   }
 }

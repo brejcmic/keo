@@ -1714,6 +1714,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Deadtime DT = 10 * R9 (in kohm)"
+		(exclude_from_sim no)
+		(at 68.072 137.668 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4c50df7e-2b6f-47bc-a3b5-c66fd2c28670")
+	)
 	(junction
 		(at 68.58 57.15)
 		(diameter 0)
@@ -1730,7 +1740,7 @@
 		(at 68.58 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2c107211-7873-4dea-af24-afb2f3dc94b3")
+		(uuid "1d2fb049-4531-4ea7-8b46-8ae0ae141aa6")
 	)
 	(junction
 		(at 149.86 123.19)
@@ -2228,6 +2238,16 @@
 	)
 	(wire
 		(pts
+			(xy 68.58 119.38) (xy 119.38 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56f262e9-b229-42bc-b261-a8f1d9bdb250")
+	)
+	(wire
+		(pts
 			(xy 58.42 78.74) (xy 68.58 78.74)
 		)
 		(stroke
@@ -2265,16 +2285,6 @@
 			(type default)
 		)
 		(uuid "66da6508-d4ac-43f2-8b4d-04f28197144e")
-	)
-	(wire
-		(pts
-			(xy 58.42 119.38) (xy 68.58 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6939ff3a-c1ec-4af8-a39a-cabc1d9829f4")
 	)
 	(wire
 		(pts
@@ -2368,7 +2378,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 119.38) (xy 119.38 119.38)
+			(xy 58.42 119.38) (xy 68.58 119.38)
 		)
 		(stroke
 			(width 0)
@@ -3573,85 +3583,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 68.58 123.19 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "275db1a8-956e-41d3-9d91-8fa5a448b4c6")
-		(property "Reference" "R9"
-			(at 71.12 121.9199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "47k"
-			(at 71.12 124.4599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 70.358 123.19 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 68.58 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 68.58 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part #" "C17713"
-			(at 68.58 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "08373964-bea1-4755-80cd-7fb90c7a4b92")
-		)
-		(pin "2"
-			(uuid "2af21202-3ec8-43d5-bb47-f572cbfc09f1")
-		)
-		(instances
-			(project "Mosfet_driver"
-				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 68.58 64.77 0)
 		(unit 1)
@@ -4089,6 +4020,85 @@
 			(project "Mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
 					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 68.58 123.19 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "60a5c6ca-b312-4423-9e83-d98c509e57db")
+		(property "Reference" "R9"
+			(at 71.12 121.9199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 71.12 124.4599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 70.358 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 68.58 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 68.58 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C17414"
+			(at 68.58 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eafd2191-1d8e-48a6-a151-9f4c1a7c2a34")
+		)
+		(pin "2"
+			(uuid "777199d4-afc1-4f51-b4bf-4d2afcb4bc89")
+		)
+		(instances
+			(project "mosfet_driver"
+				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
+					(reference "R9")
 					(unit 1)
 				)
 			)
