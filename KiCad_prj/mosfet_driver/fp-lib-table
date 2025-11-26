@@ -1,5 +1,4 @@
 (fp_lib_table
   (version 7)
-  (lib (name "moje_pouzdra")(type "KiCad")(uri "${KIPRJMOD}/moje_pouzdra.pretty")(options "")(descr ""))
-  (lib (name "nova_pouzdra")(type "KiCad")(uri "${KIPRJMOD}/nova_pouzdra.pretty")(options "")(descr ""))
+  (lib (name "Mosfet_Driver_KEO")(type "KiCad")(uri "${KIPRJMOD}/symbol_and_footprint/Mosfet_Driver_KEO.pretty")(options "")(descr ""))
 )

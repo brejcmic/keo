@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Mosfet_Driver_KEO")(type "KiCad")(uri "${KIPRJMOD}/symbol_and_footprint/Mosfet_Driver_KEO.kicad_sym")(options "")(descr ""))
+)
