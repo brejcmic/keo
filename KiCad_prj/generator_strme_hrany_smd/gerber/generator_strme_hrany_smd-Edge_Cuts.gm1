@@ -1,11 +1,11 @@
-%TF.GenerationSoftware,KiCad,Pcbnew,9.0.6*%
-%TF.CreationDate,2025-11-21T09:32:26+01:00*%
+%TF.GenerationSoftware,KiCad,Pcbnew,9.0.5*%
+%TF.CreationDate,2025-12-11T12:13:34+01:00*%
 %TF.ProjectId,generator_strme_hrany_smd,67656e65-7261-4746-9f72-5f7374726d65,rev?*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Profile,NP*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 9.0.6) date 2025-11-21 09:32:26*
+G04 Created by KiCad (PCBNEW 9.0.5) date 2025-12-11 12:13:34*
 %MOMM*%
 %LPD*%
 G01*
