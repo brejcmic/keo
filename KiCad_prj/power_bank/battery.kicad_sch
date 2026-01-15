@@ -11,6 +11,113 @@
 		(comment 1 "${DESCR}")
 	)
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:Battery_Cell"
 			(pin_numbers
 				(hide yes)
@@ -3302,7 +3409,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00f41d8a-df6b-4f5f-ab43-d7b67e730964")
-		(property "Reference" "R18"
+		(property "Reference" "R20"
 			(at 177.8 125.7299 0)
 			(effects
 				(font
@@ -3356,7 +3463,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R18")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -3372,7 +3479,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "022b5f0f-e524-4fee-93c3-7cb66a986e93")
-		(property "Reference" "D2"
+		(property "Reference" "D4"
 			(at 219.71 91.4399 90)
 			(effects
 				(font
@@ -3444,7 +3551,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "D2")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -3460,7 +3567,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "04055361-b5c4-40b4-8f14-0718672fa5ef")
-		(property "Reference" "R9"
+		(property "Reference" "R11"
 			(at 106.68 78.74 90)
 			(effects
 				(font
@@ -3512,7 +3619,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R9")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -3544,7 +3651,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+		(property "Footprint" "Package_TO_SOT_THT:TO-220F-3_Horizontal_TabUp"
 			(at 95.25 90.17 0)
 			(effects
 				(font
@@ -3669,7 +3776,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "200ffba0-6059-4212-9be0-16c95d7e6af1")
-		(property "Reference" "R15"
+		(property "Reference" "R17"
 			(at 168.91 54.6099 0)
 			(effects
 				(font
@@ -3723,7 +3830,74 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R15")
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 74.93 130.81 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "22bf6967-40d3-47c0-9863-513ff1023ab2")
+		(property "Reference" "TP3"
+			(at 77.47 132.8419 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 77.47 135.3819 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
+			(at 69.85 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 74.93 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d0b5c210-aded-4b39-b92c-2ae3855527b5")
+		)
+		(instances
+			(project "power_bank"
+				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -3881,6 +4055,140 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 74.93 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5d298786-e0c3-4631-8874-0558f6397ebe")
+		(property "Reference" "TP2"
+			(at 77.47 47.4979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 77.47 50.0379 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
+			(at 80.01 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 80.01 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 74.93 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5129abb8-f192-4f89-8a7d-c2f7eadb90b7")
+		)
+		(instances
+			(project "power_bank"
+				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 217.17 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5e740116-06ec-428a-b6f2-4a601794aa95")
+		(property "Reference" "TP4"
+			(at 219.71 47.4979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 219.71 50.0379 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
+			(at 222.25 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 217.17 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "549086ca-70f8-416d-bf1b-1211232daed8")
+		)
+		(instances
+			(project "power_bank"
+				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Regulator_Linear:LM317_TO-220")
 		(at 95.25 100.33 0)
 		(unit 1)
@@ -3906,7 +4214,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+		(property "Footprint" "Package_TO_SOT_THT:TO-220F-3_Horizontal_TabUp"
 			(at 95.25 93.98 0)
 			(effects
 				(font
@@ -3962,13 +4270,12 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "627e4c1e-a2df-4d7c-acd4-da61a66e2869")
-		(property "Reference" "R10"
+		(property "Reference" "R12"
 			(at 106.68 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "0R33"
@@ -4015,7 +4322,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R10")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -4171,7 +4478,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "70653e14-89a6-4702-bbb1-4d5d2873d2a9")
-		(property "Reference" "R16"
+		(property "Reference" "R18"
 			(at 168.91 125.7299 0)
 			(effects
 				(font
@@ -4225,7 +4532,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R16")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -4310,7 +4617,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7c752590-3491-4fba-80dc-330c2a604f90")
-		(property "Reference" "R13"
+		(property "Reference" "R15"
 			(at 160.02 54.6099 0)
 			(effects
 				(font
@@ -4364,7 +4671,74 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R13")
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 217.17 130.81 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d7e62ee-3f24-4aed-be0c-11b9a2c06980")
+		(property "Reference" "TP7"
+			(at 219.71 132.8419 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 219.71 135.3819 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
+			(at 212.09 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 212.09 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 217.17 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b43a3abe-4259-4dcf-8289-74f705ee8084")
+		)
+		(instances
+			(project "power_bank"
+				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
+					(reference "TP7")
 					(unit 1)
 				)
 			)
@@ -4380,7 +4754,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85f7783a-1ffc-4754-b0e1-4ecc1b957a1f")
-		(property "Reference" "R11"
+		(property "Reference" "R13"
 			(at 113.03 80.0099 0)
 			(effects
 				(font
@@ -4398,7 +4772,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 108.712 81.28 90)
 			(effects
 				(font
@@ -4434,7 +4808,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R11")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -4523,6 +4897,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 217.17 100.33 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9c0e3a62-31a9-4fba-a03f-7033e1d56ab7")
+		(property "Reference" "TP6"
+			(at 222.25 99.0599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 222.25 101.5999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
+			(at 217.17 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 217.17 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 217.17 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "726a0d16-546f-4bbb-85c8-fbbb4a3a1f09")
+		)
+		(instances
+			(project "power_bank"
+				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
+					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 110.49 104.14 0)
 		(unit 1)
@@ -4532,7 +4973,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9ed4f009-dfa5-4da1-b0d3-83b30bef3d5b")
-		(property "Reference" "R12"
+		(property "Reference" "R14"
 			(at 113.03 102.8699 0)
 			(effects
 				(font
@@ -4550,7 +4991,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 108.712 104.14 90)
 			(effects
 				(font
@@ -4586,7 +5027,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R12")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -4752,7 +5193,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bc1f70e7-efa2-437a-bf12-ae6f3d54d4c4")
-		(property "Reference" "R17"
+		(property "Reference" "R19"
 			(at 177.8 54.6099 0)
 			(effects
 				(font
@@ -4806,7 +5247,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R17")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -5189,7 +5630,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d4d6db72-d287-4e85-ab66-6bcd9a56466a")
-		(property "Reference" "R14"
+		(property "Reference" "R16"
 			(at 160.02 125.7299 0)
 			(effects
 				(font
@@ -5243,7 +5684,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R14")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -5387,6 +5828,73 @@
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
 					(reference "RV2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 217.17 85.09 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ebd6bf58-01da-44dd-bba5-319b9ca3d889")
+		(property "Reference" "TP5"
+			(at 222.25 83.8199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 222.25 86.3599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
+			(at 217.17 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 217.17 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 217.17 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "543870bf-2cdf-48c0-ba91-d0c84423b058")
+		)
+		(instances
+			(project "power_bank"
+				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
+					(reference "TP5")
 					(unit 1)
 				)
 			)
