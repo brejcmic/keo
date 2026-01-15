@@ -418,5 +418,9 @@
       "Battery"
     ]
   ],
-  "text_variables": {}
+  "text_variables": {
+    "DESCR": "V_{IN}: 20V - 50V, V_{OUT}: 5V, I_{OUT}: 2A",
+    "REVISION": "1.0",
+    "TITLE": "Power banka solárního panelu"
+  }
 }

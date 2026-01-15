@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "55fd61ed-d0eb-4970-95f6-6b0d4b4f417f")
 	(paper "A4")
+	(title_block
+		(title "${TITLE}")
+		(date "2026-01-15")
+		(rev "${REVISION}")
+		(comment 1 "${DESCR}")
+	)
 	(lib_symbols
 		(symbol "Device:Battery_Cell"
 			(pin_numbers
@@ -3296,7 +3302,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00f41d8a-df6b-4f5f-ab43-d7b67e730964")
-		(property "Reference" "R7"
+		(property "Reference" "R18"
 			(at 177.8 125.7299 0)
 			(effects
 				(font
@@ -3350,7 +3356,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R7")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -3366,7 +3372,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "022b5f0f-e524-4fee-93c3-7cb66a986e93")
-		(property "Reference" "D1"
+		(property "Reference" "D2"
 			(at 219.71 91.4399 90)
 			(effects
 				(font
@@ -3438,7 +3444,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "D1")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -3454,7 +3460,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "04055361-b5c4-40b4-8f14-0718672fa5ef")
-		(property "Reference" "R3"
+		(property "Reference" "R9"
 			(at 106.68 78.74 90)
 			(effects
 				(font
@@ -3506,7 +3512,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R3")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -3663,7 +3669,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "200ffba0-6059-4212-9be0-16c95d7e6af1")
-		(property "Reference" "R10"
+		(property "Reference" "R15"
 			(at 168.91 54.6099 0)
 			(effects
 				(font
@@ -3717,7 +3723,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R10")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -3733,7 +3739,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "38da2260-7777-48e8-bcd3-d0e0c47ec545")
-		(property "Reference" "Q4"
+		(property "Reference" "Q1"
 			(at 154.94 68.5801 0)
 			(effects
 				(font
@@ -3799,7 +3805,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "Q4")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -3814,7 +3820,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "57ba1a18-a614-40dc-8f2f-cf142eecb2f6")
-		(property "Reference" "C5"
+		(property "Reference" "C18"
 			(at 128.27 72.3899 0)
 			(effects
 				(font
@@ -3868,7 +3874,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "C5")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -3884,7 +3890,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "618d6e04-a8e0-466b-817f-687c6fce1845")
-		(property "Reference" "U1"
+		(property "Reference" "U4"
 			(at 95.25 93.98 0)
 			(effects
 				(font
@@ -3940,7 +3946,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "U1")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -3956,7 +3962,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "627e4c1e-a2df-4d7c-acd4-da61a66e2869")
-		(property "Reference" "R1"
+		(property "Reference" "R10"
 			(at 106.68 93.98 90)
 			(effects
 				(font
@@ -4009,7 +4015,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R1")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -4025,7 +4031,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "63c05c88-0838-402d-aefd-02df76f29657")
-		(property "Reference" "C4"
+		(property "Reference" "C14"
 			(at 78.74 110.4899 0)
 			(effects
 				(font
@@ -4079,7 +4085,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "C4")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -4095,7 +4101,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b2c1fbc-a90d-454c-8a58-a511a6e76135")
-		(property "Reference" "C1"
+		(property "Reference" "C17"
 			(at 99.06 110.4899 0)
 			(effects
 				(font
@@ -4149,7 +4155,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "C1")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -4165,7 +4171,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "70653e14-89a6-4702-bbb1-4d5d2873d2a9")
-		(property "Reference" "R2"
+		(property "Reference" "R16"
 			(at 168.91 125.7299 0)
 			(effects
 				(font
@@ -4219,7 +4225,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R2")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -4234,7 +4240,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "786dd426-8416-441e-b7fc-55f325baa18f")
-		(property "Reference" "C6"
+		(property "Reference" "C19"
 			(at 128.27 110.4899 0)
 			(effects
 				(font
@@ -4288,7 +4294,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "C6")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -4304,7 +4310,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7c752590-3491-4fba-80dc-330c2a604f90")
-		(property "Reference" "R9"
+		(property "Reference" "R13"
 			(at 160.02 54.6099 0)
 			(effects
 				(font
@@ -4358,7 +4364,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R9")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -4374,7 +4380,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85f7783a-1ffc-4754-b0e1-4ecc1b957a1f")
-		(property "Reference" "R6"
+		(property "Reference" "R11"
 			(at 113.03 80.0099 0)
 			(effects
 				(font
@@ -4428,7 +4434,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R6")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -4444,7 +4450,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9099c3dd-322d-4012-9e17-786b8d3bcda5")
-		(property "Reference" "Q5"
+		(property "Reference" "Q2"
 			(at 177.8 114.2999 0)
 			(effects
 				(font
@@ -4510,7 +4516,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "Q5")
+					(reference "Q2")
 					(unit 2)
 				)
 			)
@@ -4526,7 +4532,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9ed4f009-dfa5-4da1-b0d3-83b30bef3d5b")
-		(property "Reference" "R5"
+		(property "Reference" "R12"
 			(at 113.03 102.8699 0)
 			(effects
 				(font
@@ -4580,7 +4586,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R5")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -4664,7 +4670,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a4ce525f-3158-4b13-bc85-cef1f59c9fd8")
-		(property "Reference" "Q4"
+		(property "Reference" "Q1"
 			(at 177.8 68.5801 0)
 			(effects
 				(font
@@ -4730,7 +4736,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "Q4")
+					(reference "Q1")
 					(unit 2)
 				)
 			)
@@ -4746,7 +4752,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bc1f70e7-efa2-437a-bf12-ae6f3d54d4c4")
-		(property "Reference" "R8"
+		(property "Reference" "R17"
 			(at 177.8 54.6099 0)
 			(effects
 				(font
@@ -4800,7 +4806,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R8")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -4816,7 +4822,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bd69f0e6-7587-4b02-a22d-dc2822a4877f")
-		(property "Reference" "Q5"
+		(property "Reference" "Q2"
 			(at 154.94 114.2999 0)
 			(effects
 				(font
@@ -4882,7 +4888,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "Q5")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -4898,7 +4904,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ce8f616b-cb45-482a-850b-4d431a2cc2d3")
-		(property "Reference" "Q1"
+		(property "Reference" "Q3"
 			(at 199.39 45.72 90)
 			(effects
 				(font
@@ -4953,7 +4959,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "Q1")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -4969,7 +4975,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d052b5a6-6c7d-4a5a-badd-94038929e1aa")
-		(property "Reference" "RV2"
+		(property "Reference" "RV1"
 			(at 113.03 72.3899 0)
 			(effects
 				(font
@@ -5026,7 +5032,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "RV2")
+					(reference "RV1")
 					(unit 1)
 				)
 			)
@@ -5042,7 +5048,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d37844f5-d740-4418-963e-5e0d903d9525")
-		(property "Reference" "Q2"
+		(property "Reference" "Q4"
 			(at 199.39 134.62 90)
 			(effects
 				(font
@@ -5097,7 +5103,7 @@
 		(instances
 			(project ""
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "Q2")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -5113,7 +5119,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d4a2de6f-ad38-44da-83bd-fb4126410b3d")
-		(property "Reference" "C3"
+		(property "Reference" "C15"
 			(at 81.28 72.3899 0)
 			(effects
 				(font
@@ -5167,7 +5173,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "C3")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -5183,7 +5189,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d4d6db72-d287-4e85-ab66-6bcd9a56466a")
-		(property "Reference" "R4"
+		(property "Reference" "R14"
 			(at 160.02 125.7299 0)
 			(effects
 				(font
@@ -5237,7 +5243,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "R4")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -5253,7 +5259,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2496e2e-7b8e-4864-978a-54f5ff22d30d")
-		(property "Reference" "C2"
+		(property "Reference" "C16"
 			(at 99.06 72.3899 0)
 			(effects
 				(font
@@ -5307,7 +5313,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "C2")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -5323,7 +5329,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ea397990-6d25-49b1-af6c-b0ed0c99a0c0")
-		(property "Reference" "RV1"
+		(property "Reference" "RV2"
 			(at 113.03 110.4899 0)
 			(effects
 				(font
@@ -5380,7 +5386,7 @@
 		(instances
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
-					(reference "RV1")
+					(reference "RV2")
 					(unit 1)
 				)
 			)

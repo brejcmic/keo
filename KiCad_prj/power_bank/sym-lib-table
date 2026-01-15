@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "switching_converters")(type "KiCad")(uri "${KIPRJMOD}/lib/switching_converters.kicad_sym")(options "")(descr ""))
+)
