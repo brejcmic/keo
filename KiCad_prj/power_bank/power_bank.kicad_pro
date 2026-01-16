@@ -189,6 +189,7 @@
       "track_widths": [
         0.0,
         0.254,
+        0.508,
         0.762
       ],
       "tuning_pattern_settings": {
@@ -225,6 +226,10 @@
         {
           "diameter": 0.508,
           "drill": 0.254
+        },
+        {
+          "diameter": 0.762,
+          "drill": 0.381
         },
         {
           "diameter": 1.016,
@@ -481,7 +486,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.254,
+        "clearance": 0.127,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,

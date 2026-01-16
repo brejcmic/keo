@@ -2591,6 +2591,18 @@
 		(uuid "cf21a70a-fe41-4ce0-a4f4-e985b61ea211")
 	)
 	(junction
+		(at 143.51 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d63ce599-33e7-4876-8c45-12a5ac84f7e7")
+	)
+	(junction
+		(at 143.51 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d710d627-c3c5-4184-af67-7c4514a1267f")
+	)
+	(junction
 		(at 95.25 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2635,6 +2647,16 @@
 			(type default)
 		)
 		(uuid "050847a1-ecb7-4fcc-9d40-0be77d1586e7")
+	)
+	(wire
+		(pts
+			(xy 143.51 96.52) (xy 143.51 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "057898b7-e5bc-4b9b-8252-24bf43bc47ee")
 	)
 	(wire
 		(pts
@@ -2685,6 +2707,16 @@
 			(type default)
 		)
 		(uuid "18355096-3ece-4cc0-848c-90525ad56267")
+	)
+	(wire
+		(pts
+			(xy 143.51 130.81) (xy 157.48 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1889d104-64be-4086-aad2-e965a1c72fa4")
 	)
 	(wire
 		(pts
@@ -2748,7 +2780,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 52.07) (xy 157.48 52.07)
+			(xy 132.08 52.07) (xy 143.51 52.07)
 		)
 		(stroke
 			(width 0)
@@ -2758,7 +2790,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 130.81) (xy 157.48 130.81)
+			(xy 132.08 130.81) (xy 143.51 130.81)
 		)
 		(stroke
 			(width 0)
@@ -3078,6 +3110,16 @@
 	)
 	(wire
 		(pts
+			(xy 143.51 52.07) (xy 157.48 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87c21910-0b62-45e0-a015-695457447df8")
+	)
+	(wire
+		(pts
 			(xy 132.08 115.57) (xy 132.08 130.81)
 		)
 		(stroke
@@ -3265,6 +3307,16 @@
 			(type default)
 		)
 		(uuid "cf92fbb2-6ece-4108-b2d7-e02ec794cc4e")
+	)
+	(wire
+		(pts
+			(xy 143.51 52.07) (xy 143.51 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d620170c-a7fe-417e-a7e0-3fcbc5f1b21b")
 	)
 	(wire
 		(pts
@@ -3771,6 +3823,75 @@
 			(project "power_bank"
 				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 143.51 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0e1657d8-26aa-45ff-a9a4-fd49893c2e32")
+		(property "Reference" "C20"
+			(at 147.32 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "330n"
+			(at 147.32 93.9799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 144.4752 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.51 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 143.51 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8f88366a-f814-4777-8cd0-bd04ccaff576")
+		)
+		(pin "2"
+			(uuid "c89cb351-9ada-43bd-b022-e33be3a56ed8")
+		)
+		(instances
+			(project "power_bank"
+				(path "/43391614-883f-49dc-a949-0152c58fc2fa/9147f2e0-7dcc-462c-aa60-5310dabd00a6"
+					(reference "C20")
 					(unit 1)
 				)
 			)
