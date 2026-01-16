@@ -6515,7 +6515,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 90.17 87.63 0)
 			(effects
 				(font
