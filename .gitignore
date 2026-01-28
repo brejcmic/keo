@@ -20,6 +20,7 @@
 !*.xls
 !*.xlsx
 !*.cls
+!*.html
 
 # obrazky
 !*.png
