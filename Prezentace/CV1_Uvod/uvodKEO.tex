@@ -18,7 +18,7 @@
 \subtitle[KEO] {Konstrukce a realizace elektronických obvodů}
 \author[Brejcha]{\texorpdfstring{Michal Brejcha\newline\url{brejcmic@fel.cvut.cz}}{Michal Brejcha}}
 \institute[ČVUT]{ČVUT v Praze, FEL}
-\date[Praha, 2024]{Praha, 2024}
+\date[Praha, 2026]{Praha, 2026}
 
 %------------------------------------------------------------------------------
 %Konstanty a definice
@@ -84,7 +84,7 @@
     \frametitle{Univerzální postup v případě nebezpečí}
 		\begin{enumerate}
 		\item Zajištění bezpečnosti:\\
-		rozpojení elektrického obvodu (bezpečnostní tlačítka), odpojení přítomných přístrojů, uzavření příp. odstranění nebo zabránění šíření (louže - těkavé látky) chemických látek
+		rozpojení elektrického obvodu (bezpečnostní tlačítka), odpojení přítomných přístrojů, uzavření příp. odstranění nebo zabránění šíření (louže - těkavé látky) chemických látek.
 		\item První pomoc postiženému:\\ chlazení popáleného místa studenou vodou, zastavení krvácení, umělé dýchání, nepřímá srdeční masáž.
 		\item Upozornění lektora (zodpovědného pracovníka laboratoří), na vzniklou situaci.
 		\item Přivolání lékařské pomoci (tel.: 155), uvědomění vrátnice (tel.: 2222).
@@ -94,7 +94,7 @@
 	\begin{frame}
     \frametitle{Požární bezpečnost - povinnosti}
 		\begin{enumerate}
-		\item Počínat si tak, aby nedocházelo ke vzniku požáru, zejména při používání tepelných, elektrických, plynových a jiných spotřebičů, při skladování a používání hořlavých nebo požárně nebezpečných látek, manipulaci s nimi nebo otevřeným ohněm či jiným zdrojem zapálení
+		\item Počínat si tak, aby nedocházelo ke vzniku požáru, zejména při používání tepelných, elektrických, plynových a jiných spotřebičů, při skladování a používání hořlavých nebo požárně nebezpečných látek, manipulaci s nimi nebo otevřeným ohněm či jiným zdrojem zapálení.
 		\item Neomezovat přístup k rozvodným zařízením elektrické energie a k uzávěrům vody a topení.
 		\end{enumerate}
 	\end{frame}
@@ -123,10 +123,10 @@
           \item Prezentace elektronických obvodů zamýšlených k výrobě.
           \item Návrh DPS programem KiCAD.
           \item Návrh DPS programem KiCAD.
-          \item Ověření funkce určité části obvodu v laboratoři.
-          \item Kontrola návrhů, podkladů a generování výrobních dat pro výrobu (\textbf{nutný hotový návrh})
-          \item Specifické vlastnosti elektronických součástek
-          \item Vrtání DPS, kontrola DPS, úpravy DPS do krabiček
+          \item Návrh DPS - ověření funkce určité části obvodu v laboratoři.
+          \item Návrh DPS - kontrola návrhů, podkladů a generování výrobních dat pro výrobu (\textbf{nutný hotový návrh})
+          \item Ukázka - specifické vlastnosti elektronických součástek a obvodů.
+          \item Ukázka - vedení, přizpůsobování, EMC.
           \item Realizace elektronického obvodu – pájení 
           \item Uvádění elektronického obvodu do provozu
           \item Ověřování funkce obvodu a měření
@@ -162,7 +162,7 @@
 		\begin{itemize}
 			\item DPS vyrábí a platí škola,
 			\item součástky kupuje student.
-			\item Návrh obvodu lze získat od jiného autora - např. knížka, web...
+			\item Návrh obvodu lze získat od jiného autora - např. knížka, web, kamarád ...
 			\item Pokud již existuje dps, lze ji použít pro inspiraci, nicméně předpokládají se vlastní úpravy řešitele a hlavně její překreslení v návrhovém programu.
 		\end{itemize}
 	
@@ -173,12 +173,14 @@
 		
 		\begin{itemize}
 			\item Obvod s minimálně 30 součástkami,
-			\item převážně THT montáž (jednovrstvý plošný spoj nebo dvouvrstvý \textbf{bez prokovů}),
+			\item může být THT i SMD montáž, omezení na minimální velikost 0805,
+      \item DPS pouze se dvěma vrstvami,
+      \item vše se osazuje ručně, šablona jen ve vybraných případech,
       \item napájení výhradně malým napětím,
       \item vyhýbejte se programovatelným součástkám,
       \item pokud chcete procesor, tak Arduino (snadné ověření funkce obvodu),
-      \item jen nízkofrekvenční obvody, 
-      \item na relativně malé výkony.
+      \item jen nízkofrekvenční obvody (do cca 100 kHz), 
+      \item na relativně malé výkony (do cca 50 W).
 		\end{itemize}
 	
 	\end{frame}
@@ -204,6 +206,16 @@
 		\textbf{Signalizace ztráty napájení}
     \begin{center}
       \includegraphics[scale=0.26]{obr/eo_detBrd.png}
+    \end{center}
+	
+	\end{frame}
+  
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Příklad jednoduchého obvodu $>$30 součástek}
+		\textbf{Nabíječka Li-ion baterií}
+    \begin{center}
+      \includegraphics[width=\textwidth]{obr/eo_chargerBrd.png}
     \end{center}
 	
 	\end{frame}
