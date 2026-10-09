@@ -1,79 +1,137 @@
 # -----------------------------------------------------------------------------
 # Omezeni pripon souboru pro verzovani projektu KEO
 # -----------------------------------------------------------------------------
-#vse globalne zakazano:
-*.*
+# Kicad
+# =====
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups
+*-cache*
+*-bak
+*-bak*
+*~
+~*
+_autosave-*
+\#auto_saved_files\#
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+~*.lck
+\#auto_saved_files#
 
-# -----------------------------------------------------------------------------
-# Povolene soubory
-# -----------------------------------------------------------------------------
-# gitingnore list
-!*.gitignore
+# Netlist files (exported from Eeschema)
+*.net
 
-# dokumentace
-!*.txt
-!*.pdf
-!*.doc
-!*.docx
-!*.md
-!*.tex
-!*.xls
-!*.xlsx
-!*.cls
-!*.html
+# Autorouter files (exported from Pcbnew)
+*.dsn
+*.ses
 
-# obrazky
-!*.png
-!*.jpg
-!*.bmp
-!*.jpeg
+# Exported BOM files
+*.xml
+*.csv
 
-# slovniky
-!*.dic
-!*.aff
+# Archived Backups (KiCad 6.0)
+**/*-backups/*.zip
 
-# KiCad
-!*.sch
-!*.lib
-!*.pro
-!sym-lib-table
-!fp-lib-table
-!fp-info-cache
-!*.kicad_pro
-!*.kicad_pcb
-!*.kicad_sch
-!*.kicad_sym
-!*.kicad_mod
-!*.kicad_dru
-!*.kicad_wks
-!*.pretty
+# Local git-based history (KiCad 9.0+)
+.history
+
+# Local project settings
+*.kicad_prl
+
+# obr
+*.webp
+
+
+# Latex
+# =====
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Intermediate documents:
+*.dvi
+*.xdv
+*-converted-to.*
+# these rules might exclude image files for figures etc.
+# *.ps
+# *.eps
+# *.pdf
+
+## Generated if empty string is given at "Please type another file name for output:"
+.pdf
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bbl-SAVE-ERROR
+*.bcf
+*.bcf-SAVE-ERROR
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.rubbercache
+rubber.cache
+
+## Build tool directories for auxiliary files
+# latexrun
+latex.out/
+
+## Auxiliary and intermediate files from other packages:
+# algorithms
+*.alg
+*.loa
+
+# achemso
+acs-*.bib
+
+# amsthm
+*.thm
+
+# attachfile2
+*.atfi
+
+# beamer
+*.nav
+*.pre
+*.snm
+*.vrb
+
+# changes
+*.soc
+*.loc
+
+# texnicenter
+*.tps
+*.tcp
 
 # Simulace
-!*.sch
-!*.cir
-!*.asc
-
-# Gerber data
-!*.gbr
-!*.ger
-!*.pho
-!*.gbl
-!*.gtl
-!*.gbs
-!*.gts
-!*.gbo
-!*.gto
-!*.gm1
-!*.gm2
-!*.gm3
-
-# NC Drill soubory
-!*.drl
-!*.drd
-
-# CAM / Assembly výstupy
-!*.bom
-!*.csv
-!*.pos
-!*.mnt
-!*.pick
+# ========
+*.raw
+*.plt
+*.ngspice
+*.
