@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Switched_Capacitors") (type "KiCad") (uri "${KIPRJMOD}/lib/voltage-inverters/Switched_Capacitors.kicad_sym") (options "") (descr ""))
+)

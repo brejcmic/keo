@@ -134,4 +134,8 @@ acs-*.bib
 *.raw
 *.plt
 *.ngspice
-*.
+*.DDNO
+*.TNO
+*.bak_cir
+*.inx
+*.dat
