@@ -1269,5 +1269,136 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Seznam součástek}{Seznam soucastek}}
+%------------------------------------------------------------------------------
+
+\begin{frame}
+	\frametitle{Upravit pole symbolů}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.35\textwidth}
+			Tabulku otevřete:
+			\begin{itemize}
+				\item přes \textbf{Nástroje → Upravit pole symbolů\ldots},
+				\item nebo ikonou tabulky polí v horní liště.
+			\end{itemize}
+
+		\end{column}
+		\begin{column}{0.63\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/symbol_fields_table_edit.png}
+		\end{column}
+	\end{columns}
+  
+  \vspace{5mm}
+  
+  \begin{itemize}
+    \item Každý řádek představuje jeden symbol a každý sloupec jedno jeho pole.
+    \item Buňky lze upravovat přímo jako v tabulkovém procesoru.
+    \item Změny se po potvrzení zapíší zpět do symbolů ve schématu.
+  \end{itemize}
+  
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Pole součástek pro kusovník}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.47\textwidth}
+			\begin{description}
+        \item[Popisek sloupce:] určuje nadpis sloupce v exportovaném souboru.
+				\item[Zobrazit:] zobrazí pole v tabulce a přidá je jako sloupec.
+				\item[Skupiny:] sloučí součástky se stejnými hodnotami zvolených polí.
+			\end{description}
+		\end{column}
+		\begin{column}{0.51\textwidth}
+			Vlastní pole přidáte tlačítkem \textbf{+}. Pole se vytvoří u všech symbolů, například:
+			\begin{itemize}
+				\item \textbf{Výrobce},
+				\item \textbf{Objednací číslo} nebo \textbf{MPN},
+				\item \textbf{Dodavatel},
+				\item \textbf{Skladové číslo dodavatele}.
+			\end{itemize}
+
+			Hodnoty lze vyplňovat hromadně kopírováním přes \texttt{Ctrl+C} a \texttt{Ctrl+V}.
+		\end{column}
+	\end{columns}
+
+	\medskip
+  \begin{alertblock}{Identifikace součástky u prodejce}
+		Skladové číslo musí jednoznačně určit skutečně objednávanou součástku, nejen její obecný typ nebo hodnotu.
+	\end{alertblock}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Příprava obsahu BOM}
+	\small
+	\begin{enumerate}
+		\item Na kartě \textbf{Upravit} zaškrtněte pole, která mají být v BOM.
+		\item Nastavte pořadí sloupců přetažením jejich záhlaví.
+		\item Zapněte \textbf{Seskupit symboly} a zvolte pole \textbf{Seskupit podle}.
+		\item Zkontrolujte vzniklé skupiny a doplňte chybějící hodnoty.
+	\end{enumerate}
+
+	\medskip
+	Pro běžný nákup je vhodné seskupovat alespoň podle \textbf{Hodnoty}, \textbf{Pouzdra} a \textbf{objednacího čísla}. Dvě součástky se sloučí pouze tehdy, shodují-li se ve všech zvolených polích.
+
+	\medskip
+	Virtuální pole \texttt{\$\{QUANTITY\}} doplní počet kusů ve skupině a \texttt{\$\{ITEM\_NUMBER\}} pořadové číslo položky. Symboly označené \textbf{Vyloučit z BOM} se do exportu nikdy nezařadí; položky \textbf{DNP} lze podle nastavení zahrnout nebo vynechat.
+
+	\vfill
+	\begin{block}{Výsledek odpovídá tabulce}
+		Do BOM se exportují právě zobrazená pole, v nastaveném pořadí a se zvoleným seskupením.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Export kusovníku (BOM)}
+	\footnotesize
+	\begin{columns}[T]
+		\begin{column}{0.34\textwidth}
+			Na cvičení vytvoříme BOM přímo z této tabulky:
+			\begin{enumerate}
+				\item přejděte na kartu \textbf{Export},
+				\item zvolte výstupní soubor,
+				\item vyberte předvolbu formátu, obvykle \textbf{CSV},
+				\item zkontrolujte náhled,
+				\item stiskněte \textbf{Export}.
+			\end{enumerate}
+
+		\end{column}
+		\begin{column}{0.64\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{obr/symbol_fields_table_export.png}
+		\end{column}
+	\end{columns}
+  
+  \medskip
+  Karta umožňuje nastavit oddělovač polí, uvozování textu a oddělovače seznamu či rozsahu referencí.
+\end{frame}
+
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Poznámky k příští hodině}
+		
+		Příští cvičení je stále v místnosti \textbf{T2:C4-264}.
+		\begin{itemize}
+			\item Budeme pokračovat ve výuce KiCad \kicadVersion.
+			\item Zaměříme se na návrh DPS v PCB Editoru.
+			\item Doporučuji přijít s vlastním notebookem s instalací KiCad \kicadVersion. Kdo tuto možnost nemá, bude pracovat na stanici v místnosti.
+      \item Budeme řešit dotazy k návrhu schématu vašich prací.
+		\end{itemize}
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{To je vše...}
+		
+		\begin{center}
+			\Large{Děkuji za pozornost}
+		\end{center}
+	\end{frame}
 
 \end{document}
