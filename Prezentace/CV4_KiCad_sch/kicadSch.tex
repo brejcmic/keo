@@ -573,4 +573,155 @@
 
 \end{frame}
 
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Propojování prvků schématu}{Propojovani prvku schematu}}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojení vodičem}
+	\begin{columns}[T]
+		\begin{column}{0.78\textwidth}
+			\begin{enumerate}
+				\item Zvolte ikonu \textbf{Vodič} nebo najeďte na vývod a stiskněte \textbf{W}.
+				\item Kliknutím vytvořte zalomení vodiče.
+				\item Klikněte na cílový vývod nebo konec jiného vodiče.
+				\item Dvojklikem vodič ukončíte; klávesa \textbf{Esc} kreslení zruší.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.18\textwidth}
+			\centering
+			\includegraphics[width=1.3cm]{obr/add_line_24.png}
+		\end{column}
+	\end{columns}
+
+	\vfill
+	\begin{alertblock}{Elektrické spojení}
+		Vodiče se spojí pouze tehdy, když se přesně dotýkají koncem nebo spojovacím bodem. Pouhé překřížení vodičů spojení nevytvoří.
+	\end{alertblock}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojení pomocí popisku}
+	\begin{columns}[T]
+		\begin{column}{0.78\textwidth}
+			Popisek pojmenuje elektrickou síť. Dvě sítě se stejným názvem jsou propojené bez dlouhého vodiče.
+
+			\medskip
+			\begin{enumerate}
+				\item Nakreslete krátký vodič od vývodu.
+				\item Zvolte ikonu \textbf{Místní popisek} nebo stiskněte \textbf{L}.
+				\item Zadejte název, např. \texttt{SDA}.
+				\item Stejný popisek umístěte na druhou síť.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.18\textwidth}
+			\centering
+			\includegraphics[width=1.3cm]{obr/add_label_24.png}
+		\end{column}
+	\end{columns}
+
+	\vfill
+	Jedna síť smí mít pouze jeden název. Různé popisky na stejné síti vyvolají chybu ERC.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Propojení pomocí sběrnice}
+	\begin{columns}[T]
+		\begin{column}{0.36\textwidth}
+			Sběrnice přehledně sdružuje více pojmenovaných signálů.
+			\begin{itemize}
+				\item ikona \textbf{Sběrnice},
+				\item zkratka \textbf{B},
+				\item vektorová sběrnice např. \texttt{DATA[0..7]},
+				\item obsahuje sítě \texttt{DATA0} až \texttt{DATA7}.
+			\end{itemize}
+
+			\centering
+			\includegraphics[width=1.2cm]{obr/add_bus_24.png}
+		\end{column}
+		\begin{column}{0.62\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/sch_with_buses.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Připojení signálů ke sběrnici}
+	\begin{enumerate}
+		\item Sběrnici pojmenujte popiskem, např. \texttt{DATA[0..7]}.
+		\item Od vývodů nakreslete jednotlivé vodiče.
+		\item Vodiče pojmenujte \texttt{DATA0}, \texttt{DATA1}, \ldots, \texttt{DATA7}.
+		\item Volitelně vložte grafické vstupy vodičů do sběrnice klávesou \textbf{Z}.
+	\end{enumerate}
+
+	\vfill
+	\begin{block}{Důležité}
+		Vývod nelze elektricky připojit přímo k tlusté čáře sběrnice. Logické propojení vzniká shodou názvu vodiče a členu sběrnice. Šikmý vstup do sběrnice je pouze grafický.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Druhy popisků}
+	\begin{columns}[T]
+		\begin{column}{0.31\textwidth}
+			\centering
+			\includegraphics[width=1.2cm]{obr/add_label_24.png}
+
+			\textbf{Lokální popisek}
+
+			\texttt{SDA}
+
+			\medskip
+			Platí pouze na jednom listu.
+
+			Zkratka \textbf{L}.
+		\end{column}
+		\begin{column}{0.31\textwidth}
+			\centering
+			\includegraphics[width=1.2cm]{obr/add_glabel_24.png}
+
+			\textbf{Globální popisek}
+
+			\fbox{\texttt{SDA}}
+
+			\medskip
+			Propojuje všechny listy schématu.
+
+			Zkratka \textbf{Ctrl+L}.
+		\end{column}
+		\begin{column}{0.34\textwidth}
+			\centering
+			\includegraphics[width=1.2cm]{obr/add_hierarchical_label_24.png}
+
+			\textbf{Hierarchický popisek}
+
+			\fbox{\texttt{SDA}}
+
+			\medskip
+			Propojuje podřízený list s jeho rodičem.
+
+			Zkratka \textbf{H}.
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Rozsah platnosti popisků}
+	\begin{description}
+		\item[Lokální:] Stejné názvy se propojí jen v rámci stejného listu. Je vhodný pro běžné signály uvnitř jednoho funkčního bloku.
+		\item[Globální:] Stejné názvy se propojí kdekoli v celém schématu bez ohledu na hierarchii. Používejte jej střídmě, typicky pro napájení nebo skutečně společné signály.
+		\item[Hierarchický:] Na podřízeném listu vytváří jeho rozhraní. Musí odpovídat stejně pojmenovanému vývodu listu v rodičovském schématu.
+	\end{description}
+
+	\vfill
+	\begin{block}{Poznámka}
+		Popisky stejného jména umístěné na stejném listu se propojí bez ohledu na jejich typ. Pro přehlednost však používejte typ odpovídající zamýšlenému rozsahu.
+	\end{block}
+\end{frame}
+
 \end{document}
