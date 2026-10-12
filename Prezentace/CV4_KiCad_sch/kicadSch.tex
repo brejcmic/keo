@@ -804,4 +804,141 @@
 	\end{block}
 \end{frame}
 
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Hierarchické listy}{Hierarchicke listy}}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Více listů v kořenové úrovni}
+	\begin{columns}[T]
+		\begin{column}{0.43\textwidth}
+			KiCad umožňuje vytvořit několik samostatných listů přímo v kořenové úrovni.
+
+			\medskip
+			Takové listy nemají rodičovský list ani definované rozhraní.
+		\end{column}
+		\begin{column}{0.55\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.45\textheight,keepaspectratio]{obr/hierarchy_flat.png}
+		\end{column}
+	\end{columns}
+
+	\vfill
+	\begin{alertblock}{Nevýhoda}
+		Mezi kořenovými listy lze signály propojovat pouze globálními popisky. U rozsáhlejšího návrhu se tím ztrácí přehled o rozhraních a toku signálů.
+	\end{alertblock}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Hierarchické uspořádání}
+  \small
+	\begin{columns}[T]
+		\begin{column}{0.42\textwidth}
+			Podřízený list představuje funkční blok vložený do rodičovského listu.
+			\begin{itemize}
+				\item rozhraní bloku je viditelné v rodičovském schématu,
+				\item signály mají jasný směr a účel,
+				\item vnitřní zapojení zůstává oddělené,
+				\item jeden soubor listu lze použít opakovaně.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.56\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.64\textheight,keepaspectratio]{obr/eeschema_simple_hierarchy.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Vytvoření podřízeného listu}
+  \small
+	\begin{columns}[T]
+		\begin{column}{0.42\textwidth}
+			\begin{enumerate}
+				\item Zvolte ikonu \textbf{Přidat hierarchický list} nebo stiskněte \textbf{S}.
+				\item V rodičovském schématu nakreslete obdélník listu.
+				\item Zadejte jedinečný název listu.
+				\item Zadejte soubor \texttt{*.kicad\_sch}, nejlépe relativně ve složce projektu.
+			\end{enumerate}
+
+		\end{column}
+		\begin{column}{0.56\textwidth}
+			\centering
+			\includegraphics[width=1.2cm]{obr/add_hierarchical_subsheet_24.png}
+      
+      \vspace{5mm}
+      
+			\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{obr/hierarchical_sheet_properties.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Rozhraní hierarchického listu}
+	\begin{columns}[T]
+		\begin{column}{0.46\textwidth}
+			\begin{enumerate}
+				\item Dvojklikem vstupte do podřízeného listu.
+				\item Umístěte hierarchický popisek klávesou \textbf{H}.
+				\item Vraťte se do rodičovského listu.
+				\item Ikonou \textbf{Přidat vývod listu} vložte odpovídající vývod na okraj symbolu listu.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.52\textwidth}
+			\centering
+      \includegraphics[width=1.1cm]{obr/add_hierar_pin_24.png}
+      
+      \vspace{5mm}
+      
+			\includegraphics[width=\linewidth,height=0.52\textheight,keepaspectratio]{obr/hierarchical_sheet_pins.png}
+		\end{column}
+	\end{columns}
+
+	\vfill
+	Název vývodu listu se musí přesně shodovat s názvem hierarchického popisku uvnitř podřízeného listu.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Typy vývodů hierarchického listu}
+	Směr se uvádí z pohledu podřízeného listu:
+	\begin{description}
+		\item[Vstup:] Signál vstupuje z rodičovského listu do podřízeného bloku.
+		\item[Výstup:] Signál vzniká v podřízeném bloku a vystupuje do rodiče.
+		\item[Obousměrný:] Signál může proudit oběma směry, např. datová linka.
+		\item[Třístavový:] Výstup může kromě logických úrovní přejít do vysoké impedance.
+		\item[Pasivní:] Směr není určen; vhodné pro pasivní nebo obecné propojení.
+	\end{description}
+
+	\vfill
+	\begin{block}{Poznámka}
+		Typ mění grafický tvar popisku a dokumentuje rozhraní. V KiCadu nemá sám o sobě elektrický účinek.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Předání sběrnice mezi listy}
+	Hierarchickým rozhraním lze předat jeden signál i celou sběrnici.
+
+	\medskip
+	Příklad vektorové sběrnice:
+	\begin{enumerate}
+		\item V podřízeném listu vytvořte hierarchický popisek \texttt{DATA[0..7]}.
+		\item Na symbol listu v rodiči přidejte vývod se stejným názvem \texttt{DATA[0..7]}.
+		\item K vývodu v rodičovském listu připojte sběrnici.
+		\item Uvnitř listu sběrnici rozviňte na jednotlivé signály \texttt{DATA0} až \texttt{DATA7}.
+	\end{enumerate}
+
+	\medskip
+	Stejným způsobem lze předat skupinovou sběrnici, např. \texttt{USB\{DP DM VBUS\}}, nebo sběrnici definovanou aliasem.
+
+	\vfill
+	\begin{block}{Pravidlo}
+		Název hierarchického popisku a odpovídajícího vývodu listu musí být shodný včetně zápisu sběrnice.
+	\end{block}
+\end{frame}
+
 \end{document}
