@@ -1148,5 +1148,102 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Dialog přiřazení pouzder}{Dialog prirazeni pouzder}}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Přiřazení pouzder}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.33\textwidth}
+			Nástroj otevřete:
+			\begin{itemize}
+				\item ikonou \textbf{Přiřadit pouzdra} v horní liště,
+				\item nebo přes \textbf{Nástroje → Přiřadit pouzdra\ldots}
+			\end{itemize}
+
+			\begin{center}
+				\includegraphics[width=1.1cm]{obr/icon_cvpcb_24_24.png}
+			\end{center}
+
+			Zde měníte pole \textbf{Pouzdro} příslušného symbolu.
+		\end{column}
+		\begin{column}{0.65\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{obr/cvpcb_main_window.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Ovládání dialogu}
+	\begin{description}
+		\item[Levý panel:] knihovny pouzder dostupné v projektu.
+		\item[Prostřední panel:] symboly schématu a jejich aktuálně přiřazená pouzdra.
+		\item[Pravý panel:] pouzdra vyhovující zapnutým filtrům.
+		\item[Spodní panel:] použité filtry, počet výsledků a popis vybraného pouzdra.
+	\end{description}
+
+	\medskip
+	\begin{enumerate}
+		\item V prostředním panelu vyberte symbol.
+		\item Vpravo vyhledejte vhodné pouzdro.
+		\item Dvojklikem pouzdro přiřaďte; KiCad přejde na další symbol bez pouzdra.
+		\item Stejným způsobem zpracujte všechny osazované symboly.
+	\end{enumerate}
+
+	\vfill
+	\textbf{OK} změny uloží a zavře okno. \textbf{Použít, uložit schéma a pokračovat} změny uloží bez zavření. \textbf{Zrušit} změny zahodí.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Filtry seznamu pouzder}
+	\small
+	\begin{center}
+		\includegraphics[height=0.55cm]{obr/module_filtered_list_24.png}
+		\hspace{1.5cm}
+		\includegraphics[height=0.55cm]{obr/module_pin_filtered_list_24.png}
+		\hspace{1.5cm}
+		\includegraphics[height=0.55cm]{obr/module_library_list_24.png}
+	\end{center}
+	\begin{description}
+		\item[Filtr symbolu:] Zobrazí pouzdra odpovídající filtrům uloženým ve vlastnostech symbolu, např. pouze \texttt{SOIC-*} nebo \texttt{DIP-*}.
+		\item[Počet vývodů:] Zobrazí pouze pouzdra se stejným počtem plošek, jako má symbol vývodů.
+		\item[Knihovna:] Zobrazí pouze pouzdra z knihovny zvolené v levém panelu.
+		\item[Textový filtr:] Vyhledává podle zadaného textu; prázdné pole tento filtr vypne.
+	\end{description}
+
+	\medskip
+	Filtry lze libovolně kombinovat. Vypnutím všech filtrů se zobrazí úplný seznam pouzder.
+
+	\vfill
+	\begin{alertblock}{Když je seznam prázdný}
+		Postupně vypněte filtry a zkontrolujte, který z nich vylučuje všechna pouzdra. Nejčastěji neodpovídá filtr symbolu nebo počet vývodů.
+	\end{alertblock}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Kontrola vybraného pouzdra}
+	Před potvrzením ověřte zejména:
+	\begin{itemize}
+		\item počet a číslování plošek,
+		\item rozteč a uspořádání vývodů,
+		\item rozměry těla součástky,
+		\item variantu montáže \textbf{SMD} nebo \textbf{THT},
+		\item orientaci vývodu 1 a dostupnost 3D modelu.
+	\end{itemize}
+
+	\medskip
+	Vybrané pouzdro lze otevřít v prohlížeči pouzder ikonou v horní liště a zkontrolovat ve 2D i 3D zobrazení.
+
+	\vfill
+	\begin{block}{Doporučení}
+		Název pouzdra je pouze vodítko. Rozměry vždy porovnejte s mechanickým výkresem v katalogovém listu skutečné součástky.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
 
 \end{document}
