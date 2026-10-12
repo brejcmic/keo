@@ -941,4 +941,146 @@
 	\end{block}
 \end{frame}
 
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Kontrola pravidel elektrického návrhu}{Kontrola pravidel elektrickeho navrhu}}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Spuštění kontroly ERC}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.34\textwidth}
+			\begin{enumerate}
+				\item V horní liště zvolte ikonu \textbf{Kontrola elektrických pravidel}.
+				\item V otevřeném okně klikněte na \textbf{Spustit ERC}.
+				\item Vyberte nalezenou chybu; KiCad zobrazí její místo ve schématu.
+			\end{enumerate}
+      
+		\end{column}
+		\begin{column}{0.64\textwidth}
+			\centering
+      \includegraphics[width=1.1cm]{obr/erc_24.png}
+      
+      \vspace{1mm}
+      
+			\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{obr/dialog_erc.png}
+		\end{column}
+	\end{columns}
+
+	\vfill
+	Chyby jsou označeny červeně, varování žlutě a vyloučené problémy zeleně.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Co ERC kontroluje}
+	\begin{itemize}
+		\item nezapojené vývody, vodiče a popisky,
+		\item vstupy bez zdroje signálu,
+		\item napájecí vstupy bez napájecího výstupu,
+		\item nepovolené kombinace vývodů, např. dva výstupy spojené dohromady,
+		\item chyby hierarchických popisků, vývodů listů a sběrnic,
+		\item duplicitní označení součástek a neanotované symboly,
+		\item chybné nebo neexistující přiřazení pouzdra,
+		\item překlepy v názvech sítí a další nekonzistence schématu.
+	\end{itemize}
+
+	\vfill
+	\begin{alertblock}{Omezení kontroly}
+		ERC ověřuje elektrická pravidla a konzistenci schématu, ale nezaručuje správnou funkci zapojení. Výsledek závisí na správně nastavených elektrických typech vývodů symbolů.
+	\end{alertblock}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Závažnost pravidel ERC}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.34\textwidth}
+			Nastavení otevřete přes:
+
+			\medskip
+			\textbf{Soubor → Nastavení schématu → Elektrická pravidla → Závažnost porušení}
+
+			\medskip
+			Každému pravidlu přiřaďte:
+			\begin{itemize}
+				\item \textbf{Chyba} -- musí se vyřešit,
+				\item \textbf{Varování} -- vyžaduje kontrolu,
+				\item \textbf{Ignorovat} -- nekontroluje se.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.64\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.61\textheight,keepaspectratio]{obr/eeschema_erc_severity.png}
+		\end{column}
+	\end{columns}
+
+	\medskip
+	V části \textbf{Mapa konfliktů vývodů} lze nastavit povolené, varovné a chybové kombinace elektrických typů vývodů.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Častá chyba: napájecí vstup není buzen}
+  \small
+	\begin{columns}[T]
+		\begin{column}{0.38\textwidth}
+			ERC hlásí:
+
+			\medskip
+			\textbf{Napájecí vstup není buzen žádným napájecím výstupem.}
+
+			\medskip
+			Často nastane, když napájení přichází přes:
+			\begin{itemize}
+				\item konektor s pasivními vývody,
+				\item spínač nebo pojistku,
+				\item jiný prvek bez typu \textit{Power output}.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.60\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/eeschema_power_pins_and_flags.png}
+		\end{column}
+	\end{columns}
+
+	\vfill
+	Napětí je ve skutečnosti přivedeno, ale ERC na síti nevidí žádný vývod typu \textit{Power output}.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Použití symbolu PWR\_FLAG}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.43\textwidth}
+			\texttt{PWR\_FLAG} je symbol z knihovny \texttt{power} s jediným vývodem typu \textit{Power output}. Jeho připojením sdělíte ERC, že síť je skutečně napájena z vnějšího nebo jinak nerozpoznaného zdroje.
+
+			\medskip
+			\begin{enumerate}
+				\item Přidejte symbol klávesou \textbf{A}.
+				\item Vyhledejte \texttt{PWR\_FLAG} a připojte jej k napájené síti.
+				\item Znovu spusťte ERC.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.55\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{obr/eeschema_power_pins_and_flags_fixed.png}
+		\end{column}
+	\end{columns}
+
+	\medskip
+	\begin{alertblock}{Důležité}
+		\texttt{PWR\_FLAG} nevytváří napětí ani spojení. Pouze označí již napájenou síť pro ERC; umisťujte jej jen tam, kde je zdroj skutečně připojen.
+	\end{alertblock}
+\end{frame}
+
+
+%------------------------------------------------------------------------------
+% Příprava podkladů pro návrh DPS
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Příprava podkladů pro návrh DPS}{Priprava podkladu pro navrh DPS}}
+\subsection{\texorpdfstring{Přečíslování referencí schématu}{Přečíslování referencí schématu}}
+%------------------------------------------------------------------------------
+
 \end{document}
