@@ -13,6 +13,7 @@
 
 \usetheme{AnnArbor}
 \usecolortheme{crane}
+\setbeamerfont{description item}{series=\bfseries}
 
 
 \title[KiCAD Eeschema]{Tvorba schéma zapojení v KiCAD}
@@ -118,12 +119,89 @@
 %------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Správa knihoven symbolů}
+	\begin{columns}[T]
+		\begin{column}{0.40\textwidth}
+			V editoru schématu zvolte:
+
+			\medskip
+			\textbf{Nastavení → Spravovat knihovny symbolů\ldots}
+
+			\medskip
+			Knihovna musí být zapsána v globální nebo projektové tabulce, jinak ji KiCad nenačte.
+		\end{column}
+		\begin{column}{0.58\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.67\textheight,keepaspectratio]{obr/sym-lib-table_toplevel.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Globální a projektové knihovny}
+	\begin{description}
+		\item[Globální knihovny]: \\ Jsou dostupné ve všech projektech uživatele na daném počítači.
+		\item[Projektové knihovny]: \\ Jsou dostupné pouze v právě otevřeném projektu.
+	\end{description}
+
+	\vfill
+	\begin{block}{Doporučení}
+		Vlastní knihovnu určenou pro konkrétní návrh uložte do složky projektu a přidejte ji jako projektovou. Projekt pak lze snáze přenést na jiný počítač.
+	\end{block}
+
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Přidání knihovny symbolů}
+	\begin{enumerate}
+		\item Otevřete kartu \textbf{Globální knihovny} nebo \textbf{Projektové knihovny}.
+		\item Klikněte na tlačítko \textbf{Přidat existující knihovnu}.
+		\item Vyberte soubor knihovny, obvykle \texttt{*.kicad\_sym}.
+		\item Zkontrolujte přezdívku a cestu knihovny.
+		\item Potvrďte tlačítkem \textbf{OK}.
+	\end{enumerate}
+
+	\vfill
+	\begin{block}{Pozor}
+		Zápis v tabulce knihoven odkazuje na soubor knihovny. Samotný soubor se tím do projektu nekopíruje.
+	\end{block}
+
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Tabulky knihoven}
+	\begin{description}
+		\item[sym-lib-table] Seznam přezdívek a cest ke knihovnám symbolů.
+		\item[fp-lib-table] Seznam přezdívek a cest ke knihovnám pouzder.
+	\end{description}
+
+	\medskip
+	Každý z těchto souborů může existovat na dvou místech:
+	\begin{itemize}
+		\item v konfigurační složce KiCadu pro \textbf{globální} knihovny,
+		\item ve složce projektu pro \textbf{projektové} knihovny.
+	\end{itemize}
+
+	\vfill
+	Soubory \texttt{*-lib-table} nejsou knihovny; pouze říkají KiCadu, kde knihovny hledat.
 
 \end{frame}
 
 %------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Správa knihoven pouzder}
+	Postup je stejný jako u knihoven symbolů:
+	\begin{enumerate}
+		\item V editoru DPS zvolte \textbf{Nastavení → Spravovat knihovny pouzder\ldots}
+		\item Vyberte globální nebo projektovou kartu.
+		\item Přidejte existující knihovnu pouzder, obvykle složku \texttt{*.pretty}.
+		\item Potvrďte tlačítkem \textbf{OK}.
+	\end{enumerate}
+
+	\vfill
+	Jednotlivá pouzdra KiCadu jsou soubory \texttt{*.kicad\_mod}; jejich umístění eviduje tabulka \texttt{fp-lib-table}.
 
 \end{frame}
 
