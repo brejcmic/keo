@@ -665,6 +665,86 @@
 
 %------------------------------------------------------------------------------
 \begin{frame}
+	\frametitle{Skupinová sběrnice}
+	Složené závorky umožňují vyjmenovat signály s různými názvy:
+
+	\begin{center}
+		\Large\texttt{\{SCL SDA INT\}}
+	\end{center}
+
+	Taková sběrnice obsahuje sítě \texttt{SCL}, \texttt{SDA} a \texttt{INT}.
+
+	\medskip
+	Před závorky lze přidat název skupiny:
+
+	\begin{center}
+		\Large\texttt{USB1\{DP DM VBUS\}}
+	\end{center}
+
+	Vzniknou sítě \texttt{USB1.DP}, \texttt{USB1.DM} a \texttt{USB1.VBUS}.
+
+	\vfill
+	Skupinová sběrnice může obsahovat také vektory, např. \texttt{MEMORY\{A[7..0] D[7..0] OE WE\}}.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Alias sběrnice}
+  \small
+	\begin{columns}[T]
+		\begin{column}{0.38\textwidth}
+			Alias je krátká přezdívka pro opakovaně používanou skupinu signálů.
+			\begin{enumerate}
+				\item Otevřete \textbf{Soubor → Nastavení schématu\ldots}
+				\item Zvolte \textbf{Definice aliasů sběrnice}.
+				\item Vytvořte např. alias \texttt{USB} s členy \texttt{DP}, \texttt{DM} a \texttt{VBUS}.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.60\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/bus_alias_definitions.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Použití aliasu sběrnice}
+	Pro alias
+	\begin{center}
+		\texttt{USB = DP DM VBUS}
+	\end{center}
+	platí:
+	\begin{description}
+		\item[\{USB\}:] odpovídá zápisu \texttt{\{DP DM VBUS\}},
+		\item[USB1\{USB\}:] vytvoří sítě \texttt{USB1.DP}, \texttt{USB1.DM} a \texttt{USB1.VBUS}.
+	\end{description}
+
+	\vfill
+	\begin{block}{Výhoda aliasu}
+		Dlouhý seznam členů se definuje pouze jednou. Ve schématu se potom používá krátký a přehledný název.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Rozvinutí členu sběrnice}
+	Jednotlivé vývody sběrnice není nutné ručně vypisovat:
+	\begin{enumerate}
+		\item Najeďte kurzorem na sběrnici.
+		\item Stiskněte \textbf{C} nebo zvolte \textbf{Rozvinout ze sběrnice} v kontextové nabídce.
+		\item Ze seznamu vyberte požadovaný člen, např. \texttt{DATA3} nebo \texttt{USB1.DP}.
+		\item Kliknutím umístěte popisek a pokračujte vodičem k vývodu součástky.
+	\end{enumerate}
+
+	\vfill
+	\begin{block}{Automaticky vytvořené prvky}
+		KiCad vytvoří vstup do sběrnice, správný popisek členu a navazující vodič. Tím se omezí překlepy i ruční práce.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
 	\frametitle{Druhy popisků}
 	\begin{columns}[T]
 		\begin{column}{0.31\textwidth}
