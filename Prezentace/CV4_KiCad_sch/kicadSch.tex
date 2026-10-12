@@ -358,5 +358,76 @@
 
 \subsection{\texorpdfstring{Popisové pole - razítko}{Popisove pole - razitko}}
 %------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Nastavení razítka}
+	\begin{columns}[T]
+		\begin{column}{0.36\textwidth}
+			Dialog otevřete:
+			\begin{itemize}
+				\item příkazem \textbf{Soubor → Nastavení stránky\ldots},
+				\item tlačítkem nastavení stránky v horní liště,
+				\item dvojklikem na rámeček nebo razítko výkresu.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.62\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{obr/page_settings.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Položky nastavení stránky}
+  \small
+	\begin{description}
+		\item[Formát a orientace:] Velikost papíru a orientace výkresu.
+		\item[Soubor výkresového listu:] Volitelná vlastní šablona rámečku a razítka.
+		\item[Datum vydání:] Datum vydání dokumentace; neaktualizuje se automaticky.
+		\item[Revize:] Označení verze zapojení nebo zařízení.
+		\item[Název:] Název zařízení nebo konkrétního schématu.
+		\item[Společnost:] Autor, organizace nebo pracoviště.
+		\item[Komentáře 1--9:] Další údaje podle použité šablony, např. autor, kontroloval nebo číslo dokumentu.
+	\end{description}
+
+	\vfill
+	Volba \textbf{Exportovat na ostatní listy} přenese danou položku na všechny listy schématu.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Číslování revize zařízení}
+	Pro cvičení použijeme zápis \textbf{X.Y.Z}, například \textbf{2.1.3}:
+
+	\medskip
+	\begin{description}
+		\item[První číslice -- X:] Konektorová, funkční, signálová a mechanická kompatibilita mezi DPS.
+		\item[Druhá číslice -- Y:] Označuje významnější úpravu zařízení při zachování kompatibility.
+		\item[Třetí číslice -- Z:] Volitelně označuje menší úpravu bez změny funkce a rozhraní (oprava potisku, změna filtračního kondenzátoru apod.).
+	\end{description}
+
+	\vfill
+	\begin{block}{Pravidlo kompatibility}
+		DPS se stejným prvním číslem revize musí zachovat možnost vzájemné náhrady.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Kdy změnit číslo revize}
+	\begin{description}
+		\item[První číslice:] Změna konektorů, jejich zapojení, napájení nebo chování, která znemožní přímou náhradu starší DPS. Patří sem i změna rozměrů a montážních otvorů.
+		\item[Druhá číslice:] Nová funkce, změna integrovaného obvodu, doplnění vizuální signalizace nebo jiná úprava zařízení při zachování možnosti přímé náhrady.
+		\item[Třetí číslice:] Optimalizace propojení, drobná oprava potisku, posun součástky nebo jiná malá výrobní úprava.
+	\end{description}
+
+	\vfill
+	\begin{exampleblock}{Příklad}
+		Revize \textbf{2.0}, \textbf{2.1} a \textbf{2.1.1} jsou vzájemně nahraditelné. Revize \textbf{3.0} již může používat nekompatibilní rozhraní.
+	\end{exampleblock}
+
+	\smallskip
+	KiCad význam čísel neurčuje; pole \textbf{Revize} je volný text a pravidla revizí stanovuje projekt.
+\end{frame}
 
 \end{document}
