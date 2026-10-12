@@ -229,8 +229,131 @@
 %------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Okno nastavení schématu}
+	V editoru schématu zvolte \textbf{Soubor → Nastavení schématu\ldots}
+	nebo použijte tlačítko nastavení v horní liště.
+
+	\medskip
     \centering
-			\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{obr/schematic_editor_settings.png}
+			\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/schematic_editor_settings.png}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Obecná nastavení}
+	\begin{description}
+		\item[Formátování:] Vzhled schématu: velikosti textů, šířky čar, spojovací body, přemostění a odkazy mezi listy.
+		\item[Anotace:] Způsob automatického přidělování referencí součástek, např. \texttt{R1}, \texttt{C1} nebo \texttt{U1}.
+		\item[Šablony názvů polí:] Vlastní pole automaticky přidávaná ke všem symbolům, např. výrobce nebo objednací číslo.
+		\item[Přednastavení BOM:] Uložená nastavení obsahu a formátu kusovníku; vlastní předvolby se zde zobrazují a odstraňují.
+	\end{description}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Pravidla a projektová nastavení}
+	\begin{description}
+		\item[Závažnost porušení:] Určuje, které kontroly ERC jsou chyby, varování nebo se ignorují.
+		\item[Mapa konfliktů vývodů:] Nastavuje povolená a chybná spojení elektrických typů vývodů.
+		\item[Třídy spojů:] Sdružují sítě (vodiče) se společnými grafickými vlastnostmi a pravidly návrhu DPS.
+		\item[Definice aliasů sběrnice:] Pojmenované skupiny signálů používaných ve sběrnicích.
+		\item[Textové proměnné:] Projektové hodnoty opakovaně použitelné v textech a polích.
+		\item[Vložené soubory:] Soubory uložené přímo ve schématu pro snadnější přenos projektu.
+	\end{description}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Třídy spojů}
+	\begin{columns}[T]
+		\begin{column}{0.38\textwidth}
+			Třída spojů sdružuje sítě, které mají mít stejné vlastnosti:
+			\begin{itemize}
+				\item barvu a styl ve schématu,
+				\item šířku vodiče a sběrnice,
+				\item šířku cesty, izolační vzdálenost a rozměry prokovů na DPS.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.60\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/schematic_setup_netclasses.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Vytvoření a přiřazení třídy spojů}
+	\begin{enumerate}
+		\item V části \textbf{Třídy spojů} přidejte novou třídu a pojmenujte ji, např. \texttt{POWER}.
+		\item Nastavte její vlastnosti a případně pořadí priority.
+		\item Síť přiřaďte jedním ze způsobů:
+		\begin{itemize}
+			\item vzorem názvu sítě, např. \texttt{+5V} nebo \texttt{USB*},
+			\item pravým tlačítkem na pojmenované síti → \textbf{Přiřadit třídu spojů\ldots},
+			\item direktivním označením nebo polem \texttt{Net Class} u označení sítě.
+		\end{itemize}
+	\end{enumerate}
+
+	\vfill
+	Třída \texttt{Default} je vždy přítomná a doplňuje vlastnosti, které jiná třída neurčuje.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Textové proměnné}
+	\begin{columns}[T]
+		\begin{column}{0.42\textwidth}
+      \small
+			\begin{enumerate}
+				\item V části \textbf{Textové proměnné} přidejte název a hodnotu.
+				\item Proměnnou vložte ve tvaru \texttt{\$\{NAZEV\}} například do razítka.
+				\item KiCad při zobrazení dosadí její aktuální hodnotu.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.56\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{obr/schematic_setup_text_variables.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Použití textových proměnných}
+	Příklad projektové proměnné:
+	\begin{center}
+		\texttt{VERSION = 1.0}
+	\end{center}
+	Text \texttt{Verze: \$\{VERSION\}} se zobrazí jako \texttt{Verze: 1.0}.
+
+	\medskip
+	Proměnné lze použít například v:
+	\begin{itemize}
+		\item grafických textech schématu i DPS,
+		\item polích symbolů, pouzder, označení a hierarchických listů,
+		\item popisovém poli výkresu.
+	\end{itemize}
+
+	\vfill
+	Projektové proměnné jsou společné pro editor schématu i editor DPS. Změna hodnoty se automaticky projeví na všech místech použití.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Vestavěné textové proměnné}
+	KiCad nabízí také systémové proměnné, například:
+	\begin{description}
+		\item[\$\{TITLE\}:] název výkresu,
+		\item[\$\{COMPANY\}:] název organizace,
+		\item[\$\{COMMENT1\}:] první komentář výkresu,
+		\item[\$\{FILENAME\}:] název souboru kořenového schématu,
+		\item[\$\{CURRENT\_DATE\}:] aktuální datum,
+		\item[\$\{\#\}:] číslo aktuálního listu,
+		\item[\$\{\#\#\}:] celkový počet listů schématu.
+	\end{description}
+
+	\vfill
+	Dostupnost systémových proměnných závisí na místě, kde jsou použity.
 \end{frame}
 
 \subsection{\texorpdfstring{Popisové pole - razítko}{Popisove pole - razitko}}
