@@ -3024,7 +3024,7 @@
 				)
 			)
 		)
-		(property "Value" "33n"
+		(property "Value" "3n3"
 			(at 162.56 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
