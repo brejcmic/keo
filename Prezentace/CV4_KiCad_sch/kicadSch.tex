@@ -1080,7 +1080,73 @@
 % Příprava podkladů pro návrh DPS
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Příprava podkladů pro návrh DPS}{Priprava podkladu pro navrh DPS}}
-\subsection{\texorpdfstring{Přečíslování referencí schématu}{Přečíslování referencí schématu}}
+\subsection{\texorpdfstring{Přečíslování referencí schématu}{Precislovani referenci schematu}}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Očíslování schématu}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.34\textwidth}
+			Anotace přiřadí symbolům jedinečné reference, např. \texttt{R1}, \texttt{C3} nebo \texttt{U2}.
+
+			\medskip
+			Nástroj otevřete:
+			\begin{itemize}
+				\item ikonou \textbf{Očíslovat schéma} v horní liště,
+				\item nebo přes \textbf{Nástroje → Očíslovat schéma\ldots}
+			\end{itemize}
+
+			\begin{center}
+				\includegraphics[width=1.2cm]{obr/annotate_24.png}
+			\end{center}
+		\end{column}
+		\begin{column}{0.64\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.71\textheight,keepaspectratio]{obr/annotate-dialog.png}
+		\end{column}
+	\end{columns}
+
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Rozsah a pořadí číslování}
+	\begin{description}
+		\item[Rozsah:] Celé schéma, pouze aktuální list nebo pouze označené symboly.
+		\item[Vnořené listy:] Volba \textbf{Zahrnout podřízené listy} rozšíří vybraný rozsah také do jeho hierarchie.
+		\item[Pořadí X:] Symboly se číslují zleva doprava; levější symboly dostanou nižší čísla.
+		\item[Pořadí Y:] Symboly se číslují shora dolů; horní symboly dostanou nižší čísla.
+	\end{description}
+
+	\vfill
+	\begin{block}{Existující reference}
+		\textbf{Zachovat existující anotaci} doplní pouze symboly s otazníkem. \textbf{Obnovit existující anotaci} přečísluje všechny symboly ve zvoleném rozsahu.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Volba čísel referencí}
+	V části \textbf{Číslování} lze zvolit počáteční hodnotu:
+	\begin{description}
+		\item[První volné číslo:] použije nejnižší dostupné číslo větší než zadaná hodnota; obvykle se zadává \texttt{0}.
+		\item[Číslo listu $\times$ 100:] na listu 3 vzniknou např. reference \texttt{R301}, \texttt{R302}, \ldots
+		\item[Číslo listu $\times$ 1000:] na listu 3 vzniknou např. reference \texttt{R3001}, \texttt{R3002}, \ldots
+	\end{description}
+
+	\medskip
+	\begin{itemize}
+		\item \textbf{Vymazat anotaci} odstraní reference ve zvoleném rozsahu.
+		\item \textbf{Očíslovat} provede zvolené přečíslování.
+		\item Spodní část okna zobrazí provedené akce, varování a chyby; výpis lze uložit.
+	\end{itemize}
+
+	\vfill
+	\begin{alertblock}{Pozor}
+		Po přečíslování již existujícího návrhu aktualizujte DPS ze schématu, aby reference součástek a pouzder zůstaly shodné.
+	\end{alertblock}
+\end{frame}
+
 %------------------------------------------------------------------------------
 
 \end{document}
