@@ -356,6 +356,7 @@
 	Dostupnost systémových proměnných závisí na místě, kde jsou použity.
 \end{frame}
 
+%------------------------------------------------------------------------------
 \subsection{\texorpdfstring{Popisové pole - razítko}{Popisove pole - razitko}}
 %------------------------------------------------------------------------------
 \begin{frame}
@@ -428,6 +429,148 @@
 
 	\smallskip
 	KiCad význam čísel neurčuje; pole \textbf{Revize} je volný text a pravidla revizí stanovuje projekt.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Přidání symbolu součástky}{Pridani symbolu soucastky}}
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Vložení součástky do schématu}
+	\begin{columns}[T]
+		\begin{column}{0.74\textwidth}
+			Nástroj \textbf{Přidat symbol} spustíte:
+			\begin{itemize}
+				\item ikonou v pravé nástrojové liště,
+				\item příkazem \textbf{Umístit → Přidat symboly\ldots},
+				\item klávesovou zkratkou \textbf{A} nad místem vložení.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.22\textwidth}
+			\centering
+			\includegraphics[width=1.2cm,interpolate=false]{obr/add_component_24.png}
+		\end{column}
+	\end{columns}
+
+	\vfill
+	\begin{block}{Doporučení}
+		Nejrychlejší je umístit kurzor na požadované místo a stisknout \textbf{A}.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Výběr symbolu}
+  \small
+	\begin{columns}[T]
+		\begin{column}{0.35\textwidth}
+			\begin{enumerate}
+				\item Do vyhledávání napište název, např. \texttt{R}, \texttt{LED} nebo \texttt{74HC14}.
+				\item Zkontrolujte symbol, popis a případné výchozí pouzdro.
+				\item Potvrďte klávesou \textbf{Enter} nebo tlačítkem \textbf{OK}.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.63\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.69\textheight,keepaspectratio]{obr/dialog_choose_component.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Umístění symbolu}
+	Po výběru je symbol přichycen ke kurzoru:
+	\begin{description}
+		\item[Levé tlačítko:] umístí symbol do schématu,
+		\item[R:] otočí symbol o $90^{\circ}$,
+		\item[X / Y:] zrcadlí symbol podle osy X nebo Y,
+		\item[E:] otevře vlastnosti ještě před umístěním,
+		\item[Esc:] ukončí vkládání.
+	\end{description}
+
+	\vfill
+	Je-li zapnuta volba \textbf{Umístit opakované kopie}, po umístění se nabídne další kopie stejného symbolu.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Hodnota a pouzdro součástky}
+  \small
+	\begin{columns}[T]
+		\begin{column}{0.38\textwidth}
+			Najeďte kurzorem na symbol a stiskněte \textbf{E}.
+			\begin{description}
+				\item[Hodnota:] hodnota nebo typ součástky, např. \texttt{10k}, \texttt{100n} nebo \texttt{74HC14}.
+				\item[Pouzdro:] fyzické provedení použité na DPS.
+			\end{description}
+		\end{column}
+		\begin{column}{0.60\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/dialog_component_properties.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Rychlá změna hodnoty a pouzdra}
+	Najeďte kurzorem na symbol nebo jej označte:
+	\begin{description}
+		\item[V:] upraví pouze pole \textbf{Hodnota},
+		\item[F:] upraví pouze pole \textbf{Pouzdro},
+		\item[E:] otevře všechny vlastnosti symbolu.
+	\end{description}
+
+	\medskip
+	Při výběru pouzdra použijte tlačítko knihovny vedle pole \textbf{Pouzdro}. Otevře se prohlížeč pouzder.
+
+	\vfill
+	\begin{block}{Kontrola}
+		Pouzdro musí odpovídat skutečné součástce: počtu vývodů, číslování vývodů, jejich rozteči i fyzickým rozměrům.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Více prvků v jednom pouzdře}
+	Některé integrované obvody obsahují několik stejných funkčních jednotek.
+
+	\medskip
+	Příklad \textbf{74HC14}:
+	\begin{itemize}
+		\item jednotky \textbf{A--F}: šest samostatných invertorů,
+		\item jednotka \textbf{G}: společné napájecí vývody,
+		\item všechny jednotky patří k jednomu pouzdru a mají společnou referenci, např. \textbf{U1A--U1G},
+		\item hodnota a pouzdro jsou společné pro celý obvod \textbf{U1}.
+	\end{itemize}
+
+	\vfill
+	\begin{alertblock}{Důležité}
+		Do schématu vložte také napájecí jednotku. Jinak nebudou napájecí vývody integrovaného obvodu zapojeny.
+	\end{alertblock}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Vložení víceprvkové součástky}
+	\begin{enumerate}
+		\item Stiskněte \textbf{A} a vyberte \texttt{74HC14}.
+		\item Zapněte volbu \textbf{Umístit všechny jednotky}.
+		\item Umístěte postupně jednotky \textbf{A--F} a napájecí jednotku \textbf{G}.
+		\item Nepoužité invertory ponechte ve schématu a jejich vstupy zapojte do definované logické úrovně.
+	\end{enumerate}
+
+	\medskip
+	Pokud nechcete vložit všechny jednotky najednou:
+	\begin{itemize}
+		\item umístěte první jednotku,
+		\item v kontextové nabídce symbolu použijte \textbf{Umístit další jednotku symbolu},
+		\item KiCad nabídne další dosud neumístěnou jednotku se stejnou referencí.
+	\end{itemize}
+
+	\vfill
+	Klávesa \textbf{Esc} kdykoli ukončí posloupnost vkládání.
+
 \end{frame}
 
 \end{document}
