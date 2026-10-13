@@ -1075,6 +1075,61 @@
 	\end{alertblock}
 \end{frame}
 
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Častá chyba: nezapojený pin součástky}
+  \small
+	\begin{columns}[T]
+		\begin{column}{0.38\textwidth}
+			ERC hlásí:
+
+			\medskip
+			\textbf{Vývod není připojen}
+
+			\medskip
+			Nastává při opomenutí:
+			
+			\begin{itemize}
+				\item označení vědomě neaktivních výstupů,
+				\item zakončení nepoužitých vstupů.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.60\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/eeschema_unconnected_pins.png}
+		\end{column}
+	\end{columns}
+
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Umístění označení nezapojeno}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.43\textwidth}
+			Nezapojené vstupy a výstupy označte symbolem:
+			\begin{center}
+				\includegraphics[width=1.2cm]{obr/unconnected_24.png}
+			\end{center}
+			\begin{enumerate}
+				\item Přidejte symbol klávesou \textbf{Q}.
+				\item Symbol lze přidávat na sítě i přímo na piny.
+				\item Znovu spusťte ERC.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.55\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{obr/eeschema_unconnected_pins_fixed.png}
+		\end{column}
+	\end{columns}
+
+	\medskip
+	\begin{alertblock}{Důležité}
+		Nezapojené vstupy přednostně připojujte na známou bezpečnou úroveň napětí (zamezení kmitů).
+	\end{alertblock}
+\end{frame}
+
 
 %------------------------------------------------------------------------------
 % Příprava podkladů pro návrh DPS
