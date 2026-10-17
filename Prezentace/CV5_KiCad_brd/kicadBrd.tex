@@ -268,7 +268,60 @@
 
 %------------------------------------------------------------------------------
 \begin{frame}{Omezení: výroba v JLCPCB}
+	\small
+	Společné konzervativní nastavení pro levnou \textbf{2vrstvou i 4vrstvou FR4 DPS}, rozměry nejvýše \textbf{100\,$\times$\,100 mm}.
+	\begin{center}
+		\begin{tabular}{lr}
+			\textbf{Omezení v KiCadu} & \textbf{Nastavit} \\
+			\hline
+			Minimální šířka spoje & 0,15 mm \\
+			Minimální odstup mědi & 0,15 mm \\
+			Minimální průměr prokovu & 0,60 mm \\
+			Minimální vrtání & 0,30 mm \\
+			Minimální mezikruží prokovu & 0,15 mm \\
+			Měď od frézovaného okraje & 0,30 mm \\
+			Měď od cizího otvoru & 0,35 mm \\
+			Odstup mezi hranami vrtání & 0,50 mm \\
+		\end{tabular}
+	\end{center}
+	\begin{block}{Pravidla pro cvičení}
+	Jde o zvolené hodnoty s rezervou, nikoli o technologická minima JLCPCB. Pro běžné spoje používejte šířku 0,25 mm nebo větší.
+	\end{block}
+	\vfill
+	{\tiny Zdroj: \href{https://jlcpcb.com/capabilities/pcb-capabilities}{JLCPCB -- PCB Capabilities}, ověřeno 17.\,10.\,2026.}
+\end{frame}
 
+%------------------------------------------------------------------------------
+\begin{frame}{JLCPCB: otvory a potisk bez zvláštních požadavků}
+	\small
+	\begin{itemize}
+		\item Použijte běžné \textbf{průchozí prokovy 0,60/0,30 mm} (vnější průměr / vrtání), bez výplně a překovení.
+		\item Otvory pro vývody součástek: mezikruží alespoň \textbf{0,25 mm}; např. vrtání 0,80 mm a ploška 1,30 mm. Nezaměňujte s mezikružím prokovu.
+		\item Nepokovené otvory nejméně \textbf{0,50 mm}; výřezy navrhujte široké \textbf{nad 1 mm} a omezte jejich počet.
+		\item Potisk: výška textu alespoň \textbf{1 mm}, tloušťka tahu \textbf{0,15 mm}, odstup od plošek alespoň \textbf{0,15 mm}.
+	\end{itemize}
+	\begin{block}{Malé vrtání nemusí být zdarma}
+	Vrtání 0,15 mm je příplatkové. U vícevrstvých desek je 0,20 mm bez příplatku při vnějším průměru prokovu alespoň 0,45 mm. Pro cvičení ponechte vrtání 0,30 mm.
+	\end{block}
+	\vfill
+	{\tiny Zdroje: \href{https://jlcpcb.com/capabilities/pcb-capabilities}{PCB Capabilities}, \href{https://cart.jlcpcb.com/quote}{kalkulátor JLCPCB}; ověřeno 17.\,10.\,2026.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{JLCPCB: zachování základní ceny objednávky}
+	\small
+	\begin{itemize}
+		\item \textbf{Jeden návrh, samostatná deska, 5 kusů}; oba rozměry nejvýše \textbf{100 mm}. Bez panelizace, V-drážek a odlamovacích můstků.
+		\item \textbf{FR4, 2 nebo 4 vrstvy, tloušťka 1,6 mm}, zelená maska, bílý potisk; standardní skladba výrobce.
+		\item Vnější měď \textbf{1 oz}, u 4 vrstev vnitřní měď \textbf{0,5 oz}; povrch \textbf{HASL}, nejlevnější varianta v kalkulátoru.
+		\item Bez ENIG, pokovení hran, půlotvorů, slepých prokovů, výplně pryskyřicí a expresní výroby. Ponechte výrobní označení JLCPCB.
+		\item Nejvýše \textbf{150\,000 vrtání/m$^2$}: \textbf{1\,500 otvorů na 100\,$\times$\,100 mm}, u menší desky úměrně méně.
+	\end{itemize}
+	\begin{block}{Kontrola ceny}
+	Po nahrání Gerberů ověřte cenu pro zvolený počet vrstev. Akce se mění; doprava a daně se účtují zvlášť.
+	\end{block}
+	\vfill
+	{\tiny Zdroje: \href{https://jlcpcb.com/help/article/in-what-cases-will-there-be-charged-extra}{JLCPCB -- příplatky}, \href{https://cart.jlcpcb.com/quote}{kalkulátor}; ověřeno 17.\,10.\,2026.}
 \end{frame}
 
 %------------------------------------------------------------------------------
