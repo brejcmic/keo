@@ -69,13 +69,7 @@
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
+      "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -212,9 +206,7 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [
-        0.0
-      ],
+      "track_widths": [],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -241,12 +233,7 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [
-        {
-          "diameter": 0.0,
-          "drill": 0.0
-        }
-      ],
+      "via_dimensions": [],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -256,7 +243,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "${REVISION}"
+      "sch_revision": ""
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -482,7 +469,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "error",
+      "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "same_local_global_power": "warning",
@@ -500,6 +487,7 @@
       "wire_dangling": "error"
     }
   },
+  "legacy": [],
   "libraries": {
     "pinned_footprint_libs": [],
     "pinned_symbol_libs": []
@@ -528,26 +516,54 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
-      },
-      {
-        "name": "Power",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
-        "schematic_color": "rgb(255, 0, 0)",
-        "tuning_profile": ""
       }
     ],
     "meta": {
       "version": 5
     },
     "net_colors": {},
-    "netclass_assignments": {},
-    "netclass_patterns": [
-      {
-        "netclass": "Power",
-        "pattern": "*5V"
-      }
-    ]
+    "netclass_assignments": {
+      "/CHA": [
+        "Logic"
+      ],
+      "/CHB": [
+        "Logic"
+      ],
+      "/SAMP": [
+        "Logic"
+      ],
+      "/TRIANGLE_IN": [
+        "Logic"
+      ],
+      "/TWG_IN": [
+        "Logic"
+      ],
+      "/TWG_OUT": [
+        "Logic"
+      ],
+      "/Wave Shaper/ACDC": [
+        "Logic"
+      ],
+      "/Wave Shaper/COMPENSATION_NEG": [
+        "Logic"
+      ],
+      "/Wave Shaper/COMPENSATION_POS": [
+        "Logic"
+      ],
+      "/Wave Shaper/INPUT_SIGNAL": [
+        "Logic"
+      ],
+      "/~{CHA}": [
+        "Logic"
+      ],
+      "/~{CHB}": [
+        "Logic"
+      ],
+      "/~{SAMP}": [
+        "Logic"
+      ]
+    },
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {
@@ -564,7 +580,7 @@
     "annotate_start_num": 0,
     "annotation": {
       "method": 0,
-      "sort_order": 1
+      "sort_order": 0
     },
     "bom_export_filename": "${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
@@ -583,14 +599,14 @@
       "fields_ordered": [
         {
           "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
+          "label": "Reference",
+          "name": "Reference",
+          "show": true
         },
         {
           "group_by": false,
-          "label": "Reference",
-          "name": "Reference",
+          "label": "Qty",
+          "name": "${QUANTITY}",
           "show": true
         },
         {
@@ -601,89 +617,53 @@
         },
         {
           "group_by": true,
+          "label": "DNP",
+          "name": "${DNP}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Exclude from BOM",
+          "name": "${EXCLUDE_FROM_BOM}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Exclude from Board",
+          "name": "${EXCLUDE_FROM_BOARD}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Exclude from Simulation",
+          "name": "${EXCLUDE_FROM_SIM}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Exclude from Position Files",
+          "name": "${EXCLUDE_FROM_POS_FILES}",
+          "show": true
+        },
+        {
+          "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
           "show": true
         },
         {
           "group_by": false,
-          "label": "Počet",
-          "name": "${QUANTITY}",
-          "show": true
-        },
-        {
-          "group_by": true,
-          "label": "DNP",
-          "name": "${DNP}",
-          "show": false
-        },
-        {
-          "group_by": true,
-          "label": "Exclude from BOM",
-          "name": "${EXCLUDE_FROM_BOM}",
-          "show": false
-        },
-        {
-          "group_by": true,
-          "label": "Exclude from Board",
-          "name": "${EXCLUDE_FROM_BOARD}",
-          "show": false
-        },
-        {
-          "group_by": true,
-          "label": "Exclude from Simulation",
-          "name": "${EXCLUDE_FROM_SIM}",
-          "show": false
-        },
-        {
-          "group_by": true,
-          "label": "Exclude from Position Files",
-          "name": "${EXCLUDE_FROM_POS_FILES}",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Popis",
-          "name": "Description",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Pins",
-          "name": "Sim.Pins",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "TME Part #",
-          "name": "TME Part #",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "JLCPCB Part #",
-          "name": "JLCPCB Part #",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Device",
-          "name": "Sim.Device",
-          "show": false
+          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "",
+      "name": "Default Editing",
       "sort_asc": true,
-      "sort_field": "${ITEM_NUMBER}"
+      "sort_field": "Reference"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -700,14 +680,14 @@
       "intersheets_ref_show": false,
       "intersheets_ref_suffix": "",
       "junction_size_choice": 3,
-      "label_size_ratio": 0.375,
+      "label_size_ratio": 0.25,
       "operating_point_overlay_i_precision": 3,
       "operating_point_overlay_i_range": "~A",
       "operating_point_overlay_v_precision": 3,
       "operating_point_overlay_v_range": "~V",
       "overbar_offset_ratio": 1.23,
-      "pin_symbol_size": 25.0,
-      "text_offset_ratio": 0.15
+      "pin_symbol_size": 0.0,
+      "text_offset_ratio": 0.08
     },
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
@@ -719,42 +699,12 @@
     "reuse_designators": true,
     "subpart_first_id": 65,
     "subpart_id_separator": 0,
-    "top_level_sheets": [
-      {
-        "filename": "pwm_generator.kicad_sch",
-        "name": "pwm_generator",
-        "uuid": "8c5142ba-d623-44cf-91e0-639551b20541"
-      }
-    ],
-    "used_designators": "#FLG1-3,#PWR1-67,C1-26,D1-6,J1-3,JP1-2,R1-38,U1-14",
+    "top_level_sheets": [],
+    "used_designators": "",
     "variants": []
   },
-  "sheets": [
-    [
-      "8c5142ba-d623-44cf-91e0-639551b20541",
-      "pwm_generator"
-    ],
-    [
-      "749c89d5-b92c-45c1-9dff-9c60a81aaaf0",
-      "Triangle Wave Generator"
-    ],
-    [
-      "f7b74be6-6a94-49e5-85ae-7c5edd4c8bcf",
-      "Wave Shaper"
-    ],
-    [
-      "81d99b01-370f-4ad3-ad14-75c6aef27a3a",
-      "PWM_CHB"
-    ],
-    [
-      "ca31a367-75f3-4fc3-8750-2028a998846d",
-      "PWM_CHA"
-    ]
-  ],
-  "text_variables": {
-    "REVISION": "1.0",
-    "TITLE": "Generátor PWM"
-  },
+  "sheets": [],
+  "text_variables": {},
   "tuning_profiles": {
     "meta": {
       "version": 0
