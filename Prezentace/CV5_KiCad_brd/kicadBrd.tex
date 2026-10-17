@@ -421,8 +421,96 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\subsection{\texorpdfstring{Aktualizace DPS ze schématu}{Aktualizace DPS ze schématu}}
+\subsection{\texorpdfstring{Aktualizace DPS ze schématu}{Aktualizace DPS ze schematu}}
 %------------------------------------------------------------------------------
+\begin{frame}{Aktualizace DPS ze schématu}
+	\begin{enumerate}
+		\item Ve schématu zkontrolujte reference, přiřazení pouzder a výsledek ERC. Schéma uložte pomocí \textbf{Ctrl+S}.
+		\item Otevřete Editor DPS stejného projektu.
+		\item Zvolte \textbf{Nástroje → Aktualizovat DPS ze schématu\ldots}, stiskněte \textbf{F8} nebo použijte ikonu v horní liště:
+	\end{enumerate}
+	\begin{center}
+		\includegraphics[height=0.65cm]{obr/update_pcb_from_schematic_icon.png}
+		\quad\textbf{Aktualizovat DPS ze schématu}
+	\end{center}
+	\begin{block}{Přímý přenos v projektu}
+	Přenáší pouzdra, pole a elektrické sítě. Samostatný soubor netlistu při tomto postupu nepotřebujete.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Aktualizační okno}
+	\centering
+	\includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{obr/update_pcb_from_schematic_cs.png}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Aktualizace: propojení a skupiny}
+	\begin{description}
+		\item[Opětovné propojení podle referencí] Páruje symbol a pouzdro podle označení, např. R1. Běžně ponechte \textbf{vypnuté}: KiCad používá jejich jedinečné identifikátory.
+		\item[Seskupit pouzdra podle skupiny symbolu] Přenese seskupení symbolů do skupin pouzder na DPS.
+		\item[Apply design block layouts to new groups] Volba pro přenos rozmístění z návrhových bloků. Pro běžný přenos schématu ji nepotřebujete.
+	\end{description}
+	\begin{block}{Kdy obnovit propojení podle referencí?}
+	Například po smazání a opětovném vložení symbolu se stejnou referencí. Nejprve ověřte správné párování; při další běžné aktualizaci volbu opět vypněte.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Aktualizace: nahrazení a mazání pouzder}
+	\begin{description}
+		\item[Nahrazení pouzder těmi uvedenými v symbolu] Promítne změnu přiřazeného pouzdra ze schématu také do existující DPS.
+		\item[Smazat pouzdra bez symbolů] Odstraní pouzdra, která již nemají odpovídající symbol. Pouzdra s atributem \textbf{Není ve schématu} zůstanou.
+		\item[Přepsat zámky] Dovolí nahradit nebo odstranit i uzamčená pouzdra. Zapínejte pouze záměrně.
+	\end{description}
+	\begin{block}{Před potvrzením}
+	Zkontrolujte plánovaná nahrazení a odstranění. Změna pouzdra může vyžadovat úpravu jeho okolních spojů.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Aktualizace: pole a seznam změn}
+	\small
+	\begin{description}
+		\item[Aktualizovat pole pouzder ze symbolů] Přenese nové a změněné hodnoty polí.
+		\item[Odebrat pole nenalezená v symbolech] Smaže dodatečná pole pouzdra, která ve schématu nejsou. Vypněte, pokud je chcete na DPS zachovat.
+		\item[Změny k provedení] Výpis plánovaných akcí a případných problémů. Před aktualizací opravte chyby a posuďte varování.
+		\item[Zobrazit] Filtry \textbf{Chyby, Varování, Akce, Info} mění zobrazení výpisu, nikoli rozsah aktualizace.
+		\item[Uložit\ldots] Uloží zprávu o změnách do souboru; neukládá tím desku.
+	\end{description}
+	\begin{block}{Rozhodující tlačítka}
+	\textbf{Aktualizovat DPS} provede změny. \textbf{Zavřít} ukončí dialog; již provedenou aktualizaci nevrací zpět.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Aktualizace: dokončení a kontrola}
+	\begin{enumerate}
+		\item Projděte výpis a stiskněte \textbf{Aktualizovat DPS}.
+		\item Zavřete dialog. Nová pouzdra umístěte kliknutím do pracovní plochy; následně je rozmístěte jednotlivě.
+		\item Zkontrolujte reference, pouzdra a pomocné čáry propojení (ratsnest).
+		\item Po změně schématu upravte také dotčené spoje a zóny.
+		\item Desku uložte pomocí \textbf{Ctrl+S}; po dokončení úprav spusťte kontrolu \textbf{DRC}.
+	\end{enumerate}
+	\begin{block}{Aktualizace nenavrhuje spoje}
+	Přenos určí, které plošky mají být propojené. Rozmístění nových pouzder a vedení spojů provede návrhář.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Alternativa: přenos pomocí netlistu}
+	\begin{enumerate}
+		\item V editoru schématu zvolte \textbf{Soubor → Exportovat → Netlist\ldots}
+		\item Vyberte formát \textbf{KiCad} a uložte soubor \texttt{*.net}.
+		\item V Editoru DPS zvolte \textbf{Soubor → Importovat → Netlist\ldots} a načtěte jej.
+		\item Zkontrolujte navržené změny, proveďte aktualizaci a rozmístěte nová pouzdra.
+	\end{enumerate}
+	\begin{block}{Kdy použít netlist?}
+	Například při odděleném předávání schématu a DPS. Po změně schématu je nutné netlist znovu exportovat a načíst. V jednom projektu používejte přímou aktualizaci \textbf{F8}.
+	\end{block}
+	\vfill
+	{\tiny Postup: \href{https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html}{KiCad 10 -- PCB Editor}, \href{https://docs.kicad.org/10.0/en/eeschema/eeschema.html}{Schematic Editor}.}
+\end{frame}
 
 %------------------------------------------------------------------------------
 % Generování výrobních podkladů - Gerber
