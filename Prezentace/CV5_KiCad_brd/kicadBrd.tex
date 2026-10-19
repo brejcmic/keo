@@ -925,13 +925,114 @@
 %------------------------------------------------------------------------------
 % Generování výrobních podkladů - Gerber
 %------------------------------------------------------------------------------
-\section{\texorpdfstring{Nepájivá maska a pipisky}{Nepajiva maska a popisky}}
-\subsection{\texorpdfstring{Upravy nepajive masky}{Upravy nepajive masky}}
+\section{\texorpdfstring{Nepájivá maska a potisk}{Nepajiva maska a potisk}}
+\subsection{\texorpdfstring{Úpravy nepájivé masky}{Upravy nepajive masky}}
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Nepájivá maska: co už obsahují pouzdra}
+	\begin{itemize}
+		\item Nepájivá maska chrání povrch mědi a omezuje nežádoucí rozlévání pájky.
+		\item \textbf{Běžné pájecí plošky součástek mají otvor v masce již definovaný v pouzdře.} Není nutné je ručně odkrývat.
+		\item U SMD plošky je otvor obvykle na straně plošky; průchozí pájecí ploška jej má standardně na obou stranách.
+	\end{itemize}
+	\begin{center}
+		\begin{tabular}{ll}
+			\textbf{F.Mask} & Otvory v masce na přední straně (top). \\
+			\textbf{B.Mask} & Otvory v masce na zadní straně (bottom). \\
+			\textbf{F.Paste / B.Paste} & Otvory šablony pro pájecí pastu; jiný účel. \\
+		\end{tabular}
+	\end{center}
+	\begin{block}{Jak číst vrstvy masky}
+	Nakreslená plocha ve vrstvě Mask znamená \textbf{odkrytí povrchu}, nikoli přidání ochranného laku.
+	\end{block}
+\end{frame}
 
 %------------------------------------------------------------------------------
-\subsection{\texorpdfstring{Úpravy popisků}{Upravy popisku}}
+\begin{frame}[t]{Odkrytí vlastní měděné plochy}
+	\small
+	\begin{enumerate}
+		\item Nejprve vytvořte vodivou plochu na \textbf{F.Cu} nebo \textbf{B.Cu}, např. ploškou vlastního pouzdra nebo zónou přiřazenou správné síti.
+		\item Pro odkrytí na horní straně vyberte \textbf{F.Mask}; pro spodní stranu \textbf{B.Mask}.
+		\item Použijte ikonu \textbf{Kreslit obdélníky} nebo \textbf{Umístit → Obdélník}. Nakreslete oblast, kterou chcete odkrýt.
+		\item Vyberte tvar: \textbf{pravé tlačítko → Vlastnosti} nebo \textbf{E}. Ověřte vrstvu Mask a nastavte \textbf{plnou výplň}, aby se odkryl celý vnitřek.
+		\item Zkontrolujte polohu a rozměry otvoru vůči mědi. Otvor nesmí nechtěně odkrýt sousední spoje.
+	\end{enumerate}
+	\begin{block}{Například dotykový kontakt}
+	Měděná plocha vytváří elektrický kontakt, tvar v masce nad ní zpřístupní jeho povrch. Samotná kresba v Mask žádnou měď nevytvoří. Do Paste otvor pro takový kontakt běžně nepřidávejte.
+	\end{block}
+\end{frame}
+
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Maska: kontrola odkrytých míst}
+	\begin{itemize}
+		\item Zapněte zobrazení příslušné vrstvy \textbf{Mask} spolu s mědí a prohlédněte obrysy otvorů.
+		\item Ve \textbf{3D prohlížeči} ověřte, které plochy jsou skutečně odkryté a které chrání maska.
+		\item Otvor u plošky lze upravit jejím nastavením \textbf{rozšíření nepájivé masky}. Kladná hodnota otvor zvětšuje, záporná zmenšuje.
+		\item Základní plošky obvykle ponechte beze změny; rozšíření přizpůsobte pokynům výrobce.
+	\end{itemize}
+	\begin{block}{Prokov nemusí být odkrytý}
+	Prokov může být zakryt maskou (tenting). Jeho pokovená stěna přesto vodivě propojuje vrstvy; zakrytí maskou elektrické spojení neruší.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Úpravy potisku}{Upravy potisku}}
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Potisk a viditelnost referencí součástek}
+	\begin{itemize}
+		\item Potisk na přední straně je ve vrstvě \textbf{F.Silkscreen}, na zadní ve \textbf{B.Silkscreen}.
+		\item Reference, např. \textbf{R12, C3, U1}, jednoznačně propojují součástku se schématem a kusovníkem.
+		\item \textbf{Reference musí zůstat čitelné i po osazení.} Umístěte je vedle součástky, nikoli pod její tělo; musí být jasné, ke které součástce patří.
+		\item Nepřekrývejte jiné texty, pájecí plošky ani otvory v masce. Ponechte rezervu od okraje desky.
+	\end{itemize}
+	\begin{block}{Reference má přednost před hodnotou}
+	Při nedostatku místa lze hodnotu součástky v potisku skrýt. Referenci raději přesuňte. Text ve vrstvě F.Fab nebo B.Fab není výrobní potisk.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Přesouvání popisků: filtr výběru}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.58\textwidth}
+			\begin{enumerate}
+				\item Vpravo dole v panelu \textbf{Filtr výběru} vypněte \textbf{Všechny položky} a ponechte pouze \textbf{Text}.
+				\item Výběr \textbf{pouzder} musí být vypnutý. Snáze tak uchopíte referenci místo celé součástky.
+				\item Najeďte nad text: \textbf{pravé tlačítko → Přesunout} nebo \textbf{M}. Kliknutím potvrďte novou polohu.
+				\item \textbf{R} otočí text; \textbf{E} nebo \textbf{pravé tlačítko → Vlastnosti} otevře jeho nastavení.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.39\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.37\textheight,keepaspectratio]{obr/selection_filter.png}
+			
+			{\scriptsize Ukázka panelu: pro práci s popisky ponechte jen Text.}
+		\end{column}
+	\end{columns}
+	\medskip
+	\textbf{Po úpravách znovu povolte ostatní typy objektů.} Filtr mění možnost výběru, nikoli zobrazení nebo obsah desky.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Vlastnosti popisku a čitelnost potisku}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.45\textwidth}
+			\begin{itemize}
+				\item Ve vlastnostech pole zkontrolujte \textbf{Zobrazit}, správnou vrstvu potisku a natočení.
+				\item Ověřte také viditelnost vrstvy a referencí v panelu \textbf{Vzhled}. Zobrazení skrytých polí v editoru je jen pomůcka.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.52\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.47\textheight,keepaspectratio]{obr/footprint_field.png}
+			
+			{\scriptsize Dialog pole hodnoty; reference má obdobné nastavení. Pro potisk zvolte Silkscreen místo F.Fab.}
+		\end{column}
+	\end{columns}
+	\begin{block}{Co bude vidět na hotové desce?}
+	Reference musí být povolená a ve vrstvě potisku, mimo tělo součástky i odkrytou měď. Ověřte to v 3D pohledu a později ve výrobních podkladech.
+	\end{block}
+\end{frame}
 
 %------------------------------------------------------------------------------
 % Generování výrobních podkladů - Gerber

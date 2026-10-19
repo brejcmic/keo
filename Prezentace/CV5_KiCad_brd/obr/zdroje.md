@@ -1,5 +1,17 @@
 # Zdroje obrázků
 
+## Nepájivá maska a popisky
+
+KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější):
+
+- `selection_filter.png`: https://docs.kicad.org/10.0/en/pcbnew/images/selection_filter.png
+  (výchozí stav panelu, nikoli nastavení jen pro text).
+- `footprint_field.png`: https://docs.kicad.org/10.0/en/pcbnew/images/footprint_field.png
+  (pole hodnoty ve vrstvě F.Fab; na slajdu vysvětleno nastavení pro referenci a potisk).
+
+Postupy ověřeny v PCB Editor 10: Solder mask/paste, Editing shape properties,
+Editing footprint fields, Selection and the selection filter a Pad properties.
+
 ## Ikony zón a ohraničení DPS
 
 KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější).
