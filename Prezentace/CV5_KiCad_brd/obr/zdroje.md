@@ -1,5 +1,21 @@
 # Zdroje obrázků
 
+## Rozlitá měď a Správce zón
+
+KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější):
+
+- `zone_properties.png`: https://docs.kicad.org/10.0/en/pcbnew/images/zone_properties.png
+- `zone_manager.png`: https://docs.kicad.org/10.0/en/pcbnew/images/zone_manager.png
+- `zone_outline.png`: https://docs.kicad.org/10.0/en/getting_started_in_kicad/images/zone-outline.png
+- `zone_filled.png`: https://docs.kicad.org/10.0/en/getting_started_in_kicad/images/zone-filled.png
+  (na slajdu o připojení plošek použit také výřez tepelného můstku).
+
+Postupy ověřeny v PCB Editor 10, Working with zones / Zone manager:
+https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html#working-with-zones
+Uživatel nahradil `zone_properties.png` a `zone_manager.png` českými snímky
+své instalace KiCadu. Výše uvedené odkazy u těchto souborů označují původní
+nahrazené ilustrace; ostatní snímky zón nadále pocházejí z dokumentace.
+
 Snímky pořízeny 17. 10. 2026 z místní české instalace KiCad 10.0,
 Editor DPS, projekt `KiCad_prj/pwm_generator/pwm_generator.kicad_pro`.
 Zachycují skutečné hodnoty otevřeného projektu; nejde o ukázku aplikovaných

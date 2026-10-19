@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{tgheros}
+\usepackage{tgcursor}
 \usepackage{array}
 \usepackage{color}
 \usepackage{hyperref}
@@ -517,6 +518,10 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Ohraničení DPS}{Ohraničení DPS}}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
 \subsection{\texorpdfstring{Rozmisťování součástek}{Rozmistovani soucastek}}
 %------------------------------------------------------------------------------
 \begin{frame}{Rozmisťování pouzder: základní příkazy}
@@ -699,6 +704,143 @@
 %------------------------------------------------------------------------------
 \subsection{\texorpdfstring{Rozlitá měď}{Rozlita med}}
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Rozlitá měď: vytvoření zóny}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.51\textwidth}
+			\begin{enumerate}
+				\item Vyberte měděnou vrstvu, např. \textbf{B.Cu}.
+				\item V pravé liště zvolte \textbf{Přidat vyplněnou zónu} nebo stiskněte \textbf{Ctrl+Shift+Z}.
+				\item Klikněte na první roh. V dialogu vyberte síť, např. \textbf{GND}, a potvrďte \textbf{OK}.
+				\item Klikáním nakreslete obrys zóny; poslední roh potvrďte \textbf{dvojklikem}.
+				\item Stisknutím \textbf{B} vytvořte měděnou výplň.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.46\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.61\textheight,keepaspectratio]{obr/zone_outline.png}
+			
+			{\scriptsize Obrys určuje rozsah zóny; samotný obrys ještě není měď.}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Vlastnosti měděné zóny}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.43\textwidth}
+			\begin{itemize}
+				\item Vyberte obrys: \textbf{pravé tlačítko → Vlastnosti} nebo \textbf{E}.
+				\item \textbf{Síť}: určuje elektrické propojení, obvykle GND.
+				\item \textbf{Vrstvy}: jedna zóna může mít výplň na více vrstvách.
+				\item \textbf{Odstup}: mezera od cizích sítí; platí i návrhová pravidla.
+				\item \textbf{Minimální šířka}: nejmenší šířka měděného krčku výplně.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.54\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.63\textheight,keepaspectratio]{obr/zone_properties.png}
+			
+			{\scriptsize Hodnoty ze snímku nejsou doporučením pro školní desku.}
+		\end{column}
+	\end{columns}
+	\medskip
+	Výplně na různých vrstvách se vytvoří samostatně. Pro jejich vodivé spojení použijte \textbf{prokovy nebo průchozí plošky}.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Vyplnění zóny a kontrola výsledku}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.48\textwidth}
+			\begin{itemize}
+				\item \textbf{B}: znovu vyplnit všechny zóny; také \textbf{Upravit → Vyplnit všechny zóny}.
+				\item \textbf{Ctrl+B}: odstranit výplně, obrysy zůstanou.
+				\item Po přesunu součástek, tras nebo změně obrysu výplň \textbf{obnovte klávesou B}.
+				\item Skrytí výplně ikonou v levé liště pouze změní zobrazení.
+				\item Zkontrolujte propojení, izolované ostrůvky a nakonec spusťte \textbf{DRC}.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.49\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.61\textheight,keepaspectratio]{obr/zone_filled.png}
+			
+			{\scriptsize Výplň GND zachovává odstup od spojů jiných sítí.}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Napojení plošek a měděné ostrůvky}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.57\textwidth}
+			\begin{description}
+				\item[Tepelné můstky] Plošku připojí úzkými měděnými paprsky. Omezí odvod tepla při pájení.
+				\item[Plné připojení] Ploška přímo splývá s mědí; při pájení odvádí více tepla.
+				\item[Bez připojení] Zóna se k ploškám nepřipojí ani při stejné síti.
+				\item[Odstranit ostrůvky] Odstraní izolované části výplně podle zvoleného nastavení. Výsledek vždy zkontrolujte.
+			\end{description}
+		\end{column}
+		\begin{column}{0.40\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.38\textheight,keepaspectratio,trim=95 375 570 140,clip]{obr/zone_filled.png}
+			
+			{\scriptsize Detail plošky GND s tepelnými můstky.}
+		\end{column}
+	\end{columns}
+	\medskip
+	Ve vlastnostech zóny nastavíte \textbf{mezeru kolem plošky} a \textbf{šířku můstků}. Příliš úzký prostor může zabránit vytvoření připojení.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Správce zón: společný přehled}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.32\textwidth}
+			\begin{itemize}
+				\item Otevřete \textbf{Nástroje → Správce zón\ldots}
+				\item Také tlačítkem \textbf{Otevřít správce zón\ldots} ve vlastnostech zóny.
+				\item Vlevo: seznam a pořadí zón.
+				\item Vpravo: nastavení a náhled výplně.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.66\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{obr/zone_manager.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Správce zón: úpravy a potvrzení}
+	\begin{enumerate}
+		\item V seznamu vyberte zónu podle \textbf{názvu, sítě a vrstvy}. Seznam lze filtrovat.
+		\item Vpravo upravte její nastavení; u vícevrstvé zóny přepínejte záložky vrstev náhledu.
+		\item \textbf{Aktualizovat zobrazené zóny} přepočítá náhled. Změny tím ještě nepotvrdíte do desky.
+		\item Zapněte \textbf{Znova vyplnění zón}, pokud chcete po potvrzení znovu vyplnit zóny desky.
+		\item \textbf{OK} změny použije; \textbf{Zrušit} je zruší. Bez přepočtu při potvrzení stiskněte v editoru \textbf{B}.
+	\end{enumerate}
+	\begin{block}{Kdy správce pomůže?}
+	Při více napájecích sítích, zónách na několika vrstvách nebo hledání zóny, jejíž nastavení či prioritu potřebujete změnit.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Priority a úprava obrysu zón}
+	\small
+	\begin{itemize}
+		\item V \textbf{KiCad 10} se priority pohodlně řídí pořadím ve Správci zón: \textbf{výše v seznamu = vyšší priorita}.
+		\item Pořadí změňte přetažením řádku nebo tlačítky se šipkami. Zóna s vyšší prioritou se vyplní první; nižší jí ustoupí.
+		\item Příklad: menší zóna \textbf{+5V} má přednost před celoplošnou zónou \textbf{GND} na stejné vrstvě.
+		\item Obrys upravíte výběrem a tažením jeho rohových či hranových úchytů.
+		\item Pro otvor ve výplni použijte \textbf{pravé tlačítko → Zóny → Přidat výřez zóny}. Potom stiskněte \textbf{B}.
+	\end{itemize}
+	\begin{block}{Před výrobou}
+	Obnovte výplně a spusťte DRC. Samotné přiřazení sítě GND nezaručuje, že jsou všechny části rozlité mědi skutečně propojené.
+	\end{block}
+\end{frame}
 
 %------------------------------------------------------------------------------
 % Generování výrobních podkladů - Gerber
