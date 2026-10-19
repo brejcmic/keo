@@ -15,6 +15,11 @@ Následující soubory nahrazují původní anglické obrázky z dokumentace:
 
 Referenční dokumentace: https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html
 
+## Nastavení desky
+
+- `options_board.png`: oficiální ikona Nastavení desky z dokumentace KiCad 10:
+  https://docs.kicad.org/10.0/en/pcbnew/images/icons/options_board.png
+
 ## Aktualizace DPS ze schématu
 
 - `update_pcb_from_schematic_cs.png`: skutečný snímek českého aktualizačního
