@@ -43,6 +43,11 @@ Popis příkazů a klávesových zkratek ověřen v dokumentaci KiCad 10,
 
 ## Propojování trasami
 
+- `routing_complete.png`: KiCad Documentation Contributors, Getting Started in KiCad 10,
+  https://docs.kicad.org/10.0/en/getting_started_in_kicad/images/routing-complete.png
+  (v prezentaci zobrazen výřez kolem přechodu B.Cu -- prokov -- F.Cu;
+  dokumentace pod licencí CC BY 3.0 nebo GPL 3.0 a novější).
+
 Obrázky z oficiální dokumentace KiCad 10:
 
 - `add_tracks_24.png`: https://docs.kicad.org/10.0/en/pcbnew/images/icons/add_tracks_24.png

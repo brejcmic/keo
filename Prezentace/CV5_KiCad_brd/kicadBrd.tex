@@ -676,15 +676,29 @@
 		\end{column}
 		\begin{column}{0.49\textwidth}
 			\centering
-			\includegraphics[width=\linewidth,height=0.39\textheight,keepaspectratio]{obr/via_types.png}
+			\includegraphics[width=\linewidth,height=0.20\textheight,keepaspectratio]{obr/via_types.png}
 
 			{\scriptsize Vlevo: běžný průchozí prokov spojující vnější vrstvy.}
+
+			\smallskip
+			\includegraphics[height=1.7cm,trim=650 280 90 380,clip]{obr/routing_complete.png}
+			\hspace{0.1cm}
+			\begin{minipage}{0.62\linewidth}
+				\scriptsize
+				\textcolor{blue}{Modrá: B.Cu (bottom)}\\
+				Kroužek: prokov\\
+				\textcolor{red}{Červená: F.Cu (top)}
+			\end{minipage}
 		\end{column}
 	\end{columns}
 	\begin{alertblock}{Prokov je vodivé spojení}
 	Není to obyčejná díra: výrobce pokoví její vnitřní stěnu mědí. U dvouvrstvé DPS tak prokov vodivě spojí \texttt{F.Cu} a \texttt{B.Cu}.
 	\end{alertblock}
 \end{frame}
+
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Rozlitá měď}{Rozlita med}}
+%------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
 % Generování výrobních podkladů - Gerber
