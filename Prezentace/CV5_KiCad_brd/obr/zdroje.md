@@ -1,5 +1,17 @@
 # Zdroje obrázků
 
+## Kontrola pravidel návrhu (DRC)
+
+KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější):
+
+- `drc_icon.png`: https://docs.kicad.org/10.0/en/pcbnew/images/icons/erc_24.png
+  (ikona používaná také kontrolou DRC v PCB Editoru).
+- `drc_control.png`: https://docs.kicad.org/10.0/en/pcbnew/images/drc_control.png
+  (anglické okno před spuštěním kontroly, připravené k pozdější náhradě českým snímkem).
+
+Postup a absence výchozí zkratky ověřeny v PCB Editor 10,
+Design rules checking a Actions reference.
+
 ## Nepájivá maska a popisky
 
 Na slajdu Potisk pouzdra a reference je použit výřez `board_outline.png`

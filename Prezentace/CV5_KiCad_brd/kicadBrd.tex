@@ -1058,6 +1058,60 @@
 % Generování výrobních podkladů - Gerber
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Generování výrobních podkladů}{Generovani vyrobnich podkladu}}
+\subsection{\texorpdfstring{Kontrola pravidel návrhu (DRC)}{Kontrola pravidel navrhu (DRC)}}
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Spuštění kontroly pravidel návrhu}
+	\begin{enumerate}
+		\item Po dokončení návrhu uložte desku pomocí \textbf{Ctrl+S}. Ověřte, že je aktuální vůči schématu.
+		\item Zvolte \textbf{Inspekce → Kontrola návrhových pravidel\ldots} nebo klikněte na ikonu v horní liště.
+		\item Ponechte zapnuté \textbf{znovuvyplnění všech zón před kontrolou}.
+		\item V projektu zapněte také \textbf{kontrolu shody DPS se schématem}.
+		\item Stiskněte \textbf{Spustit DRC} (\textbf{Run DRC}) a vyčkejte na dokončení.
+	\end{enumerate}
+	\begin{center}
+		\includegraphics[height=0.65cm]{obr/drc_icon.png}
+		\quad\textbf{Kontrola pravidel návrhu (DRC)}
+	\end{center}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Okno kontroly DRC}
+	\centering
+	\includegraphics[width=\linewidth,height=0.75\textheight,keepaspectratio]{obr/drc_control.png}
+
+	{\scriptsize Okno otevřené před spuštěním: prázdný seznam ještě neznamená bezchybný návrh.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{DRC: kde hledat výsledky}
+	\small
+	\begin{description}
+		\item[Porušení] Zkraty, nedostatečné odstupy, neplatný obrys, nevhodné rozměry nebo problémy potisku podle nastavených pravidel.
+		\item[Nepropojené položky] Plošky a další objekty stejné sítě, které dosud nejsou vodivě spojené.
+		\item[Schématická parita] Rozdíly mezi schématem a DPS; kontrola je dostupná při práci se schématem v projektu.
+		\item[Ignorované testy] Kontroly vypnuté v nastavení. Prázdný seznam porušení nemusí znamenat, že byly provedeny všechny testy.
+	\end{description}
+	\begin{block}{Chyby, varování a výjimky}
+	Spodní přepínače filtrují zobrazené výsledky. Zkontrolujte \textbf{chyby i varování}; jejich skrytí problém neopraví. DRC posuzuje návrh podle nastavených pravidel, nenahrazuje ověření funkce obvodu.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{DRC: oprava a opakovaná kontrola}
+	\begin{enumerate}
+		\item Rozbalte nález a přečtěte jeho popis i dotčené objekty.
+		\item Vyberte nález nebo objekt. Při zapnutém propojení výběru s editorem se problematické místo zobrazí na desce.
+		\item Opravte příčinu: například dokončete spoj, zvětšete odstup, upravte obrys nebo přesuňte potisk.
+		\item Spusťte \textbf{DRC znovu}. Opakujte, dokud nezůstanou nevyřešené chyby; každé varování posuďte.
+		\item Volbou \textbf{Uložit\ldots} (\textbf{Save\ldots}) lze uložit zprávu o kontrole. Desku uložte samostatně pomocí \textbf{Ctrl+S}.
+	\end{enumerate}
+	\begin{block}{Odstranění značky není oprava}
+	\textbf{Delete Marker} pouze smaže značku do dalšího běhu DRC. Výjimky a vypnutí testů používejte jen pro vědomě posouzené případy, ideálně s komentářem.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Genervání výrobních dat - gerber}{Generovani výrobních dat - gerber}}
 %------------------------------------------------------------------------------
 
 \end{document}
