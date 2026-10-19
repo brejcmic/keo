@@ -2,7 +2,9 @@
 
 Schémata stackupu a návratových cest jsou vlastní ilustrace v češtině (TikZ).
 Detaily rozmístění jsou vlastní exporty z KiCadu 10. Převzaté obrázky TI
-jsou tři uživatelem dodané snímky popsané níže. Výuková syntéza principů uvedených níže.
+jsou tři uživatelem dodané snímky popsané níže. Dále jsou převzaty tři obrázky
+z článku All About Circuits [15] s uvedením původu u H. W. Otta.
+Výuková syntéza principů uvedených níže.
 Řezy nejsou v měřítku; nejsou závaznou výrobní specifikací dielektrik.
 
 - `stackup_2layer.tex` / `.pdf`: (SIG + PWR) / GND.
@@ -160,3 +162,54 @@ ne absolutní předpis pro všechny vícevrstvé PDN. U ploch může být výhod
 přímé připojení pinu a kondenzátoru prokovy s menší celkovou indukčností.
 Samotné T odbočení není chyba, pokud je uzel přímo na plošce a místní připojení
 je krátké. Vstupní/bulk kondenzátor nenahrazuje lokální blokování každého IC.
+
+## Více GND prokovů u plošky kondenzátoru
+
+13. Art Kay: Decoupling Capacitors, TI Precision Labs – ADCs, Texas Instruments,
+    2022: https://www.ti.com/video/6313253251112
+    Podklad, snímky označené 7–8 (PDF strany 9–10):
+    https://www.ti.com/content/dam/videos/external-videos/en-us/9/3816841626001/6313253251112.mp4/subassets/notes-decoupling_capacitors.pdf
+    Zkrácení vzdálenosti k referenční ploše a více paralelních prokovů snižuje
+    indukčnost; samotné zvětšení otvoru má menší účinek. Model dělení L počtem
+    prokovů je v prezentaci výslovně označen za ideální, bez vzájemné vazby.
+14. Murata: Application Manual for Power Supply Noise Suppression and Decoupling
+    for Digital ICs, C39E, 2010, část 4.1, tištěné str. 24–26 (PDF strany 28–30):
+    https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/14/c39e.pdf
+    Vznik ESL, vazba magnetického toku a vzájemná indukčnost; použit jako
+    fyzikální doplněk k ideálnímu paralelnímu modelu TI, nikoli jako důkaz
+    konkrétního číselného poměru pro nakreslené GND prokovy.
+
+- `power_ground_vias.tex` / `.pdf`: vlastní srovnávací půdorys kondenzátoru,
+  jednoho většího GND prokovu a čtyř menších GND prokovů. Všechny vedou do
+  stejné souvislé GND plochy ve stejné hloubce; široké přípojky nemají společné
+  úzké hrdlo. Průměry ani rozteče nejsou výrobní předpis či kvantitativní simulace.
+  Prokovy jsou mimo pájené plošky; kresba nepožaduje zvláštní technologii via-in-pad.
+
+Fyzikální formulace uživatelského zadání je zpřesněna: délka jedné magnetické
+indukční čáry sama neurčuje indukčnost. L se vztahuje k vázanému toku a proudu
+celé smyčky. Pole blízkých prokovů se vážou, nelze proto slíbit přesné L/N ani
+bezpodmínečnou převahu libovolné skupiny malých prokovů nad libovolným velkým.
+Nižší L snižuje induktivní složku impedance při dané frekvenci, nikoli nutně
+celkovou impedanci rezonanční napájecí sítě ve všech frekvencích.
+
+## Převzaté ukázky konfigurací prokovů
+
+15. Steve Arar: Via Configurations for Connecting Decoupling Capacitors,
+    All About Circuits, 7. 10. 2019:
+    https://www.allaboutcircuits.com/technical-articles/different-via-configurations-for-connecting-decoupling-capacitors/
+    U všech tří použitých obrázků článek uvádí původ z knihy Henry W. Ott:
+    Electromagnetic Compatibility Engineering, Wiley. Tato původní atribuce
+    je zachována na slajdech i v závěrečném seznamu.
+
+Staženo 19. 10. 2026; obrázky jsou uloženy beze změn obsahu:
+
+- `aac_decoupling_fig1.jpg` – obr. 1, prokovy na koncích plošek:
+  https://www.allaboutcircuits.com/uploads/articles/different-via-configurations-for-connecting-decoupling-capacitors-Mahdi_AAC_image1.jpg
+- `aac_decoupling_fig4.jpg` – obr. 4, dvojice PWR/GND prokovů blíže k sobě:
+  https://www.allaboutcircuits.com/uploads/articles/different-via-configurations-for-connecting-decoupling-capacitors-Mahdi_AAC_image4.jpg
+- `aac_decoupling_fig5.jpg` – obr. 5, více prokovů na každou plošku:
+  https://www.allaboutcircuits.com/uploads/articles/different-via-configurations-for-connecting-decoupling-capacitors-Mahdi_AAC_image5.jpg
+
+U obrázků jsou jen krátké české komentáře. Hodnoty indukčnosti uvedené přímo
+v obrázcích jsou označeny za příklady, nikoli návrhové hodnoty pro tuto prezentaci.
+Plná bibliografie je nyní na posledních čtyřech slajdech.

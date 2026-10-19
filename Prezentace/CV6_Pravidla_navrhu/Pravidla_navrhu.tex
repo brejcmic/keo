@@ -425,9 +425,74 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Připojení kondenzátoru: poloha dvojice prokovů}
+	\small
+	\begin{columns}[T,onlytextwidth]
+		\begin{column}{.48\textwidth}
+			\centering
+			\textbf{Prokovy na koncích}\par\medskip
+			\includegraphics[width=.98\linewidth,height=.32\textheight,keepaspectratio]{obr/aac_decoupling_fig1.jpg}
+		\end{column}
+		\begin{column}{.48\textwidth}
+			\centering
+			\textbf{Prokovy blíže k sobě}\par\medskip
+			\includegraphics[width=.98\linewidth,height=.35\textheight,keepaspectratio]{obr/aac_decoupling_fig4.jpg}
+		\end{column}
+	\end{columns}
+	\medskip
+	\begin{itemize}
+		\item Jeden prokov vede do PWR, druhý do GND. Jejich přiblížení zmenšuje smyčku; proudy v nich tečou opačnými směry.
+		\item Hodnoty 1,1 a 0,7 nH jsou \textbf{hodnoty konkrétních příkladů}, nikoli univerzální hodnoty pro náš návrh.
+	\end{itemize}
+	\vfill
+	{\tiny Obrázky: [15] S. Arar / All About Circuits, obr. 1 a 4; původ: H. W. Ott.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Připojení kondenzátoru: více prokovů na plošku}
+	\small
+	{\centering
+	\includegraphics[width=.94\linewidth,height=.39\textheight,keepaspectratio]{obr/aac_decoupling_fig5.jpg}\par}
+	\begin{itemize}
+		\item Obrázek ukazuje dva a tři prokovy na každé plošce. Jedna skupina patří k PWR, druhá ke GND; tyto sítě se nespojují přímo.
+		\item Rozhoduje počet \textbf{i rozmístění} prokovů. Také hodnoty 0,5 a 0,4 nH jsou pouze pro uvedené příklady.
+	\end{itemize}
+	\vfill
+	{\tiny Obrázek: [15] S. Arar / All About Circuits, obr. 5; původ: H. W. Ott.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Zemní ploška kondenzátoru: více prokovů}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.43\textheight,keepaspectratio]{obr/power_ground_vias.pdf}\par}
+	\begin{itemize}
+		\item GND plošku připojte \textbf{krátce a široce} k několika blízkým prokovům do stejné GND plochy. Společné dlouhé úzké hrdlo by jejich přínos omezilo.
+		\item Více paralelních prokovů může snížit indukčnost připojení účinněji než pouhé zvětšení jednoho otvoru. Výsledek závisí na rozmístění a celé návratové cestě.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [9, 13] P. Salmony, A. Kay (TI).}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Proč více prokovů snižuje indukčnost připojení?}
+	\small
+	\begin{itemize}
+		\item Proud se rozdělí do \textbf{více paralelních cest}. V ideálním modelu bez vzájemné magnetické vazby platí pro $N$ stejných prokovů $L_{\text{eq}} \approx L_{\text{via}}/N$.
+		\item Reálná pole prokovů se vzájemně vážou: \textbf{čtyři prokovy neznamenají automaticky čtvrtinovou indukčnost}. Důležitá je i vzdálenost GND vrstvy a poloha přívodu i návratu.
+		\item Menší $L$ znamená při stejné frekvenci menší \textbf{induktivní složku impedance}: $|Z_L|=2\pi f L$. Nezaručuje nižší impedanci celé sítě při všech frekvencích.
+	\end{itemize}
+	\begin{block}{Magnetické vysvětlení přesněji}
+	Indukčnost určuje vázaný magnetický tok na jednotku proudu, ne samotná délka jedné indukční čáry. Posuzujeme rozložení pole a geometrii \textbf{celé proudové smyčky}.
+	\end{block}
+	\vfill
+	{\tiny Zdroje: [13, 14] A. Kay (TI), Murata; paralelní model a magnetická vazba.}
+\end{frame}
+
+%------------------------------------------------------------------------------
 \section{\texorpdfstring{Referenční zdroje}{Referencni zdroje}}
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (1/3): skladba DPS a referenční plochy}
+\begin{frame}[t]{Zdroje (1/4): skladba DPS a referenční plochy}
 	\small
 	\begin{enumerate}
 		\item Z. Peterson: \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Understanding 2-Layer PCB Ground Planes}.
@@ -442,7 +507,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (2/3): návratový proud a blokování}
+\begin{frame}[t]{Zdroje (2/4): návratový proud a blokování}
 	\footnotesize
 	\begin{enumerate}
 		\setcounter{enumi}{6}
@@ -456,15 +521,26 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (3/3): vedení napájení a ilustrace}
-	\small
+\begin{frame}[t]{Zdroje (3/4): vedení napájení}
+	\footnotesize
 	\begin{enumerate}
 		\setcounter{enumi}{10}
 		\item Daniel Miller: \href{https://www.ti.com/video/6245227303001}{Mixed Signals, Grounding and Bypass Capacitors}, TI Precision Labs -- Op Amps, Texas Instruments, 2021. \href{https://www.ti.com/content/dam/videos/external-videos/en-us/8/3816841626001/6245227303001.mp4/subassets/op_amp_pcb_layout_mixed_signals_grounding_and_bypass_capacitors.pdf}{Podklad k videu}, snímky 7--8: blízkost a připojení blokování.
 		\item George Lakkas: \href{https://www.ti.com/document-viewer/lit/html/SSZTAL0/GUID-CF03725F-911C-4A96-9391-0E639F290409}{Optimizing Layout for Synchronous Buck Converters}, Texas Instruments, SSZTAL0, 2016; Bypass Capacitors, Parasitic Components: krátké přípoje a proudové cesty přes plošky.
+		\item Art Kay: \href{https://www.ti.com/video/6313253251112}{Decoupling Capacitors}, TI Precision Labs -- ADCs, Texas Instruments, 2022. \href{https://www.ti.com/content/dam/videos/external-videos/en-us/9/3816841626001/6313253251112.mp4/subassets/notes-decoupling_capacitors.pdf}{Podklad k videu}, snímky 7--8: indukčnost připojení a více paralelních prokovů; ideální model bez vzájemné vazby.
+	\end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Zdroje (4/4): indukčnost a převzaté ilustrace}
+	\footnotesize
+	\begin{enumerate}
+		\setcounter{enumi}{13}
+		\item Murata: \href{https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/14/c39e.pdf}{Application Manual for Power Supply Noise Suppression and Decoupling for Digital ICs}, C39E, 2010, část 4.1, str. 24--26: magnetický tok, ESL a vzájemná vazba.
+		\item Steve Arar: \href{https://www.allaboutcircuits.com/technical-articles/different-via-configurations-for-connecting-decoupling-capacitors/}{Via Configurations for Connecting Decoupling Capacitors}, All About Circuits, 7. 10. 2019. Převzaty obr. 1, 4 a 5; článek u nich uvádí původ: Henry W. Ott, \textit{Electromagnetic Compatibility Engineering}, Wiley.
 	\end{enumerate}
 	\medskip
-	{\scriptsize Ostatní obrázky jsou vlastní česká schémata nebo vlastní exporty výukových desek z KiCadu 10. Editovatelné předlohy i PDF jsou v \texttt{obr/}. Řezy nejsou v měřítku; ukázkové desky nejsou výrobním návrhem. Z Jonesova staršího podkladu přebíráme zásady blokování, nikoli obecné doporučení dělit zemní plochy.}
+	{\scriptsize Převzaté obrázky TI a All About Circuits jsou označeny přímo na slajdech. Ostatní ilustrace jsou vlastní česká schémata nebo vlastní exporty výukových desek z KiCadu 10. Předlohy i obrázky jsou v \texttt{obr/}. Řezy nejsou v měřítku; ukázkové desky nejsou výrobním návrhem. Z Jonesova podkladu přebíráme zásady blokování, nikoli obecné doporučení dělit zemní plochy.}
 \end{frame}
 
 
