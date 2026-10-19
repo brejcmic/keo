@@ -1,0 +1,15 @@
+\documentclass[tikz,border=3mm]{standalone}
+\input{stackup_style.tex}
+\begin{document}
+\begin{tikzpicture}
+ \fill[frfour] (0,0.35) rectangle (8,2.45);
+ \draw[copper,fill=sig] (0,2.45) rectangle (8,2.85);
+ \node at (4,2.65) {\textbf{SIG + PWR}: signály a napájecí trasy};
+ \node[layerlabel] at (-0.15,2.65) {L1 / F.Cu};
+ \node[note] at (4,1.4) {Jádro FR4\\U běžné tlustší desky je signál od GND daleko.};
+ \draw[copper,fill=gnd] (0,-0.05) rectangle (8,0.35);
+ \node at (4,0.15) {\textbf{GND}: co nejvíce souvislá referenční plocha};
+ \node[layerlabel] at (-0.15,0.15) {L2 / B.Cu};
+ \node[font=\scriptsize,anchor=west] at (0,-0.5) {Schématický řez; není v měřítku. Maska a potisk nejsou zakresleny.};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,193 @@
+%Beamer class
+\documentclass{beamer}
+
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgheros}
+\usepackage{tgcursor}
+\usepackage{array}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{fancyvrb} % pro verbatim
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usetheme{AnnArbor}
+\usecolortheme{crane}
+\setbeamerfont{description item}{series=\bfseries}
+
+
+\title[Pravidla návrhu DPS]{Základní pravidla návrhu DPS}
+\subtitle[KEO]{\texorpdfstring{Konstrukce a realizace elektronických obvodů}{Konstrukce a realizace elektronickych obvodu}}
+\author[Brejcha]{\texorpdfstring{Michal Brejcha\newline\url{brejcmic@fel.cvut.cz}}{Michal Brejcha}}
+\institute[ČVUT]{ČVUT v Praze, FEL}
+\date[Praha, 2026]{Praha, 2026}
+
+%------------------------------------------------------------------------------
+%Konstanty a definice
+%------------------------------------------------------------------------------
+\newtheorem{myDef}{}
+\newcommand{\kicadVersion}{10.0}
+
+\begin{document}
+%------------------------------------------------------------------------------
+%Uvodni slajd
+%------------------------------------------------------------------------------
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Obsah} 
+\tableofcontents
+\end{frame}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Téma}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%------------------------------------------------------------------------------
+% Fyzická skladba DPS
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Fyzická skladba DPS}{Fyzicka skladba DPS}}
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Stackup: nejde pouze o počet vrstev}
+	\begin{itemize}
+		\item \textbf{Stackup} určuje pořadí měděných vrstev, jejich funkci a tloušťky izolačních materiálů mezi nimi.
+		\item \textbf{SIG}: signály; \textbf{PWR}: napájení; \textbf{GND}: referenční vodič a návratová cesta proudu.
+		\item Zápis \textbf{SIG + PWR} označuje jednu společnou vrstvu pro signálové trasy a rozvod napájení, nikoli dvě vrstvy.
+		\item Pořadí v obrázcích čteme \textbf{shora dolů}. Čísla L1--L4 odpovídají pořadí měděných vrstev.
+	\end{itemize}
+	\begin{block}{Základní doporučení}
+	Signál potřebuje blízkou a souvislou referenční plochu. Důležité jsou i rychlost hran signálu a délka vedení, nejen hodinová frekvence.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Dvě vrstvy: (SIG + PWR) / GND}
+	\small
+	{\centering
+		\includegraphics[width=0.98\linewidth,height=0.59\textheight,keepaspectratio]{obr/stackup_2layer.pdf}\par}
+	\medskip
+	Signály a napájení veďte převážně na L1; protější L2 ponechte co nejvíce souvislou jako návratovou cestu GND.
+	\vfill
+	{\tiny Obr.: dle \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Z. Peterson -- Understanding 2-Layer PCB Ground Planes}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Dvě vrstvy: výhody a omezení}
+	\begin{itemize}
+		\item \textbf{Výhody:} jednoduchá a levná výroba; přehledná návratová cesta oproti desce s rozdělenou zemí na obou stranách.
+		\item \textbf{Nevýhody:} méně prostoru pro signály a napájení; u běžné tloušťky 1,6 mm je protější GND vzdálená, takže vazba a řízení impedance jsou horší než u vhodné čtyřvrstvé desky.
+		\item \textbf{Použití:} jednodušší obvody s krátkými vedeními. Spodní GND co nejméně přerušovat; trasy přes celou spodní stranu mohou rozříznout návratovou cestu.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Z. Peterson -- Understanding 2-Layer PCB Ground Planes}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Čtyři vrstvy: SIG / GND / PWR / SIG}
+	\small
+	{\centering
+		\includegraphics[width=0.98\linewidth,height=0.61\textheight,keepaspectratio]{obr/stackup_4layer_power.pdf}\par}
+	\medskip
+	L1 má referenci GND, zatímco nejbližší referencí pro L4 je PWR. Právě tento rozdíl ovlivňuje vedení rychlých signálů.
+	\vfill
+	{\tiny Obr.: dle \href{https://resources.altium.com/p/right-way-use-power-planes-4-layer-pcb-stackup}{Z. Peterson -- Power Planes in a 4-Layer PCB Stackup}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{SIG / GND / PWR / SIG: výhody a omezení}
+	\begin{itemize}
+		\item \textbf{Výhody:} dvě signálové vrstvy a samostatný rozvod napájení; horní signály mají blízkou GND.
+		\item \textbf{Nevýhody:} spodní signály mají nejbližší referenci PWR. Rozdělení napájecí plochy a změna reference při přechodu vrstev komplikují návrat proudu.
+		\item \textbf{Použití:} rychlé signály přednostně na L1 nad GND. Plná PWR může být referencí pro L4, ale je nutné vyřešit návaznost návratového proudu na GND.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: \href{https://resources.altium.com/p/right-way-use-power-planes-4-layer-pcb-stackup}{Z. Peterson -- The Right Way to Use Power Planes in a 4-Layer PCB Stackup}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Čtyři vrstvy se dvěma plochami GND}
+	\small
+	{\centering
+		\includegraphics[width=0.98\linewidth,height=0.61\textheight,keepaspectratio]{obr/stackup_4layer_gnd.pdf}\par}
+	\medskip
+	Napájení lze rozvádět na jedné nebo obou vnějších vrstvách. Dvě vnitřní GND plochy ponechte souvislé a vzájemně je propojte.
+	\vfill
+	{\tiny Obr.: dle \href{https://resources.altium.com/p/two-alternative-4-layer-pcb-stackups-50-ohms-impedance}{Z. Peterson -- Two 4 Layer PCB Stackups With 50 Ohms Impedance}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Dvě plochy GND: výhody a omezení}
+	\begin{itemize}
+		\item \textbf{Výhody:} obě vnější vrstvy mají blízkou referenci GND; vnitřní plochy oddělují signály na protilehlých stranách.
+		\item \textbf{Nevýhody:} napájení sdílí prostor se signály, není k dispozici samostatná PWR vrstva. Pro větší proudy a mnoho napěťových úrovní (zdrojů) může chybět místo.
+		\item \textbf{Doporučení:} vhodný výchozí stackup pro běžnou čtyřvrstvou digitální desku. GND plochy propojit; u přechodu signálu vložit blízký GND prokov.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: \href{https://resources.altium.com/p/two-alternative-4-layer-pcb-stackups-50-ohms-impedance}{Z. Peterson -- Two 4 Layer PCB Stackups With 50 Ohms Impedance}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Návratová cesta při změně signálové vrstvy}
+	\begin{itemize}
+		\item U rychlých změn proudu se návratový proud soustřeďuje do blízké referenční plochy pod trasou.
+		\item \textbf{GND → GND:} při přechodu L1 $\leftrightarrow$ L4 propojte obě referenční plochy GND prokovem poblíž signálového prokovu.
+		\item \textbf{GND → PWR:} samotný GND prokov nestačí. Přechod návratového proudu vyžaduje vhodnou vazbu mezi PWR a GND, např. blízký blokovací kondenzátor s krátkým připojením.
+		\item Signál neveďte přes mezeru, výřez nebo rozhraní různých napětí v jeho referenční ploše.
+	\end{itemize}
+	\begin{block}{Výhoda dvou GND vrstev}
+	Návratovou cestu lze při přechodu jednodušeji navázat GND prokovem. GND a PWR se naopak nesmějí spojit přímým prokovem.
+	\end{block}
+	\vfill
+	{\tiny Zdroje: \href{https://www.signalintegrityjournal.com/articles/2982-the-case-for-split-ground-planes}{E. Bogatin -- The Case for Split Ground Planes}; \href{https://resources.altium.com/p/should-you-use-your-power-plane-as-a-return-path}{Z. Peterson -- Power Plane as a Return Path}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Tloušťky dielektrika a napájení}
+	\begin{itemize}
+		\item U čtyřvrstvé desky požadujte blízké dvojice \textbf{L1--L2} a \textbf{L3--L4}; běžná stavba má tenké prepregy a silnější středové jádro.
+		\item Menší vzdálenost signálu od reference pomáhá omezit plochu proudové smyčky. Impedanci ale určuje i šířka a tloušťka mědi a vlastnosti dielektrika.
+		\item Vzdálené plochy PWR a GND mají malou vzájemnou kapacitu. \textbf{Samostatná PWR vrstva nenahrazuje blokovací kondenzátory.}
+		\item Konkrétní tloušťky, materiály a dostupné varianty ověřte u výrobce \textbf{před návrhem impedančně řízených spojů}.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroje: \href{https://resources.altium.com/p/pcb-stackup-basics}{Phil's Lab -- PCB Stackup Basics}; \href{https://resources.altium.com/p/right-way-use-power-planes-4-layer-pcb-stackup}{Z. Peterson -- Power Planes in a 4-Layer PCB Stackup}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Jak zvolit výchozí skladbu?}
+	\small
+	\begin{description}
+		\item[(SIG + PWR) / GND] Pro jednoduché, méně husté desky. Prioritou je zachování GND, ne zaplnění obou stran signály.
+		\item[SIG / GND / PWR / SIG] Když pomůže samostatná napájecí plocha a nejdůležitější signály zůstanou nad GND. Není to automaticky chybné řešení, ale spodní signály vyžadují pozornost.
+		\item[(SIG + PWR) / GND / GND / (SIG + PWR)] Vhodný výchozí kompromis pro digitální signály na obou stranách. Napájení řešte dostatečně širokými trasami či polygony.
+	\end{description}
+	\begin{block}{Neexistuje jedna skladba pro všechny desky}
+	Rozhodují proudy, napětí, rychlost hran, hustota zapojení a požadavky na rušení. Pokud se napájení a signály nevejdou bez porušení návratových cest, zvažte více vrstev.
+	\end{block}
+	\vfill
+	{\tiny Vlastní výukové shrnutí podle Petersona a Bogatina; konkrétní zdroje jsou uvedeny na jednotlivých slajdech.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Zdroje a původ ilustrací}
+	\small
+	\begin{itemize}
+		\item Z. Peterson: \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Understanding 2-Layer PCB Ground Planes}.
+		\item Z. Peterson: \href{https://resources.altium.com/p/right-way-use-power-planes-4-layer-pcb-stackup}{The Right Way to Use Power Planes in a 4-Layer PCB Stackup}.
+		\item Z. Peterson: \href{https://resources.altium.com/p/two-alternative-4-layer-pcb-stackups-50-ohms-impedance}{Two 4 Layer PCB Stackups With 50 Ohms Impedance}.
+		\item Z. Peterson: \href{https://resources.altium.com/p/should-you-use-your-power-plane-as-a-return-path}{Should You Use Your PCB Power Plane as a Return Path?}
+		\item E. Bogatin: \href{https://www.signalintegrityjournal.com/articles/2982-the-case-for-split-ground-planes}{The Case for Split Ground Planes}, Signal Integrity Journal, 2023.
+		\item Phil's Lab: \href{https://resources.altium.com/p/pcb-stackup-basics}{PCB Stackup Basics}, Altium.
+	\end{itemize}
+	\medskip
+	Ilustrace jsou \textbf{vlastní česká schémata} podle uvedených principů, nikoli převzaté obrázky. Zdrojové kresby i PDF jsou ve složce \texttt{obr/}. Rozměry v řezech nejsou v měřítku.
+\end{frame}
+
+
+\end{document}

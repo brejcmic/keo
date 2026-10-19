@@ -1,0 +1,23 @@
+\documentclass[tikz,border=3mm]{standalone}
+\input{stackup_style.tex}
+\begin{document}
+\begin{tikzpicture}
+ \fill[frfour] (0,0.25) rectangle (8,3.25);
+ \draw[copper,fill=sig] (0,3.25) rectangle (8,3.6);
+ \node at (4,3.425) {\textbf{SIG}: signály -- reference L2 (GND)};
+ \node[layerlabel] at (-0.15,3.425) {L1 / F.Cu};
+ \node[font=\scriptsize] at (4,3.025) {Tenké dielektrikum (prepreg)};
+ \draw[copper,fill=gnd] (0,2.45) rectangle (8,2.8);
+ \node at (4,2.625) {\textbf{GND}: souvislá referenční plocha};
+ \node[layerlabel] at (-0.15,2.625) {L2 / In1.Cu};
+ \node[note] at (4,1.75) {Obvykle silnější jádro FR4\\Kapacita GND--PWR nemusí být velká.};
+ \draw[copper,fill=pwr] (0,0.7) rectangle (8,1.05);
+ \node at (4,0.875) {\textbf{PWR}: napájecí plocha nebo více oblastí};
+ \node[layerlabel] at (-0.15,0.875) {L3 / In2.Cu};
+ \node[font=\scriptsize] at (4,0.475) {Tenké dielektrikum (prepreg)};
+ \draw[copper,fill=sig] (0,-0.1) rectangle (8,0.25);
+ \node at (4,0.075) {\textbf{SIG} -- nejbližší reference L3 (PWR)};
+ \node[layerlabel] at (-0.15,0.075) {L4 / B.Cu};
+ \node[font=\scriptsize,anchor=west] at (0,-0.55) {Schématický řez běžné geometrie; konkrétní tloušťky určuje výrobce.};
+\end{tikzpicture}
+\end{document}

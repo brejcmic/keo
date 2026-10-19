@@ -1,0 +1,23 @@
+\documentclass[tikz,border=3mm]{standalone}
+\input{stackup_style.tex}
+\begin{document}
+\begin{tikzpicture}
+ \fill[frfour] (0,0.25) rectangle (8,3.25);
+ \draw[copper,fill=sig] (0,3.25) rectangle (8,3.6);
+ \node at (4,3.425) {\textbf{SIG + PWR} -- reference L2 (GND)};
+ \node[layerlabel] at (-0.15,3.425) {L1 / F.Cu};
+ \node[font=\scriptsize] at (4,3.025) {Tenké dielektrikum (prepreg)};
+ \draw[copper,fill=gnd] (0,2.45) rectangle (8,2.8);
+ \node at (4,2.625) {\textbf{GND}: souvislá referenční plocha};
+ \node[layerlabel] at (-0.15,2.625) {L2 / In1.Cu};
+ \node[note] at (4,1.75) {Jádro FR4\\Obě plochy GND jsou propojené prokovy.};
+ \draw[copper,fill=gnd] (0,0.7) rectangle (8,1.05);
+ \node at (4,0.875) {\textbf{GND}: souvislá referenční plocha};
+ \node[layerlabel] at (-0.15,0.875) {L3 / In2.Cu};
+ \node[font=\scriptsize] at (4,0.475) {Tenké dielektrikum (prepreg)};
+ \draw[copper,fill=sig] (0,-0.1) rectangle (8,0.25);
+ \node at (4,0.075) {\textbf{SIG + PWR} -- reference L3 (GND)};
+ \node[layerlabel] at (-0.15,0.075) {L4 / B.Cu};
+ \node[font=\scriptsize,anchor=west] at (0,-0.55) {Schématický řez; napájení na vnějších vrstvách tvoří trasy nebo polygony.};
+\end{tikzpicture}
+\end{document}
