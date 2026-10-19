@@ -1,5 +1,24 @@
 # Zdroje obrázků
 
+## Ikony zón a ohraničení DPS
+
+KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější).
+Ikony v `https://docs.kicad.org/10.0/en/pcbnew/images/icons/`:
+
+- `add_zone_24.png` -- vytvoření měděné zóny,
+- `show_zone_24.png` -- zobrazení výplní,
+- `show_zone_disable_24.png` -- pouze obrysy,
+- `add_keepout_area_24.png` -- oblast pravidel,
+- `add_rectangle_24.png`, `add_line_24.png`, `add_arc_24.png` -- grafické kreslení obrysu.
+
+Ilustrace obrysu:
+
+- `board_outline.png`: https://docs.kicad.org/10.0/en/getting_started_in_kicad/images/board-outline.png
+- `select_edge_cuts.png`: https://docs.kicad.org/10.0/en/getting_started_in_kicad/images/select-edge-cuts.png
+
+Postupy: PCB Editor 10, Board outlines (Edge Cuts), Placement and drawing operations,
+a Getting Started in KiCad 10, Drawing a board outline.
+
 ## Rozlitá měď a Správce zón
 
 KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější):

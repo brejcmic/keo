@@ -495,7 +495,7 @@
 		\item Zavřete dialog. Nová pouzdra umístěte kliknutím do pracovní plochy; následně je rozmístěte jednotlivě.
 		\item Zkontrolujte reference, pouzdra a pomocné čáry propojení (ratsnest).
 		\item Po změně schématu upravte také dotčené spoje a zóny.
-		\item Desku uložte pomocí \textbf{Ctrl+S}; po dokončení úprav spusťte kontrolu \textbf{DRC}.
+		\item Desku uložte pomocí \textbf{Ctrl+S}.
 	\end{enumerate}
 	\begin{block}{Aktualizace nenavrhuje spoje}
 	Přenos určí, které plošky mají být propojené. Rozmístění nových pouzder a vedení spojů provede návrhář.
@@ -518,8 +518,73 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\subsection{\texorpdfstring{Ohraničení DPS}{Ohraničení DPS}}
+\subsection{\texorpdfstring{Ohraničení DPS}{Ohraniceni DPS}}
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Ohraničení DPS: vrstva Edge.Cuts}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.63\textwidth}
+			\begin{enumerate}
+				\item V panelu \textbf{Vzhled → Vrstvy} vyberte \textbf{Edge.Cuts}. V této vrstvě se kreslí hotový obrys desky pro frézování.
+				\item Zvolte přehlednou mřížku, např. \textbf{1 mm}.
+				\item V pravé liště klikněte na \textbf{Kreslit obdélníky}; v nabídce \textbf{Umístit → Obdélník}. Výchozí zkratka není přiřazena.
+				\item Klikněte na první a potom protilehlý roh. Klávesou \textbf{Esc} ukončete nástroj.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.34\textwidth}
+			\centering
+			\includegraphics[height=0.60cm]{obr/add_rectangle_24.png}
+			\quad\textbf{Obdélník}
+
+			\medskip
+			\includegraphics[width=\linewidth,height=0.53\textheight,keepaspectratio]{obr/select_edge_cuts.png}
+		\end{column}
+	\end{columns}
+	\medskip
+	\textbf{Edge.Cuts určuje hranici materiálu.} Nekreslete ji jako měděný spoj ani ve vrstvě potisku či Margin.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Přesné rozměry a složitější obrys DPS}
+	\small
+	\begin{itemize}
+		\item Vyberte obdélník: \textbf{pravé tlačítko → Vlastnosti} nebo \textbf{E}. Zkontrolujte vrstvu \textbf{Edge.Cuts} a souřadnice protilehlých rohů.
+		\item Příklad: rohy \textbf{(100; 100) mm} a \textbf{(160; 140) mm} vytvoří desku \textbf{60 × 40 mm}. Ponechte obrys bez plošné výplně.
+	\end{itemize}
+	\begin{center}
+		\begin{tabular}{clp{0.52\textwidth}}
+			\includegraphics[height=0.52cm]{obr/add_line_24.png} & \textbf{Čáry} & \textbf{Ctrl+Shift+L}; Umístit → Čára. \\
+			\includegraphics[height=0.52cm]{obr/add_arc_24.png} & \textbf{Oblouky} & \textbf{Ctrl+Shift+A}; Umístit → Oblouk. \\
+		\end{tabular}
+	\end{center}
+	\begin{itemize}
+		\item Čáry a oblouky propojte do uzavřené smyčky. Konce musí přesně souhlasit; používejte mřížku a přichytávání.
+		\item Vnitřní uzavřený obrys vytvoří \textbf{frézovaný výřez}. Otvory pro šrouby se obvykle řeší mechanickými pouzdry s otvorem NPTH.
+	\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Kontrola hranice frézování DPS}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.51\textwidth}
+			\begin{enumerate}
+				\item Obrys musí být \textbf{uzavřený, bez mezer, křížení a překrývajících se úseků}.
+				\item Uzavřená deska má při zapnutém zobrazení stínu světlejší vnitřní plochu.
+				\item \textbf{Poznámka:} DRC kontroluje také uzavření obrysu a odstup mědi od hrany desky.
+				\item Tvar ověřte také ve \textbf{3D prohlížeči}. Po úpravě obrysu obnovte zóny klávesou \textbf{B}.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.46\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{obr/board_outline.png}
+			
+			{\scriptsize Světlejší plocha uvnitř uzavřeného obrysu.}
+		\end{column}
+	\end{columns}
+	\medskip
+	Do výrobních podkladů patří i \textbf{Edge.Cuts}. Rozměry kreslete pro hotovou desku; kompenzaci frézy řeší výrobce.
+\end{frame}
 
 %------------------------------------------------------------------------------
 \subsection{\texorpdfstring{Rozmisťování součástek}{Rozmistovani soucastek}}
@@ -704,6 +769,21 @@
 %------------------------------------------------------------------------------
 \subsection{\texorpdfstring{Rozlitá měď}{Rozlita med}}
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Ikony pro práci s měděnými zónami}
+	\small
+	\begin{center}
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{cp{0.80\textwidth}}
+			\includegraphics[height=0.65cm]{obr/add_zone_24.png} & \textbf{Přidat vyplněnou zónu} -- pravá lišta, \textbf{Ctrl+Shift+Z}. Vytvoří obrys zóny a otevře její nastavení. \\
+			\includegraphics[height=0.65cm]{obr/show_zone_24.png} & \textbf{Zobrazit výplně zón} -- levá lišta. Zobrazí vypočítanou měď uvnitř zón. \\
+			\includegraphics[height=0.65cm]{obr/show_zone_disable_24.png} & \textbf{Zobrazit pouze obrysy zón} -- levá lišta. Skryje výplň pro přehlednější práci; měď zůstává vypočítaná. \\
+			\includegraphics[height=0.65cm]{obr/add_keepout_area_24.png} & \textbf{Přidat oblast pravidel} -- pravá lišta, \textbf{Ctrl+Shift+K}. Lze zakázat výplň zón ve vybrané oblasti. \\
+		\end{tabular}
+	\end{center}
+	\textbf{B} výplně přepočítá; \textbf{Ctrl+B} je odstraní. Ikony zobrazení mění pouze viditelnost, nikoli obsah výrobních dat.
+\end{frame}
+
+%------------------------------------------------------------------------------
 \begin{frame}[t]{Rozlitá měď: vytvoření zóny}
 	\small
 	\begin{columns}[T]
@@ -759,7 +839,7 @@
 				\item \textbf{Ctrl+B}: odstranit výplně, obrysy zůstanou.
 				\item Po přesunu součástek, tras nebo změně obrysu výplň \textbf{obnovte klávesou B}.
 				\item Skrytí výplně ikonou v levé liště pouze změní zobrazení.
-				\item Zkontrolujte propojení, izolované ostrůvky a nakonec spusťte \textbf{DRC}.
+				\item Vizuálně zkontrolujte propojení a izolované ostrůvky mědi.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.49\textwidth}
@@ -837,10 +917,21 @@
 		\item Obrys upravíte výběrem a tažením jeho rohových či hranových úchytů.
 		\item Pro otvor ve výplni použijte \textbf{pravé tlačítko → Zóny → Přidat výřez zóny}. Potom stiskněte \textbf{B}.
 	\end{itemize}
-	\begin{block}{Před výrobou}
-	Obnovte výplně a spusťte DRC. Samotné přiřazení sítě GND nezaručuje, že jsou všechny části rozlité mědi skutečně propojené.
+	\begin{block}{Poznámka ke kontrole DRC}
+	DRC ověřuje také chybějící propojení a odstupy mědi. Samotné přiřazení sítě GND nezaručuje, že jsou všechny části rozlité mědi skutečně propojené.
 	\end{block}
 \end{frame}
+
+%------------------------------------------------------------------------------
+% Generování výrobních podkladů - Gerber
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Nepájivá maska a pipisky}{Nepajiva maska a popisky}}
+\subsection{\texorpdfstring{Upravy nepajive masky}{Upravy nepajive masky}}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Úpravy popisků}{Upravy popisku}}
+%------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
 % Generování výrobních podkladů - Gerber
