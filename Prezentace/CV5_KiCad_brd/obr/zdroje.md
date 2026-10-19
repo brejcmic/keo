@@ -1,5 +1,24 @@
 # Zdroje obrázků
 
+## Gerbery, Vykreslit a vrtací data
+
+KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější):
+
+- `plot_icon.png`: https://docs.kicad.org/10.0/en/pcbnew/images/icons/plot_24.png
+- `plot_dialog.png`: https://docs.kicad.org/10.0/en/pcbnew/images/plot_dialog.png
+- `generate_drill_files_dialog.png`: https://docs.kicad.org/10.0/en/pcbnew/images/generate_drill_files_dialog.png
+
+Uživatel nahradil `plot_dialog.png` a `generate_drill_files_dialog.png` českými
+snímky své instalace KiCadu. Odkazy výše u těchto souborů označují původní,
+nahrazené ilustrace. Názvy voleb na slajdech odpovídají českým snímkům.
+Význam voleb ověřen v PCB Editor 10, Plotting / Drill files / Actions reference.
+Nastavení JLCPCB ověřeno 19. 10. 2026:
+https://jlcpcb.com/help/article/how-to-generate-gerber-and-drill-files-in-kicad-9
+(aktualizace článku 24. 9. 2026; doporučuje X2 a síťové atributy, oddělené
+PTH/NPTH, absolutní počátek a alternativní zápis oválných otvorů).
+Některé starší návody JLCPCB se v doporučení X2 liší; použito novější doporučení
+pro KiCad. Pro Gerbery i vrtání je zvolen shodný absolutní počátek.
+
 ## Kontrola pravidel návrhu (DRC)
 
 KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější):

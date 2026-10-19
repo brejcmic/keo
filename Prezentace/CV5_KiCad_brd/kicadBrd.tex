@@ -528,7 +528,7 @@
 			\begin{enumerate}
 				\item V panelu \textbf{Vzhled → Vrstvy} vyberte \textbf{Edge.Cuts}. V této vrstvě se kreslí hotový obrys desky pro frézování.
 				\item Zvolte přehlednou mřížku, např. \textbf{1 mm}.
-				\item V pravé liště klikněte na \textbf{Kreslit obdélníky}; v nabídce \textbf{Umístit → Obdélník}. Výchozí zkratka není přiřazena.
+				\item V pravé liště klikněte na \textbf{Kreslit obdélníky}; v nabídce \textbf{Umístit → Obdélník}.
 				\item Klikněte na první a potom protilehlý roh. Klávesou \textbf{Esc} ukončete nástroj.
 			\end{enumerate}
 		\end{column}
@@ -1111,7 +1111,160 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\subsection{\texorpdfstring{Genervání výrobních dat - gerber}{Generovani výrobních dat - gerber}}
+\subsection{\texorpdfstring{Generování výrobních dat -- Gerber}{Generovani vyrobnich dat -- Gerber}}
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Výrobní data: nástroj Vykreslit}
+	\small
+	\begin{enumerate}
+		\item Uložte hotovou desku. Kontrolu DRC proveďte podle předchozí části a vyřešte její nálezy.
+		\item Otevřete \textbf{Soubor → Vykreslit\ldots} nebo použijte ikonu v horní liště. Výchozí zkratka není přiřazena.
+		\item V poli \textbf{Formát kreslení} zvolte \textbf{Gerber} a zadejte \textbf{Výstupní adresář}, např. \texttt{gerber/} relativně k projektu.
+		\item Vyberte vrstvy a stiskněte \textbf{Vykreslit}. Projděte \textbf{Výstupní zprávy}.
+		\item Tlačítkem \textbf{Generovat soubory vrtání\ldots} vytvořte také data otvorů.
+	\end{enumerate}
+	\begin{center}
+		\includegraphics[height=0.65cm]{obr/plot_icon.png}
+		\quad\textbf{Vykreslit}
+	\end{center}
+	{\small Gerbery popisují obraz jednotlivých vrstev. \textbf{Vrtací data se generují samostatně.}}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Vykreslit: okno generování Gerberů}
+	\centering
+	\includegraphics[width=\linewidth,height=0.73\textheight,keepaspectratio]{obr/plot_dialog.png}
+
+	{\scriptsize České okno dvouvrstvého projektu; pro vlastní desku vyberte pouze její výrobní vrstvy.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Gerbery: výběr vrstev a výstup}
+	\small
+	\begin{center}
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{p{0.36\textwidth}p{0.56\textwidth}}
+			\textbf{F.Cu, B.Cu} & Měď na přední a zadní straně. \\
+			\textbf{In1.Cu, In2.Cu, \ldots} & Všechny skutečně použité vnitřní měděné vrstvy. \\
+			\textbf{F.Mask, B.Mask} & Otvory nepájivé masky. \\
+			\textbf{F.Silkscreen, B.Silkscreen} & Potisk příslušných stran. \\
+			\textbf{Edge.Cuts} & Uzavřená hranice desky a frézované výřezy. \\
+			\textbf{F.Paste, B.Paste} & Otvory šablony pro pastu; pro výrobu holé DPS nejsou nutné. \\
+		\end{tabular}
+	\end{center}
+	\begin{itemize}
+		\item \textbf{Zahrnout vrstvy}: pro každou zaškrtnutou vrstvu vznikne samostatný soubor.
+		\item \textbf{Kreslit na všechny vrstvy}: přidává zvolené vrstvy do každého výstupu; pro běžné výrobní Gerbery ponechte seznam prázdný.
+		\item \textbf{Výstupní adresář}: cílová složka. \textbf{Varianta návrhu}: osazovací varianta, běžně Default.
+	\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Vykreslit: obecné volby}
+	\small
+	\begin{description}
+		\item[Vykreslit ohraničení stránky] Přidá rámeček a razítko výkresu; pro výrobní vrstvy vypnout.
+		\item[Odečíst nepájivou masku z potisku] Ořízne potisk v otvorech masky. Nenahrazuje správné rozmístění referencí.
+		\item[Použít soubor počátku vrtání/umístění] Zapnuto: uživatelský počátek. Vypnuto: absolutní počátek. Gerbery i vrtání musí mít \textbf{stejný počátek}.
+		\item[Před vykreslením zkontrolovat výplně zón] Ověří a případně obnoví měděné výplně. Ponechte zapnuté.
+		\item[Vrtací značky, Měřítka] Značky otvorů a měřítko pro jiné formáty. Pro výrobu \textbf{Žádné} a \textbf{1:1}; u Gerberu jsou volby omezené.
+		\item[Kreslit zrcadlově, Kreslit negativ] Výrobní data běžně nezrcadlete ani nepřevádějte do negativu.
+	\end{description}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Vykreslit: volby Gerber a pomocné údaje}
+	\small
+	\begin{description}
+		\item[Použít PROTEL přípony souboru] Místo \texttt{.gbr} použije přípony podle funkce vrstvy, např. \texttt{.gtl} a \texttt{.gbl}.
+		\item[Generovat soubor Gerber job] Přidá \texttt{.gbrjob} s informacemi o skladbě a výrobních parametrech; nenahrazuje Gerbery vrstev ani vrtání.
+		\item[Formát souřadnic] \textbf{4.6, jednotky mm}: čtyři místa před a šest za desetinnou čárkou.
+		\item[Použít rozšířený formát X2 (doporučeno)] Přidá atributy, např. funkce vrstev; dle požadavků výrobce.
+		\item[Zahrnout atributy netlist] Přidá informace o sítích pro kontroly ve výrobním CAM systému.
+		\item[Zakázat makra otvorů (nedoporučuje se)] Rozloží složitější tvary na základní prvky; jen při požadavku výrobce.
+	\end{description}
+	\medskip
+	Volby \textbf{Zobrazit DNP na výrobních vrstvách}, \textbf{Obrys plošek na výrobních vrstvách} a \textbf{Zahrnout čísla plošek} upravují vrstvy Fab.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Generování vrtacích dat}
+	\centering
+	\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{obr/generate_drill_files_dialog.png}
+
+	{\small Otevřete z okna Vykreslit tlačítkem \textbf{Generovat soubory vrtání\ldots}; potvrďte \textbf{Generovat}.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Vrtací data: význam jednotlivých voleb}
+	\small
+	\begin{description}
+		\item[Formát, Výstupní složka] Obvykle \textbf{Excellon}; ukládejte do stejné složky jako Gerbery.
+		\item[Počátek, Jednotky, Nuly] Souřadnicový systém a zápis čísel. \textbf{Desetinný formát (doporučeno)} zapisuje desetinný oddělovač.
+		\item[PTH a NPTH v jednom souboru] Sloučí pokovené a nepokovené otvory. Standardně ponechte oddělené.
+		\item[Zrcadlit podle osy Y, Minimální hlavička] Zrcadlení a omezená hlavička souboru; pro běžnou zakázkovou výrobu vypnout.
+		\item[Použít alternativní režim vrtání pro oválné otvory] Alternativní zápis otvorů/drážek; nastavit podle výrobce.
+		\item[Vygenerovat soubor mapy] Mapa otvorů pomáhá kontrole. \textbf{Generovat soubor hlášení\ldots} uloží textovou zprávu. Mapa nenahrazuje vrtací soubor.
+	\end{description}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{JLCPCB: doporučené nastavení Gerberů}
+	\small
+	\begin{itemize}
+		\item \textbf{2 vrstvy}: F.Cu, B.Cu, F.Mask, B.Mask, F.Silkscreen, B.Silkscreen a Edge.Cuts. Potisk exportujte tam, kde jej návrh obsahuje.
+		\item \textbf{4 vrstvy}: navíc In1.Cu a In2.Cu ve správném pořadí skladby. Paste přidejte při objednávce šablony či osazování.
+		\item \textbf{Formát kreslení: Gerber}; \textbf{Formát souřadnic: 4.6, jednotky mm}. Zapnout \textbf{Použít PROTEL přípony souboru}, \textbf{Použít rozšířený formát X2} a \textbf{Zahrnout atributy netlist}.
+		\item \textbf{Před vykreslením zkontrolovat výplně zón}: zapnout. \textbf{Vykreslit ohraničení stránky}: vypnout. \textbf{Kreslit na všechny vrstvy}: prázdný seznam.
+		\item \textbf{Použít soubor počátku vrtání/umístění}: vypnout pro absolutní počátek shodný s vrtáním.
+		\item Beze zrcadlení; měřítko 1:1. Poté \textbf{Vykreslit} a zkontrolovat výstupní zprávy.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj: \href{https://jlcpcb.com/help/article/how-to-generate-gerber-and-drill-files-in-kicad-9}{JLCPCB -- aktualizovaný návod pro KiCad 9}, ověřeno 19. 10. 2026; význam voleb dle KiCad 10.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{JLCPCB: doporučené nastavení vrtání}
+	\small
+	\begin{itemize}
+		\item \textbf{Formát: Excellon}, \textbf{Počátek: Absolutní}, \textbf{Jednotky: Milimetry}, \textbf{Nuly: Desetinný formát (doporučeno)}.
+		\item \textbf{PTH a NPTH v jednom souboru}: vypnout. Vzniknou samostatné soubory \texttt{*-PTH.drl} a \texttt{*-NPTH.drl}, pokud návrh příslušné otvory obsahuje.
+		\item \textbf{Zrcadlit podle osy Y} a \textbf{Minimální hlavička}: vypnout.
+		\item \textbf{Použít alternativní režim vrtání pro oválné otvory}: zapnout podle návodu JLCPCB.
+		\item Stejná výstupní složka jako Gerbery; stisknout \textbf{Generovat}. Mapa otvorů je volitelný kontrolní podklad.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj: \href{https://jlcpcb.com/help/article/how-to-generate-gerber-and-drill-files-in-kicad-9}{JLCPCB -- Gerber and Drill Files from KiCad 9}, ověřeno 19. 10. 2026.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Kontrola a předání dat JLCPCB}
+	\begin{enumerate}
+		\item Otevřete \textbf{vygenerované Gerbery i vrtací soubory} v prohlížeči Gerberů. Ověřte vrstvy, obrys, masku, potisk a souhlas poloh otvorů.
+		\item Zkontrolujte, že sada obsahuje všechny měděné vrstvy a že neobsahuje staré výstupy jiných verzí desky.
+		\item Gerbery a soubory \texttt{.drl} zabalte do \textbf{jednoho ZIP}. Názvy souborů ponechte bez diakritiky a speciálních znaků.
+		\item Po nahrání do JLCPCB ověřte jejich náhled, počet vrstev a rozměry. Parametry objednávky musí odpovídat navržené desce.
+	\end{enumerate}
+	\begin{block}{Co tato sada objednává?}
+	Výrobu holé DPS. Pro automatické osazení jsou navíc potřeba např. BOM a polohová data součástek; samotné Gerbery nestačí.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{Poznámky k příští hodině}
+		
+		\begin{itemize}
+			\item Vracíme se do místnosti \textbf{T2:E1-2}.
+			\item Zkuste začít s návrhy DPS, provedeme kontrolu a vyřešíme nejasnosti.
+		\end{itemize}
+	\end{frame}
+%------------------------------------------------------------------------------
+	\begin{frame}
+    \frametitle{To je vše...}
+		
+		\begin{center}
+			\Large{Děkuji za pozornost}
+		\end{center}
+	\end{frame}
 
 \end{document}
