@@ -1,7 +1,8 @@
 # Skladba DPS: vlastní ilustrace a odborné zdroje
 
-Ilustrace vytvořeny pro tuto prezentaci v češtině (TikZ); nejedná se o stažené
-či překreslené konkrétní cizí obrázky. Výuková syntéza principů uvedených níže.
+Schémata stackupu a návratových cest jsou vlastní ilustrace v češtině (TikZ).
+Detaily rozmístění jsou vlastní exporty z KiCadu 10. Jediný převzatý obrázek
+je výřez TI popsaný níže. Výuková syntéza principů uvedených níže.
 Řezy nejsou v měřítku; nejsou závaznou výrobní specifikací dielektrik.
 
 - `stackup_2layer.tex` / `.pdf`: (SIG + PWR) / GND.
@@ -39,3 +40,48 @@ Napájení lze při vhodném rozmístění vést jen na jedné vnější vrstvě
 o nutnou vlastnost této skladby. Mechanická skladba má zůstat vyvážená.
 Příklady tloušťky prepregu či šířky pro 50 ohmů nejsou bez výrobního stackupu
 předepsány; je třeba použít údaje konkrétního výrobce a výpočet impedance.
+
+## Návratové cesty – doplněno 19. 10. 2026
+
+Číslování odpovídá posledním dvěma slajdům prezentace. Na obsahových slajdech
+jsou jen drobné odkazy na doporučení; převzatý obrázek má navíc citaci obrázku.
+
+7. Art Kay, Texas Instruments: PCB Trace as a Wave Guide, TI Precision Labs – ADCs:
+   https://www.ti.com/video/6307562268112
+   Podklad k videu (lokální kopie `ti_pcb_trace_waveguide.pdf`):
+   https://www.ti.com/content/dam/videos/external-videos/zh-tw/9/3816841626001/6307562268112.mp4/subassets/pcb-trace-as-wave-guide-presentation-quiz.pdf
+   Snímky 8 a 12: přechod mezi dvěma GND referencemi přes GND prokov, resp.
+   přechod GND/PWR přes blízký kondenzátor. Převzat je pouze výřez pohledu shora
+   ze snímku 12; kresba je TI, nikoli vlastní screenshot editoru. Výřez je
+   realizován přímo v LaTeXu z původního PDF (bez změn obsahu obrázku).
+8. David L. Jones: PCB Design Tutorial, revize A, 29. 6. 2004.
+   Uživatelem dodaný soubor `../doc/pcb_tutorial.pdf`, str. 19–20.
+   Použity zásady krátkého připojení lokálních blokovacích kondenzátorů.
+   Starší doporučení na dělení zemních ploch nejsou přebírána jako obecné pravidlo.
+9. Phil Salmony (Phil's Lab): Vias 101: Standards, Sizing, and Spacing:
+   https://resources.altium.com/p/vias-101
+   Transfer Vias a Placement: návratové prokovy, kapacitní vazba GND/PWR,
+   krátké a široké přípoje. Žádné obrázky z tohoto článku nebyly převzaty.
+
+### Vlastní editovatelné ilustrace
+
+- `return_gnd.tex` / `.pdf`: schématický řez SIG/GND/GND/SIG a návratový prokov.
+- `return_cap.tex` / `.pdf`: schématický řez SIG/GND/PWR/SIG a kapacitní vazba.
+  Šipky znázorňují jeden okamžitý směr vysokofrekvenčního proudu, ne DC spojení
+  přes kondenzátor. Antipady oddělují nepříslušné měděné plochy od prokovů.
+- `layout_gnd.kicad_pcb`, `layout_cap.kicad_pcb`: vlastní čtyřvrstvé výukové
+  desky. U1 je obecný třívývodový model, nikoli reálné pouzdro/pinout IC.
+  C1 má dvě SMD plošky. Vnitřní referenční plochy jsou vyplněné, v exportu
+  však skryté. Desky nejsou určené pro výrobu ani nejsou vzorem kompletní DPS.
+- `make_return_layouts.py`: generátor desek pomocí knihovny pcbnew z KiCadu 10.
+  Spouštět z `obr` Pythonem dodávaným s KiCadem. Nepoužívá uživatelovy projekty.
+- `layout_*_full.pdf`: vlastní barevný export KiCad CLI, vrstvy
+  `B.Cu,F.Cu`, režim single, bez rámečku.
+- `layout_*_labels.pdf`: export `Dwgs.User,Edge.Cuts` s volbou black-and-white;
+  tmavé popisky a obrysy pro dobrou čitelnost na bílém pozadí.
+- `layout_gnd.tex` / `.pdf`, `layout_cap.tex` / `.pdf`: složení a výřezy obou exportů.
+  Překlad stejně jako samostatné řezy pomocí pdflatex ve složce `obr`.
+
+Ukázky zdůrazňují topologii a blízkost spojů; neurčují univerzální vzdálenost
+prokovů ani univerzální hodnotu kondenzátoru. Kapacita mezi PWR a GND musí
+náležet správné napájecí síti a mít vhodnou vysokofrekvenční impedanci.

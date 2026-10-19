@@ -1,0 +1,141 @@
+%PDF-1.5
+%€‚ƒ
+5 0 obj
+<< /Length 6 0 R /Filter /FlateDecode >>
+stream
+xÚİUAÛ0¼çz@‘)½ @íj -Šì¥—~¿´dÉt¼ÉÅ{ZA4¢8œ¡i"€b€õ³/—·ÂWûşé‘ğ÷×¶øö%”H,,áßí»A$HU’‘q-@Õ*EPÛ±çÑ–`{¤Œ;‰)eX‚)Úw
+ÚN*Œ«aab89¼¬;\\8Euù·
+‹Ûa2e3Ÿ¤:ö-®zm#ó¨~	?.õfòa­ùĞĞä´$êÎ†Ö÷NŒøğÙ³7Ô¸S‰uäbÉqçŞ°ëÄ<1µnù^ûåNgêÒ„Ø¸@iÜ«€Y
+o·$iµ@ˆ…±ûíû»c«…)±UB+ˆ¸/š §ÑÓØ" æ˜+äl¨DÕ¤öĞbö0¢µ¥„»ÅDj´‘ù}sœ÷ğ¼Ş=ü?/9;r³FM’)Ÿ¼"ÙSS(zÒû2æ8½cë¥Mj£æ³—õÑlPÎz_Ä<ç£—cìª—Ïx5~@7>ÉÕx¡ãjD`ÅÈ•óéj|zm®W£Y¶Uê‹wş•Ù¦FoîP¼bMökXò¡á·†“ÄìO¹üÍÁë˜•{‹·Üv;8öWœúÃÑÁÚô¹7Ghœ±·ØªíœÙÕ\‘÷³E›Ş‘ÙĞŸ	v§=+åè^£;/óÄÔ¹1xİm|NmÿİPóä
+endstream
+endobj
+6 0 obj
+520
+endobj
+7 0 obj
+<<
+/Type /Page
+/Parent 1 0 R
+/Resources <<
+    /ProcSet [/PDF /Text /ImageC /ImageB]
+    /Font 2 0 R
+    /XObject 3 0 R >>
+/MediaBox [0 0 841.896 595.296]
+/Contents 5 0 R
+>>
+endobj
+8 0 obj
+<</S /GoTo /D [7 0 R /Fit]
+>>
+endobj
+2 0 obj
+<<
+>>
+endobj
+3 0 obj
+<<
+
+>>
+endobj
+4 0 obj
+<< /JavaScript
+ << /Names
+    [ (JSInit) << /Type /Action /S /JavaScript /JS (
+function ShM\(aEntries\) {
+    var aParams = [];
+    for \(var i = 0; i < aEntries.length; ++i\) {
+        aParams.push\({
+            cName: aEntries[i][0],
+            cReturn: aEntries[i].length > 1 ? aEntries[i][1] : ''
+        }\)
+    }
+
+    var cChoice = app.popUpMenuEx.apply\(app, aParams\);
+    if \(cChoice == null || cChoice == ''\) return;
+
+    if \(cChoice.substring\(0, 1\) == '#'\) {
+        this.pageNum = parseInt\(cChoice.slice\(1\)\);
+        return;
+    }
+
+    // Fallback: some viewers return cName instead of cReturn
+    var url = cChoice;
+    if \(url.substring\(0, 4\) != 'http' && url.substring\(0, 4\) != 'file'\) {
+        var idx = url.indexOf\('http'\);
+        if \(idx < 0\) idx = url.indexOf\('file:'\);
+        if \(idx >= 0\) url = url.substring\(idx\);
+        else return;
+    }
+
+    if \(url.substring\(0, 8\) == 'file:///'\) app.openDoc\(url.substring\(7\)\);
+    else if \(url.substring\(0, 7\) == 'file://'\) app.openDoc\('//' + url.substring\(7\)\);
+    else app.launchURL\(url\);
+}
+) >> ]
+ >>
+>>
+endobj
+1 0 obj
+<<
+/Type /Pages
+/Kids [
+7 0 R
+]
+/Count 1
+>>
+endobj
+10 0 obj
+<<
+/Producer (KiCad PDF)
+/CreationDate (D:2026:10:19:14:41:08)
+/Creator (PCBNEW)
+/Title (layout_gnd_full.pdf)
+/Author ()
+/Subject ()
+>>
+endobj
+9 0 obj
+<<
+/Title (B.Cu \(strana 1\))
+/Parent 11 0 R
+/A 8 0 R
+>>
+endobj
+11 0 obj
+<< /Type /Outlines
+   /Count 1
+   /First 9 0 R
+   /Last 9 0 R
+>>
+endobj
+12 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/Version /1.5
+/PageMode /UseOutlines
+/Outlines 11 0 R
+/Names 4 0 R
+/PageLayout /SinglePage
+>>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000002037 00000 n 
+0000000862 00000 n 
+0000000883 00000 n 
+0000000905 00000 n 
+0000000015 00000 n 
+0000000609 00000 n 
+0000000628 00000 n 
+0000000817 00000 n 
+0000002248 00000 n 
+0000002096 00000 n 
+0000002320 00000 n 
+0000002401 00000 n 
+trailer
+<< /Size 13 /Root 12 0 R /Info 10 0 R >>
+startxref
+2542
+%%EOF

@@ -1,4 +1,5 @@
 %Beamer class
+\pdfminorversion=7
 \documentclass{beamer}
 
 \usepackage[czech]{babel}
@@ -64,6 +65,8 @@
 	\begin{block}{Základní doporučení}
 	Signál potřebuje blízkou a souvislou referenční plochu. Důležité jsou i rychlost hran signálu a délka vedení, nejen hodinová frekvence.
 	\end{block}
+	\vfill
+	{\tiny Zdroj doporučení: [1, 5, 6]. Úplný seznam zdrojů je na konci prezentace.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -74,7 +77,7 @@
 	\medskip
 	Signály a napájení veďte převážně na L1; protější L2 ponechte co nejvíce souvislou jako návratovou cestu GND.
 	\vfill
-	{\tiny Obr.: dle \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Z. Peterson -- Understanding 2-Layer PCB Ground Planes}.}
+	{\tiny Zdroj doporučení: [1] Z. Peterson.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -85,7 +88,7 @@
 		\item \textbf{Použití:} jednodušší obvody s krátkými vedeními. Spodní GND co nejméně přerušovat; trasy přes celou spodní stranu mohou rozříznout návratovou cestu.
 	\end{itemize}
 	\vfill
-	{\tiny Zdroj doporučení: \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Z. Peterson -- Understanding 2-Layer PCB Ground Planes}.}
+	{\tiny Zdroj doporučení: [1] Z. Peterson.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -96,7 +99,7 @@
 	\medskip
 	L1 má referenci GND, zatímco nejbližší referencí pro L4 je PWR. Právě tento rozdíl ovlivňuje vedení rychlých signálů.
 	\vfill
-	{\tiny Obr.: dle \href{https://resources.altium.com/p/right-way-use-power-planes-4-layer-pcb-stackup}{Z. Peterson -- Power Planes in a 4-Layer PCB Stackup}.}
+	{\tiny Zdroj doporučení: [2] Z. Peterson.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -107,7 +110,7 @@
 		\item \textbf{Použití:} rychlé signály přednostně na L1 nad GND. Plná PWR může být referencí pro L4, ale je nutné vyřešit návaznost návratového proudu na GND.
 	\end{itemize}
 	\vfill
-	{\tiny Zdroj doporučení: \href{https://resources.altium.com/p/right-way-use-power-planes-4-layer-pcb-stackup}{Z. Peterson -- The Right Way to Use Power Planes in a 4-Layer PCB Stackup}.}
+	{\tiny Zdroj doporučení: [2] Z. Peterson.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -118,7 +121,7 @@
 	\medskip
 	Napájení lze rozvádět na jedné nebo obou vnějších vrstvách. Dvě vnitřní GND plochy ponechte souvislé a vzájemně je propojte.
 	\vfill
-	{\tiny Obr.: dle \href{https://resources.altium.com/p/two-alternative-4-layer-pcb-stackups-50-ohms-impedance}{Z. Peterson -- Two 4 Layer PCB Stackups With 50 Ohms Impedance}.}
+	{\tiny Zdroj doporučení: [3] Z. Peterson.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -129,7 +132,7 @@
 		\item \textbf{Doporučení:} vhodný výchozí stackup pro běžnou čtyřvrstvou digitální desku. GND plochy propojit; u přechodu signálu vložit blízký GND prokov.
 	\end{itemize}
 	\vfill
-	{\tiny Zdroj doporučení: \href{https://resources.altium.com/p/two-alternative-4-layer-pcb-stackups-50-ohms-impedance}{Z. Peterson -- Two 4 Layer PCB Stackups With 50 Ohms Impedance}.}
+	{\tiny Zdroj doporučení: [3] Z. Peterson.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -144,7 +147,89 @@
 	Návratovou cestu lze při přechodu jednodušeji navázat GND prokovem. GND a PWR se naopak nesmějí spojit přímým prokovem.
 	\end{block}
 	\vfill
-	{\tiny Zdroje: \href{https://www.signalintegrityjournal.com/articles/2982-the-case-for-split-ground-planes}{E. Bogatin -- The Case for Split Ground Planes}; \href{https://resources.altium.com/p/should-you-use-your-power-plane-as-a-return-path}{Z. Peterson -- Power Plane as a Return Path}.}
+	{\tiny Zdroj doporučení: [4, 5, 7, 9] Peterson, Bogatin, Kay, Salmony.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{GND $\rightarrow$ GND: návrat přes blízký prokov}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.51\textheight,keepaspectratio]{obr/return_gnd.pdf}\par}
+	\begin{itemize}
+		\item Signál přechází z L1 na L4; návrat se přesouvá z L3 na L2 po \textbf{blízkém GND prokovu}.
+		\item Čím vzdálenější je návratový prokov, tím větší je proudová smyčka. Signálový prokov se s GND plochami nespojuje.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [7, 9] A. Kay (TI), P. Salmony (Phil's Lab).}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Ukázka v KiCadu: GND vedle signálového prokovu}
+	\small
+	\begin{columns}[T,onlytextwidth]
+		\begin{column}{.46\textwidth}
+			\begin{itemize}
+				\item \textbf{SIG}: prokov mění signálovou vrstvu; červená trasa je F.Cu, modrá B.Cu.
+				\item \textbf{GND}: sousední prokov propojuje vnitřní referenční plochy L2 a L3.
+				\item GND prokov přidat přímo k přechodu, ne až na vzdálený okraj desky. Dodržet izolační odstupy.
+			\end{itemize}
+		\end{column}
+		\begin{column}{.52\textwidth}
+			\includegraphics[width=\linewidth]{obr/layout_gnd.pdf}
+			{\scriptsize Export z KiCadu 10, pohled shora. Vnitřní měděné plochy jsou skryté. U1 je pouze výukový model.}
+		\end{column}
+	\end{columns}
+	\vfill
+	{\tiny Zdroj doporučení: [7, 9] A. Kay (TI), P. Salmony (Phil's Lab).}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{GND $\rightarrow$ PWR: návrat přes kondenzátor}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.51\textheight,keepaspectratio]{obr/return_cap.pdf}\par}
+	\begin{itemize}
+		\item Návrat mezi různými referencemi potřebuje \textbf{nízkoimpedanční kapacitní vazbu} poblíž přechodu.
+		\item GND a PWR se nesmějí spojit prokovem! Kondenzátor je \textbf{mezi PWR a GND}, nikoli v sérii se signálem.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [4, 7, 9] Z. Peterson, A. Kay (TI), P. Salmony.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Ukázka v KiCadu: blokování u přechodu signálu}
+	\small
+	\begin{columns}[T,onlytextwidth]
+		\begin{column}{.46\textwidth}
+			\begin{itemize}
+				\item \textbf{C1} je mezi napájením U1 a GND. Připojení plošek k jejich prokovům je krátké a široké.
+				\item Blízký blokovací kondenzátor součástky může současně navázat návrat u \textbf{SIG prokovu}.
+				\item Musí patřit ke \textbf{stejnému napájení}, které tvoří referenci L3. Vzdálený kondenzátor tuto úlohu nemusí splnit.
+			\end{itemize}
+		\end{column}
+		\begin{column}{.52\textwidth}
+			\includegraphics[width=\linewidth]{obr/layout_cap.pdf}
+			{\scriptsize Export z KiCadu 10. L2 = GND, L3 = PWR; obě plochy jsou skryté. U1 má pouze modelové vývody.}
+		\end{column}
+	\end{columns}
+	\vfill
+	{\tiny Zdroj doporučení: [7--9] A. Kay (TI), D. L. Jones, P. Salmony.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Přechod reference: výuková ilustrace TI}
+	\small
+	{\centering
+	\includegraphics[page=12,trim=100bp 455bp 105bp 255bp,clip,width=.98\linewidth]{obr/ti_pcb_trace_waveguide.pdf}\par}
+	\begin{itemize}
+		\item Pohled shora: růžová trasa je nahoře, modrá dole; u přechodů jsou kondenzátory mezi PWR a GND.
+		\item Vpravo je kondenzátor přímo u součástky (DUT). Fialové značky znázorňují šíření pole, nikoli další měděné spoje.
+	\end{itemize}
+	\begin{block}{Při návrhu}
+	Přednostně zachovejte referenci GND. Při změně na PWR rozhoduje impedance kondenzátoru i jeho připojení; hodnotu a pouzdro volte podle obvodu a doporučení výrobce.
+	\end{block}
+	\vfill
+	{\tiny Obrázek: [7] A. Kay, Texas Instruments, snímek 12 (výřez). Zdroj doporučení: [7--9].}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -156,7 +241,7 @@
 		\item Konkrétní tloušťky, materiály a dostupné varianty ověřte u výrobce \textbf{před návrhem impedančně řízených spojů}.
 	\end{itemize}
 	\vfill
-	{\tiny Zdroje: \href{https://resources.altium.com/p/pcb-stackup-basics}{Phil's Lab -- PCB Stackup Basics}; \href{https://resources.altium.com/p/right-way-use-power-planes-4-layer-pcb-stackup}{Z. Peterson -- Power Planes in a 4-Layer PCB Stackup}.}
+	{\tiny Zdroj doporučení: [2, 6] Z. Peterson, Phil's Lab.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -171,22 +256,35 @@
 	Rozhodují proudy, napětí, rychlost hran, hustota zapojení a požadavky na rušení. Pokud se napájení a signály nevejdou bez porušení návratových cest, zvažte více vrstev.
 	\end{block}
 	\vfill
-	{\tiny Vlastní výukové shrnutí podle Petersona a Bogatina; konkrétní zdroje jsou uvedeny na jednotlivých slajdech.}
+	{\tiny Zdroj doporučení: [1--6]. Výukové shrnutí; úplný seznam zdrojů následuje na konci.}
 \end{frame}
 
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje a původ ilustrací}
+\begin{frame}[t]{Zdroje (1/2): skladba DPS a referenční plochy}
 	\small
-	\begin{itemize}
+	\begin{enumerate}
 		\item Z. Peterson: \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Understanding 2-Layer PCB Ground Planes}.
 		\item Z. Peterson: \href{https://resources.altium.com/p/right-way-use-power-planes-4-layer-pcb-stackup}{The Right Way to Use Power Planes in a 4-Layer PCB Stackup}.
 		\item Z. Peterson: \href{https://resources.altium.com/p/two-alternative-4-layer-pcb-stackups-50-ohms-impedance}{Two 4 Layer PCB Stackups With 50 Ohms Impedance}.
 		\item Z. Peterson: \href{https://resources.altium.com/p/should-you-use-your-power-plane-as-a-return-path}{Should You Use Your PCB Power Plane as a Return Path?}
 		\item E. Bogatin: \href{https://www.signalintegrityjournal.com/articles/2982-the-case-for-split-ground-planes}{The Case for Split Ground Planes}, Signal Integrity Journal, 2023.
 		\item Phil's Lab: \href{https://resources.altium.com/p/pcb-stackup-basics}{PCB Stackup Basics}, Altium.
-	\end{itemize}
+	\end{enumerate}
 	\medskip
-	Ilustrace jsou \textbf{vlastní česká schémata} podle uvedených principů, nikoli převzaté obrázky. Zdrojové kresby i PDF jsou ve složce \texttt{obr/}. Rozměry v řezech nejsou v měřítku.
+	{\scriptsize Čísla v drobných odkazech na slajdech odpovídají tomuto seznamu.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Zdroje (2/2): návratový proud a blokování}
+	\small
+	\begin{enumerate}
+		\setcounter{enumi}{6}
+		\item Art Kay: \href{https://www.ti.com/video/6307562268112}{PCB Trace as a Wave Guide}, TI Precision Labs -- ADCs, Texas Instruments. \href{https://www.ti.com/content/dam/videos/external-videos/zh-tw/9/3816841626001/6307562268112.mp4/subassets/pcb-trace-as-wave-guide-presentation-quiz.pdf}{Podklad k videu}, snímky 8 a 12; převzatý výřez ze snímku 12.
+		\item David L. Jones: \textit{PCB Design Tutorial}, revize A, 29. 6. 2004, str. 19--20: Good Bypassing, High Frequency Design Techniques. Lokální podklad: \texttt{doc/pcb\_tutorial.pdf}.
+		\item Phil Salmony (Phil's Lab): \href{https://resources.altium.com/p/vias-101}{Vias 101: Standards, Sizing, and Spacing}, Altium; části Transfer Vias a Placement.
+	\end{enumerate}
+	\medskip
+	{\scriptsize Ostatní obrázky jsou vlastní česká schémata nebo vlastní exporty výukových desek z KiCadu 10. Editovatelné předlohy i PDF jsou v \texttt{obr/}. Řezy nejsou v měřítku; ukázkové desky nejsou výrobním návrhem. Z Jonesova staršího podkladu přebíráme zásady blokování, nikoli obecné doporučení dělit zemní plochy.}
 \end{frame}
 
 

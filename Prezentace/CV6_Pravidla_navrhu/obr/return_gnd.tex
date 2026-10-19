@@ -1,0 +1,30 @@
+\documentclass[tikz,border=3mm]{standalone}
+\input{stackup_style.tex}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}[>=Latex, font=\small]
+ \fill[frfour] (0,0) rectangle (9,3);
+ \foreach \y/\lab in {3/L1: SIG,2.35/L2: GND,0.65/L3: GND,0/L4: SIG}
+  {\node[anchor=east] at (-.2,\y) {\lab};}
+ \foreach \y in {2.35,.65} {\fill[gnd] (0,\y-.12) rectangle (9,\y+.12);}
+ % Antipads: signal is insulated from both reference planes.
+ \fill[frfour] (4.25,.3) rectangle (4.75,2.7);
+ \draw[red!75!black,line width=5pt] (0,3)--(4.5,3)--(4.5,0)--(9,0);
+ \draw[gnd!65!black,line width=5pt] (5.35,.3)--(5.35,2.7);
+ \draw[red!75!black,very thick,->] (1,3.22)--(3.2,3.22);
+ \draw[red!75!black,very thick,->] (4.3,2)--(4.3,1);
+ \draw[red!75!black,very thick,->] (6.2,-.22)--(8.3,-.22);
+ \draw[blue!75!black,very thick,->] (8.3,.65)--(5.35,.65)--(5.35,1.6);
+ \draw[blue!75!black,very thick,->] (5.35,1.6)--(5.35,2.35)--(4.85,2.35);
+ \draw[blue!75!black,very thick,->] (4.15,2.35)--(.7,2.35);
+ \node[anchor=south] at (3.7,3.7) {Signálový prokov};
+ \draw[->] (3.7,3.65)--(4.5,3.05);
+ \node[anchor=south] at (7,3.7) {Blízký GND prokov};
+ \draw[->] (6.4,3.65)--(5.35,2.75);
+ \node[align=center] at (2,1.4) {Návratový proud\textcolor{blue!75!black}{ $\leftarrow$}\\v referenční ploše};
+ \node[align=center] at (7.3,1.65) {Vodivé propojení\\obou ploch GND};
+ \node[anchor=west,font=\scriptsize] at (0,-.8) {Červeně: signálový proud. Modře: jeho návrat. Šipky ukazují jeden okamžitý směr.};
+ \node[anchor=west,font=\scriptsize] at (0,-1.15) {Z GND prokovu je zobrazen jen úsek mezi plochami; v půdorysu je mimo signálovou trasu.};
+ \node[anchor=west,font=\scriptsize] at (0,-1.5) {Návrat obtéká izolační mezeru (antipad) mimo rovinu řezu; nespojuje se se signálem.};
+\end{tikzpicture}
+\end{document}
