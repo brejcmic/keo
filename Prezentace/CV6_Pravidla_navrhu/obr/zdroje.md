@@ -1,8 +1,8 @@
 # Skladba DPS: vlastní ilustrace a odborné zdroje
 
 Schémata stackupu a návratových cest jsou vlastní ilustrace v češtině (TikZ).
-Detaily rozmístění jsou vlastní exporty z KiCadu 10. Jediný převzatý obrázek
-je výřez TI popsaný níže. Výuková syntéza principů uvedených níže.
+Detaily rozmístění jsou vlastní exporty z KiCadu 10. Převzaté obrázky TI
+jsou tři uživatelem dodané snímky popsané níže. Výuková syntéza principů uvedených níže.
 Řezy nejsou v měřítku; nejsou závaznou výrobní specifikací dielektrik.
 
 - `stackup_2layer.tex` / `.pdf`: (SIG + PWR) / GND.
@@ -50,12 +50,17 @@ jsou jen drobné odkazy na doporučení; převzatý obrázek má navíc citaci o
    https://www.ti.com/video/6307562268112
    Podklad k videu (lokální kopie `ti_pcb_trace_waveguide.pdf`):
    https://www.ti.com/content/dam/videos/external-videos/zh-tw/9/3816841626001/6307562268112.mp4/subassets/pcb-trace-as-wave-guide-presentation-quiz.pdf
-   Snímky 8 a 12: přechod mezi dvěma GND referencemi přes GND prokov, resp.
-   přechod GND/PWR přes blízký kondenzátor. Převzat je pouze výřez pohledu shora
-   ze snímku 12; kresba je TI, nikoli vlastní screenshot editoru. Výřez je
-   realizován přímo v LaTeXu z původního PDF (bez změn obsahu obrázku).
+   Uživatelem dodané printscreeny ze stejného zdroje, použité beze změn obsahu:
+   - `wave_guide_no_vias.png`: snímek 9, přechod bez blízkého propojení GND.
+   - `wave_guide_gnd_vias.png`: snímek 8, přechod mezi GND plochami s GND prokovy.
+   - `wave_guide_capacitors.png`: snímek 12, přechod GND/PWR přes kondenzátor.
+   Každý obsahuje boční i horní pohled; obrázky jsou citovány přímo na slajdech
+   a úplný zdroj je v závěrečném seznamu pod číslem 7. Kresby jsou TI, nikoli
+   vlastní screenshoty editoru. Nahrazují dřívější osamocený horní výřez z PDF.
 8. David L. Jones: PCB Design Tutorial, revize A, 29. 6. 2004.
-   Uživatelem dodaný soubor `../doc/pcb_tutorial.pdf`, str. 19–20.
+   Veřejná kopie pro studenty, str. 19–20:
+   https://www.scs.stanford.edu/~zyedidia/docs/pcb/pcb_tutorial.pdf
+   Odkaz v prezentaci nahrazuje cestu k lokální kopii `../doc/pcb_tutorial.pdf`.
    Použity zásady krátkého připojení lokálních blokovacích kondenzátorů.
    Starší doporučení na dělení zemních ploch nejsou přebírána jako obecné pravidlo.
 9. Phil Salmony (Phil's Lab): Vias 101: Standards, Sizing, and Spacing:

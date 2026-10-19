@@ -151,6 +151,20 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Bez GND prokovů: přerušená návaznost reference}
+	\footnotesize
+	{\centering
+	\includegraphics[width=.98\linewidth,height=.58\textheight,keepaspectratio]{obr/wave_guide_no_vias.png}\par}
+	\footnotesize
+	\begin{itemize}
+		\item Nahoře boční pohled, dole pohled shora. Signál mění vrstvu, ale mezi oběma GND plochami chybí blízké propojení.
+		\item Fialové značky ilustrují pole: u přechodů se rozprostírá do okolí.
+	\end{itemize}
+	\vfill
+	{\tiny Obrázek a princip: [7] A. Kay (Texas Instruments), snímek 9.}
+\end{frame}
+
+%------------------------------------------------------------------------------
 \begin{frame}[t]{GND $\rightarrow$ GND: návrat přes blízký prokov}
 	\small
 	{\centering
@@ -161,6 +175,20 @@
 	\end{itemize}
 	\vfill
 	{\tiny Zdroj doporučení: [7, 9] A. Kay (TI), P. Salmony (Phil's Lab).}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{GND prokovy: boční a horní pohled}
+	\footnotesize
+	{\centering
+	\includegraphics[width=.98\linewidth,height=.58\textheight,keepaspectratio]{obr/wave_guide_gnd_vias.png}\par}
+	\footnotesize
+	\begin{itemize}
+		\item Zelené GND prokovy vedle černých signálových prokovů propojují obě vnitřní GND plochy.
+		\item Návrat má blízkou cestu při obou změnách signálové vrstvy; pole se drží blíže k vedení a referenci.
+	\end{itemize}
+	\vfill
+	{\tiny Obrázek a princip: [7] A. Kay (Texas Instruments), snímek 8.}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -197,6 +225,20 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
+\begin{frame}[t]{GND $\rightarrow$ PWR: boční a horní pohled}
+	\footnotesize
+	{\centering
+	\includegraphics[width=.98\linewidth,height=.58\textheight,keepaspectratio]{obr/wave_guide_capacitors.png}\par}
+	\footnotesize
+	\begin{itemize}
+		\item Zelená plocha je GND, oranžová PWR. Kondenzátory u přechodů zajišťují kapacitní vazbu mezi referencemi.
+		\item Vpravo tuto úlohu plní blokování u součástky (DUT). GND a PWR nejsou spojeny přímo; kondenzátory nejsou v signálové trase.
+	\end{itemize}
+	\vfill
+	{\tiny Obrázek a princip: [7] A. Kay (Texas Instruments), snímek 12.}
+\end{frame}
+
+%------------------------------------------------------------------------------
 \begin{frame}[t]{Ukázka v KiCadu: blokování u přechodu signálu}
 	\small
 	\begin{columns}[T,onlytextwidth]
@@ -214,22 +256,6 @@
 	\end{columns}
 	\vfill
 	{\tiny Zdroj doporučení: [7--9] A. Kay (TI), D. L. Jones, P. Salmony.}
-\end{frame}
-
-%------------------------------------------------------------------------------
-\begin{frame}[t]{Přechod reference: výuková ilustrace TI}
-	\small
-	{\centering
-	\includegraphics[page=12,trim=100bp 455bp 105bp 255bp,clip,width=.98\linewidth]{obr/ti_pcb_trace_waveguide.pdf}\par}
-	\begin{itemize}
-		\item Pohled shora: růžová trasa je nahoře, modrá dole; u přechodů jsou kondenzátory mezi PWR a GND.
-		\item Vpravo je kondenzátor přímo u součástky (DUT). Fialové značky znázorňují šíření pole, nikoli další měděné spoje.
-	\end{itemize}
-	\begin{block}{Při návrhu}
-	Přednostně zachovejte referenci GND. Při změně na PWR rozhoduje impedance kondenzátoru i jeho připojení; hodnotu a pouzdro volte podle obvodu a doporučení výrobce.
-	\end{block}
-	\vfill
-	{\tiny Obrázek: [7] A. Kay, Texas Instruments, snímek 12 (výřez). Zdroj doporučení: [7--9].}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -260,6 +286,12 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
+\section{\texorpdfstring{Přerušení zpětné cesty}{Preruseni zpetne cesty}}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Referenční zdroje}{Referencni zdroje}}
+%------------------------------------------------------------------------------
 \begin{frame}[t]{Zdroje (1/2): skladba DPS a referenční plochy}
 	\small
 	\begin{enumerate}
@@ -279,8 +311,8 @@
 	\small
 	\begin{enumerate}
 		\setcounter{enumi}{6}
-		\item Art Kay: \href{https://www.ti.com/video/6307562268112}{PCB Trace as a Wave Guide}, TI Precision Labs -- ADCs, Texas Instruments. \href{https://www.ti.com/content/dam/videos/external-videos/zh-tw/9/3816841626001/6307562268112.mp4/subassets/pcb-trace-as-wave-guide-presentation-quiz.pdf}{Podklad k videu}, snímky 8 a 12; převzatý výřez ze snímku 12.
-		\item David L. Jones: \textit{PCB Design Tutorial}, revize A, 29. 6. 2004, str. 19--20: Good Bypassing, High Frequency Design Techniques. Lokální podklad: \texttt{doc/pcb\_tutorial.pdf}.
+		\item Art Kay: \href{https://www.ti.com/video/6307562268112}{PCB Trace as a Wave Guide}, TI Precision Labs -- ADCs, Texas Instruments. \href{https://www.ti.com/content/dam/videos/external-videos/zh-tw/9/3816841626001/6307562268112.mp4/subassets/pcb-trace-as-wave-guide-presentation-quiz.pdf}{Podklad k videu}, snímky 8, 9 a 12. Použity uživatelem dodané snímky s bočním a horním pohledem.
+		\item David L. Jones: \href{https://www.scs.stanford.edu/~zyedidia/docs/pcb/pcb_tutorial.pdf}{\textit{PCB Design Tutorial}}, revize A, 29. 6. 2004, str. 19--20: Good Bypassing, High Frequency Design Techniques. Veřejná kopie na webu Stanford University.
 		\item Phil Salmony (Phil's Lab): \href{https://resources.altium.com/p/vias-101}{Vias 101: Standards, Sizing, and Spacing}, Altium; části Transfer Vias a Placement.
 	\end{enumerate}
 	\medskip
