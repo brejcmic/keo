@@ -11,6 +11,7 @@
 \usepackage{hyperref}
 \usepackage{fancyvrb} % pro verbatim
 \usepackage{graphicx}
+\usepackage{tikz}
 
 \usetheme{AnnArbor}
 \usecolortheme{crane}
@@ -987,6 +988,25 @@
 	\begin{block}{Reference má přednost před hodnotou}
 	Při nedostatku místa lze hodnotu součástky v potisku skrýt. Referenci raději přesuňte. Text ve vrstvě F.Fab nebo B.Fab není výrobní potisk.
 	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Potisk pouzdra a reference: ukázka}
+	\small
+	\begin{center}
+		\begin{tikzpicture}
+			\node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=6.4cm,trim=100 140 400 510,clip]{obr/board_outline.png}};
+			\node[anchor=west,align=left] (reference) at (7.0,2.7) {\textbf{Reference R1}\\Označení konkrétní\\součástky ve schématu.};
+			\draw[->,thick,cyan] (reference.west) -- (3.35,2.48);
+			\node[anchor=west,align=left] (outline) at (7.0,0.7) {\textbf{Potisk pouzdra}\\Obrys těla součástky\\a případně značka polarity.};
+			\draw[->,thick,cyan] (outline.west) -- (5.12,1.28);
+		\end{tikzpicture}
+	\end{center}
+	\begin{itemize}
+		\item V této ukázce jsou \textbf{žlutý obrys i žlutá reference} ve vrstvě \textbf{F.Silkscreen}; obojí se vytiskne na desku.
+		\item Šedé texty uvnitř a pod pouzdrem jsou pomocné údaje ve \textbf{F.Fab}. Do potisku nepatří, pokud je do něj výslovně nepřesunete.
+	\end{itemize}
+	\textbf{Obrys může zakrýt osazená součástka; reference musí zůstat čitelná vedle ní.}
 \end{frame}
 
 %------------------------------------------------------------------------------

@@ -2,6 +2,10 @@
 
 ## Nepájivá maska a popisky
 
+Na slajdu Potisk pouzdra a reference je použit výřez `board_outline.png`
+z dokumentace Getting Started in KiCad 10 (zdroj níže v části ohraničení DPS).
+Výřez rezistoru R1 doplněn šipkami a českými popisky v LaTeXu.
+
 KiCad Documentation Contributors, dokumentace KiCad 10 (CC BY 3.0 nebo GPL 3.0 a novější):
 
 - `selection_filter.png`: https://docs.kicad.org/10.0/en/pcbnew/images/selection_filter.png
