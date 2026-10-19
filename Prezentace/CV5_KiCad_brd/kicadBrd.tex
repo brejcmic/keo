@@ -517,7 +517,85 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\subsection{\texorpdfstring{Rozmisťování součástek a propojení trasami}{Rozmistovani soucastek a propojovani trasami}}
+\subsection{\texorpdfstring{Rozmisťování součástek}{Rozmistovani soucastek}}
+%------------------------------------------------------------------------------
+\begin{frame}{Rozmisťování pouzder: základní příkazy}
+	\small
+	\begin{description}
+		\item[Přesunout -- \texttt{M}] Umístěte ukazatel nad pouzdro nebo je vyberte. Použijte \textbf{pravé tlačítko → Přesunout} nebo \textbf{M}; novou polohu potvrďte levým tlačítkem. Připojené spoje se nepřesouvají.
+		\item[Otočit -- \texttt{R}] Použijte \textbf{pravé tlačítko → Otočit proti směru hodinových ručiček} nebo \textbf{R}. Opačný směr provede \textbf{Shift+R}; výchozí krok je 90°.
+		\item[Změnit stranu -- \texttt{F}] Použijte \textbf{pravé tlačítko → Změnit stranu / překlopit} nebo \textbf{F}. Pouzdro i jeho prvky se převedou mezi odpovídajícími předními a zadními vrstvami.
+		\item[Vlastnosti -- \texttt{E}] Použijte \textbf{pravé tlačítko → Vlastnosti} nebo \textbf{E}. Lze zadat přesnou polohu, natočení i stranu desky.
+	\end{description}
+	\begin{block}{Použití zkratky}
+	Zkratku lze stisknout nad pouzdrem bez předchozího kliknutí, nebo po výběru jednoho či více pouzder. \textbf{Esc} probíhající příkaz zruší.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Vyhledání a přesné rozmístění pouzder}
+	\begin{description}
+		\item[Vybrat a přesunout -- \texttt{T}] Použijte \textbf{pravé tlačítko → Vybrat a přesunout pouzdro} nebo \textbf{T}. Zadejte referenci, např. \texttt{R12}; vybrané pouzdro se připojí k ukazateli.
+		\item[Přesunout přesně -- \texttt{Shift+M}] Vyberte pouzdro a použijte \textbf{pravé tlačítko → Pozice → Přesunout přesně\ldots} Zadává posun X, Y a natočení vůči zvolenému počátku.
+		\item[Umístit relativně -- \texttt{Shift+P}] Použijte \textbf{pravé tlačítko → Pozice → Umístit relativně k\ldots} Zvolte referenční bod a požadovaný posun pouzdra.
+	\end{description}
+	\begin{block}{Kdy použít přesnou polohu?}
+	Například pro konektor u hrany desky, montážní otvor nebo součástky s předepsanou vzájemnou polohou.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Rozmístění více pouzder}
+	\small
+	\begin{description}
+		\item[Přesunout jednotlivě -- \texttt{Ctrl+M}] Vyberte více pouzder a použijte \textbf{pravé tlačítko → Přesunout jednotlivě}. KiCad je nabídne postupně; \textbf{Tab} aktuální přeskočí.
+		\item[Sbalit a přesunout -- \texttt{P}] Vyberte více pouzder a použijte \textbf{pravé tlačítko → Sbalit a přesunout pouzdra}. Pouzdra těsně seskupí a přesune jako celek.
+	\end{description}
+	\begin{block}{Přesun a tažení}
+	\textbf{M} nepřesune připojené segmenty spojů, pokud nejsou také vybrány. Pro přesun zapojeného pouzdra se zachováním spojů použijte \textbf{pravé tlačítko → Táhnout} nebo \textbf{D}.
+	\end{block}
+	\begin{block}{Praktický postup}
+	Nejprve rozmístěte mechanicky určené prvky, potom integrované obvody, jejich blokovací kondenzátory a nakonec zbývající součástky podle pomocných čar propojení.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Mřížka a jednotky}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.58\textwidth}
+			\begin{description}
+				\item[Mřížka] Rozteč zvolte v nabídce horní lišty nebo přes \textbf{pravé tlačítko → Mřížka}. Další mřížka: \textbf{N}; předchozí: \textbf{Shift+N}.
+				\item[Rychlé mřížky] Předvolby přepnou \textbf{Alt+1} a \textbf{Alt+2}. Seznam a předvolby upravíte přes pravé tlačítko na ikoně mřížky → \textbf{Upravit mřížky\ldots}
+				\item[Jednotky] Tlačítky v levé liště zvolte \textbf{mm}, \textbf{mil} nebo \textbf{inch}. \textbf{Ctrl+U} přepíná metrické a imperiální jednotky.
+			\end{description}
+		\end{column}
+		\begin{column}{0.38\textwidth}
+			\centering
+			\includegraphics[height=0.65cm]{obr/grid_24.png}
+			\quad\textbf{Mřížka}
+
+			\vspace{0.4cm}
+			\includegraphics[height=0.65cm]{obr/unit_mm_24.png}
+			\quad\textbf{mm}
+
+			\medskip
+			\includegraphics[height=0.65cm]{obr/unit_mil_24.png}
+			\quad\textbf{mil}
+
+			\medskip
+			\includegraphics[height=0.65cm]{obr/unit_inch_24.png}
+			\quad\textbf{inch}
+		\end{column}
+	\end{columns}
+	\vspace{-0.15cm}
+	\begin{block}{Praktické pravidlo}
+	Pouzdra rozmisťujte na rozumně hrubé mřížce; jemnější mřížku použijte až pro detail. \textbf{1 inch = 1000 mil = 25,4 mm}.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\subsection{\texorpdfstring{Propojení trasami}{Propojení trasami}}
 %------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------

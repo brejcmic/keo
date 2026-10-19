@@ -28,3 +28,15 @@ Referenční dokumentace: https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html
 
 Ikona KiCadu: KiCad Developers, grafické prvky aplikace KiCad.
 Význam voleb ověřen v dokumentaci KiCad 10, část Update PCB From Schematic.
+
+## Rozmisťování pouzder, mřížka a jednotky
+
+Oficiální ikony z dokumentace KiCad 10:
+
+- `grid_24.png`: https://docs.kicad.org/10.0/en/pcbnew/images/icons/grid_24.png
+- `unit_mm_24.png`: https://docs.kicad.org/10.0/en/pcbnew/images/icons/unit_mm_24.png
+- `unit_mil_24.png`: https://docs.kicad.org/10.0/en/pcbnew/images/icons/unit_mil_24.png
+- `unit_inch_24.png`: https://docs.kicad.org/10.0/en/pcbnew/images/icons/unit_inch_24.png
+
+Popis příkazů a klávesových zkratek ověřen v dokumentaci KiCad 10,
+části Placing and moving footprints, Grid settings a Actions reference.
