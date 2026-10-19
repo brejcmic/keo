@@ -597,6 +597,94 @@
 %------------------------------------------------------------------------------
 \subsection{\texorpdfstring{Propojení trasami}{Propojení trasami}}
 %------------------------------------------------------------------------------
+\begin{frame}{Zahájení vedení spoje}
+	\begin{columns}[T]
+		\begin{column}{0.52\textwidth}
+			\small
+			\begin{enumerate}
+				\item Umístěte ukazatel nad plošku, prokov nebo konec existujícího spoje.
+				\item Použijte \textbf{pravé tlačítko → Vést spoj} nebo klávesu \textbf{X}.
+				\item Pohybem myši určete trasu; levým tlačítkem nebo \textbf{Enter} potvrzujte úseky.
+				\item Spoj ukončete na plošce stejné sítě, dvojklikem nebo klávesou \textbf{End}. \textbf{Esc} trasování zruší.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.44\textwidth}
+			\centering
+			\includegraphics[height=0.65cm]{obr/add_tracks_24.png}
+			\quad\textbf{Vést spoje}
+
+			\medskip
+			\includegraphics[width=\linewidth,height=0.38\textheight,keepaspectratio]{obr/track_corner_mode_45deg.png}
+		\end{column}
+	\end{columns}
+	\vspace{-0.05cm}
+	\begin{block}{Síť a pravidla se převezmou automaticky}
+	Začnete-li na připojeném objektu, KiCad převezme jeho síť, zvýrazní ji a použije příslušnou třídu spojů, odstupy a návrhová pravidla.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Volba vrstvy pro vedení spoje}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.45\textwidth}
+			\begin{enumerate}
+				\item Aktivní měděnou vrstvu zvolte v horní liště nebo v panelu \textbf{Vzhled}.
+				\item \textbf{PgUp} vybere \texttt{F.Cu}, \textbf{PgDn} vrstvu \texttt{B.Cu}.
+				\item Nabídka \textbf{Vést → Nastavit dvojici vrstev\ldots} určuje vrstvy, mezi kterými při trasování přepíná klávesa \textbf{V}.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.52\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.44\textheight,keepaspectratio]{obr/Pcbnew_layer_pair_dialog.png}
+		\end{column}
+	\end{columns}
+	\medskip
+	\textbf{Pozor:} spoje na \texttt{F.Cu} a \texttt{B.Cu} nejsou elektricky propojené, dokud je nespojí průchozí ploška nebo prokov.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Šířka spoje: třída sítě a vlastní volba}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.47\textwidth}
+			\begin{enumerate}
+				\item Pro běžné trasování ponechte \textbf{Použít šířku třídy spoje}. Síť ve třídě \texttt{POWER} tak použije její výchozí šířku.
+				\item Jinou hodnotu zvolte v horní liště nebo přes \textbf{pravé tlačítko → Vybrat šířku spoje}.
+				\item \textbf{W} a \textbf{Shift+W} procházejí předdefinované šířky; \textbf{Q} otevře vlastní rozměry.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.50\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.45\textheight,keepaspectratio]{obr/board_setup_predefined_sizes.png}
+		\end{column}
+	\end{columns}
+	\medskip
+	\textbf{Pozor:} jiná šířka než ve třídě není sama o sobě chybou DRC, ale nesmí porušit minimum ani vlastní pravidlo. Pro změnu šířky uprostřed spoje trasu ukončete a z jejího konce začněte novou.
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Prokov při vedení spoje}
+	\small
+	\begin{columns}[T]
+		\begin{column}{0.48\textwidth}
+			\begin{enumerate}
+				\item Během trasování stiskněte \textbf{V} nebo použijte \textbf{pravé tlačítko → Umístit průchozí prokov}.
+				\item Kliknutím prokov umístěte; trasování pokračuje na druhé vrstvě aktivní dvojice.
+				\item Také \textbf{PgUp}, \textbf{PgDn}, \textbf{+} nebo \textbf{--} změní vrstvu a vloží prokov. Rozměr se převezme z třídy nebo aktivní předvolby.
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.49\textwidth}
+			\centering
+			\includegraphics[width=\linewidth,height=0.39\textheight,keepaspectratio]{obr/via_types.png}
+
+			{\scriptsize Vlevo: běžný průchozí prokov spojující vnější vrstvy.}
+		\end{column}
+	\end{columns}
+	\begin{alertblock}{Prokov je vodivé spojení}
+	Není to obyčejná díra: výrobce pokoví její vnitřní stěnu mědí. U dvouvrstvé DPS tak prokov vodivě spojí \texttt{F.Cu} a \texttt{B.Cu}.
+	\end{alertblock}
+\end{frame}
 
 %------------------------------------------------------------------------------
 % Generování výrobních podkladů - Gerber

@@ -40,3 +40,18 @@ Oficiální ikony z dokumentace KiCad 10:
 
 Popis příkazů a klávesových zkratek ověřen v dokumentaci KiCad 10,
 části Placing and moving footprints, Grid settings a Actions reference.
+
+## Propojování trasami
+
+Obrázky z oficiální dokumentace KiCad 10:
+
+- `add_tracks_24.png`: https://docs.kicad.org/10.0/en/pcbnew/images/icons/add_tracks_24.png
+- `track_corner_mode_45deg.png`: https://docs.kicad.org/10.0/en/pcbnew/images/track_corner_mode_45deg.png
+- `Pcbnew_layer_pair_dialog.png`: https://docs.kicad.org/10.0/en/pcbnew/images/Pcbnew_layer_pair_dialog.png
+
+Řez typy prokovů:
+
+- `via_types.png`: M adler, Cmglee, Wikimedia Commons, licence CC BY 3.0 / GFDL:
+  https://commons.wikimedia.org/wiki/File:Via_Types.svg
+
+Postup a zkratky ověřeny v dokumentaci KiCad 10, část Routing tracks and vias.
