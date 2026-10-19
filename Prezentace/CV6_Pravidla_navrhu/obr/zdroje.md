@@ -90,3 +90,33 @@ jsou jen drobné odkazy na doporučení; převzatý obrázek má navíc citaci o
 Ukázky zdůrazňují topologii a blízkost spojů; neurčují univerzální vzdálenost
 prokovů ani univerzální hodnotu kondenzátoru. Kapacita mezi PWR a GND musí
 náležet správné napájecí síti a mít vhodnou vysokofrekvenční impedanci.
+
+## Přerušení zpětné cesty – funkční sloty
+
+10. Alexander Weiler, Alexander Pakosta, Ankur Verma: High-Speed Layout Guidelines,
+    Texas Instruments, SCAA082A, rev. A, srpen 2017:
+    https://www.ti.com/lit/pdf/SCAA082A
+    Část 1.6, str. 8–9 a obr. 6: slot nutí návrat k oklíce; vhodnější je
+    souvislá reference nebo vedení signálu podél dostupné návratové cesty.
+    Z tohoto dokumentu není převzat žádný obrázek ani univerzální doporučení dělit GND.
+
+Nové obrázky jsou vlastní výukové aplikace principů [1, 9, 10], nikoli konkrétní
+překreslené obrázky z těchto zdrojů. Půdorysy jsou schematické a nejsou v měřítku.
+Červeně je horní signál, zeleně spodní GND, modře jedna ilustrativní cesta
+vysokofrekvenční složky návratu (proud se ve skutečnosti rozděluje v ploše).
+
+- `slot_examples.tex`: společná kresba a barevnost.
+- `slot_connector_bad.tex` / `.pdf`: cizí průchozí plošky konektoru; spojené
+  izolační odstupy v GND, trasa mezi piny a návrat kolem konce řady.
+- `slot_connector_better.tex` / `.pdf`: vedení signálu kolem řady nad GND.
+- `slot_crossing_bad.tex` / `.pdf`: cizí trasa na B.Cu vyřízne pás v GND,
+  signál na F.Cu ji kříží jen v projekci; nejde o elektrický zkrat.
+- `slot_crossing_better.tex` / `.pdf`: blízký GND můstek na F.Cu se dvěma
+  prokovy propojujícími tutéž GND; nesmí se spojit s cizí spodní sítí.
+  Jde o kompromis, nikoli ekvivalent souvislé plochy nebo univerzální recept.
+
+Překlad všech čtyř samostatných `slot_*.tex` příkladů pomocí pdflatex ve složce
+`obr` (soubor `slot_examples.tex` je pouze společný vstup, nepřekládá se samostatně).
+Pojem funkční slot se v prezentaci používá pro funkční přerušení referenční mědi,
+nikoli pro mechanickou drážku. Průchod mezi piny není automaticky chybný:
+rozhoduje skutečný tvar naplněné GND a případná úzká hrdla mezi odstupy.

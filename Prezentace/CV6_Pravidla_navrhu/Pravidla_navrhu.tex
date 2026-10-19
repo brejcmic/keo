@@ -288,6 +288,75 @@
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Přerušení zpětné cesty}{Preruseni zpetne cesty}}
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Funkční slot: deska není proříznutá, GND ano}
+	\small
+	\begin{itemize}
+		\item Zde výrazem \textbf{funkční slot} označujeme mezeru v referenční mědi vytvořenou jinými prvky návrhu, nikoli mechanické frézování DPS.
+		\item Vzniká například spojením \textbf{izolačních odstupů kolem cizích plošek} konektoru nebo vedením \textbf{jiné sítě uvnitř GND plochy}.
+		\item Signál může být správně propojený, ale jeho vysokofrekvenční návrat musí mezeru obejít. Zvětšuje se proudová smyčka a riziko rušení i změny impedance.
+	\end{itemize}
+	\begin{block}{Sledujeme dva vodiče, ne jen signál}
+	Průchod mezi piny ani křížení na různých vrstvách nejsou samy o sobě chybou. Rozhodující je, zda pod signálem zůstává dostatečně souvislá referenční měď.
+	\end{block}
+	\vfill
+	{\tiny Zdroj doporučení: [1, 9, 10] Peterson, Salmony, Texas Instruments.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Konektor: signál projde, návrat musí oklikou}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.52\textheight,keepaspectratio]{obr/slot_connector_bad.pdf}\par}
+	\begin{itemize}
+		\item Trasa na F.Cu se vejde mezi piny. Odstupy cizích průchozích plošek však na B.Cu splývají do \textbf{souvislé mezery v GND}.
+		\item Návrat nemůže sledovat signál přímo; musí obejít řadu plošek. Případně ponechané úzké hrdlo mědi může být také nevhodné z pohledu impedance.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [9, 10] P. Salmony, Texas Instruments.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Konektor: veďte signál nad souvislou GND}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.52\textheight,keepaspectratio]{obr/slot_connector_better.pdf}\par}
+	\begin{itemize}
+		\item Zde signál obchází konec řady plošek \textbf{nad souvislou GND}; návrat může zůstat blízko jeho trasy.
+		\item Jinou možností je změnit rozmístění či pinout a přidělit vhodné piny GND. Výsledek posuzujte v \textbf{naplněné referenční ploše}, ne jen podle spojnic.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [9, 10] P. Salmony, Texas Instruments.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Dvě vrstvy: spodní trasa rozřízne GND}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.52\textheight,keepaspectratio]{obr/slot_crossing_bad.pdf}\par}
+	\begin{itemize}
+		\item Horní signál kříží v půdorysu jinou trasu na B.Cu. \textbf{Spodní trasa i její odstupy vytlačí GND} právě pod horním signálem.
+		\item Dlouhá spodní trasa vynutí dlouhou okliku návratu. Pokud oddělí GND až od okraje k okraji, nemusí zbýt ani vodivá cesta v této vrstvě.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [1, 10] Z. Peterson (dvě vrstvy), TI (slot a proudová smyčka).}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Křížení: blízký GND můstek jako kompromis}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{obr/slot_crossing_better.pdf}\par}
+	\begin{itemize}
+		\item Nejprve zkuste spodní trasu \textbf{přemístit nebo zkrátit} tak, aby nepřerušovala referenci důležitého signálu.
+		\item Kompromis: blízké GND prokovy a krátký GND můstek na F.Cu přenesou návrat přes mezeru. \textbf{Nespojí cizí síť s GND}; stále přidávají indukčnost a nenahrazují souvislou plochu.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [1, 9, 10] Peterson, Salmony, Texas Instruments.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Trasy napájení}{Trasy napajeni}}
+%------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Referenční zdroje}{Referencni zdroje}}
@@ -308,12 +377,13 @@
 
 %------------------------------------------------------------------------------
 \begin{frame}[t]{Zdroje (2/2): návratový proud a blokování}
-	\small
+	\footnotesize
 	\begin{enumerate}
 		\setcounter{enumi}{6}
 		\item Art Kay: \href{https://www.ti.com/video/6307562268112}{PCB Trace as a Wave Guide}, TI Precision Labs -- ADCs, Texas Instruments. \href{https://www.ti.com/content/dam/videos/external-videos/zh-tw/9/3816841626001/6307562268112.mp4/subassets/pcb-trace-as-wave-guide-presentation-quiz.pdf}{Podklad k videu}, snímky 8, 9 a 12. Použity uživatelem dodané snímky s bočním a horním pohledem.
 		\item David L. Jones: \href{https://www.scs.stanford.edu/~zyedidia/docs/pcb/pcb_tutorial.pdf}{\textit{PCB Design Tutorial}}, revize A, 29. 6. 2004, str. 19--20: Good Bypassing, High Frequency Design Techniques. Veřejná kopie na webu Stanford University.
 		\item Phil Salmony (Phil's Lab): \href{https://resources.altium.com/p/vias-101}{Vias 101: Standards, Sizing, and Spacing}, Altium; části Transfer Vias a Placement.
+		\item A. Weiler, A. Pakosta, A. Verma: \href{https://www.ti.com/lit/pdf/SCAA082A}{High-Speed Layout Guidelines}, Texas Instruments, SCAA082A, rev. A, 2017; část 1.6 a obr. 6: návratový proud, slot a plocha smyčky.
 	\end{enumerate}
 	\medskip
 	{\scriptsize Ostatní obrázky jsou vlastní česká schémata nebo vlastní exporty výukových desek z KiCadu 10. Editovatelné předlohy i PDF jsou v \texttt{obr/}. Řezy nejsou v měřítku; ukázkové desky nejsou výrobním návrhem. Z Jonesova staršího podkladu přebíráme zásady blokování, nikoli obecné doporučení dělit zemní plochy.}
