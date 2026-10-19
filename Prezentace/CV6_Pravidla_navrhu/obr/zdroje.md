@@ -120,3 +120,43 @@ Překlad všech čtyř samostatných `slot_*.tex` příkladů pomocí pdflatex v
 Pojem funkční slot se v prezentaci používá pro funkční přerušení referenční mědi,
 nikoli pro mechanickou drážku. Průchod mezi piny není automaticky chybný:
 rozhoduje skutečný tvar naplněné GND a případná úzká hrdla mezi odstupy.
+
+## Trasy napájení – blokovací a filtrační kondenzátory
+
+11. Daniel Miller: Mixed Signals, Grounding and Bypass Capacitors,
+    TI Precision Labs – Op Amps, Texas Instruments, 2021:
+    https://www.ti.com/video/6245227303001
+    Podklad, zejména snímky označené 7 a 8 (PDF strany 9–11):
+    https://www.ti.com/content/dam/videos/external-videos/en-us/8/3816841626001/6245227303001.mp4/subassets/op_amp_pcb_layout_mixed_signals_grounding_and_bypass_capacitors.pdf
+    Blokování blízko napájecího pinu; přívod přes napájecí plošku kondenzátoru,
+    omezení indukčnosti dlouhých přípojek.
+12. George Lakkas: Optimizing Layout for Synchronous Buck Converters,
+    Texas Instruments, SSZTAL0, listopad 2016:
+    https://www.ti.com/document-viewer/lit/html/SSZTAL0/GUID-CF03725F-911C-4A96-9391-0E639F290409
+    Bypass Capacitors, Parasitic Components: krátké proudové smyčky, široké
+    přípoje, proudové cesty přes svorky kondenzátorů. Nejde zde o kompletní
+    návod k návrhu měniče; konkrétní měnič vyžaduje vlastní doporučený layout.
+
+Ověřeno 19. 10. 2026. Dále použit [8] Jones, str. 19–20 (Good Bypassing,
+připojení vstupu přes hlavní filtrační kondenzátor a výjimka pro přímé připojení
+do ploch) a [9] Salmony (krátké a široké přípoje, blízké napájecí/GND prokovy).
+Úplné zdroje zůstávají pouze na posledních třech slajdech.
+
+Všechny čtyři nové obrázky jsou vlastní české ilustrace, nikoli převzaté kresby:
+
+- `power_examples.tex`: společná kresba plošek, IC, prokovů a přípojek.
+- `power_decoupling_bad.tex` / `.pdf`: C1 a C2 na dlouhých T odbočkách.
+- `power_decoupling_better.tex` / `.pdf`: hlavní trasa přes napájecí plošky
+  jednotlivých kondenzátorů, odbočení z plošky přímo k příslušnému IC.
+- `power_filter_bad.tex` / `.pdf`: obě svorky filtračního kondenzátoru na
+  dlouhých odbočkách od hlavní napájecí a návratové cesty.
+- `power_filter_better.tex` / `.pdf`: přívod a odběr přímo na příslušných
+  ploškách; kondenzátor je stále paralelně mezi PWR a GND, nikoli v sérii.
+
+Samostatné příklady přeložit pdflatex ve složce `obr`. Obrázky nejsou v měřítku;
+jde o topologii fyzického připojení, nikoli výrobní rozměry či reálné pinouty.
+Připojení přes plošku je výchozí pravidlo pro jednoduché trasované napájení,
+ne absolutní předpis pro všechny vícevrstvé PDN. U ploch může být výhodnější
+přímé připojení pinu a kondenzátoru prokovy s menší celkovou indukčností.
+Samotné T odbočení není chyba, pokud je uzel přímo na plošce a místní připojení
+je krátké. Vstupní/bulk kondenzátor nenahrazuje lokální blokování každého IC.

@@ -306,7 +306,7 @@
 \begin{frame}[t]{Konektor: signál projde, návrat musí oklikou}
 	\small
 	{\centering
-	\includegraphics[width=\linewidth,height=.52\textheight,keepaspectratio]{obr/slot_connector_bad.pdf}\par}
+	\includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{obr/slot_connector_bad.pdf}\par}
 	\begin{itemize}
 		\item Trasa na F.Cu se vejde mezi piny. Odstupy cizích průchozích plošek však na B.Cu splývají do \textbf{souvislé mezery v GND}.
 		\item Návrat nemůže sledovat signál přímo; musí obejít řadu plošek. Případně ponechané úzké hrdlo mědi může být také nevhodné z pohledu impedance.
@@ -357,11 +357,77 @@
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Trasy napájení}{Trasy napajeni}}
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Napájení: krátká cesta ke kondenzátoru i zpět}
+	\small
+	\begin{itemize}
+		\item Napájecí cesta má odpor a indukčnost. Veďte ji \textbf{krátce a dostatečně široce} s ohledem na proud, úbytek napětí a oteplení; vyhněte se úzkým hrdlům.
+		\item \textbf{Blokovací kondenzátor} poskytuje místní zásobu pro rychlé změny proudu IC. Patří blízko jeho napájecího pinu a potřebuje také krátké připojení GND.
+		\item \textbf{Filtrační / zásobní kondenzátor} u vstupu napájení či napájené větve nepatří na konec dlouhé odbočky. Přívod i pokračování připojte přímo k jeho ploškám.
+	\end{itemize}
+	\begin{block}{Pravidlo pro jednoduché trasované napájení}
+	Přívod $\rightarrow$ napájecí ploška kondenzátoru $\rightarrow$ krátká větev k napájecímu pinu. Kondenzátor je stále \textbf{mezi PWR a GND}, ne v sérii s napájením.
+	\end{block}
+	\vfill
+	{\tiny Zdroj doporučení: [8, 9, 11, 12] Jones, Salmony, Miller, Lakkas.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Blokování: dlouhá odbočka od hlavní trasy}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{obr/power_decoupling_bad.pdf}\par}
+	\begin{itemize}
+		\item U1 i U2 jsou připojené přímo k hlavní trase. C1 a C2 jsou elektricky připojené, ale \textbf{přes dlouhé T odbočky}.
+		\item Rychlý proud z kondenzátoru musí projít dlouhou přípojkou k IC. Samotná správná kapacita tak nezaručí účinné blokování.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [8, 11] D. L. Jones, D. Miller (TI).}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Blokování: odbočení na plošce kondenzátoru}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{obr/power_decoupling_better.pdf}\par}
+	\begin{itemize}
+		\item Hlavní napájecí trasa prochází \textbf{napájecími ploškami C1 a C2}. Z každé plošky vede krátká vlastní větev k příslušnému IC.
+		\item Kondenzátor umístěte co nejblíže napájecímu pinu; GND připojte krátce do souvislé plochy. \textbf{Tvar T nevadí, pokud uzel leží přímo na plošce.}
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [8, 9, 11] Jones, Salmony, Miller.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Filtrace: kondenzátor na dlouhém T připojení}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{obr/power_filter_bad.pdf}\par}
+	\begin{itemize}
+		\item Hlavní napájecí i návratová cesta kondenzátor míjejí. Jeho obě plošky jsou připojené dlouhými přípojkami.
+		\item Odpor a indukčnost přípojek zhoršují filtraci rychlých změn. \textbf{Nestačí zkrátit jen kladný přívod a nechat dlouhé připojení GND.}
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [8, 12] D. L. Jones, G. Lakkas (TI).}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Filtrace: přívod i odběr přímo na ploškách}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.38\textheight,keepaspectratio]{obr/power_filter_better.pdf}\par}
+	\begin{itemize}
+		\item Napájení i jeho návrat přiveďte na příslušné plošky; z nich pokračujte k zátěži. Kondenzátor není na dlouhém slepém rameni.
+		\item U GND / PWR ploch minimalizujte \textbf{impedanci místní smyčky}. Přímé prokovy bývají lepší než propojení zemí přes sousední GND plošku.
+		\item Filtrační C nenahrazuje místní blokování. U měničů a regulátorů dodržte datasheet včetně doporučeného layoutu a podmínek stability.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [8, 9, 12] Jones, Salmony, Lakkas.}
+\end{frame}
 
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Referenční zdroje}{Referencni zdroje}}
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (1/2): skladba DPS a referenční plochy}
+\begin{frame}[t]{Zdroje (1/3): skladba DPS a referenční plochy}
 	\small
 	\begin{enumerate}
 		\item Z. Peterson: \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Understanding 2-Layer PCB Ground Planes}.
@@ -376,7 +442,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (2/2): návratový proud a blokování}
+\begin{frame}[t]{Zdroje (2/3): návratový proud a blokování}
 	\footnotesize
 	\begin{enumerate}
 		\setcounter{enumi}{6}
@@ -384,6 +450,18 @@
 		\item David L. Jones: \href{https://www.scs.stanford.edu/~zyedidia/docs/pcb/pcb_tutorial.pdf}{\textit{PCB Design Tutorial}}, revize A, 29. 6. 2004, str. 19--20: Good Bypassing, High Frequency Design Techniques. Veřejná kopie na webu Stanford University.
 		\item Phil Salmony (Phil's Lab): \href{https://resources.altium.com/p/vias-101}{Vias 101: Standards, Sizing, and Spacing}, Altium; části Transfer Vias a Placement.
 		\item A. Weiler, A. Pakosta, A. Verma: \href{https://www.ti.com/lit/pdf/SCAA082A}{High-Speed Layout Guidelines}, Texas Instruments, SCAA082A, rev. A, 2017; část 1.6 a obr. 6: návratový proud, slot a plocha smyčky.
+	\end{enumerate}
+	\vfill
+	{\scriptsize Další zdroje k vedení napájení a původ ilustrací jsou na následujícím slajdu.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Zdroje (3/3): vedení napájení a ilustrace}
+	\small
+	\begin{enumerate}
+		\setcounter{enumi}{10}
+		\item Daniel Miller: \href{https://www.ti.com/video/6245227303001}{Mixed Signals, Grounding and Bypass Capacitors}, TI Precision Labs -- Op Amps, Texas Instruments, 2021. \href{https://www.ti.com/content/dam/videos/external-videos/en-us/8/3816841626001/6245227303001.mp4/subassets/op_amp_pcb_layout_mixed_signals_grounding_and_bypass_capacitors.pdf}{Podklad k videu}, snímky 7--8: blízkost a připojení blokování.
+		\item George Lakkas: \href{https://www.ti.com/document-viewer/lit/html/SSZTAL0/GUID-CF03725F-911C-4A96-9391-0E639F290409}{Optimizing Layout for Synchronous Buck Converters}, Texas Instruments, SSZTAL0, 2016; Bypass Capacitors, Parasitic Components: krátké přípoje a proudové cesty přes plošky.
 	\end{enumerate}
 	\medskip
 	{\scriptsize Ostatní obrázky jsou vlastní česká schémata nebo vlastní exporty výukových desek z KiCadu 10. Editovatelné předlohy i PDF jsou v \texttt{obr/}. Řezy nejsou v měřítku; ukázkové desky nejsou výrobním návrhem. Z Jonesova staršího podkladu přebíráme zásady blokování, nikoli obecné doporučení dělit zemní plochy.}

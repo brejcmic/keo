@@ -1,0 +1,89 @@
+% Vlastni ilustrace fyzickeho vedeni, nikoli prevzate layouty.
+\input{stackup_style.tex}
+\usetikzlibrary{arrows.meta}
+\tikzset{powerwire/.style={red!70!black,line width=3pt,rounded corners=2pt},
+ groundwire/.style={gnd!50!black,line width=3pt,rounded corners=2pt},
+ powerpad/.style={draw=black!60,fill=pwr,minimum width=.55cm,minimum height=.38cm,inner sep=0pt},
+ groundpad/.style={draw=black!60,fill=gnd,minimum width=.55cm,minimum height=.38cm,inner sep=0pt}}
+\newcommand{\GroundVia}[2]{
+ \filldraw[fill=gnd,draw=black!60] (#1,#2) circle (.14);
+ \fill[white] (#1,#2) circle (.06);
+}
+% Kondenzator je svisle: napajeci pad v (x,y), GND pad o 1.2 nize.
+\newcommand{\PowerCap}[3]{
+ \draw[black,line width=1pt] (#1,#2)--(#1,{#2-1.2});
+ \filldraw[fill=black!65,draw=black] ({#1-.19},{#2-.9}) rectangle ({#1+.19},{#2-.3});
+ \node[powerpad] at (#1,#2) {};
+ \node[groundpad] at (#1,{#2-1.2}) {};
+ \node[anchor=west,font=\small] at ({#1+.4},{#2-.6}) {#3};
+}
+\newcommand{\PowerIC}[2]{
+ \filldraw[fill=black!8,draw=black!65] ({#1-1},3.8) rectangle ({#1+1},4.8);
+ \node at (#1,4.4) {#2};
+ \node[powerpad] at (#1,3.8) {};
+ \node[font=\scriptsize,anchor=east] at ({#1-.35},3.5) {VDD};
+ \node[groundpad] at ({#1+.65},3.8) {};
+ \draw[groundwire] ({#1+.65},3.8)--({#1+.65},3.15)--({#1+1.3},3.15);
+ \GroundVia{#1+1.3}{3.15}
+}
+\newcommand{\PowerDecoupling}[1]{
+ \begin{tikzpicture}[font=\small,>=Latex]
+ \fill[black!2] (0,-1.65) rectangle (10,5.15);
+ \PowerIC{3}{U1}
+ \PowerIC{7}{U2}
+ \draw[powerwire] (.3,2)--(9.5,2);
+ \draw[powerwire] (3,2)--(3,3.8) (7,2)--(7,3.8);
+ \node[anchor=south west] at (.3,2.15) {Přívod napájení};
+ \node[anchor=south east,font=\scriptsize] at (9.5,2.15) {Dále k dalším větvím};
+ \ifnum#1=0
+  \draw[powerwire] (1.4,2)--(1.4,.5)--(3,.5);
+  \draw[powerwire] (5.4,2)--(5.4,.5)--(7,.5);
+  \PowerCap{3}{.5}{C1}
+  \PowerCap{7}{.5}{C2}
+  \draw[groundwire] (3,-.7)--(3,-1.1) (7,-.7)--(7,-1.1);
+  \GroundVia{3}{-1.1} \GroundVia{7}{-1.1}
+  \node[font=\scriptsize,align=center] at (5,-1.55) {Dlouhá odbočka přidává indukčnost mezi kondenzátor a napájecí pin.};
+ \else
+  \PowerCap{3}{2}{C1}
+  \PowerCap{7}{2}{C2}
+  \draw[groundwire] (3,.8)--(3,.4) (7,.8)--(7,.4);
+  \GroundVia{3}{.4} \GroundVia{7}{.4}
+  \draw[->,line width=.8pt] (4.8,-.4)--(3.2,1.8);
+  \node[anchor=west,align=left,font=\scriptsize] at (4.8,-.6) {Odbočení k U1 je přímo\\na napájecí plošce C1.};
+ \fi
+ \node[anchor=west,font=\scriptsize] at (0,-2.05) {Půdorys, schematicky: červeně napájení, zeleně GND. Kondenzátory jsou mezi PWR a GND.};
+ \node[anchor=west,font=\scriptsize] at (0,-2.4) {Zelené kroužky jsou prokovy do souvislé GND plochy (nezobrazena). Rozměry nejsou v měřítku.};
+ \end{tikzpicture}
+}
+\newcommand{\PowerFilter}[1]{
+ \begin{tikzpicture}[font=\small,>=Latex]
+ \ifnum#1=0
+  \def\groundlevel{-.8}
+  \draw[powerwire] (.4,3)--(9.6,3);
+  \draw[groundwire] (.4,\groundlevel)--(9.6,\groundlevel);
+  \draw[powerwire] (2.8,3)--(2.8,1.8)--(5,1.8);
+  \draw[groundwire] (5,.6)--(7.2,.6)--(7.2,\groundlevel);
+  \PowerCap{5}{1.8}{C\textsubscript{F}}
+  \node[align=center,font=\scriptsize] at (5,4.05) {Hlavní cesta kondenzátor míjí;\\obě plošky jsou na dlouhých odbočkách.};
+ \else
+  \def\groundlevel{1.8}
+  \draw[powerwire] (.4,3)--(9.6,3);
+  \draw[groundwire] (.4,\groundlevel)--(9.6,\groundlevel);
+  \PowerCap{5}{3}{C\textsubscript{F}}
+  \node[align=center,font=\scriptsize] at (5,4.05) {Přívod i pokračování vycházejí přímo z plošek.\\Kondenzátor zůstává napříč mezi PWR a GND.};
+ \fi
+ \draw[->,line width=1pt,red!70!black] (1.1,3.25)--(2,3.25);
+ \draw[->,line width=1pt,gnd!50!black] (2,{\groundlevel-.25})--(1.1,{\groundlevel-.25});
+ \node[anchor=east,align=right] at (.2,3) {PWR\\vstup};
+ \node[anchor=east] at (.2,\groundlevel) {GND};
+ \node[anchor=west,align=left] at (9.8,3) {Napájení\\zátěže};
+ \node[anchor=west] at (9.8,\groundlevel) {GND};
+ \ifnum#1=0
+  \def\legendlevel{-1.6}
+ \else
+  \def\legendlevel{.7}
+ \fi
+ \node[anchor=west,font=\scriptsize] at (0,\legendlevel) {Červeně: napájecí cesta. Zeleně: její návrat. Obdélníky jsou připojovací plošky kondenzátoru.};
+ \node[anchor=west,font=\scriptsize] at (0,{\legendlevel-.35}) {Zjednodušený půdorys propojení; rozměry ani rozestupy nejsou v měřítku.};
+ \end{tikzpicture}
+}
