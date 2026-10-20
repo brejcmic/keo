@@ -117,7 +117,20 @@ vysokofrekvenční složky návratu (proud se ve skutečnosti rozděluje v ploš
   prokovy propojujícími tutéž GND; nesmí se spojit s cizí spodní sítí.
   Jde o kompromis, nikoli ekvivalent souvislé plochy nebo univerzální recept.
 
-Překlad všech čtyř samostatných `slot_*.tex` příkladů pomocí pdflatex ve složce
+- `slot_crossing_cap.tex` / `.pdf`: doplněno 20. 10. 2026; vlastní varianta
+  stejného křížení s kondenzátorem na F.Cu mezi dvěma GND prokovy.
+  Značka C zdůrazňuje kapacitní vazbu, nejde o výrobní rozměry pouzdra.
+  C ani jeho přípoje se nedotýkají signálu či cizí spodní trasy.
+  Obě strany patří stejné GND, DC propojené mimo křížení; C pouze zkracuje
+  vysokofrekvenční návrat. Nenahrazuje DC propojení ani souvislou referenci.
+  Pro tutéž GND je zpravidla vhodnější přímý vodivý můstek.
+  Princip kapacitního propojení referencí: [7] Art Kay, PCB Trace as a Wave Guide
+  (ověřeno 20. 10. 2026 na https://www.ti.com/video/6307562268112).
+  Omezení slotů a parazitní impedance C: [10], části 1.6 a 2.4.
+  Jde o vlastní aplikaci principů na předchozí dvouvrstvý příklad,
+  nikoli překreslení konkrétního obrázku TI. Kapacita není univerzálně předepsaná.
+
+Překlad všech pěti samostatných příkladů pomocí pdflatex ve složce
 `obr` (soubor `slot_examples.tex` je pouze společný vstup, nepřekládá se samostatně).
 Pojem funkční slot se v prezentaci používá pro funkční přerušení referenční mědi,
 nikoli pro mechanickou drážku. Průchod mezi piny není automaticky chybný:

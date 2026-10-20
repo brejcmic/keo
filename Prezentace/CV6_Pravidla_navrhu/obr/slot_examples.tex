@@ -55,14 +55,31 @@
   \draw[returnpath,->] (8.3,2.6)--(4.95,2.6)--(4.95,5.8)--(3.05,5.8)--(3.05,2.6)--(.7,2.6);
   \node[fill=white,inner sep=2pt,font=\scriptsize,align=center] at (7.1,1.2) {Křížení není zkrat,\\ale GND je přerušená};
  \else
-  % Tento GND mustek je na horni vrstve; nekoliduje se SIG na y=2.8.
-  \draw[gnd!50!black,line width=4pt] (3.2,3.45)--(4.8,3.45);
+  % Oba mustky jsou na horni vrstve; nekoliduji se SIG na y=2.8.
+  \ifnum#1=1
+   \draw[gnd!50!black,line width=4pt] (3.2,3.45)--(4.8,3.45);
+  \else
+   \draw[gnd!50!black,line width=4pt] (3.2,3.45)--(3.85,3.45);
+   \draw[gnd!50!black,line width=4pt] (4.15,3.45)--(4.8,3.45);
+   % Znacka C zachovava viditelnou mezeru mezi elektrodami.
+   \fill[white] (3.78,3.05) rectangle (4.22,3.85);
+   \draw[black,line width=1.8pt] (3.85,3.1)--(3.85,3.8);
+   \draw[black,line width=1.8pt] (4.15,3.1)--(4.15,3.8);
+   \node[anchor=south,font=\scriptsize] at (4,3.9) {C};
+  \fi
   \foreach \x in {3.2,4.8} {
    \filldraw[fill=gnd!50!black,draw=black!60] (\x,3.45) circle (.16);
    \fill[white] (\x,3.45) circle (.07);
   }
-  \draw[returnpath,->] (8.3,2.6)--(5.1,2.6)--(4.8,3.45)--(3.2,3.45)--(2.9,2.6)--(.7,2.6);
-  \node[fill=white,inner sep=2pt,font=\scriptsize,align=center] at (6.8,1.1) {2 GND prokovy\\a krátký můstek na F.Cu};
+  \ifnum#1=1
+   \draw[returnpath,->] (8.3,2.6)--(5.1,2.6)--(4.8,3.45)--(3.2,3.45)--(2.9,2.6)--(.7,2.6);
+   \node[fill=white,inner sep=2pt,font=\scriptsize,align=center] at (6.8,1.1) {2 GND prokovy\\a krátký můstek na F.Cu};
+  \else
+   \draw[returnpath,->] (8.3,2.6)--(5.1,2.6)--(4.8,3.45)--(4.24,3.45);
+   \draw[returnpath,->] (3.75,3.45)--(3.2,3.45)--(2.9,2.6)--(.7,2.6);
+   \node[fill=white,inner sep=2pt,font=\scriptsize,align=center] at (6.8,1.1) {2 GND prokovy a C na F.Cu\\přenos návratu kapacitní vazbou};
+   \node[fill=white,inner sep=2pt,font=\scriptsize,align=center] at (1.65,4.8) {GND zůstává DC\\propojená mimo křížení};
+  \fi
   \draw[->] (5.7,1.6)--(4.8,3.25);
  \fi
  \node[anchor=west,font=\scriptsize] at (0,-.45) {Červeně: SIG na F.Cu. Oranžově: cizí trasa na B.Cu. Zeleně: GND na B.Cu.};

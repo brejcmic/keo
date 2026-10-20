@@ -204,7 +204,7 @@
 		\end{column}
 		\begin{column}{.52\textwidth}
 			\includegraphics[width=\linewidth]{obr/layout_gnd.pdf}
-			{\scriptsize Export z KiCadu 10, pohled shora. Vnitřní měděné plochy jsou skryté. U1 je pouze výukový model.}
+			{\scriptsize Export z KiCadu 10, pohled shora. Vnitřní měděné plochy jsou skryté.}
 		\end{column}
 	\end{columns}
 	\vfill
@@ -251,7 +251,7 @@
 		\end{column}
 		\begin{column}{.52\textwidth}
 			\includegraphics[width=\linewidth]{obr/layout_cap.pdf}
-			{\scriptsize Export z KiCadu 10. L2 = GND, L3 = PWR; obě plochy jsou skryté. U1 má pouze modelové vývody.}
+			{\scriptsize Export z KiCadu 10. L2 = GND, L3 = PWR; obě plochy jsou skryté.}
 		\end{column}
 	\end{columns}
 	\vfill
@@ -355,6 +355,20 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Křížení: kapacitní můstek jako další kompromis}
+	\footnotesize
+	{\centering
+	\includegraphics[width=\linewidth,height=.39\textheight,keepaspectratio]{obr/slot_crossing_cap.pdf}\par}
+	\begin{itemize}
+		\item Kondenzátor na F.Cu spojí přes dva blízké prokovy \textbf{GND po obou stranách mezery}. Je těsně vedle křížení.
+		\item \textbf{Vysokofrekvenční návrat přejde kapacitní vazbou}; DC přes kondenzátor neteče. Stejnosměrné propojení GND musí zůstat zajištěno jinudy.
+		\item Volte nízkou impedanci ve frekvenčním pásmu signálu včetně jeho hran: rozhodují kapacita i ESL $\Rightarrow$ krátké přípoje. Pro tutéž GND bývá vhodnější přímý vodivý můstek.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [7, 10] TI: kapacitní vazba návratu, omezení slotů a impedance reálného C.}
+\end{frame}
+
+%------------------------------------------------------------------------------
 \section{\texorpdfstring{Trasy napájení}{Trasy napajeni}}
 %------------------------------------------------------------------------------
 \begin{frame}[t]{Napájení: krátká cesta ke kondenzátoru i zpět}
@@ -365,7 +379,7 @@
 		\item \textbf{Filtrační / zásobní kondenzátor} u vstupu napájení či napájené větve nepatří na konec dlouhé odbočky. Přívod i pokračování připojte přímo k jeho ploškám.
 	\end{itemize}
 	\begin{block}{Pravidlo pro jednoduché trasované napájení}
-	Přívod $\rightarrow$ napájecí ploška kondenzátoru $\rightarrow$ krátká větev k napájecímu pinu. Kondenzátor je stále \textbf{mezi PWR a GND}, ne v sérii s napájením.
+	Přívod $\rightarrow$ napájecí ploška kondenzátoru $\rightarrow$ krátká větev k napájecímu pinu. Kondenzátor je připojen \textbf{mezi PWR a GND}.
 	\end{block}
 	\vfill
 	{\tiny Zdroj doporučení: [8, 9, 11, 12] Jones, Salmony, Miller, Lakkas.}
@@ -377,8 +391,8 @@
 	{\centering
 	\includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{obr/power_decoupling_bad.pdf}\par}
 	\begin{itemize}
-		\item U1 i U2 jsou připojené přímo k hlavní trase. C1 a C2 jsou elektricky připojené, ale \textbf{přes dlouhé T odbočky}.
-		\item Rychlý proud z kondenzátoru musí projít dlouhou přípojkou k IC. Samotná správná kapacita tak nezaručí účinné blokování.
+		\item U1 i U2 jsou připojené přímo k hlavní trase. Pro C1 a C2 existuje elektrické připojení, ale je realizováno \textbf{pomocí dlouhé T odbočky}.
+		\item Proud musí procházet přes impedanci odbočky, což snižuje účinnost blokování.
 	\end{itemize}
 	\vfill
 	{\tiny Zdroj doporučení: [8, 11] D. L. Jones, D. Miller (TI).}
@@ -403,7 +417,7 @@
 	{\centering
 	\includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{obr/power_filter_bad.pdf}\par}
 	\begin{itemize}
-		\item Hlavní napájecí i návratová cesta kondenzátor míjejí. Jeho obě plošky jsou připojené dlouhými přípojkami.
+		\item Hlavní napájecí i návratová cesta míjejí kondenzátor. Jeho obě plošky jsou připojené dlouhými přípojkami.
 		\item Odpor a indukčnost přípojek zhoršují filtraci rychlých změn. \textbf{Nestačí zkrátit jen kladný přívod a nechat dlouhé připojení GND.}
 	\end{itemize}
 	\vfill
@@ -416,9 +430,9 @@
 	{\centering
 	\includegraphics[width=\linewidth,height=.38\textheight,keepaspectratio]{obr/power_filter_better.pdf}\par}
 	\begin{itemize}
-		\item Napájení i jeho návrat přiveďte na příslušné plošky; z nich pokračujte k zátěži. Kondenzátor není na dlouhém slepém rameni.
-		\item U GND / PWR ploch minimalizujte \textbf{impedanci místní smyčky}. Přímé prokovy bývají lepší než propojení zemí přes sousední GND plošku.
-		\item Filtrační C nenahrazuje místní blokování. U měničů a regulátorů dodržte datasheet včetně doporučeného layoutu a podmínek stability.
+		\item Napájecí i návratovou cestu přiveďte na příslušné plošky; z nich pokračujte k zátěži. Kondenzátor není na dlouhém slepém rameni.
+		\item U GND / PWR ploch minimalizujte \textbf{impedanci místní smyčky}. Přímé prokovy bývají lepší než propojení zemí přes sousední GND plošku jiné součástky.
+		\item Filtrační C nenahrazuje místní blokování.
 	\end{itemize}
 	\vfill
 	{\tiny Zdroj doporučení: [8, 9, 12] Jones, Salmony, Lakkas.}
@@ -454,8 +468,8 @@
 	{\centering
 	\includegraphics[width=.94\linewidth,height=.39\textheight,keepaspectratio]{obr/aac_decoupling_fig5.jpg}\par}
 	\begin{itemize}
-		\item Obrázek ukazuje dva a tři prokovy na každé plošce. Jedna skupina patří k PWR, druhá ke GND; tyto sítě se nespojují přímo.
-		\item Rozhoduje počet \textbf{i rozmístění} prokovů. Také hodnoty 0,5 a 0,4 nH jsou pouze pro uvedené příklady.
+		\item Více prokovů na každé plošce dále snižuje indukčnost propojení. Jedna skupina prokovů patří k PWR, druhá ke GND.
+		\item Rozhoduje počet \textbf{i rozmístění} prokovů. Hodnoty 0,5 a 0,4 nH jsou pouze pro uvedené příklady.
 	\end{itemize}
 	\vfill
 	{\tiny Obrázek: [15] S. Arar / All About Circuits, obr. 5; původ: H. W. Ott.}
@@ -482,12 +496,14 @@
 		\item Reálná pole prokovů se vzájemně vážou: \textbf{čtyři prokovy neznamenají automaticky čtvrtinovou indukčnost}. Důležitá je i vzdálenost GND vrstvy a poloha přívodu i návratu.
 		\item Menší $L$ znamená při stejné frekvenci menší \textbf{induktivní složku impedance}: $|Z_L|=2\pi f L$. Nezaručuje nižší impedanci celé sítě při všech frekvencích.
 	\end{itemize}
-	\begin{block}{Magnetické vysvětlení přesněji}
-	Indukčnost určuje vázaný magnetický tok na jednotku proudu, ne samotná délka jedné indukční čáry. Posuzujeme rozložení pole a geometrii \textbf{celé proudové smyčky}.
-	\end{block}
 	\vfill
 	{\tiny Zdroje: [13, 14] A. Kay (TI), Murata; paralelní model a magnetická vazba.}
 \end{frame}
+
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Spínané měniče napětí}{Spinane menice napeti}}
+%------------------------------------------------------------------------------
+
 
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Referenční zdroje}{Referencni zdroje}}
