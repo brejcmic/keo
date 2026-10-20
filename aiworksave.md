@@ -1,6 +1,6 @@
 # Kontext práce – prezentace KiCad
 
-Aktualizováno: 19. 10. 2026 – konec dne, kontext pro příští pokračování.
+Aktualizováno: 20. 10. 2026 – konec dne, kontext pro příští pokračování.
 
 ## Účel
 
@@ -10,9 +10,9 @@ Tento soubor slouží k navázání na tvorbu výukových prezentací pro předm
 
 - Složka: `Prezentace/CV6_Pravidla_navrhu/`.
 - Zdroj: `Pravidla_navrhu.tex`, výsledek: `Pravidla_navrhu.pdf`.
-- Aktuální rozsah: **41 slajdů** včetně titulu, obsahů sekcí a čtyř závěrečných slajdů zdrojů.
-- Poslední překlad proběhl dvakrát, nové slajdy byly vizuálně zkontrolovány. Aktuální LaTeX log je bez varování, chyb a přetečení.
-- CV6 má uživatelem připravené sekce **Fyzická skladba DPS**, **Přerušení zpětné cesty**, **Trasy napájení**, **Referenční zdroje**. Nové sekce/podsekce nevymýšlet bez zadání.
+- Aktuální rozsah při uložení kontextu: **67 stran/slajdů** (ověřeno z aktuálního PDF i logu). Před posledními uživatelovými úpravami měla prezentace 66 slajdů; vždy vycházet z aktuálního souboru, ne ze starších čísel v konverzaci.
+- Nové slajdy a ilustrace byly vizuálně zkontrolovány. Po poslední opravě překlad dvakrát úspěšně prošel; při uložení kontextu je aktuální LaTeX log také bez chyb, varování a přetečení.
+- Aktuální pořadí sekcí: **Fyzická skladba DPS**, **Přerušení zpětné cesty**, **Zónování DPS**, **Trasy napájení**, **Spínané měniče napětí**, **Zatížitelnost tras**, **Referenční zdroje**. Zónování je výslovně na přání uživatele před trasami napájení. Další sekce/podsekce nevymýšlet bez zadání.
 - Ponechány autor Michal Brejcha, předmět, rok 2026 a vzhled AnnArbor/crane.
 
 ### Dosavadní obsah CV6
@@ -23,7 +23,21 @@ Tento soubor slouží k navázání na tvorbu výukových prezentací pro předm
 4. Funkční sloty: spojené izolační odstupy cizích průchozích plošek konektoru a křížící spodní trasa v GND dvouvrstvé DPS. Obrázky problému i zlepšení: vedení signálu nad souvislou GND, případně krátký GND můstek se dvěma prokovy jako kompromis.
 5. Power routing: široké a krátké přípoje, blokovací kondenzátor u IC, odbočení k IC přímo z jeho napájecí plošky, nevhodné dlouhé T odbočky, filtrační kondenzátor s přívodem a odběrem přímo na ploškách v napájecí i návratové cestě.
 6. Zemní ploška kondenzátoru s jedním větším vs. více menšími GND prokovy; paralelní proudové cesty, vliv vzájemné magnetické vazby, induktivní složka impedance. Vlastní srovnávací půdorys.
-7. Poslední doplnění: **dva slajdy (33–34) se třemi převzatými obrázky z All About Circuits**: poloha PWR/GND prokovů a dva/tři prokovy na každé plošce. Vlastní srovnání GND prokovů a vysvětlení následují na slajdech 35–36. Zdroje jsou úplně na konci, slajdy 38–41.
+7. Tři převzaté obrázky z All About Circuits: poloha PWR/GND prokovů a dva/tři prokovy na každé plošce. Za nimi vlastní srovnání GND prokovů a vysvětlení. Starší číslování slajdů 33–36 již neplatí po vložení nových kapitol.
+8. Kapacitní můstek jako další kompromis při křížení nad mezerou v GND: C na F.Cu mezi dvěma GND prokovy, VF návrat přes C, DC propojení téže GND zajištěné jinudy. Příklad následuje za vodivým GND můstkem (slajd 27).
+9. Celá kapitola **Zónování DPS (PCB partitioning / floor planning)**: definice, tabulka hledisek, postup rozmístění, promíchaný vs. uspořádaný blokový plán, výkon/frekvence, teplotní hlediska a souvislá GND. Osm obsahových slajdů (při doplnění 29–36). Uživatel následně upravil formulace a zkrátil některé bloky – zachovat jeho úpravy.
+10. Čtyři obsahové slajdy o **spínacím uzlu SWN**: funkční schéma synchronního bucku, rychlé změny napětí a kapacitní rušení, kompaktní vs. rozlitá měď, rozdíl mezi plochou uzlu s vysokým dv/dt a komutační smyčkou s vysokým di/dt.
+11. Šest obsahových slajdů o **zatížitelnosti tras a prokovů a neckingu**: oteplení, efektivní proud, odpor/úbytek/ztráty, kalkulátor KiCad, pokovená stěna prokovu, skupiny prokovů, místní zúžení u plošky a číselný příklad 0,5 vs. 5 mm. Výpočty odporu nejsou automaticky proudové limity.
+
+### Výslovná upřesnění uživatele z 20. 10. – zachovat
+
+- Spínací uzel označovat v celé prezentaci i ve vlastních obrázcích výhradně **SWN**; tak se používá na cvičeních. Nenahrazovat znovu SW, LX nebo PH. Názvy souborů `buck_sw_layout.*` zůstaly beze změny.
+- U obrázků **řezů návratových cest** `return_gnd` a `return_cap` ponechat v dolním popisku pouze význam červené a modré barvy. Dodatečné vysvětlivky o antipadech, zkrácených prokovech či směru šipek byly z popisku na přání odstraněné. Vnitřní označení vrstev a prvků obrázku zůstalo. Fyzikální vysvětlení lze ponechat v poznámkách, nevracet je do popisku bez žádosti.
+- Studenti nemají přístup k **IPC-2152**. Zmínit pouze, že nabízí podrobnější popis. Pro jejich návrhy výslovně doporučovat **kalkulátor v KiCadu s jednodušším modelem dle IPC-2221**. Nevyžadovat použití či získání celé IPC-2152.
+- Uživatel nazývá funkční plánování rozmístění **zónování DPS**. Toto označení používat; nejde o měděné zóny editoru. Sdružovat funkčně související prvky, současně posoudit výkon/proudy, frekvence/rychlost hran, citlivost a teplotu.
+- Neinterpretovat tepelná hlediska jako povinnost nahromadit všechny horké součástky. Respektovat odvod tepla, kryt a ochranu přesných obvodů. Čidlo okolní teploty a čidlo sledované součástky mají odlišné požadavky.
+- Zónování není automatické dělení zemní reference. Uživatel ve finálních formulacích zdůraznil souvislou GND; zachovat jeho texty. U skutečného galvanického oddělení respektovat příslušnou bariéru a dokumentaci konkrétního obvodu.
+- Poslední oprava: uživatel vložil `\vskip{5mm}`, což vyvolalo **Missing number** a **Illegal unit of measure** (Beamer hlásil až `\end{frame}`). Opraveno na **`\vspace{5mm}`** v tabulkovém slajdu zónování, nyní přibližně řádek 400. Nevracet jeho ostatní úpravy. Pro `\vskip` by správně byla dimenze bez složených závorek; pro tuto prezentaci použít `\vspace{5mm}`.
 
 ### Důležitá odborná upřesnění, která zachovat
 
@@ -37,7 +51,7 @@ Tento soubor slouží k navázání na tvorbu výukových prezentací pro předm
 
 ### Pravidla citací a obrázků pro CV6
 
-- **Úplná bibliografie vždy až na úplně posledních slajdech.** Obsahové slajdy mají malé číselné odkazy na doporučení (např. `[9, 13]`). Číslování 1–15 je nyní stabilní.
+- **Úplná bibliografie vždy až na úplně posledních slajdech.** Obsahové slajdy mají malé číselné odkazy na doporučení (např. `[9, 13]`). Aktuální číslování zdrojů **1–24**; původní čísla zachována. Závěrečné zdrojové slajdy mají titulky `(1/7)` až `(7/7)`.
 - **Převzaté obrázky citovat přímo na slajdu**, včetně původní atribuce, pokud ji zdroj uvádí. Vlastní kresby nemají citaci obrázku, pouze malý odkaz na zdroj doporučení.
 - Všechny obrázky a editovatelné předlohy ukládat lokálně do `obr/`. Podrobný původ, URL, poznámky a instrukce k regeneraci jsou v `Prezentace/CV6_Pravidla_navrhu/obr/zdroje.md`.
 - Preferovány jsou české obrázky, ale existující obrázky nepřekládat/nepřegenerovávat bez vyzvání. Uživatel si některé snímky připravuje sám. Pro nové obrázky použít dokumentaci/web nebo vytvořit vhodná česká vektorová schémata.
@@ -56,6 +70,12 @@ Tento soubor slouží k navázání na tvorbu výukových prezentací pro předm
 - `obr/aac_decoupling_fig1.jpg`, `aac_decoupling_fig4.jpg`, `aac_decoupling_fig5.jpg`: originální převzaté obrázky z https://www.allaboutcircuits.com/technical-articles/different-via-configurations-for-connecting-decoupling-capacitors/ , Steve Arar, 7. 10. 2019, zdroj [15]. Článek u všech uvádí původ **Henry W. Ott: Electromagnetic Compatibility Engineering, Wiley**; tato atribuce je zachována i v prezentaci. Soubory mají přirozeně nízké rozlišení; nebyly překreslovány ani AI upravovány.
 - `doc/pcb_tutorial.pdf`: uživatelův podklad David L. Jones, rev. A, 29. 6. 2004. V prezentaci je místo lokální cesty veřejný odkaz https://www.scs.stanford.edu/~zyedidia/docs/pcb/pcb_tutorial.pdf (zdroj [8]).
 - Další citace: Peterson/Altium [1–4], Bogatin [5], Phil's Lab stackup [6], Salmony Vias 101 [9], TI SCAA082A [10], Miller TI blokování [11], Lakkas TI layout měniče [12], Kay TI Decoupling Capacitors [13], Murata C39E [14]. Přesné odkazy jsou v TeXu a `obr/zdroje.md`.
+- `obr/slot_crossing_cap.tex` / `.pdf`: kapacitní můstek; nová větev `\CrossingExample{2}` v `slot_examples.tex`. Původní vodivý můstek je varianta 1.
+- `obr/buck_switch_node.tex` / `.pdf`: vlastní funkční schéma bucku s bloky QH/QL, červeně **SWN**. Pro samostatný překlad potřebuje `amsmath` kvůli `\text` v indexech.
+- `obr/buck_sw_layout.tex` / `.pdf`: vlastní půdorys rozlitého vs. kompaktního **SWN** a citlivé trasy. Nejde o reálný pinout. Citlivá modrá trasa se s červenou mědí nespojuje.
+- `obr/current_necking.tex` / `.pdf`: dlouhé zúžení vs. krátký necking u malé plošky. `obr/current_via_array.tex` / `.pdf`: skupina čtyř prokovů za společným hrdlem vs. široký přívod.
+- `obr/floorplan_examples.tex`: společná kresba blokových plánů, nepřekládat samostatně. `floorplan_bad.tex` / `.pdf` a `floorplan_good.tex` / `.pdf`: promíchané a funkčně uspořádané rozmístění se stejnými hlavními bloky. Šipky jsou funkční vazby, ne konkrétní měděné trasy; barevné oblasti nejsou rozdělené GND plochy.
+- Nové zdroje [16–24]: TI SLVAFJ3 (SWN a komutační smyčky), TI SSZT978 (měď, ztráty, chlazení), IPC-2152 (pouze úvod/podrobnější popis), dokumentace kalkulátoru KiCad 10 (IPC-2221), TI SLVA959B (prokovy a výkonové obvody), TI SNVA312B (místní změna šířky), Analog Devices Mixed-Signal PCB Layout (floor planning), TI SNOA967A (teplotní čidla a šíření tepla), Analog Devices Layout for Precision Op Amps (gradienty a termoelektrická napětí). Přesné URL jsou v TeXu a `obr/zdroje.md`.
 
 ### Technika a stav při ukončení
 
@@ -67,7 +87,8 @@ Tento soubor slouží k navázání na tvorbu výukových prezentací pro předm
 - Finální PDF není zamčené. Pokud bude příště otevřené a zápis selže, požádat o zavření a prozatím použít `-jobname=Pravidla_navrhu_preview`; uživatel tento postup zná.
 - Síťové `Invoke-WebRequest` v sandboxu zde selhává; úspěšné stažení obrázků proběhlo po standardní eskalaci oprávnění. Nebyly měněny globální konfigurace.
 - Dočasné kontrolní PNG byly odstraněny. Neodstraňovat obecně starší/sledované preview soubory z jiných úloh.
-- Při konci jsou změněné CV6 `.tex`, `.pdf`, `obr/zdroje.md` a nové nesledované `aac_decoupling_fig1/4/5.jpg`, `power_ground_vias.tex/.pdf`. **Není provedeno git add ani commit**; uživatel změny průběžně ukládá sám. Zachovat i jeho souběžné úpravy formulací, sekcí a obrázků.
+- Hlavní PDF je při konci aktuální a poslední překlad šel pod běžným názvem. Dočasné `Pravidla_navrhu_preview.pdf` bylo odstraněno; mohou zůstat ignorované pomocné `Pravidla_navrhu_preview.aux/.log/.nav/.out/.snm/.toc` z dřívějšího zamčení. Nezaměňovat jejich starý log za hlavní aktuální log.
+- Při konci jsou změněné CV6 `.tex`, `.pdf`, `obr/zdroje.md`; nové nesledované jsou `obr/floorplan_examples.tex`, `floorplan_bad.tex/.pdf` a `floorplan_good.tex/.pdf`. Dřívější dnešní změny si uživatel mezitím průběžně uložil. **Agent neprovedl git add ani commit**; uživatel změny ukládá sám. Zachovat i jeho souběžné úpravy formulací, sekcí a obrázků.
 - Zítřejší další téma zatím nebylo zadáno. Pokračovat až dle nové žádosti.
 
 ## CV5 – aktuální stav: hotovo

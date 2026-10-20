@@ -304,3 +304,47 @@ Necking stejného průřezu o délce 5 mm má 10× větší celkovou ztrátu ne�
 R/N pro stejné prokovy je ideální elektrický model; povolený proud skupiny
 není automaticky Nnásobek jednotlivého prokovu. Celá bibliografie je nyní
 na posledních šesti slajdech; čísla zdrojů 1–17 zůstávají zachovaná.
+
+## Zónování DPS – PCB partitioning / floor planning (20. 10. 2026)
+
+22. Analog Devices: What Are the Basic Guidelines for Layout Design of
+    Mixed-Signal PCBs?, Analog Dialogue:
+    https://www.analog.com/en/resources/analog-dialogue/articles/what-are-the-basic-guidelines-for-layout-design-of-mixed-signal-pcbs.html
+    Funkční bloky, tok signálu, rozhraní analog/digital a souvislá zemní
+    reference. Nepřebírá se univerzální doporučení umisťovat zdroje tepla do
+    středu desky; rozhoduje konkrétní mechanika a chlazení.
+23. Ben Kasemsadeh, Aaron Heng, Amit Ashara: Temperature Sensors: PCB
+    Guidelines for Surface Mount Devices, TI, SNOA967A, leden 2019:
+    https://www.ti.com/lit/an/snoa967a/snoa967a.pdf
+    Části 1–3: šíření tepla mědí a deskou; rozdíl mezi umístěním čidla
+    okolního vzduchu a čidla teploty součástky. Speciální tepelné izolační
+    ostrovy nejsou prezentovány jako obecný požadavek rozřezat GND.
+24. Analog Devices: Layout for Precision Op Amps:
+    https://www.analog.com/en/resources/technical-articles/layout-for-precision-op-amps.html
+    Teplotní gradienty, termoelektrická napětí a přesná analogová část.
+
+Dále použity [10] TI High-Speed Layout Guidelines (části 1.2, 1.6, 2.1,
+2.3 a 2.5), [11] TI Mixed Signals, Grounding and Bypass Capacitors,
+[16] kritické místní smyčky a [20] TI motor drivers (části 1–2, 6).
+Zdroje ověřeny 20. 10. 2026. Kapitola je před částí Trasy napájení.
+Název zónování DPS používá uživatel pro funkční plánování rozmístění,
+nikoli pro měděné zóny editoru.
+
+Vlastní editovatelné blokové plány (nejde o převzaté obrázky):
+
+- `floorplan_examples.tex`: společné kreslení, nepřekládat samostatně.
+- `floorplan_bad.tex` / `.pdf`: stejné funkční bloky promíchané po desce,
+  dlouhá analogová cesta a silové vazby přes jiné oblasti.
+- `floorplan_good.tex` / `.pdf`: analogový řetězec od vstupu přes filtr
+  a zesilovač do ADC, MCU a datového konektoru; ADC na rozhraní oblastí,
+  měnič a výkonový stupeň v samostatném prostoru.
+
+Přeložit oba samostatné příklady pomocí pdflatex ve složce `obr`.
+Šipky ukazují vybrané funkční vazby, nikoli vedení mědi ani úplné schéma
+zapojení. Nejsou zobrazené všechny napájecí větve a návraty; návraty se
+musí navrhnout nad vhodnou referencí. Napájení analogové větve po filtraci
+je koncept, ne obecný zákaz či příkaz použít spínaný zdroj pro analog.
+Barevné hranice nejsou drážky ani rozdělení GND. Nejsou předepsané rozměry,
+pinouty, izolační vzdálenosti nebo tepelné parametry. Nejde o kvantitativní
+simulaci vazeb ani o výrobní návrh. Bibliografie zůstává na konci, nyní na
+sedmi slajdech; číslování zdrojů 1–21 zůstává zachované.
