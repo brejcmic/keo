@@ -503,12 +503,76 @@
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Spínané měniče napětí}{Spinane menice napeti}}
 %------------------------------------------------------------------------------
+\begin{frame}[t]{Spínací uzel: SW, LX nebo PH}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.38\textheight,keepaspectratio]{obr/buck_switch_node.pdf}\par}
+	\begin{itemize}
+		\item U synchronního snižujícího měniče (buck) je \textbf{SW společný uzel horního spínače QH, dolního QL a vstupu tlumivky L}. Spínače jsou zde znázorněné funkčními bloky.
+		\item Napětí SW rychle přechází přibližně mezi PGND a VIN; obsahuje i překmity. \textbf{Za tlumivkou je výstup VOUT}, vyhlazovaný kondenzátorem.
+		\item U nesynchronního bucku nahrazuje QL dioda; do SW patří její katoda.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [12, 16] TI; vlastní zjednodušené schéma synchronního bucku.}
+\end{frame}
 
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Proč musí být plocha SW co nejmenší?}
+	\small
+	\begin{itemize}
+		\item SW patří k uzlům s \textbf{největší strmostí změny napětí} $\mathrm{d}v/\mathrm{d}t$. Rušení určují zejména rychlé hrany, nejen spínací frekvence měniče.
+		\item Měď SW má parazitní kapacitu vůči okolním spojům a plochám. Přes tuto kapacitu se při každé hraně přenáší rušivý proud:
+	\end{itemize}
+	\[
+		i_{\text{ruš}} \approx C_{\text{par}}\,\frac{\Delta V}{t_r}
+	\]
+	\begin{block}{Ilustrační příklad, nikoli návrhové hodnoty}
+	Změna 12 V za 3 ns dává 4 V/ns. Přes parazitní kapacitu 2 pF teče během hrany proud přibližně 8 mA.
+	\end{block}
+	\begin{itemize}
+		\item \textbf{Větší plocha SW obvykle zvyšuje kapacitní vazbu} a riziko EMI. Citlivá zpětná vazba či analogový vstup mohou zachytit špičky.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [16] TI; číselný příklad je vlastní výpočet pro zadané předpoklady.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{SW na DPS: krátké a kompaktní propojení}
+	\small
+	{\centering
+	\includegraphics[width=\linewidth,height=.35\textheight,keepaspectratio]{obr/buck_sw_layout.pdf}\par}
+	\begin{itemize}
+		\item \textbf{Přisuňte a natočte tlumivku k pinu SW}; u externích spínačů seskupte i QH a QL / diodu. Měď SW omezte na nutné propojení jejich plošek.
+		\item Nepřidávejte velký polygon ani dlouhou odbočku k testovacímu bodu. SW zbytečně nerozvádějte na další vrstvy.
+		\item \textbf{Malá plocha neznamená tenký dlouhý spoj.} Zachovejte šířku pro proud a potřebný odvod tepla; rozhoduje doporučený layout konkrétního měniče.
+	\end{itemize}
+	\vfill
+	{\tiny Zdroj doporučení: [16, 17] TI; vlastní schematický půdorys, nikoli výrobní layout.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Malý SW a malá proudová smyčka}
+	\small
+	\begin{itemize}
+		\item \textbf{Plocha mědi SW: vysoké $\mathrm{d}v/\mathrm{d}t$.} Zmenšete ji a oddalte od ní FB, kompenzaci, snímání proudu a citlivé signály; neveďte je ani přímo pod SW.
+		\item \textbf{Plocha komutační smyčky: vysoké $\mathrm{d}i/\mathrm{d}t$.} U synchronního bucku ji tvoří vstupní keramický $C_{\text{IN}}$, QH, QL a jejich spoje. Kondenzátor patří těsně k VIN a PGND výkonového stupně.
+		\item Samotné zmenšení SW neopraví dlouhou vstupní smyčku. Její parazitní indukčnost přispívá k překmitům a zvonění: $\Delta v \approx L_{\text{par}}\,\mathrm{d}i/\mathrm{d}t$.
+	\end{itemize}
+	\begin{block}{Postup návrhu}
+	Nejprve rozmístěte výkonový stupeň a vstupní C, poté tlumivku a kompaktní SW. Zpětnou vazbu odebírejte z výstupu za tlumivkou. Pro GND, případný keepout pod SW a chlazení respektujte datasheet a vzorovou desku.
+	\end{block}
+	\vfill
+	{\tiny Zdroj doporučení: [12, 16, 17] TI; popsaná komutační smyčka platí pro buck.}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\section{\texorpdfstring{Zatížitelnost tras}{Zatizitelnost tras}}
+%------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
 \section{\texorpdfstring{Referenční zdroje}{Referencni zdroje}}
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (1/4): skladba DPS a referenční plochy}
+\begin{frame}[t]{Zdroje (1/5): skladba DPS a referenční plochy}
 	\small
 	\begin{enumerate}
 		\item Z. Peterson: \href{https://resources.altium.com/p/understanding-ground-planes-your-two-layer-pcb}{Understanding 2-Layer PCB Ground Planes}.
@@ -523,7 +587,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (2/4): návratový proud a blokování}
+\begin{frame}[t]{Zdroje (2/5): návratový proud a blokování}
 	\footnotesize
 	\begin{enumerate}
 		\setcounter{enumi}{6}
@@ -537,7 +601,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (3/4): vedení napájení}
+\begin{frame}[t]{Zdroje (3/5): vedení napájení}
 	\footnotesize
 	\begin{enumerate}
 		\setcounter{enumi}{10}
@@ -548,7 +612,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------
-\begin{frame}[t]{Zdroje (4/4): indukčnost a převzaté ilustrace}
+\begin{frame}[t]{Zdroje (4/5): indukčnost a převzaté ilustrace}
 	\footnotesize
 	\begin{enumerate}
 		\setcounter{enumi}{13}
@@ -559,5 +623,17 @@
 	{\scriptsize Převzaté obrázky TI a All About Circuits jsou označeny přímo na slajdech. Ostatní ilustrace jsou vlastní česká schémata nebo vlastní exporty výukových desek z KiCadu 10. Předlohy i obrázky jsou v \texttt{obr/}. Řezy nejsou v měřítku; ukázkové desky nejsou výrobním návrhem. Z Jonesova podkladu přebíráme zásady blokování, nikoli obecné doporučení dělit zemní plochy.}
 \end{frame}
 
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Zdroje (5/5): spínací uzel a layout měniče}
+	\small
+	\begin{enumerate}
+		\setcounter{enumi}{15}
+		\item Texas Instruments: \href{https://www.ti.com/lit/an/slvafj3/slvafj3.pdf}{Layout Optimization of 4-Switch Buck-Boost Converters}, SLVAFJ3, září 2023; části 2.1--2.2 a 2.5: uzly s vysokým dv/dt, komutační smyčky a ochrana citlivých signálů. Obecné zásady jsou zde aplikovány na jednoduchý buck.
+		\item Texas Instruments: \href{https://www.ti.com/document-viewer/lit/html/SSZT978/GUID-8C25D4C0-B783-4E3A-9E0C-8DE1DFBC7851}{How to Correctly Layout a 40A Power Supply: Copper, Vias and Loop Path}, SSZT978, 2017; kompromis mezi plochou mědi, vodivými ztrátami a chlazením.
+	\end{enumerate}
+	\medskip
+	{\scriptsize Schéma bucku a porovnání plochy SW jsou vlastní české ilustrace. Půdorysy nemají reálný pinout ani výrobní rozměry. Číselný příklad kapacitní vazby není měření konkrétního měniče.}
+\end{frame}
 
 \end{document}

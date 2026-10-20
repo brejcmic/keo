@@ -226,3 +226,34 @@ Staženo 19. 10. 2026; obrázky jsou uloženy beze změn obsahu:
 U obrázků jsou jen krátké české komentáře. Hodnoty indukčnosti uvedené přímo
 v obrázcích jsou označeny za příklady, nikoli návrhové hodnoty pro tuto prezentaci.
 Plná bibliografie je nyní na posledních čtyřech slajdech.
+
+## Spínané měniče – spínací uzel SW (20. 10. 2026)
+
+16. Texas Instruments: Layout Optimization of 4-Switch Buck-Boost Converters,
+    SLVAFJ3, září 2023, části 2.1–2.2 a 2.5:
+    https://www.ti.com/lit/an/slvafj3/slvafj3.pdf
+    Malá plocha uzlů s vysokým dv/dt, malé komutační smyčky, odstup citlivých
+    signálů. Použity obecné principy pro jednoduchý buck, nikoli převzatý layout
+    LM5177 ani obecný pokyn dělit AGND/PGND.
+17. Texas Instruments: How to Correctly Layout a 40A Power Supply: Copper,
+    Vias and Loop Path, SSZT978, 2017:
+    https://www.ti.com/document-viewer/lit/html/SSZT978/GUID-8C25D4C0-B783-4E3A-9E0C-8DE1DFBC7851
+    Plocha mědi musí respektovat vodivé ztráty a chlazení; minimalizace SW
+    proto neznamená libovolně úzké propojení. Dále použit zdroj [12].
+
+Ověřeno 20. 10. 2026. Vlastní editovatelné ilustrace:
+
+- `buck_switch_node.tex` / `.pdf`: funkční schéma synchronního bucku;
+  QH a QL jsou bloky spínačů bez řízení, červeně je společný uzel SW.
+  Nejde o kompletní schéma k výrobě. U nesynchronního bucku do SW patří
+  katoda volnoběžné diody místo horního vývodu QL.
+- `buck_sw_layout.tex` / `.pdf`: srovnání zbytečně velkého polygonu SW
+  a kompaktního propojení pinu SW s tlumivkou. Obecný IC nemá reálný pinout;
+  vstupní kondenzátor a další součástky nejsou v tomto detailu zakreslené.
+  Modrá citlivá trasa je nezávislý signál, nikoli schéma zapojení FB.
+
+Obrázky přeložit samostatně ve složce `obr` pomocí pdflatex.
+Příklad 12 V / 3 ns a 2 pF je vlastní ilustrační výpočet, nikoli údaj výrobce.
+Podmínky keepoutu pod SW nejsou zobecněné: postupovat podle konkrétního
+datasheetu a vzorové desky. Bibliografie zůstává na posledních pěti slajdech,
+stávající číslování 1–15 je zachované.
