@@ -227,7 +227,7 @@ U obrázků jsou jen krátké české komentáře. Hodnoty indukčnosti uvedené
 v obrázcích jsou označeny za příklady, nikoli návrhové hodnoty pro tuto prezentaci.
 Plná bibliografie je nyní na posledních čtyřech slajdech.
 
-## Spínané měniče – spínací uzel SW (20. 10. 2026)
+## Spínané měniče – spínací uzel SWN (20. 10. 2026)
 
 16. Texas Instruments: Layout Optimization of 4-Switch Buck-Boost Converters,
     SLVAFJ3, září 2023, části 2.1–2.2 a 2.5:
@@ -238,22 +238,69 @@ Plná bibliografie je nyní na posledních čtyřech slajdech.
 17. Texas Instruments: How to Correctly Layout a 40A Power Supply: Copper,
     Vias and Loop Path, SSZT978, 2017:
     https://www.ti.com/document-viewer/lit/html/SSZT978/GUID-8C25D4C0-B783-4E3A-9E0C-8DE1DFBC7851
-    Plocha mědi musí respektovat vodivé ztráty a chlazení; minimalizace SW
+    Plocha mědi musí respektovat vodivé ztráty a chlazení; minimalizace SWN
     proto neznamená libovolně úzké propojení. Dále použit zdroj [12].
 
 Ověřeno 20. 10. 2026. Vlastní editovatelné ilustrace:
 
 - `buck_switch_node.tex` / `.pdf`: funkční schéma synchronního bucku;
-  QH a QL jsou bloky spínačů bez řízení, červeně je společný uzel SW.
-  Nejde o kompletní schéma k výrobě. U nesynchronního bucku do SW patří
+  QH a QL jsou bloky spínačů bez řízení, červeně je společný uzel SWN.
+  Nejde o kompletní schéma k výrobě. U nesynchronního bucku do SWN patří
   katoda volnoběžné diody místo horního vývodu QL.
-- `buck_sw_layout.tex` / `.pdf`: srovnání zbytečně velkého polygonu SW
-  a kompaktního propojení pinu SW s tlumivkou. Obecný IC nemá reálný pinout;
+- `buck_sw_layout.tex` / `.pdf`: srovnání zbytečně velkého polygonu SWN
+  a kompaktního propojení pinu SWN s tlumivkou. Obecný IC nemá reálný pinout;
   vstupní kondenzátor a další součástky nejsou v tomto detailu zakreslené.
   Modrá citlivá trasa je nezávislý signál, nikoli schéma zapojení FB.
 
 Obrázky přeložit samostatně ve složce `obr` pomocí pdflatex.
 Příklad 12 V / 3 ns a 2 pF je vlastní ilustrační výpočet, nikoli údaj výrobce.
-Podmínky keepoutu pod SW nejsou zobecněné: postupovat podle konkrétního
+Podmínky keepoutu pod SWN nejsou zobecněné: postupovat podle konkrétního
 datasheetu a vzorové desky. Bibliografie zůstává na posledních pěti slajdech,
 stávající číslování 1–15 je zachované.
+
+## Zatížitelnost tras, prokovů a necking (20. 10. 2026)
+
+18. IPC: IPC-2152: Standard for Determining Current Carrying Capacity in
+    Printed Board Design, srpen 2009:
+    https://www.ipc.org/TOC/IPC-2152.pdf
+    Veřejný obsah a úvod standardu, nikoli celý text. Použito vymezení návrhu
+    vodičů podle proudu a dovoleného oteplení; nejsou převzaté grafy či tabulky
+    z placené normy ani vymyšlené univerzální proudové limity.
+19. KiCad 10.0: Calculator Tools, Track Width a Via Size:
+    https://docs.kicad.org/10.0/en/pcb_calculator/pcb_calculator.html
+    Studenti mají pro návrh šířky použít dostupný kalkulátor KiCadu
+    s jednodušším modelem podle IPC-2221. IPC-2152 je zmíněna pouze jako
+    podrobnější popis, přístup k celé normě se nevyžaduje. Dokumentace verze 10
+    uvádí u šířky IPC-2221; tvrzení se nevztahuje na budoucí vývojovou větev.
+    Obrázky GUI nejsou převzaté.
+20. Texas Instruments: Best Practices for Board Layout of Motor Drivers,
+    SLVA959B, rev. B, říjen 2021, část 3:
+    https://www.ti.com/lit/an/slva959b/slva959b.pdf
+    Nízký odpor přechodu, skupiny prokovů a jejich přímé připojení k mědi.
+    Číselné proudové limity tabulky 3-1 nejsou zobecněny na libovolné prokovy.
+21. Texas Instruments: AN-1772 LM3691 Evaluation Board, SNVA312B, rev. B,
+    květen 2013, část 7:
+    https://www.ti.com/lit/ug/snva312b/snva312b.pdf
+    Výrobcův příklad místní změny šířky u plošky. Konkrétní rozměry a doporučení
+    pro pájení daného pouzdra nejsou vydávány za univerzální návrh neckingu.
+
+Ověřeno 20. 10. 2026. Vlastní editovatelné ilustrace:
+
+- `current_necking.tex` / `.pdf`: porovnání dlouhého zúžení s krátkým neckingem
+  u malé plošky, obecný IC bez reálného pinoutu, bez výrobních rozměrů.
+- `current_via_array.tex` / `.pdf`: stejná skupina čtyř prokovů, přívod úzkým
+  společným hrdlem nebo širokou mědí. Cílová vrstva není zobrazena; také musí
+  mít dostatečný přívod/odběr a vhodné chlazení.
+
+Přeložit samostatně pomocí pdflatex ve složce `obr`.
+Odporové příklady jsou vlastní výpočty pro měď s rezistivitou
+0,0172 ohm mm²/m přibližně při 20 °C. Trasy: R = rho l/(w t).
+Prokov: rovnoměrná homogenní stěna s hotovým vnitřním průměrem d,
+tloušťkou pokovení tp, A = pi (d + tp) tp. Pokovení 25 µm je jen vstup
+příkladu; nejde o parametr odvozený z velikosti 0,60/0,30 mm.
+Model nezahrnuje odpor přívodů, rozložení proudové hustoty ani teplotní pole.
+Necking stejného průřezu o délce 5 mm má 10× větší celkovou ztrátu než
+0,5 mm, nikoli automaticky 10× větší teplotu. Oteplení nebylo simulováno.
+R/N pro stejné prokovy je ideální elektrický model; povolený proud skupiny
+není automaticky Nnásobek jednotlivého prokovu. Celá bibliografie je nyní
+na posledních šesti slajdech; čísla zdrojů 1–17 zůstávají zachovaná.

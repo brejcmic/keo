@@ -2,25 +2,25 @@
 \input{stackup_style.tex}
 \begin{document}
 \begin{tikzpicture}[font=\small]
- \foreach \offset/\title in {0/Nevhodné: rozlitý SW,7/Kompaktní SW} {
+ \foreach \offset/\title in {0/Nevhodné: rozlitý SWN,7/Kompaktní SWN} {
   \begin{scope}[xshift=\offset cm]
    \node[anchor=west,font=\bfseries] at (0,4.5) {\title};
    \filldraw[fill=black!2,draw=black!40] (0,0) rectangle (6,4);
    \filldraw[fill=black!12] (.4,1.5) rectangle (1.9,3.2);
    \node at (1.15,2.65) {IC};
-   \node[font=\scriptsize] at (1.25,2) {SW};
+   \node[font=\scriptsize] at (1.25,2) {SWN};
    \fill[red!75!black] (1.7,1.8) rectangle (2.05,2.2);
    \ifnum\offset=0
     \fill[red!65] (2,1.2) rectangle (4.6,3.7);
     \fill[red!65] (4.2,1.9) rectangle (4.8,2.2);
     \def\inductorx{4.8}
     \draw[blue!70!black,line width=1pt] (.6,.65)--(4.1,.65)--(4.1,1.05)--(2.1,1.05);
-    \node[anchor=west,font=\scriptsize,text=blue!70!black] at (.5,.35) {Citlivá trasa těsně vedle SW};
+    \node[anchor=west,font=\scriptsize,text=blue!70!black] at (.5,.35) {Citlivá trasa těsně vedle SWN};
    \else
     \fill[red!65] (2,1.8) rectangle (2.6,2.2);
     \def\inductorx{2.6}
     \draw[blue!70!black,line width=1pt] (.6,.65)--(5.3,.65);
-    \node[anchor=west,font=\scriptsize,text=blue!70!black] at (.5,.35) {Citlivá trasa mimo oblast SW};
+    \node[anchor=west,font=\scriptsize,text=blue!70!black] at (.5,.35) {Citlivá trasa mimo oblast SWN};
    \fi
    \filldraw[fill=black!15] (\inductorx,1.55) rectangle (\inductorx+.85,2.85);
    \node at (\inductorx+.43,2.55) {L};
@@ -30,6 +30,6 @@
    \node[anchor=north east,font=\scriptsize] at (5.85,1.45) {VOUT};
   \end{scope}
  }
- \node[anchor=west,font=\scriptsize] at (0,-.5) {Červeně: SW. Modře: citlivá signálová trasa.};
+ \node[anchor=west,font=\scriptsize] at (0,-.5) {Červeně: SWN. Modře: citlivá signálová trasa.};
 \end{tikzpicture}
 \end{document}
