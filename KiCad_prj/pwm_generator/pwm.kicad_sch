@@ -1007,6 +1007,12 @@
 		(uuid "971ca61e-a6e8-438b-9542-068d5054912b")
 	)
 	(junction
+		(at 71.12 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "abe8a139-79fd-48c7-82ae-53d1b098931d")
+	)
+	(junction
 		(at 88.9 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1026,7 +1032,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 76.2) (xy 68.58 76.2)
+			(xy 74.93 76.2) (xy 71.12 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1306,6 +1312,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.12 76.2) (xy 68.58 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc15847d-10a3-47c6-80b9-bfa02314435c")
+	)
+	(wire
+		(pts
 			(xy 100.33 59.69) (xy 88.9 59.69)
 		)
 		(stroke
@@ -1383,6 +1399,16 @@
 			(type default)
 		)
 		(uuid "f0c4b621-6155-4b29-9aee-ec1ca03cf2bb")
+	)
+	(wire
+		(pts
+			(xy 71.12 76.2) (xy 71.12 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3b60cf4-73c1-4498-8da6-c20e22174c04")
 	)
 	(wire
 		(pts
@@ -2139,6 +2165,92 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 71.12 81.28 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3672bd86-6595-44e8-98a4-747580831e61")
+		(property "Reference" "C30"
+			(at 74.93 80.0099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100n"
+			(at 74.93 82.5499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 70.1548 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 71.12 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "85a63cf2-ff5a-49e9-b01d-f3ac7cf3eb20")
+		)
+		(pin "2"
+			(uuid "c786e96f-1cbc-4c55-a31c-844f7aed6f95")
+		)
+		(instances
+			(project "pwm_generator"
+				(path "/8c5142ba-d623-44cf-91e0-639551b20541/81d99b01-370f-4ad3-ad14-75c6aef27a3a"
+					(reference "C31")
+					(unit 1)
+				)
+				(path "/8c5142ba-d623-44cf-91e0-639551b20541/ca31a367-75f3-4fc3-8750-2028a998846d"
+					(reference "C30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 191.77 88.9 0)
 		(mirror y)
@@ -2299,6 +2411,88 @@
 				)
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/ca31a367-75f3-4fc3-8750-2028a998846d"
 					(reference "#PWR054")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 71.12 85.09 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7f28808d-ac91-4825-9af1-c2df2cc308dc")
+		(property "Reference" "#PWR069"
+			(at 71.12 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 71.12 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c29c7193-eb8b-477b-858b-e510f683b613")
+		)
+		(instances
+			(project "pwm_generator"
+				(path "/8c5142ba-d623-44cf-91e0-639551b20541/81d99b01-370f-4ad3-ad14-75c6aef27a3a"
+					(reference "#PWR070")
+					(unit 1)
+				)
+				(path "/8c5142ba-d623-44cf-91e0-639551b20541/ca31a367-75f3-4fc3-8750-2028a998846d"
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
