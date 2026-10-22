@@ -50,7 +50,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "border_display_style": 2,
+          "border_display_style": 0,
           "border_hatch_pitch": 0.5,
           "corner_radius": 0.0,
           "corner_smoothing": 0,
@@ -571,6 +571,9 @@
       "/TRIANGLE_IN": [
         "Logic"
       ],
+      "/TRIG": [
+        "Logic"
+      ],
       "/TWG_IN": [
         "Logic"
       ],
@@ -596,6 +599,9 @@
         "Logic"
       ],
       "/~{SAMP}": [
+        "Logic"
+      ],
+      "/~{TRIG}": [
         "Logic"
       ]
     },
@@ -747,7 +753,7 @@
         "uuid": "8c5142ba-d623-44cf-91e0-639551b20541"
       }
     ],
-    "used_designators": "C1-33,D1-6,#PWR1-72,R1-40,J1-2,#FLG1-2,U1-13",
+    "used_designators": "C1-33,D1-7,#PWR1-72,R1-41,J1-2,#FLG1-2,U1-13",
     "variants": []
   },
   "sheets": [

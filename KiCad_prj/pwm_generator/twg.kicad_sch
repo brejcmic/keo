@@ -1451,7 +1451,7 @@
 		)
 		(uuid "8ba0f050-5bd9-40f9-bb52-2e872f8ab10f")
 	)
-	(hierarchical_label "~{SAMPLING}"
+	(hierarchical_label "~{TRIGGER}"
 		(shape output)
 		(at 102.87 128.27 180)
 		(effects
