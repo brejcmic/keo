@@ -1474,7 +1474,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "04127890-5143-4e1c-b2bd-b906df6061df")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR028"
 			(at 146.05 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -1534,7 +1534,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "#PWR021")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -1552,7 +1552,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "053dc9df-1cb1-4d62-932a-15dedb86f6fe")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR027"
 			(at 129.54 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -1613,7 +1613,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "#PWR022")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -1631,7 +1631,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0adb6fc2-ebbc-4ff4-adf7-7929326e41a1")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR023"
 			(at 115.57 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -1692,7 +1692,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "#PWR026")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -1710,7 +1710,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "11ee1eb0-0df3-4c0e-b8ca-395c37812abc")
-		(property "Reference" "C9"
+		(property "Reference" "C11"
 			(at 125.73 111.76 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1772,7 +1772,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "C9")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -1790,7 +1790,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2118336f-595f-457d-98f8-fbf537eb4aba")
-		(property "Reference" "R10"
+		(property "Reference" "R13"
 			(at 132.08 101.6 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1852,7 +1852,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "R10")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -1870,7 +1870,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3d009bf3-039a-468c-85e0-744762d66e4f")
-		(property "Reference" "R11"
+		(property "Reference" "R14"
 			(at 162.56 101.6 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1932,7 +1932,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "R11")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -1950,7 +1950,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "465d2f60-9977-4389-ae0a-0062ce8a8a74")
-		(property "Reference" "U4"
+		(property "Reference" "U5"
 			(at 161.29 54.5398 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2022,7 +2022,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "U4")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -2041,7 +2041,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b844fa8-050b-4cd0-abb4-54dd1c3f0475")
-		(property "Reference" "R8"
+		(property "Reference" "R11"
 			(at 132.08 73.66 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2103,7 +2103,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "R8")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -2121,7 +2121,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d58997b-56bc-46b0-94cb-8d5af073f5f8")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR024"
 			(at 129.54 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -2182,7 +2182,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "#PWR027")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -2201,7 +2201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6459ea24-d381-4ea7-b653-538f0185d89d")
-		(property "Reference" "R9"
+		(property "Reference" "R12"
 			(at 132.08 90.17 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2263,7 +2263,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "R9")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -2281,7 +2281,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "87429c29-276a-4898-8c90-09fb04d7cd1c")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR026"
 			(at 132.08 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -2341,7 +2341,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "#PWR028")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -2360,7 +2360,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a8d88b9b-bf37-48a1-bdcb-6ace940a2152")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR022"
 			(at 119.38 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -2420,7 +2420,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "#PWR023")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -2516,7 +2516,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b9b73a81-1a62-4b47-85b3-0126273b986b")
-		(property "Reference" "R12"
+		(property "Reference" "R15"
 			(at 162.56 119.38 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2578,7 +2578,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "R12")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -2596,7 +2596,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "be54a376-7dbc-4424-a103-ace563608f2e")
-		(property "Reference" "C10"
+		(property "Reference" "C14"
 			(at 166.37 133.3499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2660,7 +2660,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "C10")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -2679,7 +2679,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2467c28-96f1-4765-850a-a81648647295")
-		(property "Reference" "U5"
+		(property "Reference" "U4"
 			(at 135.1981 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2755,7 +2755,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "U5")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -2773,7 +2773,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c99fcdbd-52d8-483b-bb67-e3dca1bc777f")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR030"
 			(at 162.56 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -2833,7 +2833,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "#PWR029")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -2851,7 +2851,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "de1c422c-a07d-47c2-83b9-ee0b4031a009")
-		(property "Reference" "C6"
+		(property "Reference" "C12"
 			(at 139.7 44.45 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2913,7 +2913,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "C6")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -2932,7 +2932,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e191803a-79bb-49b4-96b2-f7a87e50afa1")
-		(property "Reference" "C7"
+		(property "Reference" "C10"
 			(at 115.57 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2996,7 +2996,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "C7")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -3014,7 +3014,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e3317253-6a2d-45c3-a449-cc719a296ac4")
-		(property "Reference" "C8"
+		(property "Reference" "C13"
 			(at 162.56 88.9 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3076,7 +3076,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "C8")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -3093,7 +3093,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f370f4c5-caf8-4b9b-ae49-ea1353b7ce44")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR029"
 			(at 146.05 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -3153,7 +3153,7 @@
 		(instances
 			(project "pwm_generator"
 				(path "/8c5142ba-d623-44cf-91e0-639551b20541/749c89d5-b92c-45c1-9dff-9c60a81aaaf0"
-					(reference "#PWR024")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
