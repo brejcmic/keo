@@ -71,68 +71,92 @@
 
 %------------------------------------------------------------------------------
 \begin{frame}[t]{Dvě vrstvy: (SIG + PWR) / GND}
-	\small
+
 	{\centering
-		\includegraphics[width=0.98\linewidth,height=0.59\textheight,keepaspectratio]{obr/stackup_2layer.pdf}\par}
-	\medskip
+		\includegraphics[width=0.7\linewidth]{obr/DPS_SG.eps}\par}
+    
+	\vspace{1cm}
 	Signály a napájení veďte převážně na L1; protější L2 ponechte co nejvíce souvislou jako návratovou cestu GND.
-	\vfill
-	{\tiny Zdroj doporučení: [1] Z. Peterson.}
 \end{frame}
 
 %------------------------------------------------------------------------------
 \begin{frame}[t]{Dvě vrstvy: výhody a omezení}
-	\begin{itemize}
-		\item \textbf{Výhody:} jednoduchá a levná výroba; přehledná návratová cesta oproti desce s rozdělenou zemí na obou stranách.
-		\item \textbf{Nevýhody:} méně prostoru pro signály a napájení; u běžné tloušťky 1,6 mm je protější GND vzdálená, takže vazba a řízení impedance jsou horší než u vhodné čtyřvrstvé desky.
-		\item \textbf{Použití:} jednodušší obvody s krátkými vedeními. Spodní GND co nejméně přerušovat; trasy přes celou spodní stranu mohou rozříznout návratovou cestu.
-	\end{itemize}
-	\vfill
-	{\tiny Zdroj doporučení: [1] Z. Peterson.}
-\end{frame}
+  \textbf{Výhody:}
+  \begin{itemize}
+    \item jednoduchá a levná výroba,
+    \item přehledná návratová cesta oproti desce s rozdělenou zemí na obou stranách.
+  \end{itemize}
 
-%------------------------------------------------------------------------------
-\begin{frame}[t]{Čtyři vrstvy: SIG / GND / PWR / SIG}
-	\small
-	{\centering
-		\includegraphics[width=0.98\linewidth,height=0.61\textheight,keepaspectratio]{obr/stackup_4layer_power.pdf}\par}
-	\medskip
-	L1 má referenci GND, zatímco nejbližší referencí pro L4 je PWR. Právě tento rozdíl ovlivňuje vedení rychlých signálů.
-	\vfill
-	{\tiny Zdroj doporučení: [2] Z. Peterson.}
-\end{frame}
-
-%------------------------------------------------------------------------------
-\begin{frame}[t]{SIG / GND / PWR / SIG: výhody a omezení}
+  \textbf{Nevýhody:}
 	\begin{itemize}
-		\item \textbf{Výhody:} dvě signálové vrstvy a samostatný rozvod napájení; horní signály mají blízkou GND.
-		\item \textbf{Nevýhody:} spodní signály mají nejbližší referenci PWR. Rozdělení napájecí plochy a změna reference při přechodu vrstev komplikují návrat proudu.
-		\item \textbf{Použití:} rychlé signály přednostně na L1 nad GND. Plná PWR může být referencí pro L4, ale je nutné vyřešit návaznost návratového proudu na GND.
+		\item méně prostoru pro signály a napájení,
+    \item u běžné tloušťky 1,5 mm je protější GND dost vzdálená vůči signálu $\Rightarrow$ horší vazba a případně řízení impedance.
 	\end{itemize}
-	\vfill
-	{\tiny Zdroj doporučení: [2] Z. Peterson.}
+  
+  \begin{block}{Doporučení}
+	Použijte pro jednodušší obvody s krátkými vedeními. Spodní GND přerušujte co nejméně -- trasy přes celou spodní stranu mohou rozříznout návratovou cestu.
+  \end{block}
 \end{frame}
 
 %------------------------------------------------------------------------------
 \begin{frame}[t]{Čtyři vrstvy se dvěma plochami GND}
-	\small
+
 	{\centering
-		\includegraphics[width=0.98\linewidth,height=0.61\textheight,keepaspectratio]{obr/stackup_4layer_gnd.pdf}\par}
-	\medskip
-	Napájení lze rozvádět na jedné nebo obou vnějších vrstvách. Dvě vnitřní GND plochy ponechte souvislé a vzájemně je propojte.
-	\vfill
-	{\tiny Zdroj doporučení: [3] Z. Peterson.}
+		\includegraphics[width=0.7\linewidth]{obr/DPS_SGGS.eps}\par}
+    
+	\vspace{1cm}
+	Napájení lze rozvádět na jedné nebo obou vnějších vrstvách. Dvě vnitřní GND plochy (L2 a L3) ponechte souvislé a vzájemně je propojte.
+
 \end{frame}
 
 %------------------------------------------------------------------------------
 \begin{frame}[t]{Dvě plochy GND: výhody a omezení}
+
+  \textbf{Výhody:}
+  \begin{itemize}
+    \item obě signálové vrstvy mají blízkou referenční GND,
+    \item vnitřní plochy oddělují signály na protilehlých stranách.
+  \end{itemize}
+  
+  \textbf{Nevýhody:}
 	\begin{itemize}
-		\item \textbf{Výhody:} obě vnější vrstvy mají blízkou referenci GND; vnitřní plochy oddělují signály na protilehlých stranách.
-		\item \textbf{Nevýhody:} napájení sdílí prostor se signály, není k dispozici samostatná PWR vrstva. Pro větší proudy a mnoho napěťových úrovní (zdrojů) může chybět místo.
-		\item \textbf{Doporučení:} vhodný výchozí stackup pro běžnou čtyřvrstvou digitální desku. GND plochy propojit; u přechodu signálu vložit blízký GND prokov.
+		\item napájení sdílí prostor se signály, není k dispozici samostatná PWR vrstva. Pro větší proudy a mnoho napěťových úrovní (zdrojů) může chybět místo.
 	\end{itemize}
-	\vfill
-	{\tiny Zdroj doporučení: [3] Z. Peterson.}
+  
+	\begin{block}{Doporučení}
+	Vhodný výchozí stackup pro běžnou čtyřvrstvou digitální desku. GND plochy propojte a u přechodu signálu mezi L1 a L4 je vhodné vložit blízký GND prokov.
+  \end{block}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{Čtyři vrstvy: SIG / GND / PWR / SIG}
+
+	{\centering
+		\includegraphics[width=0.7\linewidth]{obr/DPS_SGPS.eps}\par}
+    
+	\vspace{1cm}
+	L1 má referenci GND, zatímco nejbližší referencí pro L4 je PWR. Právě tento rozdíl určuje vrstvu L1 pro rychlé signály.
+
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}[t]{SIG / GND / PWR / SIG: výhody a omezení}
+
+  \textbf{Výhody:}
+  
+  \begin{itemize}
+    \item dvě signálové vrstvy a samostatný rozvod napájení -- snazší vedení spojů,
+    \item horní signály mají blízkou GND.
+  \end{itemize}
+  
+  \textbf{Nevýhody:}
+	\begin{itemize}
+		\item spodní signály mají nejbližší referenci PWR. Rozdělení napájecí plochy a změna reference při přechodu vrstev komplikují návrat proudu.
+	\end{itemize}
+	
+  \begin{block}{Doporučení}
+	Rychlé signály veďte přednostně na L1 nad GND. Plná PWR může být referencí pro L4, ale je nutné vyřešit návaznost návratového proudu na GND (blokovací kondenzátory).
+  \end{block}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -166,15 +190,15 @@
 
 %------------------------------------------------------------------------------
 \begin{frame}[t]{GND $\rightarrow$ GND: návrat přes blízký prokov}
-	\small
+
 	{\centering
-	\includegraphics[width=\linewidth,height=.51\textheight,keepaspectratio]{obr/return_gnd.pdf}\par}
+	\includegraphics[width=0.6\linewidth]{obr/DPS_SGGS_return.eps}\par}
+  
 	\begin{itemize}
 		\item Signál přechází z L1 na L4; návrat se přesouvá z L3 na L2 po \textbf{blízkém GND prokovu}.
 		\item Čím vzdálenější je návratový prokov, tím větší je proudová smyčka. Signálový prokov se s GND plochami nespojuje.
 	\end{itemize}
-	\vfill
-	{\tiny Zdroj doporučení: [7, 9] A. Kay (TI), P. Salmony (Phil's Lab).}
+
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -215,13 +239,13 @@
 \begin{frame}[t]{GND $\rightarrow$ PWR: návrat přes kondenzátor}
 	\small
 	{\centering
-	\includegraphics[width=\linewidth,height=.51\textheight,keepaspectratio]{obr/return_cap.pdf}\par}
+	\includegraphics[width=0.6\linewidth]{obr/DPS_SGPS_return.eps}\par}
+  
 	\begin{itemize}
 		\item Návrat mezi různými referencemi potřebuje \textbf{nízkoimpedanční kapacitní vazbu} poblíž přechodu.
-		\item GND a PWR se nesmějí spojit prokovem! Kondenzátor je \textbf{mezi PWR a GND}, nikoli v sérii se signálem.
+		\item GND a PWR se nesmějí spojit prokovem! Kondenzátor je \textbf{mezi PWR a GND}.
 	\end{itemize}
-	\vfill
-	{\tiny Zdroj doporučení: [4, 7, 9] Z. Peterson, A. Kay (TI), P. Salmony.}
+
 \end{frame}
 
 %------------------------------------------------------------------------------
