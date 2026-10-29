@@ -1032,6 +1032,16 @@
 	)
 	(wire
 		(pts
+			(xy 146.05 66.04) (xy 146.05 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01159973-fab9-429b-9cf8-67a7e32cf501")
+	)
+	(wire
+		(pts
 			(xy 74.93 76.2) (xy 71.12 76.2)
 		)
 		(stroke
@@ -1129,6 +1139,16 @@
 			(type default)
 		)
 		(uuid "243a6411-937e-41ae-a763-77eb3c3c8ec2")
+	)
+	(wire
+		(pts
+			(xy 223.52 66.04) (xy 146.05 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "282bb225-7f30-4994-9025-16a241a55d2c")
 	)
 	(wire
 		(pts
@@ -1441,6 +1461,17 @@
 		)
 		(uuid "08a091fb-19e7-43d7-b27b-8f788715848b")
 	)
+	(hierarchical_label "REF"
+		(shape output)
+		(at 223.52 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4fd8f388-adfb-4d4c-b8c4-3d946f749e15")
+	)
 	(hierarchical_label "PWM"
 		(shape output)
 		(at 223.52 99.06 0)
@@ -1540,6 +1571,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C49678"
+			(at 198.12 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c73682f1-3584-4727-ae1c-70a33560a5df")
 		)
@@ -1627,6 +1669,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C17414"
+			(at 88.9 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "80901b89-afff-419f-bd64-fb0af1036eb1")
 		)
@@ -1703,6 +1756,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 78.74 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C17414"
+			(at 78.74 99.06 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2048,6 +2112,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C193413"
+			(at 194.31 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "6"
 			(uuid "93c5735c-e469-4aad-a2cd-7a768518d158")
 		)
@@ -2145,6 +2220,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C17414"
+			(at 124.46 99.06 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a21b5369-6852-4698-99de-6de08924ce19")
 		)
@@ -2221,6 +2307,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 71.12 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C49678"
 			(at 71.12 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -2644,6 +2741,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C49678"
+			(at 115.57 69.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4ce8432f-0c8a-425a-8857-41c81e75ff54")
 		)
@@ -2720,6 +2828,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 78.74 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C17414"
+			(at 78.74 76.2 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2815,6 +2934,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C49678"
+			(at 100.33 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e26eab46-421c-44a5-b23f-abdc91559f16")
 		)
@@ -2899,6 +3029,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C1790"
+			(at 124.46 110.49 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "48e8f874-0a7c-4aee-815d-e797a694c48d")
 		)
@@ -2974,6 +3115,17 @@
 			)
 		)
 		(property "Description" "50-MHz, Zero-Crossover, Low-Distortion, High CMRR, RRI/O, Single-Supply, SOT-23-5"
+			(at 124.46 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C96626"
 			(at 124.46 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -3069,6 +3221,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 158.75 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C17513"
+			(at 158.75 78.74 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3320,6 +3483,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 194.31 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C17514"
+			(at 194.31 78.74 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

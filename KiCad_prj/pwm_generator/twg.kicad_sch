@@ -1763,6 +1763,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C49678"
+			(at 125.73 119.38 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "04a85bd9-85b3-40d0-ac5f-3e45eada16f5")
 		)
@@ -1834,6 +1845,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 132.08 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C17414"
+			(at 132.08 107.95 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1923,6 +1945,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C17506"
+			(at 162.56 107.95 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e28851ef-65d1-45f0-989e-2b5386f4c9f9")
 		)
@@ -1994,6 +2027,17 @@
 			)
 		)
 		(property "Description" "50-MHz, Zero-Crossover, Low-Distortion, High CMRR, RRI/O, Single-Supply, SOT-23-5"
+			(at 148.59 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C96626"
 			(at 148.59 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -2085,6 +2129,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 132.08 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C4382"
+			(at 132.08 80.01 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2245,6 +2300,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 132.08 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C17772"
+			(at 132.08 96.52 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2569,6 +2635,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C17506"
+			(at 162.56 125.73 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "03ed9abc-444f-4a8a-b3b8-d90428433c09")
 		)
@@ -2641,6 +2718,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 162.56 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C49678"
 			(at 162.56 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -2724,6 +2812,17 @@
 			)
 		)
 		(property "Description" "High-Speed Comparator, 4.5-ns, Rail-to-Rail, Push-Pull CMOS Output, SOT-23-6"
+			(at 129.54 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C193413"
 			(at 129.54 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -2904,6 +3003,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C49678"
+			(at 139.7 52.07 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f5e00f05-af34-41a3-9852-2e5a1b9efe9a")
 		)
@@ -2987,6 +3097,17 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C49678"
+			(at 119.38 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "31f60138-2a71-4176-bdbe-b10b4658923f")
 		)
@@ -3058,6 +3179,17 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 162.56 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C7467177"
+			(at 162.56 96.52 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
