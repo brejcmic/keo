@@ -3179,6 +3179,17 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Pro diferenciální linku dle AM26LS32\n- zakončení 120 ohm (118 ohm výstup)\n- NEXT dělič napětí 5 V na 1,7 V, pro FEXT 0,85 V\n- sestava (22 zde):150:(180 výstup):150:(22 zde)\n- zatížení výstupu 12 mA"
+		(exclude_from_sim no)
+		(at 232.664 84.328 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "aa12000b-33d4-4a92-a4ff-45b38015048a")
+	)
 	(junction
 		(at 196.85 139.7)
 		(diameter 0)
