@@ -815,7 +815,7 @@
     ]
   ],
   "text_variables": {
-    "REVISION": "1.0",
+    "REVISION": "1.1",
     "TITLE": "PWM generator"
   },
   "tuning_profiles": {
