@@ -3271,7 +3271,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "11c3f892-ecbd-4b19-83de-bec8e0436cd2")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR012"
 			(at 58.42 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -3331,7 +3331,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR014")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -3440,7 +3440,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c1ae8b5-afbf-4a3b-a741-e26b7bd899b8")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR013"
 			(at 58.42 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -3500,7 +3500,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR015")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -3794,7 +3794,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "33d6d1a2-ba6a-480a-bbab-bd9f75a98db2")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR015"
 			(at 68.58 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -3854,7 +3854,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR017")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -4056,7 +4056,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "47401af8-286f-4607-bf6a-3cd21f8718f6")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR019"
 			(at 104.14 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -4117,7 +4117,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR021")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -4501,7 +4501,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "638555af-43d9-4318-8ef0-13e2f03ed40b")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR018"
 			(at 68.58 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -4561,7 +4561,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR020")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -4672,7 +4672,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78fcb85c-76e7-4315-9da8-657827eef86b")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR014"
 			(at 58.42 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -4732,7 +4732,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR016")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -4934,7 +4934,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "847cf403-fbff-41ce-9c56-f750a4473f8c")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR016"
 			(at 68.58 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -4994,7 +4994,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR018")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -5285,7 +5285,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "abf88d8f-0493-4c1e-a3d4-184b1190b915")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR020"
 			(at 104.14 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -5346,7 +5346,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR022")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -5641,7 +5641,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8834389-9420-4c13-bad5-c62b4def23b4")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR022"
 			(at 119.38 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -5701,7 +5701,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR024")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -5719,7 +5719,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c937f0f1-b328-439b-b2a6-b101be5061c1")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR017"
 			(at 68.58 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -5779,7 +5779,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR019")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -5930,7 +5930,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc15a67e-e827-42b2-b45c-dc5759378c01")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR011"
 			(at 58.42 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -5990,7 +5990,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR013")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -6287,7 +6287,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee1dc3cb-2a63-41d4-b546-ff9bfa9a5518")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR021"
 			(at 119.38 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -6347,7 +6347,7 @@
 		(instances
 			(project "mosfet_driver"
 				(path "/affe9f01-beaf-4b8a-b5ac-1888fb444f62/3d388a56-2466-4d51-8971-3f7a4f39f3a1"
-					(reference "#PWR023")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)

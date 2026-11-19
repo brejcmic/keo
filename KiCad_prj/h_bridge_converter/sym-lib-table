@@ -1,0 +1,5 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Mosfet_Driver_KEO") (type "KiCad") (uri "${KIPRJMOD}/../mosfet_driver/symbol_and_footprint/Mosfet_Driver_KEO.kicad_sym") (options "") (descr ""))
+	(lib (name "PWM_Generator_KEO") (type "KiCad") (uri "${KIPRJMOD}/../pwm_generator/symbol_and_footprint/PWM_Generator_KEO.kicad_sym") (options "") (descr ""))
+)
